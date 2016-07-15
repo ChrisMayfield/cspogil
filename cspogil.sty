@@ -1,0 +1,86 @@
+\ProvidesPackage{cspogil}
+
+% fonts
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{palatino}
+
+% spacing
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+% orphans and widows
+\clubpenalty=10000
+\widowpenalty=10000
+\pagestyle{empty}
+
+% figures
+\usepackage{graphicx}
+
+% colors
+\usepackage[svgnames]{xcolor}
+\definecolor{bgcolor}{HTML}{FAFAFA}
+\definecolor{comment}{HTML}{007C00}
+\definecolor{keyword}{HTML}{0000FF}
+\definecolor{strings}{HTML}{B20000}
+
+% syntax highlighting
+\usepackage{textcomp}
+\usepackage{listings}
+\lstset{
+    language=java,
+    basicstyle=\ttfamily,
+    backgroundcolor=\color{bgcolor},
+    commentstyle=\color{comment},
+    keywordstyle=\color{keyword},
+    stringstyle=\color{strings},
+    columns=fullflexible,
+    emph={label},  % keyword?
+    keepspaces=true,
+    showstringspaces=false,
+    upquote=true,
+    xleftmargin=15pt,  % \parindent
+    framexleftmargin=3pt,
+    aboveskip=\parskip,
+    belowskip=\parskip
+}
+
+% PDF properties
+\usepackage[pdftex]{hyperref}
+\makeatletter
+\hypersetup{%
+  pdftitle={\@title},
+  pdfauthor={\@author},
+  pdfsubject={\@date},
+  pdfkeywords={},
+  bookmarksopen=false,
+  colorlinks=true,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=blue
+}
+\makeatother
+
+% titles
+\makeatletter
+\renewcommand{\maketitle}{\begin{center}\LARGE\@title\end{center}}
+\makeatother
+
+% models
+\newcommand{\model}[1]{\section{#1}}
+\renewcommand{\thesection}{Model \arabic{section}}
+
+% questions
+\newcommand{\quest}[1]{\subsection*{Questions (#1)}}
+\newcounter{question}
+\newcommand{\Q}{\stepcounter{question} \arabic{question}. }
+
+% answers [optional size]
+\newenvironment{answer}[2][4em]{
+\begin{minipage}[t][#1]{\linewidth}
+\color{Silver}#2}{\end{minipage}}
+
+% inline answers
+\newcommand{\ans}[1]{\textcolor{Silver}{#1}}

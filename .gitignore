@@ -1,0 +1,8 @@
+# LaTeX output
+*.aux
+*.log
+*.out
+*.synctex.gz
+
+# Java examples
+*.class

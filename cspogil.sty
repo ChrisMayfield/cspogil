@@ -15,8 +15,9 @@
 \widowpenalty=10000
 \pagestyle{empty}
 
-% figures
+% figures and tables
 \usepackage{graphicx}
+\usepackage{tabularx}
 
 % colors
 \usepackage[svgnames]{xcolor}
@@ -45,6 +46,9 @@
     aboveskip=\parskip,
     belowskip=\parskip
 }
+
+% inline examples
+\newcommand{\java}[1]{\lstinline{#1}}%{
 
 % PDF properties
 \usepackage[pdftex]{hyperref}
@@ -83,4 +87,4 @@
 \color{Silver}#2}{\end{minipage}}
 
 % inline answers
-\newcommand{\ans}[1]{\textcolor{Silver}{#1}}
+\newcommand{\ans}[1]{~~\textcolor{Silver}{#1}}

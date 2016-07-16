@@ -4,7 +4,8 @@ import os
 import sys
 
 def build(path, name):
-    root = os.getcwd()
+    print path, name,
+    cwd = os.getcwd()
     os.chdir(path)
     # create temp activity
     temp = open("temp.tex", "w")
@@ -14,14 +15,21 @@ def build(path, name):
     temp.write("\\input{" + name + "}\n")
     temp.write("\\end{document}\n")
     temp.close()
-    # build and clean temp
-    os.system("pdflatex -interaction=nonstopmode temp.tex")
-    os.rename("temp.pdf", name[:-3] + "pdf")
+    # build and rename pdf
+    os.system("pdflatex -interaction=nonstopmode temp.tex > temp.csm")
+    status = os.system("pdflatex -interaction=nonstopmode temp.tex > temp.csm")
+    if status > 0:
+        print "ERROR"
+    else:
+        print "OK"
+        os.rename("temp.pdf", name[:-3] + "pdf")
+    # clean up temp files
     os.remove("temp.aux")
+    os.remove("temp.csm")
     os.remove("temp.log")
     os.remove("temp.out")
     os.remove("temp.tex")
-    os.chdir(root)
+    os.chdir(cwd)
 
 def main(args):
     # build all models

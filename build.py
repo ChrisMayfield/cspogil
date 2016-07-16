@@ -2,7 +2,6 @@
 
 import os
 import shutil
-import sys
 
 # command to use for os.system
 LATEX = "pdflatex -interaction=nonstopmode"
@@ -10,11 +9,23 @@ LATEX = "pdflatex -interaction=nonstopmode"
 # remove temporary output files
 CLEAN = True
 
+def latex(name, suff):
+    """Run latex and rename pdf."""
+    print "  " + suff,
+    os.system(LATEX + " _TEMP_.tex > _TEMP_.run")
+    status = os.system(LATEX + " _TEMP_.tex > _TEMP_.run")
+    if status > 0:
+        print "ERROR"
+        return
+    else:
+        print "OK"
+        os.rename("_TEMP_.pdf", name[:-4] + "-" + suff + ".pdf")
+
 def build(path, name):
     """Build the given source file."""
     if name == "_TEMP_.tex":
         return
-    print path, name,
+    print path, name
     cwd = os.getcwd()
     os.chdir(path)
     # create temp activity
@@ -28,14 +39,17 @@ def build(path, name):
         temp.close()
     else:
         shutil.copyfile(name, "_TEMP_.tex")
-    # build and rename pdf
-    os.system(LATEX + " _TEMP_.tex > _TEMP_.run")
-    status = os.system(LATEX + " _TEMP_.tex > _TEMP_.run")
-    if status > 0:
-        print "ERROR"
-    else:
-        print "OK"
-        os.rename("_TEMP_.pdf", name[:-3] + "pdf")
+    latex(name, "Teacher")
+    # patch student version (make answers white)
+    temp = open("_TEMP_.tex", 'U')
+    code = temp.readlines()
+    temp.close()
+    pos = code.index("\\begin{document}\n")
+    code.insert(pos, "\\definecolor{answers}{HTML}{FFFFFF}\n")
+    temp = open("_TEMP_.tex", 'w')
+    temp.writelines(code)
+    temp.close()
+    latex(name, "Student")
     # clean up temp files
     if CLEAN:
         os.remove("_TEMP_.aux")
@@ -45,7 +59,7 @@ def build(path, name):
         os.remove("_TEMP_.tex")
     os.chdir(cwd)
 
-def main(args):
+def main():
     """Find and build all files."""
     for root in ["Activities", "Models"]:
         for path, dirs, files in os.walk(root):
@@ -54,8 +68,7 @@ def main(args):
                     build(path, name)
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv))
+    main()
 
 # TODO build dict of file modification times
-# TODO pdflatex teacher and student versions
 # TODO sysargs: all, clean, student, teacher

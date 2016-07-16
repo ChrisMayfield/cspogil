@@ -16,7 +16,7 @@ def latex(name, suff):
     status = os.system(LATEX + " _TEMP_.tex > _TEMP_2.run")
     if status == 0:
         print "OK"
-        os.rename("_TEMP_.pdf", name[:-4] + "-" + suff + ".pdf")
+        os.rename("_TEMP_.pdf", name[:-4] + "_" + suff + ".pdf")
     else:
         print "ERROR"
         return status

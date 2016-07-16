@@ -9,3 +9,5 @@ The activities in this repository are written in LaTeX. Each source file contain
 You can browse each of the activities and models separately. The provided Makefile recursively builds PDF versions of each source file.
 
 Unless otherwise noted, this work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+
+For more information, see http://pogil.org and http://cspogil.org.

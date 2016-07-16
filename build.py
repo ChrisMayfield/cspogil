@@ -12,22 +12,27 @@ CLEAN = True
 def latex(name, suff):
     """Run latex and rename pdf."""
     print "  " + suff,
-    os.system(LATEX + " _TEMP_.tex > _TEMP_.run")
-    status = os.system(LATEX + " _TEMP_.tex > _TEMP_.run")
-    if status > 0:
-        print "ERROR"
-        return
-    else:
+    os.system(LATEX + " _TEMP_.tex > _TEMP_1.run")
+    status = os.system(LATEX + " _TEMP_.tex > _TEMP_2.run")
+    if status == 0:
         print "OK"
         os.rename("_TEMP_.pdf", name[:-4] + "-" + suff + ".pdf")
+    else:
+        print "ERROR"
+        return status
+    # clean up temp files
+    if CLEAN:
+        os.remove("_TEMP_.aux")
+        os.remove("_TEMP_.log")
+        os.remove("_TEMP_.out")
+        os.remove("_TEMP_1.run")
+        os.remove("_TEMP_2.run")
 
 def build(path, name):
     """Build the given source file."""
     if name == "_TEMP_.tex":
         return
     print path, name
-    cwd = os.getcwd()
-    os.chdir(path)
     # create temp activity
     if path.startswith("Models/"):
         temp = open("_TEMP_.tex", 'w')
@@ -39,7 +44,10 @@ def build(path, name):
         temp.close()
     else:
         shutil.copyfile(name, "_TEMP_.tex")
-    latex(name, "Teacher")
+    # build teacher version
+    status = latex(name, "Teacher")
+    if status:
+        return status
     # patch student version (make answers white)
     temp = open("_TEMP_.tex", 'U')
     code = temp.readlines()
@@ -49,23 +57,26 @@ def build(path, name):
     temp = open("_TEMP_.tex", 'w')
     temp.writelines(code)
     temp.close()
-    latex(name, "Student")
-    # clean up temp files
+    # build student version
+    status = latex(name, "Student")
+    if status:
+        return status
+    # delete temp activity
     if CLEAN:
-        os.remove("_TEMP_.aux")
-        os.remove("_TEMP_.log")
-        os.remove("_TEMP_.out")
-        os.remove("_TEMP_.run")
         os.remove("_TEMP_.tex")
-    os.chdir(cwd)
 
 def main():
     """Find and build all files."""
+    cwd = os.getcwd()
     for root in ["Activities", "Models"]:
         for path, dirs, files in os.walk(root):
             for name in files:
                 if name.endswith(".tex"):
-                    build(path, name)
+                    os.chdir(path)
+                    status = build(path, name)
+                    if status:
+                        return status
+                    os.chdir(cwd)
 
 if __name__ == "__main__":
     main()

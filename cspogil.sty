@@ -1,4 +1,4 @@
-\ProvidesPackage{cspogil}
+%\ProvidesPackage{cspogil}
 
 % fonts
 \usepackage[T1]{fontenc}
@@ -31,6 +31,7 @@
 \definecolor{comment}{HTML}{007C00}
 \definecolor{keyword}{HTML}{0000FF}
 \definecolor{strings}{HTML}{B20000}
+\definecolor{answers}{HTML}{C0C0C0}
 
 % syntax highlighting
 \usepackage{textcomp}
@@ -90,7 +91,7 @@
 % answers [optional size]
 \newenvironment{answer}[2][4em]{
 \begin{minipage}[t][#1]{\linewidth}
-\color{Silver}#2}{\end{minipage}}
+\color{answers}#2}{\end{minipage}}
 
 % inline answers
-\newcommand{\ans}[1]{~~\textcolor{Silver}{#1}}
+\newcommand{\ans}[1]{~~\textcolor{answers}{#1}}

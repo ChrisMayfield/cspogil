@@ -4,5 +4,6 @@
 *.out
 *.synctex.gz
 
-# Java examples
+# Java / Python
 *.class
+*.pyc

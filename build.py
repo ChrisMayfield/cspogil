@@ -32,7 +32,7 @@ def build(path, name):
     """Build the given source file."""
     if name == "_TEMP_.tex":
         return
-    print path, name
+    print os.path.join(path, name)
     # create temp activity
     if path.startswith("Models/"):
         temp = open("_TEMP_.tex", 'w')

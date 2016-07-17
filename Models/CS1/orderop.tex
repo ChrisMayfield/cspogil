@@ -1,0 +1,78 @@
+\model{Order of Operations}
+
+The Java language defines a specific order of execution for math and other operations. For example, multiplication and division take \textbf{precedence} over addition and subtraction. Using parentheses, you can override the order of operations. The following table lists some Java operators from highest precedence to lowest precedence.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|L{3in}|L{1in}|}
+\hline
+Parenthesis
+& \tt ( ) \\
+\hline
+Unary (positive or negative signs)
+& \tt + - \\
+\hline
+Multiplicative
+& \tt * / \\
+\hline
+Additive
+& \tt + - \\
+\hline
+Assignment
+& \tt = \\
+\hline
+\end{tabular}
+\end{center}
+
+For the following questions, assume you have these two variables:
+
+\begin{quote}
+\begin{java}
+int x;
+double y;
+\end{java}
+\end{quote}
+
+
+\quest{10 min}
+
+\Q What operator has the lowest precedence? Why do you think Java is designed that way?
+
+\begin{answer}
+\end{answer}
+
+
+\Q The \texttt{+} and \texttt{-} operators show up twice in the above list of operator precedence. In the Java expression ~ \texttt{x = 5 * -3;} ~ explain how you know whether the \texttt{-} operator is being used as an unary or binary operator in this expression.
+
+\begin{answer}
+\end{answer}
+
+
+\Q Give the order of operations in the Java expression: ~ \texttt{x = 5 * -3;}
+
+\begin{enumerate}
+\item First operator to be executed:
+\item Second operator:
+\item Third operator:
+\end{enumerate}
+
+
+
+\Q Give the order of operations in the Java expression: ~ \texttt{y = 9 / 2;}
+
+\begin{enumerate}
+\item First operator to be executed:
+\item Second operator:
+\end{enumerate}
+
+
+\Q Based on your answer to the previous question, explain why the variable y will be changed to 4.0 (and not 4 or 4.5).
+
+\begin{answer}
+\end{answer}
+
+
+\Q Rewrite the assignment for y so that it will be set correctly to 4.5. (Hint: you'll need to recall what you learned about division in \ref{CS1/intdiv}.)
+
+\begin{answer}
+\end{answer}

@@ -3,7 +3,7 @@
 % fonts
 \usepackage[T1]{fontenc}
 \usepackage{microtype}
-\usepackage{palatino}
+\usepackage{mathpazo}
 
 % spacing
 \usepackage[margin=1in]{geometry}
@@ -43,25 +43,21 @@
 \usepackage{textcomp}
 \usepackage{listings}
 \lstset{
-    language=java,
     basicstyle=\ttfamily,
     backgroundcolor=\color{bgcolor},
+    numberstyle=\small\color{comment},
     commentstyle=\color{comment},
     keywordstyle=\color{keyword},
     stringstyle=\color{strings},
     columns=fullflexible,
-    emph={label},  % keyword?
     keepspaces=true,
     showstringspaces=false,
-    upquote=true,
-    xleftmargin=15pt,  % \parindent
-    framexleftmargin=3pt,
-    aboveskip=\parskip,
-    belowskip=\parskip
+    upquote=true
 }
 
-% inline examples
-\newcommand{\java}[1]{\lstinline{#1}}%{
+% code listing environments
+\lstnewenvironment{java}{\lstset{language=java}}{}
+\lstnewenvironment{javabox}{\lstset{language=java,frame=single,numbers=left}}{}
 
 % PDF properties
 \usepackage[pdftex]{hyperref}
@@ -90,10 +86,13 @@
 \renewcommand{\thesection}{Model \arabic{section}}
 
 % questions
-\newcommand{\quest}[1]{\subsection*{Questions (#1)}}
+\newcommand{\quest}[1]{\subsection*{Questions ~(#1)}}
 \newcounter{question}
 \newcommand{\Q}{\stepcounter{question} \arabic{question}. }
-\renewcommand{\theenumi}{\Alph{enumi}}
+
+% sub-questions
+\usepackage{enumitem}
+\setenumerate[1]{label=\alph*)}
 
 % answers [optional size]
 \newenvironment{answer}[2][4em]{

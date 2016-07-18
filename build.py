@@ -1,4 +1,4 @@
-"""Recursively builds PDF versions of each LaTeX file."""
+"""Recursively builds student and teacher PDF versions of each LaTeX file."""
 
 import os
 import shutil
@@ -68,7 +68,7 @@ def build(path, name):
 def main():
     """Find and build all files."""
     cwd = os.getcwd()
-    for root in ["Activities", "Models"]:
+    for root in ["Models", "Activities"]:
         for path, dirs, files in os.walk(root):
             for name in files:
                 if name.endswith(".tex"):

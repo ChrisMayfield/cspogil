@@ -3,7 +3,7 @@
 % fonts
 \usepackage[T1]{fontenc}
 \usepackage{microtype}
-\usepackage{mathpazo}
+\usepackage{palatino}
 
 % spacing
 \usepackage[margin=1in]{geometry}
@@ -45,7 +45,7 @@
 \lstset{
     basicstyle=\ttfamily,
     backgroundcolor=\color{bgcolor},
-    numberstyle=\small\color{comment},
+    numberstyle=\scriptsize\color{comment},
     commentstyle=\color{comment},
     keywordstyle=\color{keyword},
     stringstyle=\color{strings},
@@ -55,9 +55,9 @@
     upquote=true
 }
 
-% code listing environments
-\lstnewenvironment{java}{\lstset{language=java}}{}
-\lstnewenvironment{javabox}{\lstset{language=java,frame=single,numbers=left}}{}
+% code environments
+\newcommand{\java}[1]{\lstinline[language=java]{#1}}%[
+\lstnewenvironment{javabox}{\lstset{language=java,frame=single,numbers=left}\quote}{\endquote}
 
 % PDF properties
 \usepackage[pdftex]{hyperref}

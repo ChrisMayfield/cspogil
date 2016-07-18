@@ -1,11 +1,11 @@
-% Based on Model 3 of "Activity 01 Operators" by Helen Hu
+% Based on Models 3 and 4 of "Activity 01 Operators" by Helen Hu
 
 \model{Dividing Numbers}
 \label{CS1/intdiv}
 
 \vspace{-1em}
 \begin{center}
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.4}
 \begin{tabular}[t]{|C{35pt}|C{65pt}|C{35pt}|}
 \hline
  9 / 4 & \textit{evaluates to} & 2 \\
@@ -28,15 +28,21 @@
 \hspace{0.5in}
 \begin{tabular}[t]{|C{45pt}|C{65pt}|C{45pt}|}
 \hline
-9.0 / 4.0 & \textit{evaluates to} & 2.25 \\
+9    / 4.0 & \textit{evaluates to} & 2.25 \\
 \hline
-10. / 4.  & \textit{evaluates to} & 2.5 \\
+10   / 4.  & \textit{evaluates to} & 2.5 \\
 \hline
-11  / 4.0 & \textit{evaluates to} & 2.75 \\
+11.  / 4   & \textit{evaluates to} & 2.75 \\
 \hline
-12. / 4   & \textit{evaluates to} & 3.0 \\
+12   / 4.0 & \textit{evaluates to} & 3.0 \\
 \hline
-13  / 4.0 & \textit{evaluates to} & 3.25 \\
+13   / 4.  & \textit{evaluates to} & 3.25 \\
+\hline
+14.0 / 4   & \textit{evaluates to} & 3.5 \\
+\hline
+15   / 4.0 & \textit{evaluates to} & 3.75 \\
+\hline
+16   / 4.  & \textit{evaluates to} & 4.0 \\
 \hline
 \end{tabular}
 \end{center}
@@ -44,54 +50,65 @@
 
 \quest{15 min}
 
-\Q In the first table, which number(s) divided by 4 evaluate to 3? What is significant about the number of answers you have written down?
+\Q In the first table, which number(s) divided by 4 evaluate to 3?
+What is significant about the number of answers you have written down?
 
 \begin{answer}
+12, 13, 14, and 15.
+There are four answers, and we divided by four.
 \end{answer}
 
 
-\Q How do the answers in the first table differ from the mathematically correct answers?
+\Q How do the answers in the first table differ from the second table?
 
 \begin{answer}
+The second table is mathematically correct; the first table rounds down.
 \end{answer}
 
 
-\Q To the right of the second table, round each answer to the closest integer. How do those values compare to what you see in the first table?
+\Q To the right of the second table, round each answer to the closest integer.
+How do those values compare to what you see in the first table?
 
 \begin{answer}
+The pattern is off by two rows.
+The 0.5 and 0.75 values round up, but in the first table they don't.
 \end{answer}
 
 
 \Q Carefully explain the difference between the numbers in the first and second tables.
 
 \begin{answer}
+All the numbers in the first table have no decimal points.
+At least one number in each row of the second table as a decimal point.
 \end{answer}
 
 
 \Q Complete the table:
-
-\begin{center}
-\renewcommand{\arraystretch}{1.5}
+\hspace{2em}
+\begin{minipage}{0.5\textwidth}
+\renewcommand{\arraystretch}{1.4}
 \begin{tabular}[t]{|C{45pt}|C{65pt}|C{45pt}|}
 \hline
-14. / 4. & \textit{evaluates to} & 3.5 \\
+14. / 4. & \textit{evaluates to} & \ans{3.5} \\
 \hline
-14. / 4  & \textit{evaluates to} & 3.5 \\
+14. / 4  & \textit{evaluates to} & \ans{3.5} \\
 \hline
-14  / 4. & \textit{evaluates to} & 3.5 \\
+14  / 4. & \textit{evaluates to} & \ans{3.5} \\
 \hline
-14  / 4  & \textit{evaluates to} & 3 \\
+14  / 4  & \textit{evaluates to} & \ans{3}   \\
 \hline
 \end{tabular}
-\end{center}
+\end{minipage}
 
 
-\Q Dividing numbers with fractional parts (known as \textbf{floating-point} numbers) gives you different results from dividing two integers. In the previous question:
+\Q Dividing numbers with fractional parts (known as \textbf{floating-point} numbers) gives you different results from dividing two integers.
+In the previous question:
 
 \begin{enumerate}
 \item Which rows evaluate to an integer? \ans{the first three}
 \vspace{1ex}
 \item Which rows evaluate to a floating-point number? \ans{the last one}
+\vspace{1ex}
 \end{enumerate}
 
 
@@ -100,7 +117,6 @@
 \begin{enumerate}
 \item What must be true about the \textbf{operands} (the numbers around the \textbf{operators}) for you to get the mathematically correct answer?
 
-\vspace{1ex}
 \ans{At least one of them needs to be a floating-point number.}
 \vspace{1ex}
 
@@ -109,13 +125,19 @@
 \end{enumerate}
 
 
-\Q Consider what you know about addition. If you add two integers in a Java expression, will the result always be mathematically correct? Justify your answer.
+\Q Consider what you know about addition (\java{+}).
+If you add two integers in a Java expression, will the result always be mathematically correct?
+Justify your answer.
 
 \begin{answer}
+Yes, because adding two integers always results in an integer.
+(Unless the number gets too large and the arithmetic overflows.)
 \end{answer}
 
 
-\Q What about subtraction and multiplication? If you subtract or multiply two integers, will the answer always be mathematically correct? Justify your answer.
+\Q What about subtraction (\java{-}) and multiplication (\java{*})? If you subtract or multiply two integers, will the answer always be mathematically correct? Justify your answer.
 
 \begin{answer}
+Yes, because subtraction and multiplication can be rewritten in terms of addition.
+Division is the only special case, because it has both a quotient and a remainder.
 \end{answer}

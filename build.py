@@ -2,6 +2,7 @@
 
 import os
 import shutil
+import sys
 
 # command to use for os.system
 LATEX = "pdflatex -interaction=nonstopmode"
@@ -11,7 +12,8 @@ CLEAN = True
 
 def latex(name, suff):
     """Run latex and rename pdf."""
-    print "  " + suff,
+    print "  " + suff + "...",
+    sys.stdout.flush()
     os.system(LATEX + " _TEMP_.tex > _TEMP_1.run")
     status = os.system(LATEX + " _TEMP_.tex > _TEMP_2.run")
     if status == 0:

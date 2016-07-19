@@ -46,7 +46,7 @@ def build(path, name):
     if path.startswith("Models/"):
         temp = open("_TEMP_.tex", 'w')
         temp.write("\\documentclass[11pt]{article}\n")
-        temp.write("\\usepackage{../../cspogil}\n")
+        temp.write("\\input{../../cspogil.sty}\n")
         temp.write("\\begin{document}\n")
         temp.write("\\input{" + name + "}\n")
         temp.write("\\end{document}\n")
@@ -88,5 +88,4 @@ def main():
                     os.chdir(cwd)
 
 if __name__ == "__main__":
-    # TODO sysargs: all, clean, student, teacher
     main()

@@ -91,12 +91,14 @@
 \newcounter{question}
 \newcommand{\Q}{\stepcounter{question} \arabic{question}. }
 
-% sub-questions
+% sub-question lists
 \usepackage{enumitem}
 \setenumerate[1]{label=\alph*)}
+\setlist{itemsep=1em,after=\vspace{1ex}}
 
 % answers [optional height]
 \newenvironment{answer}[2][4em]{
+\nopagebreak
 \begin{minipage}[t][#1]{\linewidth}
 \color{answers}#2}{\end{minipage}}
 

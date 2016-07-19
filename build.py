@@ -1,4 +1,4 @@
-"""Recursively builds student and teacher PDF versions of each LaTeX file."""
+"""Compiles student and teacher PDFs for each LaTeX source file."""
 
 import os
 import shutil
@@ -14,11 +14,18 @@ def latex(name, suff):
     """Run latex and rename pdf."""
     print "  " + suff + "...",
     sys.stdout.flush()
+    # check timestamp
+    pdf = name[:-4] + "_" + suff + ".pdf"
+    if os.path.isfile(pdf):
+        if os.path.getmtime(pdf) > os.path.getmtime(name):
+            print "SKIP"
+            return
+    # run pdflatex
     os.system(LATEX + " _TEMP_.tex > _TEMP_1.run")
     status = os.system(LATEX + " _TEMP_.tex > _TEMP_2.run")
     if status == 0:
         print "OK"
-        os.rename("_TEMP_.pdf", name[:-4] + "_" + suff + ".pdf")
+        os.rename("_TEMP_.pdf", pdf)
     else:
         print "ERROR"
         return status
@@ -81,7 +88,5 @@ def main():
                     os.chdir(cwd)
 
 if __name__ == "__main__":
+    # TODO sysargs: all, clean, student, teacher
     main()
-
-# TODO build dict of file modification times
-# TODO sysargs: all, clean, student, teacher

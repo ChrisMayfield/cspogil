@@ -1,14 +1,14 @@
 %\ProvidesPackage{cspogil}
 
 % fonts
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{microtype}
-\usepackage{palatino}
+\usepackage{mathpazo}
 
 % spacing
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=2cm]{geometry}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{4pt}
+%\setlength{\parskip}{4pt}
 
 % orphans and widows
 \clubpenalty=10000
@@ -60,6 +60,7 @@
 
 % code environments
 \newcommand{\java}[1]{\lstinline[language=java]{#1}}%[
+\lstnewenvironment{javalst}{\lstset{language=java,backgroundcolor=}}{}
 \lstnewenvironment{javabox}{\lstset{language=java,frame=single,numbers=left}\quote}{\endquote}
 
 % PDF properties
@@ -90,9 +91,10 @@
 \renewcommand{\thesection}{Model \arabic{section}}
 
 % questions
-\newcommand{\quest}[1]{\subsection*{Questions ~(#1)}}
+\newcommand{\quest}[1]{\subsection*{Questions ~(#1)}\smallskip}
 \newcounter{question}
-\newcommand{\Q}{\stepcounter{question} \arabic{question}. }
+\newcommand{\Q}{\mbox{}\refstepcounter{question}\arabic{question}.~ }
+\renewcommand{\thequestion}{\#\arabic{question}}
 
 % sub-question lists
 \usepackage{enumitem}

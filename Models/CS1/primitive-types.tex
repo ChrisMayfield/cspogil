@@ -1,0 +1,121 @@
+\model{Primitive Types}
+
+\vspace{-1ex}
+\begin{table}[h!]
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|X|X|X|X|}
+\hline
+\tr Keyword & \tr Size & \tr Min Value & \tr Max Value \\
+\hline
+\java{byte} & 1 byte & $-128$ & $127$ \\
+\hline
+\java{short} & 2 bytes & $-32,768$ & $32,767$ \\
+\hline
+\java{int} & 4 bytes & $-2^{31}$ & $2^{31}-1$ \\
+\hline
+\java{long} & 8 bytes & $-2^{63}$ & $2^{63}-1$ \\
+\hline
+\java{float} & 4 bytes & $\pm 3.4 \times 10^{-38}$ & $\pm 3.4 \times 10^{38}$ \\
+\hline
+\java{double} & 8 bytes & $\pm 1.7 \times 10^{-308}$ & $\pm 1.7 \times 10^{308}$ \\
+\hline
+\java{boolean} & N/A & \java{false} & \java{true} \\
+\hline
+\java{char} & 2 bytes & \java{'\\u0000'} & \java{'\\uffff'} \\
+\hline
+\end{tabularx}
+\end{table}
+
+Note that 1 byte is 8 bits, i.e., eight ``ones and zeros'' in computer memory.
+Since there are only two options for each bit, with 8 bits you can represent $2^8 = 256$ possible values.
+
+\quest{10 min}
+
+
+\Q Which of the primitive types are integers? Which are floating-point? Which are not numeric?
+
+\begin{answer}
+\end{answer}
+
+
+\Q Why do primitive types have ranges of values? What determines the range of the data type?
+
+\begin{answer}
+\end{answer}
+
+
+\Q Why can't computers represent every possible number in mathematics? Will they ever be able to do so?
+
+\begin{answer}
+\end{answer}
+
+
+\Q Since a \java{byte} can represent 256 different numbers, why is its max value 127 and not 128?
+
+\begin{answer}
+\end{answer}
+
+
+\Q What is the data type for each of the following values?
+
+\begin{quote}
+\begin{minipage}{0.5\linewidth}
+1.14159 \ans{double} \\[1ex]
+0       \ans{int} \\[1ex]
+-1.0F   \ans{float} \\[1ex]
+123     \ans{int}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+7.2E-4  \ans{double} \\[1ex]
+0.0     \ans{double} \\[1ex]
+-13L    \ans{long} \\[1ex]
+'0'     \ans{char}
+\end{minipage}
+\end{quote}
+
+
+\Q Given the following variable declarations, which of the assignments are not allowed?
+
+\begin{quote}
+\begin{minipage}{0.5\linewidth}
+
+\begin{javalst}
+byte miles;
+short minutes;
+int checking;
+long days;
+float total;
+double sum;
+boolean flag;
+char letter;
+\end{javalst}
+
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+
+\begin{javalst}
+checking = 56000;
+total = 0;
+sum = total;
+total = sum;
+checking = miles;
+sum = checking;
+sum = days;
+days = "0";
+\end{javalst}
+
+\end{minipage}
+\end{quote}
+
+
+\Q \label{allow} In general, when does Java allow you to assign one type of numeric variable to another?
+
+\begin{answer}
+\end{answer}
+
+
+\Q Based on your answer to \ref{allow}, list all possible assignments in this format:
+\java{int} $\gets$ \java{short}
+
+\begin{answer}
+\end{answer}

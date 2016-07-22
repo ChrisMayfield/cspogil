@@ -7,6 +7,7 @@
 
 % spacing
 \usepackage[margin=2cm]{geometry}
+\renewcommand{\arraystretch}{1.4}
 \setlength{\parindent}{0pt}
 
 % orphans and widows
@@ -18,7 +19,6 @@
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{tabularx}
-\renewcommand{\arraystretch}{1.5}
 
 % fixed-width columns
 \usepackage{array}
@@ -38,11 +38,9 @@
 \definecolor{comment}{HTML}{007C00}
 \definecolor{keyword}{HTML}{0000FF}
 \definecolor{strings}{HTML}{B20000}
-\definecolor{headers}{HTML}{808080}
-\definecolor{answers}{HTML}{C0C0C0}
 
 % table headers
-\newcommand{\tr}{\bf\cellcolor{Yellow!25}}
+\newcommand{\tr}{\bf\cellcolor{Yellow!10}}
 
 % syntax highlighting
 \usepackage{textcomp}
@@ -64,20 +62,6 @@
 \newcommand{\java}[1]{\lstinline[language=java]{#1}}%[
 \lstnewenvironment{javalst}{\lstset{language=java,backgroundcolor=}}{}
 \lstnewenvironment{javabox}{\lstset{language=java,frame=single,numbers=left}\quote}{\endquote}
-
-% headers and footers
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\makeatletter
-\lhead{}
-\chead{}
-\rhead{}
-\lfoot{\scriptsize\textcolor{headers}{\@title}}
-\cfoot{\scriptsize\textcolor{headers}{\@author}}
-\rfoot{\scriptsize\textcolor{headers}{\@date}}
-\makeatother
 
 % PDF properties
 \usepackage[pdftex]{hyperref}
@@ -102,6 +86,13 @@
 \renewcommand{\maketitle}{\begin{center}\LARGE\@title\end{center}}
 \makeatother
 
+% boxes
+\newcommand{\emptybox}[1][10em]{
+\vspace{1em}
+\begin{tabularx}{\linewidth}{|X|}
+\hline\\[#1]\hline
+\end{tabularx}}
+
 % models
 \newcommand{\model}[1]{\section{#1}\nopagebreak}
 \renewcommand{\thesection}{Model~\arabic{section}}
@@ -117,7 +108,16 @@
 \setenumerate[1]{label=\alph*)}
 \setlist{itemsep=1em,after=\vspace{1ex}}
 
-% answers [optional height]
+% inline answers
+\definecolor{answers}{HTML}{C0C0C0}
+\newcommand{\ans}[1]{%
+\ifdefined\Student
+    \phantom{~~\textcolor{answers}{#1}}
+\else
+    ~~\textcolor{answers}{#1}
+\fi}
+
+% longer answers [optional height]
 \newsavebox{\ansbox}
 \newenvironment{answer}[1][4em]{
 \nopagebreak
@@ -128,15 +128,7 @@
 \end{minipage}
 \end{lrbox}
 \ifdefined\Student
-    \phantom{\usebox{\ansbox}}
+    \phantom{\usebox{\ansbox}}%
 \else
     \usebox{\ansbox}%
-\fi}
-
-% inline answers
-\newcommand{\ans}[1]{%
-\ifdefined\Student
-    \phantom{~~\textcolor{answers}{#1}}
-\else
-    ~~\textcolor{answers}{#1}
 \fi}

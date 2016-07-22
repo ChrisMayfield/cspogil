@@ -1,0 +1,14 @@
+% headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\makeatletter
+\lhead{}
+\chead{}
+\rhead{}
+\definecolor{headers}{HTML}{808080}
+\lfoot{\scriptsize\textcolor{headers}{\@title}}
+\cfoot{\scriptsize\textcolor{headers}{\@author}}
+\rfoot{\scriptsize\textcolor{headers}{\@date}}
+\makeatother

@@ -1,13 +1,13 @@
 % Based on Model 4 in "Activity 13 Encryption" by Helen Hu
 
-\model{Vigen\`{e}re Cipher}
+\model{Vigenère Cipher}
 
-Vigen\`{e}re Ciphers are a value-added Caesar Cipher that is very difficult to crack.
+Vigenère Ciphers are a value-added Caesar Cipher that is very difficult to crack.
 Instead of using a single number, the key is a word.
 Each character in the key is encoded with its own Caesar Cipher.
 For example, here is how you encrypt the word \texttt{UMBRELLA} using the key \texttt{DOG} shown below.
 
-\begin{table}[h]
+\begin{table}[h!]
 \centering
 \begin{tabular}{lll}
 1. & Enter plaintext: & \texttt{UMBRELLA} \\[1ex]
@@ -15,9 +15,10 @@ For example, here is how you encrypt the word \texttt{UMBRELLA} using the key \t
 3. & Get ciphertext:  & \texttt{XAHUSROO}
 \end{tabular}
 \end{table}
-
-\includegraphics[width=\linewidth]{CSP/vigenere1.png}
-
+\vspace{-1em}
+\begin{center}
+\includegraphics[width=0.9\linewidth]{CSP/vigenere1.png}
+\end{center}
 
 \quest{20 min}
 
@@ -85,7 +86,7 @@ Plus there's only 26 unique letters. 12-15 is practically enough.
 
 
 \Q Think about the examples you brainstormed at the beginning of the activity.
-What is one advantage and one disadvantage of using Vigen\`{e}re Cipher encryption for online security?
+What is one advantage and one disadvantage of using Vigenère Cipher encryption for online security?
 
 \begin{enumerate}
 

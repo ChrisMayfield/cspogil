@@ -118,10 +118,25 @@
 \setlist{itemsep=1em,after=\vspace{1ex}}
 
 % answers [optional height]
-\newenvironment{answer}[2][4em]{
+\newsavebox{\ansbox}
+\newenvironment{answer}[1][4em]{
 \nopagebreak
+\begin{lrbox}{\ansbox}
 \begin{minipage}[t][#1]{\linewidth}
-\color{answers}#2}{\end{minipage}}
+\color{answers}
+}{
+\end{minipage}
+\end{lrbox}
+\ifdefined\Student
+    \phantom{\usebox{\ansbox}}
+\else
+    \usebox{\ansbox}%
+\fi}
 
 % inline answers
-\newcommand{\ans}[1]{~~\textcolor{answers}{#1}}
+\newcommand{\ans}[1]{%
+\ifdefined\Student
+    \phantom{~~\textcolor{answers}{#1}}
+\else
+    ~~\textcolor{answers}{#1}
+\fi}

@@ -20,9 +20,10 @@ def latex(name, suff):
         if os.path.getmtime(pdf) > os.path.getmtime(name):
             print "SKIP"
             return
-    # run pdflatex
-    os.system(LATEX + " _TEMP_.tex > _TEMP_1.run")
-    status = os.system(LATEX + " _TEMP_.tex > _TEMP_2.run")
+    # pass suffix to latex
+    cmd = LATEX + " '\\def\\" + suff + "{}\\input{_TEMP_.tex}'"
+    status = os.system(cmd + " > _TEMP_1.run")
+    status = os.system(cmd + " > _TEMP_2.run")
     if status == 0:
         print "OK"
         os.rename("_TEMP_.pdf", pdf)
@@ -60,15 +61,6 @@ def build(path, name):
     status = latex(name, "Teacher")
     if status:
         return status
-    # patch student version (make answers white)
-    temp = open("_TEMP_.tex", 'U')
-    code = temp.readlines()
-    temp.close()
-    pos = code.index("\\begin{document}\n")
-    code.insert(pos, "\\definecolor{answers}{HTML}{FFFFFF}\n")
-    temp = open("_TEMP_.tex", 'w')
-    temp.writelines(code)
-    temp.close()
     # build student version
     status = latex(name, "Student")
     if status:

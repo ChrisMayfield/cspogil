@@ -16,6 +16,7 @@
 
 % figures and tables
 \usepackage{graphicx}
+\usepackage{multicol}
 \usepackage{tabularx}
 \renewcommand{\arraystretch}{1.5}
 
@@ -87,7 +88,7 @@
 \makeatother
 
 % models
-\newcommand{\model}[1]{\section{#1}}
+\newcommand{\model}[1]{\section{#1}\nopagebreak}
 \renewcommand{\thesection}{Model~\arabic{section}}
 
 % questions

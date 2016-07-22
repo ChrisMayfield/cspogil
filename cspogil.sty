@@ -38,6 +38,7 @@
 \definecolor{comment}{HTML}{007C00}
 \definecolor{keyword}{HTML}{0000FF}
 \definecolor{strings}{HTML}{B20000}
+\definecolor{headers}{HTML}{808080}
 \definecolor{answers}{HTML}{C0C0C0}
 
 % table headers
@@ -63,6 +64,20 @@
 \newcommand{\java}[1]{\lstinline[language=java]{#1}}%[
 \lstnewenvironment{javalst}{\lstset{language=java,backgroundcolor=}}{}
 \lstnewenvironment{javabox}{\lstset{language=java,frame=single,numbers=left}\quote}{\endquote}
+
+% headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\makeatletter
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{\scriptsize\textcolor{headers}{\@title}}
+\cfoot{\scriptsize\textcolor{headers}{\@author}}
+\rfoot{\scriptsize\textcolor{headers}{\@date}}
+\makeatother
 
 % PDF properties
 \usepackage[pdftex]{hyperref}

@@ -45,7 +45,10 @@ def build(path, name):
     # create temp activity
     if path.startswith("Models/"):
         temp = open("_TEMP_.tex", 'w')
-        temp.write("\\documentclass[11pt]{article}\n")
+        temp.write("\\documentclass[12pt]{article}\n")
+        temp.write("\\title{}\n")
+        temp.write("\\author{}\n")
+        temp.write("\\date{}\n")
         temp.write("\\input{../../cspogil.sty}\n")
         temp.write("\\begin{document}\n")
         temp.write("\\input{" + name + "}\n")

@@ -36,31 +36,38 @@ Since there are only two options for each bit, with 8 bits you can represent $2^
 \Q Which of the primitive types are integers? Which are floating-point? Which are not numeric?
 
 \begin{answer}
+Integers: byte, short, int, long.
+Floating-point: float, double.
+Non-numeric: boolean, char.
 \end{answer}
 
 
 \Q Why do primitive types have ranges of values? What determines the range of the data type?
 
 \begin{answer}
+The range of values depends on the size, i.e., how many bytes are used to store the value.
 \end{answer}
 
 
 \Q Why can't computers represent every possible number in mathematics? Will they ever be able to do so?
 
 \begin{answer}
+Computers have finite memory, but there are an infinite number of numbers.
+There will always be a number larger than what computers can store.
 \end{answer}
 
 
 \Q Since a \java{byte} can represent 256 different numbers, why is its max value 127 and not 128?
 
 \begin{answer}
+One of the 256 values is the number zero. So 128 negatives, plus 1 zero, plus 127 positives equals 256 values.
 \end{answer}
 
 
 \Q What is the data type for each of the following values?
 
 \begin{quote}
-\begin{multicols}{2}
+\begin{multicols}{3}
 1.14159 \ans{double} \\[1ex]
 0       \ans{int} \\[1ex]
 -1.0F   \ans{float} \\[1ex]
@@ -70,6 +77,11 @@ Since there are only two options for each bit, with 8 bits you can represent $2^
 0.0     \ans{double} \\[1ex]
 -13L    \ans{long} \\[1ex]
 '0'     \ans{char}
+
+-128    \ans{int} \\[1ex]
+false   \ans{boolean} \\[1ex]
+true    \ans{boolean} \\[1ex]
+"0"     \ans{String}
 \end{multicols}
 \end{quote}
 
@@ -77,7 +89,7 @@ Since there are only two options for each bit, with 8 bits you can represent $2^
 \Q Given the following variable declarations, which of the assignments are not allowed?
 
 \begin{quote}
-\begin{multicols}{2}
+\begin{multicols}{3}
 
 \begin{javalst}
 byte miles;
@@ -90,6 +102,8 @@ boolean flag;
 char letter;
 \end{javalst}
 
+\columnbreak
+
 \begin{javalst}
 checking = 56000;
 total = 0;
@@ -101,6 +115,14 @@ sum = days;
 days = "0";
 \end{javalst}
 
+\columnbreak
+
+\begin{answer}[3em]
+All are okay except:
+\\ \hspace*{1em} \java{total = sum;}
+\\ \hspace*{1em} \java{days = "0";}
+\end{answer}
+
 \end{multicols}
 \end{quote}
 
@@ -108,11 +130,17 @@ days = "0";
 \Q \label{allow} In general, when does Java allow you to assign one type of numeric variable to another?
 
 \begin{answer}
+The types have to be compatible (e.g., you can't assign numeric to boolean), and you can only assign from smaller to larger (e.g., from float to double, or int to double).
 \end{answer}
 
 
-\Q Based on your answer to \ref{allow}, list all possible assignments in this format:
-\java{int} $\gets$ \java{short}
+\Q Based on your answer to \ref{allow}, list all possible assignments for \java{int}, \java{long}, \java{float}, and \java{double} values in this format: \java{long} $\gets$ \java{int}
 
 \begin{answer}
+\setlength{\tabcolsep}{12pt}
+\begin{tabular}{llll}
+&  long   $\gets$ int  &                       &                        \\
+&  float  $\gets$ int  &  float  $\gets$ long  &                        \\
+&  double $\gets$ int  &  double $\gets$ long  &  double $\gets$ float  \\
+\end{tabular}
 \end{answer}

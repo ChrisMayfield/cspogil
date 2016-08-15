@@ -1,0 +1,148 @@
+\model{Common Mistakes}
+
+\newsavebox{\programA}
+\begin{lrbox}{\programA}
+\begin{javalst}
+String greeting = "hello world";
+greeting.toUpperCase();
+System.out.println(greeting);
+
+\end{javalst}
+\end{lrbox}
+
+\newsavebox{\programB}
+\begin{lrbox}{\programB}
+\begin{javalst}
+Scanner in = new Scanner(System.in);
+String line = in.nextLine();
+char letter = line.charAt(1);
+System.out.println(letter);
+\end{javalst}
+\end{lrbox}
+
+\vspace{-1ex}
+\begin{table}[h!]
+\begin{tabularx}{\linewidth}{|X|X|}
+\hline
+\tr Program A & \tr Program B \\
+\hline
+\usebox{\programA} & \usebox{\programB} \\
+\hline
+\end{tabularx}
+\end{table}
+
+
+\quest{15 min}
+
+
+\Q Write the output of each program in the space under the table above. What is the logic error you see when you run Program A?
+
+\begin{answer}
+\end{answer}
+
+
+\Q \label{errorA} In Program A, what is returned by the string method? What happens to the return value?
+
+\begin{answer}
+\end{answer}
+
+
+\Q List two different ways you can fix the logic error in \ref{errorA}.
+
+\begin{answer}
+\end{answer}
+
+
+%TODO \ref to Model 2
+\Q In general, what happens to \java{this} string when calling the methods in Model 2?
+
+\begin{answer}
+\end{answer}
+
+
+\Q \label{errorB} In what cases will Program B crash? What is the error message displayed?
+
+\begin{answer}
+\end{answer}
+
+
+\Q List two different ways you can fix the runtime error in \ref{errorB}.
+
+\begin{answer}[3em]
+\end{answer}
+
+
+%\Q Solve the \java{stringYak} problem (see attached page) using \java{charAt}.
+
+
+\newpage
+
+[CodingBat] Given two strings, return the number of positions where they contain the same substring of length two. So \java{"xxcaazz"} and \java{"xxbaaz"} yields 3, since the \java{"xx"}, \java{"aa"}, and \java{"az"} substrings appear in the same place in both strings.
+
+\medskip
+\begin{javalst}
+public int stringMatch(String a, String b) {
+\end{javalst}
+
+\vspace{-1em}
+\begin{answer}[18em]
+\begin{javalst}
+    // figure which string is shorter
+    int len = Math.min(a.length(), b.length());
+    int count = 0;
+    
+    // Look at both substrings starting at i
+    for (int i = 0; i < len - 1; i++) {
+        String aSub = a.substring(i, i + 2);
+        String bSub = b.substring(i, i + 2);
+        if (aSub.equals(bSub)) {
+            count++;
+        }
+    }
+    
+    return count;
+\end{javalst}
+\end{answer}
+
+\begin{javalst}
+}
+\end{javalst}
+
+\vfill
+
+[CodingBat] Suppose the string \java{"yak"} is unlucky. Given a string, return a version where all the \java{"yak"} are removed, but the \java{'a'} can be any character. The \java{"yak"} strings will not overlap.
+
+\bigskip
+
+\java{stringYak("yakpak")} $\rightarrow$ \java{"pak"}
+
+\java{stringYak("pakyak")} $\rightarrow$ \java{"pak"}
+
+\java{stringYak("yak123ya")} $\rightarrow$ \java{"123ya"}
+
+\medskip
+\begin{javalst}
+public String stringYak(String str) {
+\end{javalst}
+
+\vspace{-1em}
+\begin{answer}[16em]
+\begin{javalst}
+    String result = "";
+    
+    for (int i = 0; i < str.length(); i++) {
+        if (i + 2 < str.length() && str.charAt(i) == 'y'
+                                 && str.charAt(i + 2) == 'k') {
+            i = i + 2;
+        } else {
+            result += str.charAt(i);
+        }
+    }
+    
+    return result;
+\end{javalst}
+\end{answer}
+
+\begin{javalst}
+}
+\end{javalst}

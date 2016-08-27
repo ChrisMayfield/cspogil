@@ -19,6 +19,7 @@
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{tabularx}
+\usepackage{wrapfig}
 
 % fixed-width columns
 \usepackage{array}
@@ -87,7 +88,7 @@
 \renewcommand{\maketitle}{\begin{center}\LARGE\@title\end{center}}
 \makeatother
 
-% boxes
+% boxes [optional height]
 \newcommand{\emptybox}[1][10em]{
 \vspace{1em}
 \begin{tabularx}{\linewidth}{|X|}
@@ -113,7 +114,7 @@
 \definecolor{answers}{HTML}{C0C0C0}
 \newcommand{\ans}[1]{%
 \ifdefined\Student
-    \phantom{~~\textcolor{answers}{#1}}
+    \leavevmode\phantom{~~\textcolor{answers}{#1}}
 \else
     ~~\textcolor{answers}{#1}
 \fi}

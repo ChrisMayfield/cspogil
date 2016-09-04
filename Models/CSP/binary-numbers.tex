@@ -1,0 +1,139 @@
+% Based on Model 1 from "Activity 5 - Binary" by Helen Hu
+% which in turn uses "Count the Dots" from csunplugged.org
+
+\model{Binary Numbers}
+
+Each team has four cards that are ordered from the card with the most dots (8) to the card with the least dots (1). The cards represent four ``binary digits'', or in other words, a 4-bit number.
+
+\newcommand{\bin}[4]{#1\hspace{64pt}#2\hspace{64pt}#3\hspace{64pt}#4}
+
+\begin{center}
+\begin{tabular}{|c|C{1in}|}
+\hline
+Binary & Decimal \\
+\hline
+\includegraphics[height=1in]{CSP/binary1.png} & \\
+\bin{1}{0}{1}{0} & \\
+\hline
+\includegraphics[height=1in]{CSP/binary2.png} & \\
+\bin{1}{0}{1}{1} & \\
+\hline
+\includegraphics[height=1in]{CSP/binary3.png} & \\
+\bin{1}{1}{0}{0} & \\
+\hline
+\includegraphics[height=1in]{CSP/binary4.png} & \\
+\bin{1}{1}{1}{1} & \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\quest{15 min}
+
+
+\Q \label{fourbit} In the table above, write the decimal value for each row by counting the number of dots.
+\begin{enumerate}
+\item What is the largest decimal number that can be represented by four bits?
+\item What is the smallest decimal number that can be represented by four bits?
+\item How many possible decimal numbers can be represented by four bits?
+\end{enumerate}
+
+
+\Q Examine the binary notation below the cards. Explain in a full sentence what a 0 means about the card's dots and what a 1 means.
+
+\begin{answer}
+\end{answer}
+
+
+\Q \label{binhex} Complete the following table by writing the binary representation of the decimal numbers 0 to 15 using four bits. (And check your answers for \ref{fourbit}.)
+
+\begin{center}
+\begin{tabular}{|C{1in}|C{1in}|C{1in}|}
+\hline
+Decimal & Binary & Hex \\
+\hline
+0  &  & 0 \\
+\hline
+1  &  & 1 \\
+\hline
+2  &  & 2 \\
+\hline
+3  &  & 3 \\
+\hline
+4  &  & 4 \\
+\hline
+5  &  & 5 \\
+\hline
+6  &  & 6 \\
+\hline
+7  &  & 7 \\
+\hline
+8  &  & 8 \\
+\hline
+9  &  & 9 \\
+\hline
+10 &  & A \\
+\hline
+11 &  & B \\
+\hline
+12 &  & C \\
+\hline
+13 &  & D \\
+\hline
+14 &  & E \\
+\hline
+15 &  & F \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\Q \emph{Hexadecimal} is shorthand for binary. For example, 0xD5 in hex is 1101 0101.
+
+\begin{enumerate}
+\item What is 0x2E in binary?
+\item What is 0x74 in binary?
+\item What is 0xB00 in binary?
+\item What is 0xFAD in binary?
+\end{enumerate}
+
+
+\Q Based on the table in \ref{binhex}, explain why binary is sometimes referred to as base-2, decimal as base-10, and hexadecimal as base-16.
+
+\begin{answer}
+\end{answer}
+
+
+\Q Explain the humor: ``There are only 10 types of people in the world: those who understand binary, and those who don't.''
+
+\begin{answer}
+\end{answer}
+
+
+\Q Typically computers group 8 bits together at a time (8 bits are also called 1 \emph{byte}). Fill in the number of dots for the four new cards:
+
+\begin{center}
+\includegraphics[width=\textwidth]{CSP/binary5.png}
+\end{center}
+
+
+\Q What is the largest number that can be represented by:
+\begin{enumerate}
+\item five bits?
+\item six bits?
+\item seven bits?
+\item eight bits?
+\item $n$ bits?
+\end{enumerate}
+
+
+\Q Most computers built since the year 2000 have 64-bit processors. Before then, 32-bit processors were the norm. What is the advantage of having more bits?
+
+\begin{answer}
+\end{answer}
+
+
+\Q In terms of logic gates and digital circuits, what is the disadvantage of having more bits?
+
+\begin{answer}
+\end{answer}

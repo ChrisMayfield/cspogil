@@ -23,7 +23,7 @@ Hi-Lo is a number guessing game with simple rules, played by school children.
 \quest{12 min}
 
 
-\Q How many different answers can player $A$ give?
+\Q How many different answers can player $A$ give? \ans{Three (too high, too low, you win).}
 
 \vspace{1ex}
 
@@ -31,6 +31,7 @@ Hi-Lo is a number guessing game with simple rules, played by school children.
 \Q When does the game end?
 
 \begin{answer}[2em]
+The game ends when $B$ guesses the correct number or gives up.
 \end{answer}
 
 
@@ -59,11 +60,11 @@ In computer science, we call such strategies \textbf{algorithms}.
 Try to have a mixture of simple and clever algorithms, including ones that young children could use.
 
 \begin{enumerate}
-\item 
-\item 
-\item 
-\item 
-\item 
+\item \ans{Randomly guess numbers until you get the right one.}
+\item \ans{Start at 100 and count down by 1 to the correct answer.}
+\item \ans{Count up by 10 until too high, and then count down by 1.}
+\item \ans{Count up by 25, then count down by 5, and finally count up by 1.}
+\item \ans{Start at 50, if too high search 1--49, or if too low search 51-100, etc.}
 \end{enumerate}
 
 
@@ -71,6 +72,9 @@ Try to have a mixture of simple and clever algorithms, including ones that young
 Write 1 for the fastest algorithm (fewest guesses) and 5 for the slowest one (most guesses).
 
 \begin{answer}
+In this particular example:
+
+1: e ~ 2: d ~ 3: c ~ 4: b ~ 5: a
 \end{answer}
 
 
@@ -79,20 +83,25 @@ Write 1 for the fastest algorithm (fewest guesses) and 5 for the slowest one (mo
 Write 1 for the algorithm that is easiest to describe and 5 for the one that is hardest.
 
 \begin{answer}
+In this particular example:
+
+1: a ~ 2: b ~ 3: c ~ 4: d ~ 5: e
 \end{answer}
 
 
 \Q For each algorithm ($a$ to $e$), plot its fast and easy values on the graph:
 
+\newcommand{\X}{\ans{X}~~}
+
 \begin{table}[h]
 \centering
 \renewcommand{\arraystretch}{1.6}
 \begin{tabularx}{275pt}{X C{28pt} | C{28pt} C{28pt} C{28pt} C{28pt} C{28pt}}
-Hard & 5 \\
-     & 4 \\
-     & 3 \\
-     & 2 \\
-Easy & 1 \\
+Hard & 5 & \X                    \\
+     & 4 &    & \X               \\
+     & 3 &    &   & \X           \\
+     & 2 &    &   &   & \X       \\
+Easy & 1 &    &   &   &   & \X   \\
 \hline
      & & 1    & 2 & 3 & 4 & 5    \\
      & & Fast &   &   &   & Slow \\
@@ -100,7 +109,9 @@ Easy & 1 \\
 \end{table}
 
 
-\Q In complete sentences, describe the relationship between the fast and easy rankings, including what you see from the graph. 
+\Q In complete sentences, describe the relationship between the fast and easy rankings, including what you see from the graph.
 
 \begin{answer}
+Algorithms that are really easy to describe (and are not that sophisticated) generally run the slowest.
+On the other hand, fast algorithms are complex and more difficult to describe.
 \end{answer}

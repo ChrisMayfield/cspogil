@@ -14,13 +14,13 @@
 \hline
 Inputs & Output \\
 \hline
-0 ~ 0 &  \\
+0 ~ 0 & \ans{0}~~ \\
 \hline
-0 ~ 1 &  \\
+0 ~ 1 & \ans{0}~~ \\
 \hline
-1 ~ 0 &  \\
+1 ~ 0 & \ans{0}~~ \\
 \hline
-1 ~ 1 &  \\
+1 ~ 1 & \ans{1}~~ \\
 \hline
 \end{tabular}
 \end{minipage}
@@ -35,13 +35,13 @@ Inputs & Output \\
 \hline
 Inputs & Output \\
 \hline
-0 ~ 0 &  \\
+0 ~ 0 & \ans{0}~~ \\
 \hline
-0 ~ 1 &  \\
+0 ~ 1 & \ans{1}~~ \\
 \hline
-1 ~ 0 &  \\
+1 ~ 0 & \ans{1}~~ \\
 \hline
-1 ~ 1 &  \\
+1 ~ 1 & \ans{1}~~ \\
 \hline
 \end{tabular}
 \end{minipage}
@@ -58,13 +58,13 @@ Inputs & Output \\
 \hline
 Inputs & Output \\
 \hline
-0 ~ 0 &  \\
+0 ~ 0 & \ans{0}~~ \\
 \hline
-0 ~ 1 &  \\
+0 ~ 1 & \ans{1}~~ \\
 \hline
-1 ~ 0 &  \\
+1 ~ 0 & \ans{1}~~ \\
 \hline
-1 ~ 1 &  \\
+1 ~ 1 & \ans{0}~~ \\
 \hline
 \end{tabular}
 \end{minipage}
@@ -79,9 +79,9 @@ Inputs & Output \\
 \hline
 Input & Output \\
 \hline
-0 &  \\
+0 & \ans{1}~~ \\
 \hline
-1 &  \\
+1 & \ans{0}~~ \\
 \hline
 \end{tabular}
 \end{minipage}
@@ -93,41 +93,53 @@ Input & Output \\
 \Q In the circuit diagrams, what does the color (brightness) of the the lines represent?
 
 \begin{answer}
+Dark green represents the value 0, and light green represents the value 1.
 \end{answer}
 
 
 \Q For each type of gate, describe the circumstances when it will output the value 1.
 
 \begin{description}
-\item \textsc{and}:
-\item \textsc{or}:
-\item \textsc{xor}:
-\item \textsc{not}:
+\item \textsc{and}: \ans{when both inputs are 1}
+\item \textsc{or}: \ans{when either input is 1}
+\item \textsc{xor}: \ans{when only one input is 1}
+\item \textsc{not}: \ans{when the input is 0}
 \end{description}
 
 
 \Q As a team, define the following words as they are used in everyday English.
 
 \begin{description}
-\item logic:
-\item gate:
+\item logic: \ans{making conclusions based on fundamental principles}
+\item gate: \ans{opening in a fence or wall that you can walk through}
 \end{description}
 
 
 \Q Based on your definitions, what do you think a ``logic gate'' represents?
 
 \begin{answer}
+A digital circuit that electricity flows through to compute a simple truth value.
+Composing gates together into a larger circuit makes it possible to compute more complex logic.
 \end{answer}
 
 
 \Q In the example circuit below, what are the values of $A$, $B$, $C$, $D$, and $E$?
 
 \vspace{1em}
-\includegraphics[width=0.45\textwidth]{CSP/logic-example.png}
+\begin{minipage}{0.45\textwidth}
+\includegraphics[width=\linewidth]{CSP/logic-example.png}
+\end{minipage}
+\hspace{1em}
+\begin{minipage}{0.45\textwidth}
+\begin{answer}
+$A=1$ ~ $B=1$ ~ $C=0$ ~ $D=1$ ~ $F=0$ ~
+\end{answer}
+\end{minipage}
 \vspace{1em}
 
 
 \Q How would $A$, $B$, $C$, $D$, and/or $E$ change if the top input were zero?
 
 \begin{answer}
+All five values would be zero.
 \end{answer}

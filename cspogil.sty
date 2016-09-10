@@ -115,9 +115,9 @@
 \definecolor{answers}{HTML}{C0C0C0}
 \newcommand{\ans}[1]{%
 \ifdefined\Student
-    \leavevmode\phantom{~~\textcolor{answers}{#1}}
+    \leavevmode\phantom{\hspace*{1ex}\textcolor{answers}{#1}\hspace*{1ex}}
 \else
-    ~~\textcolor{answers}{#1}
+    \hspace*{1ex}\textcolor{answers}{#1}\hspace*{1ex}
 \fi}
 
 % longer answers [optional height]

@@ -121,10 +121,10 @@
 
 % inline answers
 \newcommand{\ans}[1]{%
-\ifdefined\Student
-    \leavevmode\phantom{\hspace*{1ex}\textcolor{answers}{#1}\hspace*{1ex}}
+\ifdefined\Teacher
+    \hspace*{1ex}\textcolor{answers}{#1}\hspace*{1ex}%
 \else
-    \hspace*{1ex}\textcolor{answers}{#1}\hspace*{1ex}
+    \leavevmode\phantom{\hspace*{1ex}\textcolor{answers}{#1}\hspace*{1ex}}%
 \fi}
 
 % longer answers [optional height]
@@ -137,8 +137,8 @@
 }{
 \end{minipage}
 \end{lrbox}
-\ifdefined\Student
-    \phantom{\usebox{\ansbox}}%
-\else
+\ifdefined\Teacher
     \usebox{\ansbox}%
+\else
+    \leavevmode\phantom{\usebox{\ansbox}}%
 \fi}

@@ -40,6 +40,7 @@
 \definecolor{comment}{HTML}{007C00}
 \definecolor{keyword}{HTML}{0000FF}
 \definecolor{strings}{HTML}{B20000}
+\definecolor{answers}{HTML}{C0C0C0}
 
 % table headers
 \newcommand{\tr}{\bf\cellcolor{Yellow!10}}
@@ -48,7 +49,7 @@
 \usepackage{textcomp}
 \usepackage{listings}
 \lstset{
-    basicstyle=\ttfamily\color{black},
+    basicstyle=\ttfamily,
     backgroundcolor=\color{bgcolor},
     numberstyle=\scriptsize\color{comment},
     commentstyle=\color{comment},
@@ -60,9 +61,16 @@
     showstringspaces=false,
     upquote=true
 }
+\lstdefinestyle{lstanswers}{
+    backgroundcolor=,
+    commentstyle=\color{answers},
+    keywordstyle=\color{answers},
+    stringstyle=\color{answers},
+}
 
 % code environments
 \newcommand{\java}[1]{\lstinline[language=java]{#1}}%[
+\lstnewenvironment{javaans}{\lstset{language=java,style=lstanswers}}{}
 \lstnewenvironment{javalst}{\lstset{language=java,backgroundcolor=}}{}
 \lstnewenvironment{javabox}{\lstset{language=java,frame=single,numbers=left}\quote}{\endquote}
 
@@ -112,7 +120,6 @@
 \setlist{itemsep=1em,after=\vspace{1ex}}
 
 % inline answers
-\definecolor{answers}{HTML}{C0C0C0}
 \newcommand{\ans}[1]{%
 \ifdefined\Student
     \leavevmode\phantom{\hspace*{1ex}\textcolor{answers}{#1}\hspace*{1ex}}

@@ -69,18 +69,23 @@ def build(path, name):
     if CLEAN:
         os.remove("_TEMP_.tex")
 
-def main():
+def main(pattern):
     """Find and build all files."""
     cwd = os.getcwd()
     for root in ["Models", "Activities"]:
         for path, dirs, files in os.walk(root):
             for name in files:
                 if name.endswith(".tex"):
-                    os.chdir(path)
-                    status = build(path, name)
-                    if status:
-                        return status
-                    os.chdir(cwd)
+                    if pattern is None or pattern in name:
+                        os.chdir(path)
+                        status = build(path, name)
+                        if status:
+                            return status
+                        os.chdir(cwd)
 
 if __name__ == "__main__":
-    main()
+    # Usage: python build.py [NAME]
+    if len(sys.argv) == 2:
+        main(sys.argv[1])
+    else:
+        main(None)

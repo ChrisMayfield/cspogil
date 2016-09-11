@@ -1,0 +1,114 @@
+\def\Teacher{}
+\documentclass[12pt]{article}
+
+\title{Activity 3: Hardware}
+\author{Dr. Chris Mayfield}
+\date{CS 101, Fall 2016}
+
+\input{../../cspogil.sty}
+
+\begin{document}
+
+\maketitle
+
+Have you ever wondered what goes on \emph{physically} inside your smartphone?
+Not the apps that are running, but how the electrical hardware actually works?
+Last week you designed a simple circuit that adds two 4-bit numbers.
+With enough time and energy, you could learn to build an entire computer!
+But that's not the goal of this course, so let's make use of several layers of abstraction.
+In this activity, you will explore how computers store and process information.
+
+
+\model{Computer Architecture}
+\label{CSP/architecture}
+
+Here is the 8-bit machine from Appendix~C of Brookshear and Brylow (2015):
+
+\begin{center}
+\includegraphics[width=0.8\linewidth]{CSP/cpu-bus-ram.pdf}
+\end{center}
+
+
+\quest{10 min}
+
+
+\Q What are the three main components in the diagram?
+What do you think each hardware component does?
+
+\begin{answer}
+The CPU is ``the brain'' of the computer that performs calculations and makes decisions.
+The RAM is where ``working memory'' is stored.
+The Bus connects the CPU and RAM together.
+\end{answer}
+
+
+\Q How many registers does the CPU have? How many memory cells are in RAM?
+
+\begin{answer}[3em]
+16 registers (0--F) and 256 memory cells (00--FF).
+\end{answer}
+
+
+\Q The CPU has circuits for adding the contents of two registers; think of registers as the ``pins'' from last week's lab.
+What is the largest number this machine can add without overflowing?
+
+\begin{answer}
+Because the machine has eight bits, the largest number is 0xFF or 255.
+\end{answer}
+
+
+\Q Common tasks the CPU performs include \emph{loading} data from a memory cell into a register and \emph{storing} data in a register into a memory cell.
+Describe what the CPU would need to do in order to add twenty numbers in memory.
+
+\begin{answer}[7em]
+The CPU would need to use two registers: one for a running total, and one to load data from memory.
+Start by setting the total register to zero.
+For each number, load it into the other register, and then add it to the total.
+\end{answer}
+
+
+\model{Machine Instructions}
+
+%TODO replace images from textbook (Copyrighted by Pearson -- fair use?)
+
+\begin{multicols}{2}
+\includegraphics[width=\linewidth]{CSP/opcode1.png}
+
+\columnbreak
+
+\includegraphics[width=\linewidth]{CSP/opcode2.png}
+\end{multicols}
+
+
+\quest{10 min}
+
+
+\Q How many bits is the op-code? How many possible instructions can the machine support?
+
+\begin{answer}
+With 4-bit op-codes, the machine can have at most 16 different instructions.
+\end{answer}
+
+
+\Q The op-code for loading data from memory into a register is 1. Write an instruction (in hex) for loading data from address 3D into register 4.
+
+\begin{answer}
+143D
+\end{answer}
+
+
+\Q Why is the instruction register in \ref{CSP/architecture} twice as large as the others?
+
+\begin{answer}
+Instructions are 16 bits, and memory cells are 8 bits. The instructions need to be large enough for their operand to represent a memory address.
+\end{answer}
+
+
+
+\end{document}
+
+* 2-4: We will focus on three components: CPU, Bus, RAM
+* 2-5: Programs are stored in memory alongside data itself
+* 2-9: At the machine level, instructions are very very basic
+* 2-11: Brookshear Machine has 16 registers and 256 cells
+* 2-13: Decoding instructions / how to read the handout

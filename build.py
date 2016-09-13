@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """Compiles student and teacher PDFs for each LaTeX source file."""
 
 import os
@@ -75,17 +76,24 @@ def main(pattern):
     for root in ["Models", "Activities"]:
         for path, dirs, files in os.walk(root):
             for name in files:
-                if name.endswith(".tex"):
-                    if pattern is None or pattern in name:
+                # build tex files
+                if pattern != "clean" and name.endswith(".tex"):
+                    if pattern == "all" or pattern in name:
                         os.chdir(path)
                         status = build(path, name)
                         if status:
                             return status
                         os.chdir(cwd)
+                # clean pdf files
+                if pattern == "clean" and name.endswith(".pdf"):
+                    if name[-12:-4] in ["_Student", "_Teacher"]:
+                        pathname = os.path.join(path, name)
+                        print pathname
+                        os.remove(pathname)
 
 if __name__ == "__main__":
-    # Usage: python build.py [NAME]
     if len(sys.argv) == 2:
         main(sys.argv[1])
     else:
-        main(None)
+        print "Usage: build.py {all | clean | NAME}"
+        print "NAME is any substring of the file(s)"

@@ -1,0 +1,110 @@
+\model{Invoke and Return}
+
+Each statement in this program \emph{invokes} (or calls) a method.
+At the end of a method, Java \emph{returns} to where it was invoked.
+The list of events on the right illustrates how the program runs.
+
+\vspace{3ex}
+
+\begin{minipage}{0.68\textwidth}
+\begin{javabox}
+public class Model {
+    
+    public static void main(String[] args) {
+        System.out.println("First line.");
+        threeLine();
+        System.out.println("Second line.");
+    }
+    
+    public static void newLine() {
+        System.out.println();
+    }
+    
+    public static void threeLine() {
+        newLine();
+        newLine();
+        newLine();
+    }
+    
+}
+\end{javabox}
+\end{minipage}
+\hfill
+\begin{minipage}{0.34\textwidth}
+\begin{verbatim}
+
+INVOKE println
+RETURN to line 5
+INVOKE threeLine
+    INVOKE newLine
+        INVOKE println
+        RETURN to line 11
+    RETURN to line 15
+    INVOKE newLine
+        INVOKE println
+        RETURN to line 11
+    RETURN to line 16
+    INVOKE newLine
+        INVOKE println
+        RETURN to line 11
+    RETURN to line 17
+RETURN to line 6
+INVOKE println
+RETURN to line 7
+
+\end{verbatim}
+\end{minipage}
+
+
+\quest{15 min}
+
+
+\Q How many lines of source code invoke the \java{println} method? \ans{Three (lines 4, 6, 10)}
+\vspace{1em}
+
+
+\Q How many times is \java{println} invoked when the program runs? \ans{Five times}
+\vspace{1em}
+
+
+\Q For each \texttt{INVOKE} on the right, draw an arrow to the corresponding line of code.
+(Plan ahead so that crossing lines will still be legible.) \ans{There should be 9 lines total.}
+\vspace{1em}
+
+
+\Q What is the output of the program? Please write \java{\\n} to show each newline character.
+
+\begin{answer}[8em]
+\vspace{-1ex}
+\begin{javaans}
+First line.\n
+\n
+\n
+\n
+Second line.\n
+\end{javaans}
+\end{answer}
+
+
+\Q When Java sees a name like \java{x}, \java{count}, or \java{newLine}, how can it tell whether it's a variable or a method? (Hint: syntax)
+
+\begin{answer}[5em]
+Methods have parentheses, and variables do not.
+They are similar to functions in math  : when you see $g(x)$, you know that $g$ is a function and $x$ is a variable.
+\end{answer}
+
+
+\Q What is the difference between a method and a variable? What do they have in common?
+
+\begin{answer}[5em]
+All computer programs, regardless of language, consist of \emph{code} and \emph{data}.
+Methods contain code (statements or instructions), whereas variables contain data (references or values).
+\end{answer}
+
+
+\Q In your own words, describe what methods are for. Why not just write everything in \java{main}?
+
+\begin{answer}[5em]
+Methods help organize the code into separate parts.
+They also make it possible to write code once and use it multiple times.
+\end{answer}

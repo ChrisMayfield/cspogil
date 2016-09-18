@@ -104,6 +104,16 @@
 \hline\\[#1]\hline
 \end{tabularx}}
 
+% comment boxes
+\newcommand{\comment}[1]{
+\begin{center}
+\begin{tabularx}{\linewidth}{|X|}
+\hline
+\itshape #1 \\
+\hline
+\end{tabularx}
+\end{center}}
+
 % models
 \newcommand{\model}[1]{\section{#1}\nopagebreak}
 \renewcommand{\thesection}{Model~\arabic{section}}

@@ -1,4 +1,4 @@
-\model{Method Signatures}
+\model{Math Methods}
 
 Consider the following methods from the \java{Math} class:
 
@@ -11,8 +11,17 @@ Consider the following methods from the \java{Math} class:
 \end{javalst}
 
 Note this list isn't exhaustive; \java{Math} has over 70 methods in total.
-Here is the documentation for the examples listed above:
+To invoke methods in other classes (like \java{Math}), you must first specify the class name:
 
+\begin{javalst}
+    value = abs(-5);       // Error: cannot find symbol
+    value = Math.abs(-5);  // correct
+\end{javalst}
+
+The period in this example is called the \emph{dot operator}. When reading the above code out loud, you would say ``math dot abs''.
+
+Here is the Java documentation for the methods listed above:
+\nopagebreak
 \begin{center}
 \includegraphics[scale=0.90]{CS1/math-javadoc.pdf}
 \end{center}
@@ -75,7 +84,7 @@ Since arguments will be assigned to parameters, their types must be compatible.
 }
 
 
-\Q How many parameters and arguments does each method typically have?
+\Q How many parameters and arguments does each method have?
 
 \begin{center}
 \begin{tabular}{|c|C{1in}|C{1in}|}

@@ -1,6 +1,6 @@
 \model{Math Methods}
 
-Consider the following methods from the \java{Math} class:
+Consider the following methods defined in the \java{Math} class:
 
 \begin{javalst}
     public static int abs(int a)
@@ -11,7 +11,7 @@ Consider the following methods from the \java{Math} class:
 \end{javalst}
 
 Note this list isn't exhaustive; \java{Math} has over 70 methods in total.
-To invoke methods in other classes (like \java{Math}), you must first specify the class name:
+To invoke methods from another class (like \java{Math}), you must first specify the class name:
 
 \begin{javalst}
     value = abs(-5);       // Error: cannot find symbol
@@ -28,6 +28,7 @@ Here is the Java documentation for the methods listed above:
 
 
 \quest{15 min}
+
 
 \Q What type of value does \java{Math.random()} return? Give an example of what it would look like.
 
@@ -109,7 +110,7 @@ Since arguments will be assigned to parameters, their types must be compatible.
 
 \Q Consider the statement \java{System.out.println("Price: " + price);} where the value of \java{price} is 9.99. What is the argument that \texttt{println} receives?
 
-\begin{answer}[3em]
+\begin{answer}
 \begin{javaans}
 "Price: 9.99"
 \end{javaans}

@@ -1,0 +1,149 @@
+% based on Model 3 of Activity 4 Boolean by Helen Hu
+
+\model{Conditional Operators}
+
+Boolean expressions may also use conditional operators to implement basic logic.
+Relational operators are always executed first, so there is generally no need for parentheses.
+
+\begin{center}
+\begin{tabular}{|C{100pt}|C{100pt}|}
+\hline
+\tr Operator & \tr Meaning \\
+\hline
+\java{!}  & Not \\
+\hline
+\java{&&} & And \\
+\hline
+\java{||} & Or \\
+\hline
+\end{tabular}
+\end{center}
+
+If all three operators appear in the same expression, Java will evaluate the \java{!} first, then \java{&&}, and finally \java{||}.
+If there are multiples of the same operator, they are evaluated from left to right.
+
+\smallskip
+\begin{multicols}{2}
+\centering
+
+\textbf{Example Variables:} \\[1ex]
+\java{int a = 3;} \\
+\java{int b = 4;} \\
+\java{int c = 5;} \\
+\java{boolean funny = true;} \\
+\java{boolean weird = false;} \\
+
+\columnbreak
+
+\textbf{Example Expressions:} \\[1ex]
+\java{a < b && funny} \\
+\java{a < b && b < c} \\
+\java{c < a || b < a} \\
+\java{funny && a < c} \\
+\java{!funny || weird} \\
+
+\end{multicols}
+
+
+\quest{15 min}
+
+
+\Q What are the values (true or false) of the example expressions?
+\ans{true, true, false, true, false}
+
+\vspace{1em}
+
+
+\Q Give different examples of Boolean expressions that:
+
+\begin{enumerate}
+\item uses a, b, and !, and evaluates to false \ans{!(a < b)}
+\item uses b, c, and !, and evaluates to true \ans{!(b > c)}
+\item uses any variables, but evaluates to false \ans{weird}
+\item uses any variables, but evaluates to true \ans{funny}
+\end{enumerate}
+
+
+\Q Using your answers from the previous question, write the Boolean expression \java{p && q} where \java{p} is your first answer and \java{q} is your second answer.
+
+\begin{enumerate}
+\item Your expression: \ans{\java{!(a < b) && !(b > c)}}
+\item Result of ~\java{p && q}: \ans{false (no matter what)}
+\end{enumerate}
+
+
+\Q \label{truthtable} Complete the following table:
+
+\begin{center}
+\begin{tabular}{|C{50pt}|C{50pt}|C{50pt}|C{50pt}|C{50pt}|}
+\hline
+\tr \java{p} & \tr \java{q} & \tr \java{p && q} & \tr \java{p || q} & \tr \java{!p} \\
+\hline
+false & false & \ans{false} & \ans{false} & \ans{true}  \\
+\hline
+false & true  & \ans{false} & \ans{true}  & \ans{true}  \\
+\hline
+true  & false & \ans{false} & \ans{true}  & \ans{false} \\
+\hline
+true  & true  & \ans{true}  & \ans{true}  & \ans{false} \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\Q Using the values in the model, give the result of each operator in the following expression.
+In other words, show your work as you evaluate the code in the same order that Java would.
+
+\begin{center}
+\java{!(a > c) && b > c}
+\vspace{1em}
+
+\begin{tabular}{|C{50pt}|C{70pt}|C{200pt}|C{70pt}|}
+\hline
+\tr & \tr Operator & \tr Expression & \tr Result \\
+\hline
+1st & \java{>}  & \java{a > c} & false \\
+\hline
+2nd & \ans{\java{!}}  & \ans{\java{!}false} & \ans{true} \\
+\hline
+3rd & \ans{\java{>}}  & \ans{\java{b > c}}  & \ans{false} \\
+\hline
+4th & \ans{\java{&&}} & \ans{true \java{&&} false} & \ans{false} \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\Q Add parentheses to the Boolean expression from the previous question so that the \java{&&} is evaluated before the \java{!}. Then remove any unnecessary parentheses.
+
+\begin{enumerate}
+\item Expression: \ans{\java{!(a > c && b > c)}}
+\item New result: \ans{true}
+\end{enumerate}
+
+
+\Q Review the table from \ref{truthtable} for evaluating \java{&&} and \java{||}.
+Looking only at the \java{p} and \java{&&} columns, when is it necessary to examine \java{q} to determine how \java{p && q} should be evaluated?
+
+\begin{answer}
+You only need to look at \java{q} when \java{p} is true.
+If \java{p} is false, you know the expression will be false.
+\end{answer}
+
+
+\Q Review the table from \ref{truthtable} for evaluating \java{&&} and \java{||}.
+Looking only at the \java{p} and \java{||} columns, when is it necessary to examine \java{q} to determine how \java{p || q} should be evaluated?
+
+\begin{answer}
+You only need to look at \java{q} when \java{p} is false.
+If \java{p} is true, you know the expression will be true.
+\end{answer}
+
+
+\Q The Java \java{&&} and \java{||} are \emph{short circuit} operators, meaning they evaluate only what is necessary.
+If the expression \java{p} is more likely to be true than the expression \java{q}, which one should you place on the left of each operator to avoid doing extra work?
+
+\begin{enumerate}
+\item left of the \java{&&} expression: \ans{\java{q} --- if it's false, then \java{p} won't be evaluated}
+\item left of the \java{||} expression: \ans{\java{p} --- if it's true, then \java{q} won't be evaluated}
+\end{enumerate}

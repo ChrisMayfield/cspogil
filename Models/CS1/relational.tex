@@ -1,0 +1,97 @@
+% based on Model 2 of Activity 4 Boolean by Helen Hu
+
+\model{Relational Operators}
+
+When you leave out the semicolon in DrJava's Interactions pane, it will display the \emph{value} of the expression you have entered.
+Fill in the below table (the first four rows are completed for you).
+
+\begin{center}
+\begin{tabular}{|L{200pt}|C{110pt}|C{110pt}|}
+\hline
+\tr DrJava Interactions & \tr Value displayed & \tr Relational operator \\
+\hline
+\java{int three = 3}                   & none        & none            \\
+\hline
+\java{int four = 4}                    & none        & none            \\
+\hline
+\java{System.out.println(four)}        & 4           & none            \\
+\hline
+\java{three > four}                    & false       & \java{>}        \\
+\hline
+\java{boolean isLarger = three > four} & \ans{none}  & \ans{\java{>}}  \\
+\hline
+\java{System.out.println(isLarger)}    & \ans{false} & \ans{none}      \\
+\hline
+\java{three == four}                   & \ans{false} & \ans{\java{==}} \\
+\hline
+\java{three < four}                    & \ans{true}  & \ans{\java{<}}  \\
+\hline
+\java{three <= four}                   & \ans{true}  & \ans{\java{<=}} \\
+\hline
+\java{three = four}                    & \ans{4}     & \ans{none}      \\
+\hline
+\java{three == four}                   & \ans{true}  & \ans{\java{==}} \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\quest{10 min}
+
+\Q Examine the fifth line of Java code in the above model.
+
+\begin{enumerate}
+
+\item What three actions are performed in this single line of code?
+\ans{It declares the variable \java{isLarger}, compares the values of \java{three} and \java{four}, and assigns the result to \java{isLarger}.}
+
+\item Write two lines of code, ending with semicolons, that would perform these same actions (but in two lines instead of a single line).
+
+\ans{boolean isLarger;} \\
+\ans{isLarger = three > four;}
+
+\end{enumerate}
+
+
+\Q List the four unique Boolean expressions used in the model.
+
+\begin{answer}[3em]
+\begin{javaans}
+    three > four    three == four    three < four    three <= four
+\end{javaans}
+\end{answer}
+
+
+\Q The \java{!=} operator means ``not equals''.
+Give an example of a Boolean expression that uses \java{!=} and evaluates to \java{false}.
+
+\begin{answer}[3em]
+\java{5 != 5} is false (because they \emph{are} equal)
+\end{answer}
+
+
+\Q Explain why the same boolean expression \java{three == four} resulted with two different boolean values in this Model.
+
+\begin{answer}
+The line \java{three = four} assigned the value of four to three, making the two variables equal.
+They started out not being equal, but they ended up with the same value.
+\end{answer}
+
+
+\Q What is the difference between \java{=} and \java{==} in Java?
+
+\begin{answer}
+The \java{=} operator assigns a value to a variable, and the \java{==} operator compares two values.
+\end{answer}
+
+
+\Q List the six relational operators that can be used in a Boolean expression.
+(Five have been used so far, but you should be able to guess the sixth.)
+Explain briefly what each one means.
+
+\begin{answer}
+\begin{tabular}{lll}
+\java{<} is less than              & \java{>} is greater than              & \java{==} is equal to     \\
+\java{<=} is less than or equal to & \java{>=} is greater than or equal to & \java{!=} is not equal to \\
+\end{tabular}
+\end{answer}

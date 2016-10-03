@@ -54,7 +54,7 @@ If there are multiples of the same operator, they are evaluated from left to rig
 \vspace{1em}
 
 
-\Q Give different examples of Boolean expressions that:
+\Q Give different examples of boolean expressions that:
 
 \begin{enumerate}
 \item uses a, b, and !, and evaluates to false \ans{!(a < b)}
@@ -64,7 +64,7 @@ If there are multiples of the same operator, they are evaluated from left to rig
 \end{enumerate}
 
 
-\Q Using your answers from the previous question, write the Boolean expression \java{p && q} where \java{p} is your first answer and \java{q} is your second answer.
+\Q Using your answers from the previous question, write the boolean expression \java{p && q} where \java{p} is your first answer and \java{q} is your second answer.
 
 \begin{enumerate}
 \item Your expression: \ans{\java{!(a < b) && !(b > c)}}
@@ -114,7 +114,7 @@ In other words, show your work as you evaluate the code in the same order that J
 \end{center}
 
 
-\Q Add parentheses to the Boolean expression from the previous question so that the \java{&&} is evaluated before the \java{!}. Then remove any unnecessary parentheses.
+\Q Add parentheses to the boolean expression from the previous question so that the \java{&&} is evaluated before the \java{!}. Then remove any unnecessary parentheses.
 
 \begin{enumerate}
 \item Expression: \ans{\java{!(a > c && b > c)}}
@@ -140,7 +140,7 @@ If \java{p} is true, you know the expression will be true.
 \end{answer}
 
 
-\Q The Java \java{&&} and \java{||} are \emph{short circuit} operators, meaning they evaluate only what is necessary.
+\Q In Java, \java{&&} and \java{||} are \emph{short circuit} operators, meaning they evaluate only what is necessary.
 If the expression \java{p} is more likely to be true than the expression \java{q}, which one should you place on the left of each operator to avoid doing extra work?
 
 \begin{enumerate}

@@ -1,6 +1,8 @@
-\model{Factorial Function}
+% based on Model 1 of Activity 12 - Recursion by Helen Hu, with modifications by Dee Weikle
 
-''In mathematics, the factorial of a non-negative integer $n$, denoted by $n!$, is the product of all positive integers less than or equal to $n$. For example, $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$.''
+\model{Factorial}
+
+''In mathematics, the \emph{factorial} of a non-negative integer $n$, denoted by $n!$, is the product of all positive integers less than or equal to $n$. For example, $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$.''
 
 \smallskip\hfill
 Source: \url{https://en.wikipedia.org/wiki/Factorial}
@@ -8,7 +10,9 @@ Source: \url{https://en.wikipedia.org/wiki/Factorial}
 \begin{center}
 \begin{tabular}{|C{1cm}|C{1cm}|}
 \hline
-\tr n & \tr n! \\
+\tr $n$ & \tr $n!$ \\
+\hline
+0 & 1 \\
 \hline
 1 & 1 \\
 \hline
@@ -19,37 +23,153 @@ Source: \url{https://en.wikipedia.org/wiki/Factorial}
 4 & 24 \\
 \hline
 5 & 120 \\
-\hline
-6 & 720 \\
+%\hline
+%6 & 720 \\
 \hline
 \end{tabular}
 \end{center}
 
 
-\quest{15 min}
+\quest{20 min}
 
 
-\Q \label{fact4} Consider two different ways to show how to calculate 4!
+\Q \label{fact4} Consider how to calculate $4! = 24$.
 
 \begin{enumerate}
-\item Write out all numbers that need to be multiplied
+\item Write out all the numbers that need to be multiplied:
 
-4! = \ans{4 * 3 * 2 * 1}
+$4! =$ \ans{4 * 3 * 2 * 1}
 
-\item Rewrite the expression using 3!
+\item Rewrite the expression using 3! instead of $3 \times 2 \times 1$:
 
-4! = \ans{4 * 3!}
+$4! =$ \ans{4 * 3!}
 \end{enumerate}
 
 
-\Q Write an expression similar to \ref{fact4}b showing how each factorial can be calculated in terms of a simpler factorial.
+\Q \label{factn} Write an expression similar to \ref{fact4}b showing how each factorial can be calculated in terms of a simpler factorial.
 
 \begin{enumerate}
-\item 3! = \ans{3 * 2!}
-\item 2! = \ans{2 * 1!}
-\item 100! = \ans{100 * 99!}
-\item $n!$ = \ans{$n * (n - 1)!$}
+\item $3! =$ \ans{3 * 2!}
+\item $2! =$ \ans{2 * 1!}
+\item $100! =$ \ans{100 * 99!}
+\item $n! =$ \ans{$n * (n - 1)!$}
 \end{enumerate}
 
 
-\Q What is the value of 1! based on the model? Does it make sense to define 1! in terms of a simpler factorial?
+\Q What is the value of $0!$ based on the model?
+Does it make sense to define $0!$ in terms of a simpler factorial?
+Why or why not?
+
+\begin{answer}
+$0!$ is 1 by convention for an empty product.
+We can't say $0 \times -1!$, because factorial is only defined for non-negative integers.
+At some point we need to define the solution in concrete terms, without referencing itself.
+\end{answer}
+
+
+\comment{
+If we repeatedly break down a problem into smaller versions of itself, we eventually reach a basic problem that can't be broken down any further.
+Such a problem, like $0!$, is referred to as the \textbf{base case}.
+}
+
+
+\Q Assume you already have a working method named ~\java{factorial(int n)} that returns $n!$ for any positive integer.
+
+\begin{enumerate}
+\item Review your answer to \ref{factn}c that shows how to compute $100!$ using a simpler factorial.
+Convert this expression to Java by using the \java{factorial} method instead of the \java{!} operator.
+
+\ans{\java{100 * factorial(99)}}
+
+\item Now rewrite your answer to \ref{factn}d in Java using the variable \java{n}.
+
+\ans{\java{n * factorial(n - 1)}}
+\end{enumerate}
+
+
+\Q \label{factjava} Here is a \java{factorial} method that includes output for debugging:
+
+\begin{javabox}
+public static int factorial(int n) {
+    System.out.println("n is " + n);
+    if (n == 0) {
+        return 1;  // base case
+    } else {
+        System.out.printf("need factorial of %d\n", n - 1);
+        int answer = factorial(n - 1);
+        System.out.printf("factorial of %d is %d\n", n - 1, answer);
+        return n * answer;
+    }
+}
+
+public static void main(String[] args) {
+    System.out.println(factorial(3));
+}
+\end{javabox}
+
+\begin{enumerate}
+\item What specific method is invoked on line 7?
+
+\ans{The \java{factorial} method invokes itself with a smaller argument.}
+
+\item Why is the \java{if} statement required on line 3?
+
+\ans{Without the base case, it would invoke itself forever (until running out of memory).}
+\end{enumerate}
+
+
+\Q A method that invokes itself is called \textbf{recursive}.
+What two steps were necessary to define \java{factorial}?
+How were they implemented in Java?
+
+\begin{answer}
+1. The base case, which was implemented using an if statement. \\
+2. The recursive case, which as implemented using a method call.
+\end{answer}
+
+
+\Q How many distinct method calls would be made to \java{factorial} to compute the factorial of 3?
+Identify the value of the parameter $n$ for each of these separate calls.
+
+\begin{answer}
+Four method calls: \java{factorial(3)} $\to$ \java{factorial(2)} $\to$ \java{factorial(1)} $\to$ \java{factorial(0)}.
+\end{answer}
+
+
+\Q Here is the complete output from the program in \ref{factjava}.
+Identify which distinct method call printed each line.
+In other words, which lines were printed by \java{factorial(3)}, which lines were printed by \java{factorial(2)}, and so on.
+
+\vspace{-1ex}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{ll}
+\tt n is 3              & \tt \ans{factorial(3)} \\
+\tt need factorial of 2 & \tt \ans{factorial(3)} \\
+\tt n is 2              & \tt \ans{factorial(2)} \\
+\tt need factorial of 1 & \tt \ans{factorial(2)} \\
+\tt n is 1              & \tt \ans{factorial(1)} \\
+\tt need factorial of 0 & \tt \ans{factorial(1)} \\
+\tt n is 0              & \tt \ans{factorial(0)} \\
+\tt factorial of 0 is 1 & \tt \ans{factorial(1)} \\
+\tt factorial of 1 is 1 & \tt \ans{factorial(2)} \\
+\tt factorial of 2 is 2 & \tt \ans{factorial(3)} \\
+\tt 6                   & \tt \ans{main} \\
+\end{tabular}
+\end{center}
+
+
+\Q What happens if you try to calculate the factorial of a negative number?
+How could you prevent this bug in the \java{factorial} method?
+
+\begin{answer}
+The recursion would repeat until the program runs out of memory (\java{StackOverflowError}).
+To fix this bug, you could add an if statement that checks for \java{n < 0} and returns -1.
+\end{answer}
+
+
+\Q Trivia question: What is the largest factorial you can compute in Java when using \java{int} as the data type? If you don't know, how could you find out?
+
+\begin{answer}
+$12! = 479,001,600$. Anything larger exceeds the 32-bit range. $20!$ is the largest for \texttt{long} integers.
+\end{answer}

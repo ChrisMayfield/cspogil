@@ -1,0 +1,189 @@
+% based on Model 2 of Activity 08 - Introduction to Loops by Helen Hu
+
+\model{Assignment}
+
+Consider the following Java statements. What is the resulting value of each variable?
+
+\begin{center}
+\vspace{-1em}
+\begin{tabular}{p{120pt}p{120pt}p{120pt}}
+
+\vspace{-1em}
+\begin{javalst}
+int x, y;
+x = 1;
+y = 2;	
+y = x;  
+x = y;
+
+\end{javalst}
+&
+\vspace{-1em}
+\begin{javalst}
+int x, y, z;
+x = 1;
+y = 2;
+z = y;
+y = x;
+x = z;
+\end{javalst}
+&
+\vspace{-1em}
+\begin{javalst}
+int z, a;
+z = 2;
+z = z + 1;
+z = z + 1;
+a = a + 1;
+
+\end{javalst}
+
+\\[-1em]
+Value of x: \blank \ans{1}
+
+\vspace{1em}
+Value of y: \blank \ans{1}
+
+&
+Value of x: \blank \ans{2}
+
+\vspace{1em}
+Value of y: \blank \ans{1}
+
+\vspace{1em}
+Value of z: \blank \ans{2}
+
+&
+Value of z: \blank \ans{4}
+
+\vspace{1em}
+Value of a: \blank \ans{?}
+
+\end{tabular}
+\vspace{-1em}
+\end{center}
+
+
+\quest{15 min}
+
+
+\Q Why is the value of \java{x} not 2 in the first section of code?
+
+\begin{answer}
+Each statement is executed one after the other, so the third assignment changes the value of \java{y} to 1.
+The last assignment then assigns 1 to the value \java{x}.
+\end{answer}
+
+
+\Q What happens to the values of \java{x} and \java{y} in the second section of code?
+
+\begin{answer}
+They get swapped; \java{x} was 1 and \java{y} was 2, but in the end \java{x} was 2 and \java{y} was 1.
+\end{answer}
+
+
+\Q What is the purpose of the variable \java{z} in the second section of code?
+
+\begin{answer}
+It is a temporary variable that makes it possible to swap the values of \java{x} and \java{y}.
+\end{answer}
+
+
+\Q What happens to the value of \java{z} in the third section of code?
+
+\begin{answer}
+It gets incremented twice; the value starts at 2, then it becomes 3, and then it becomes 4.
+\end{answer}
+
+
+\Q Why is it possible to increment \java{z} but not \java{a} in the third section of code?
+
+\begin{answer}
+The variable \java{z} was initialized, but \java{a} was not.
+Java doesn't know what value to increment.
+\end{answer}
+
+
+\Q Because \emph{increment} and \emph{decrement} are so common in algorithms, Java provides the operators \java{++} and \java{--}.
+For example, ~\java{x++} is the same as ~\java{x = x + 1}, and \java{y--} is the same as ~\java{y = y - 1}.
+Write the value of \java{x} and \java{y} next to each statement below.
+
+\vspace{-1ex}
+\hspace{2em}
+\begin{minipage}[t]{100pt}
+\begin{javalst}
+int x = 5;
+int y = -10;
+x--;
+y++;
+x--;
+y++;
+\end{javalst}
+\end{minipage}
+\begin{minipage}[t]{100pt}
+\begin{answer}[8em]
+\begin{javaans}
+x is 5
+y is -10
+x is 4
+y is -9
+x is 3
+y is -8
+\end{javaans}
+\end{answer}
+\end{minipage}
+
+
+\Q \label{compound} Like the assignment operator, the \java{++} and \java{--} operators replace the value of a variable.
+Java also has \emph{compound assignment} operators for convenience.
+For example, the statement ~\java{x = x + 2} can be rewritten as ~\java{x += 2}.
+Simplify the following assignment statements.
+
+\vspace{-1ex}
+\hspace{2em}
+\begin{minipage}[t]{150pt}
+\begin{javalst}
+step = step + 5;
+size = size - 3;
+total = total * 2;
+change = change / 10;
+hours = hours % 24;
+\end{javalst}
+\end{minipage}
+\begin{minipage}[t]{150pt}
+\begin{answer}[6em]
+\begin{javaans}
+step += 5;
+size -= 3;
+total *= 2;
+change /= 10;
+hours %= 24;
+\end{javaans}
+\end{answer}
+\end{minipage}
+
+
+\Q Which of the following assignment statements can also be rewritten like the ones \ref{compound}?
+
+\vspace{-1ex}
+\hspace{2em}
+\begin{minipage}[t]{150pt}
+\begin{javalst}
+step = 5 + step;
+size = 3 - size;
+total = 2 * total;
+change = 10 / change;
+hours = 24 % hours;
+\end{javalst}
+\end{minipage}
+\begin{minipage}[t]{150pt}
+\begin{answer}[6em]
+\begin{javaans}
+step += 5;
+NO
+total *= 2;
+NO
+NO
+\end{javaans}
+\end{answer}
+\end{minipage}

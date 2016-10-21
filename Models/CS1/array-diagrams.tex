@@ -1,0 +1,61 @@
+\model{Array Diagrams}
+
+Array elements are stored together in one contiguous block of memory. To show arrays in memory diagrams, we simply draw adjacent boxes.
+
+\begin{center}
+\java{int[] nums = {10, 3, 7, -5};}
+
+\vspace{1ex}
+\includegraphics[width=225pt]{CS1/array-diagram1.png}
+\end{center}
+
+
+\quest{15 min}
+
+
+\Q Draw a memory diagram for the following array declarations.
+
+\begin{enumerate}
+
+\item
+\begin{javalst}
+int[] sizes = new int[5];
+sizes[2] = 7;
+\end{javalst}
+
+\item
+\begin{javalst}
+char[] codes = new char[3];
+codes[2] = 'X';
+\end{javalst}
+
+\item
+\begin{javalst}
+double[] costs = new double[4];
+costs[0] = 0.99;
+\end{javalst}
+
+\end{enumerate}
+
+
+\Q What is the \emph{default} value for uninitialized array elements? (Hint: You should have no empty boxes in your memory diagram.)
+
+\begin{answer}
+\end{answer}
+
+
+\Q Like strings, arrays are reference types. What is the \emph{value} of an array variable?
+
+\begin{answer}
+\end{answer}
+
+
+\Q Draw a memory diagram of the following array.
+(Hint: You should have four arrows.)
+
+\begin{javalst}
+String[] greek = {"alpha", "beta", "gamma"};
+\end{javalst}
+
+\begin{answer}
+\end{answer}

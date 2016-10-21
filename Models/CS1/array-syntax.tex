@@ -1,0 +1,149 @@
+% based on Model 1 of Activity 13 - TwoD Arrays by Helen Hu
+
+\model{Array Syntax}
+
+%An \emph{array} allows you to declare a collection of related variables (of the same type) at once.
+Each value in the array is known as an \emph{element}.
+The programmer must specify the \emph{length} of the array (the number of array elements).
+
+\begin{quote}
+\begin{javalst}
+String[] wordArray = {"hello", "world"};
+System.out.println(wordArray[0]);            // outputs hello
+System.out.println(wordArray.length);        // outputs 2
+
+double[] numberArray = new double[365];
+System.out.println(numberArray[0]);          // outputs 0.0
+System.out.println(numberArray.length);      // outputs 365
+\end{javalst}
+\end{quote}
+
+Once the array is created, its length cannot be changed.
+Array elements are accessed by \emph{index} number, starting at zero:
+
+\newcommand{\fs}{\footnotesize}
+
+\begin{quote}
+\begin{tabular}{cc}
+\hline
+\multicolumn{1}{|c|}{\java{"hello"}} &
+\multicolumn{1}{ c|}{\java{"world"}} \\
+\hline
+\fs 0 & \fs 1 \\
+\end{tabular}
+\hspace{3em}
+\begin{tabular}{ccC{4em}c}
+\hline
+\multicolumn{1}{|c|}{\java{0.0}} &
+\multicolumn{1}{ c|}{\java{0.0}} &
+\multicolumn{1}{ c|}{$\cdots$} &
+\multicolumn{1}{ c|}{\java{0.0}} \\
+\hline
+\fs 0 & \fs 1 &   & \fs 364 \\
+\end{tabular}
+\end{quote}
+
+
+\quest{15 min}
+
+
+\Q Examine the results of the above code.
+
+\begin{enumerate}
+\item What is the index for the element \java{"world"}?
+\item What is the length of the \java{wordArray}?
+\item What is the length of the \java{numberArray}?
+\item How would you access the last element of \java{numberArray}?
+\end{enumerate}
+
+
+\Q Now examine the syntax of the code.
+
+\begin{enumerate}
+\item What are three ways that square brackets [] are used?
+\item In contrast, how are curly braces {} used for an array?
+\end{enumerate}
+
+
+\begin{tabularx}{\linewidth}{|X|}
+\hline
+Array variables can be initialized without the \java{new} keyword: \\
+~~~~~~~~\java{int[] sizes = \{3, 5, 7, 2, 1\};} \\[-1ex]
+~~~~~~~~\java{String[] names = \{"James", "Madison", "University"\};} \\[1ex]
+
+However if the variable is already declared, \java{new} is required: \\
+~~~~~~~~\java{sizes = new int[] \{3, 5, 7, 2, 1\};} \\[-1ex]
+~~~~~~~~\java{names = new String[] \{"James", "Madison", "University"\};} \\
+\hline
+\end{tabularx}
+\vspace{1ex}
+
+
+\Q Write \emph{expressions} that create the following \java{new} arrays. (Do not declare variables.)
+
+\begin{enumerate}
+
+\item
+\begin{tabular}{|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|}
+\hline
+0 & 14 & 1024 & 127 & 3 & 5521 \\
+\hline
+\end{tabular}
+
+\vspace{1ex}
+\ans{\tt new int[] \{0, 14, 1024, 127, 3, 5521\}}
+
+\item 
+\begin{tabular}{|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|}
+\hline
+3.23 & 1.52 & 4.23 & 32.5 & 2.45 & 5.23 & 3.33 \\
+\hline
+\end{tabular}
+
+\vspace{1ex}
+\ans{\tt new double[] \{3.23, 1.52, 4.23, 32.5, 2.45, 5.23, 3.33\}}
+
+\end{enumerate}
+
+
+\Q Write \emph{statements} that both declare and initialize variables for these \java{new} arrays.
+
+\begin{enumerate}
+
+\item
+\begin{tabular}{|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|}
+\hline
+0 & 14 & 1024 & 127 & 3 & 5521 \\
+\hline
+\end{tabular}
+
+\vspace{1ex}
+\ans{\tt int[] a = \{0, 14, 1024, 127, 3, 5521\};}
+
+\item 
+\begin{tabular}{|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|}
+\hline
+3.23 & 1.52 & 4.23 & 32.5 & 2.45 & 5.23 & 3.33 \\
+\hline
+\end{tabular}
+
+\vspace{1ex}
+\ans{\tt double[] b = \{3.23, 1.52, 4.23, 32.5, 2.45, 5.23, 3.33\};}
+
+\end{enumerate}
+
+
+\Q What are the type and value for each of the four \emph{expressions} below?
+
+\begin{javalst}
+int[] a = {3, 6, 15, 22, 100, 0};
+double[] b = {3.5, 4.5, 2.0, 2.0, 2.0};
+String[] c = {"alpha", "beta", "gamma"};
+\end{javalst}
+
+\begin{enumerate}
+\item \java{a[3] + a[2]}
+\item \java{b[2] - b[0] + a[4]}
+\item \java{c[1].charAt(a[0])}
+\item \java{a[4] * b[1] <= a[5] * a[0]}
+\end{enumerate}

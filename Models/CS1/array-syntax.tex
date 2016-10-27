@@ -3,8 +3,9 @@
 \model{Array Syntax}
 
 %An \emph{array} allows you to declare a collection of related variables (of the same type) at once.
-Each value in the array is known as an \emph{element}.
+Each value in an array is known as an \emph{element}.
 The programmer must specify the \emph{length} of the array (the number of array elements).
+Once the array is created, its length cannot be changed.
 
 \begin{quote}
 \begin{javalst}
@@ -18,7 +19,6 @@ System.out.println(numberArray.length);      // outputs 365
 \end{javalst}
 \end{quote}
 
-Once the array is created, its length cannot be changed.
 Array elements are accessed by \emph{index} number, starting at zero:
 
 \newcommand{\fs}{\footnotesize}
@@ -50,18 +50,23 @@ Array elements are accessed by \emph{index} number, starting at zero:
 \Q Examine the results of the above code.
 
 \begin{enumerate}
-\item What is the index for the element \java{"world"}?
-\item What is the length of the \java{wordArray}?
-\item What is the length of the \java{numberArray}?
-\item How would you access the last element of \java{numberArray}?
+\item What is the index for the element \java{"world"}? \ans{1}
+\item What is the length of the \java{wordArray}? \ans{2}
+\item What is the length of the \java{numberArray}? \ans{365}
+\item How would you access the last element of \java{numberArray}? \ans{\java{numberArray[364]}}
 \end{enumerate}
 
 
 \Q Now examine the syntax of the code.
 
 \begin{enumerate}
-\item What are three ways that square brackets [] are used?
+\item What are three ways that square brackets [] are used? \ans{
+1) To declare the type: {\tt String[]}.
+2) To specify the length: {\tt double[365]}.
+3) To access an element: {\tt wordArray[0]}.}
+
 \item In contrast, how are curly braces {} used for an array?
+\ans{To create an array with an initial set of values.}
 \end{enumerate}
 
 
@@ -143,7 +148,14 @@ String[] c = {"alpha", "beta", "gamma"};
 
 \begin{enumerate}
 \item \java{a[3] + a[2]}
+\ans{Type: {\tt int}, Value: {\tt 37}}
+
 \item \java{b[2] - b[0] + a[4]}
+\ans{Type: {\tt double}, Value: {\tt 98.5}}
+
 \item \java{c[1].charAt(a[0])}
+\ans{Type: {\tt char}, Value: {\tt \qs{a}\qs}}
+
 \item \java{a[4] * b[1] <= a[5] * a[0]}
+\ans{Type: {\tt boolean}, Value: {\tt false}}
 \end{enumerate}

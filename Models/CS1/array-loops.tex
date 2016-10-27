@@ -1,7 +1,7 @@
 \model{Arrays and Loops}
 
 The real power of arrays is the ability to process them using loops, i.e., performing the same task for multiple elements.
-The standard form of iteration is as follows:
+Here is the standard form of iteration:
 
 \begin{javalst}
     for (int i = 0; i < array.length; i++) {
@@ -41,7 +41,51 @@ for (int i = 0; i < array.length; i++) {
 }
 \end{javalst}
 
-\begin{answer}
+\begin{answer}[12em]
+\begin{tabular}{|C{20pt}|C{40pt}|C{40pt}|}
+\hline
+i & array[i] & accum \\
+\hline
+\hline
+0 & 5 & 0 \\
+\hline
+1 & 26 & 26 \\
+\hline
+2 & 13 & 26 \\
+\hline
+3 & 12 & 38 \\
+\hline
+4 & 37 & 38 \\
+\hline
+\end{tabular}
+\hspace{20pt}
+\begin{tabular}{|C{20pt}|C{40pt}|C{40pt}|}
+\hline
+i & array[i] & accum \\
+\hline
+\hline
+5 & 15 & 53 \\
+\hline
+6 & 16 & 69 \\
+\hline
+7 & 4 & 69 \\
+\hline
+8 & 1 & 69 \\
+\hline
+9 & 3 & 72 \\
+\hline
+\end{tabular}
+\hspace{20pt}
+\begin{minipage}{175pt}
+\begin{javalst}
+array:
+  { -5, 26, -13, 12, -37,
+   -15, 16,   4, -1,   3}
+
+accumulator:
+  72
+\end{javalst}
+\end{minipage}
 \end{answer}
 
 
@@ -56,13 +100,26 @@ for (int i = 0; i < array.length; i++) {
  *
  * @param x an array of double values
  * @param y an array of double values
- * @return pairwise max of x and y; returns null if x.length
-           != y.length or if either of the arrays is null
+ * @return pairwise max of x and y
  */
 public static double[] pairwiseMax(double[] x, double[] y) {
 \end{javalst}
 
-\vfill
+\vspace{-3ex}
+\begin{answer}[11.3em]
+\begin{javaans}
+    double[] z = new double[x.length];
+    for (int i = 0; i < x.length; i++) {
+        if (x[i] > y[i]) {
+            z[i] = x[i];
+        } else {
+            z[i] = y[i];
+        }
+    }
+    return z;
+\end{javaans}
+\end{answer}
+
 \begin{javalst}
 }
 \end{javalst}
@@ -72,19 +129,34 @@ public static double[] pairwiseMax(double[] x, double[] y) {
 
 \begin{javalst}
 /**
- * Computes the final letter grade for a student. The labs are
+ * Computes the final average grade for a student. The labs are
  * worth 40% and the exams are worth 60%. All scores range from
- * 0 to 100, inclusive. Letter grades are assigned on the scale
- * A=90-100, B=80-89, C=70-79, D=60-69, F=0-59.
+ * 0 to 100, inclusive.
  *
  * @param labs the student's lab scores
  * @param exams the student's exam scores
- * @return letter grade 'A', 'B', 'C', 'D', or 'F'
+ * @return weighted average of all scores
  */
-public static char finalGrade(int[] labs, int[] exams) {
+public static double finalGrade(int[] labs, int[] exams) {
 \end{javalst}
 
-\vfill
+\vspace{-3ex}
+\begin{answer}[13.7em]
+\begin{javaans}
+    int labSum = 0;
+    for (int score : labs) {
+        labSum += score;
+    }
+    int examSum = 0;
+    for (int score : exams) {
+        examSum += score;
+    }
+    double labGrade = 1.0 * labSum / labs.length;
+    double examGrade = 1.0 * examSum / exams.length;
+    return 0.40 * labGrade + 0.60 * examGrade;
+\end{javaans}
+\end{answer}
+
 \begin{javalst}
 }
 \end{javalst}

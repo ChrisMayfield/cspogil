@@ -1,0 +1,112 @@
+\model{Character Arrays}
+
+The primitive type \java{char} is used to store a single \emph{character}, which can be a letter, a number, or a symbol.
+In contrast, the reference type \java{java.lang.String} represents a sequence of characters.
+
+\begin{quote}
+\begin{javalst}
+char letter;           String word;
+letter = 'a';          word = "food";
+\end{javalst}
+\end{quote}
+
+Internally, a string is stored as an \emph{array} of characters.
+Each character is indexed by a position starting at zero:
+
+\begin{quote}
+\begin{tabular}{cccc}
+\hline
+\multicolumn{1}{|c|}{\java{'f'}} &
+\multicolumn{1}{ c|}{\java{'o'}} &
+\multicolumn{1}{ c|}{\java{'o'}} &
+\multicolumn{1}{ c|}{\java{'d'}} \\
+\hline
+\fs 0 & \fs 1 & \fs 2 & \fs 3 \\
+\end{tabular}
+\end{quote}
+
+
+\quest{15 min}
+
+
+\Q How is the syntax of character literals and string literals different?
+
+\begin{answer}[3em]
+\end{answer}
+
+
+\Q Why can you use the \java{String} class in Java programs without having to import it first?
+
+\begin{answer}[3em]
+\end{answer}
+
+
+\Q What is the index of \java{'d'} in the string above?
+In general, what is the index of the last character of a string?
+
+\begin{answer}[3em]
+\end{answer}
+
+
+\Q Sketch the underlying array for the string \java{"hello world"} (with indexes as shown above).
+
+\begin{answer}
+\end{answer}
+
+
+\Q What is the \emph{value} of a \java{char} variable? What is the \emph{value} of a \java{String} variable?
+
+\begin{answer}
+\end{answer}
+
+
+\Q Draw a memory diagram for the given code. Each variable should be a name next to a box containing its \emph{value}.
+
+\begin{javalst}
+String str;
+str = "Hi!";
+
+char let;
+let = 'X';
+
+short num;
+num = -17;
+
+int foo;
+foo = num;
+
+String hmm;
+hmm = str;
+\end{javalst}
+
+
+\Q Recall that the == operator compares the value of two variables. What does it mean for two \java{char} variables to be ==? What does it mean for two \java{String} variables to be ==?
+
+\begin{answer}
+\end{answer}
+
+
+\Q To compare strings (and other objects), you should use either the equals or compareTo method. Predict the output of the following code.
+
+\begin{javalst}
+String name1 = "Mark";    String name2 = "Ma" + "rk";    String name3 = "Mary";
+
+// compare name1 and name2
+if (name1 == name2) {
+    System.out.println("name1 and name2 are identical");
+} else {
+    System.out.println("name1 and name2 are NOT identical");
+}
+// compare "Mark" and "Mark"
+if (name1.equals(name2)) {
+    System.out.println("name1 and name2 are equal");
+} else {
+    System.out.println("name1 and name2 are NOT equal");
+}
+// compare "Mark" and "Mary"
+if (name1.equals(name3)) {
+    System.out.println("name1 and name3 are equal");
+} else {
+    System.out.println("name1 and name3 are NOT equal");
+}
+\end{javalst}

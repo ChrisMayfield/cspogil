@@ -1,0 +1,45 @@
+%TODO define macros for memory diagrams
+
+\usepackage{amsmath}
+
+
+\begin{minipage}{0.49\textwidth}
+\begin{javalst}
+char letter;
+letter = 'a';
+\end{javalst}
+\end{minipage}
+\hfill
+\begin{minipage}{0.50\textwidth}
+\begin{tabular}{c|C{20pt}|}
+\cline{2-2}
+letter & \java{'a'} \\
+\cline{2-2}
+\end{tabular}
+\end{minipage}
+
+
+\begin{minipage}{0.49\textwidth}
+\begin{javalst}
+char[] array;
+array = new char[] {'f', 'o', 'o', 'd'};
+\end{javalst}
+\end{minipage}
+\hfill
+\begin{minipage}{0.50\textwidth}
+\begin{tabular}{c|C{20pt}|c}
+\cline{2-2}
+array & & \hspace{-2em}$\xrightarrow{\hspace*{3em}}$\hspace{-8pt} \\
+\cline{2-2}
+\multicolumn{3}{c}{} \\
+\end{tabular}
+\begin{tabular}{cccc}
+\hline
+\multicolumn{1}{|c|}{\java{'f'}} &
+\multicolumn{1}{ c|}{\java{'o'}} &
+\multicolumn{1}{ c|}{\java{'o'}} &
+\multicolumn{1}{ c|}{\java{'d'}} \\
+\hline
+\fs 0 & \fs 1 & \fs 2 & \fs 3 \\
+\end{tabular}
+\end{minipage}

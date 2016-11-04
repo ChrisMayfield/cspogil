@@ -1,3 +1,5 @@
+% Based on Model 3 of Activity 5 - Strings by Helen Hu
+
 \model{Common Mistakes}
 
 \newsavebox{\programA}
@@ -28,6 +30,8 @@ System.out.println(letter);
 \hline
 \usebox{\programA} & \usebox{\programB} \\
 \hline
+\multicolumn{1}{c}{\ans{\tt hello world}} &
+\multicolumn{1}{c}{\ans{\tt StringIndexOutOfBoundsException}} \\[-3ex]
 \end{tabularx}
 \end{table}
 
@@ -35,15 +39,19 @@ System.out.println(letter);
 \quest{15 min}
 
 
-\Q Write the output of each program in the space under the table above. What is the logic error you see when you run Program A?
+\Q Write the output of each program in the space under the table above.
+What is the logic error you see when you run Program A?
 
 \begin{answer}
+Hello world is still lowercase.
 \end{answer}
 
 
-\Q \label{errorA} In Program A, what is returned by the string method? What happens to the return value?
+\Q \label{errorA} In Program A, what is returned by the string method?
+What happens to the return value?
 
 \begin{answer}
+A new string is returned, but its value is not saved anywhere.
 \end{answer}
 
 
@@ -53,8 +61,7 @@ System.out.println(letter);
 \end{answer}
 
 
-%TODO \ref to Model 2
-\Q In general, what happens to \java{this} string when calling the methods in Model 2?
+\Q In general, what happens to \java{this} string when calling the methods in \ref{CS1/string-methods}?
 
 \begin{answer}
 \end{answer}
@@ -66,7 +73,7 @@ System.out.println(letter);
 \end{answer}
 
 
-\Q List two different ways you can fix the runtime error in \ref{errorB}.
+\Q List two different ways you can fix the run-time error in \ref{errorB}.
 
 \begin{answer}[3em]
 \end{answer}

@@ -1,18 +1,79 @@
-\model{String Methods}
+% Based on Model 2 of Activity 5 - Strings by Helen Hu
 
-TODO
+\model{String Methods}
+\label{CS1/string-methods}
+
+\begin{tabularx}{\linewidth}{|p{128pt}|p{72pt}|X|}
+\hline
+\tr Method & \tr Returns & \tr Description \\
+\hline
+\java{charAt(int)}          & \java{char}
+  & Returns the char value at the specified index of \java{this} string. \\
+%\hline
+%\java{equals(Object)}       & \java{boolean}
+%  & Compares \java{this} string to the specified object. \\
+\hline
+\java{indexOf(String)}      & \java{int}
+  & Returns the index within \java{this} string of the first occurrence of the specified substring. \\
+\hline
+\java{length()}             & \java{int}
+  & Returns the length of \java{this} string. \\
+\hline
+\java{substring(int, int)}  & \java{String}
+  & Returns a new string that is a substring of \java{this} string (from \java{beginIndex} to \java{endIndex - 1}). \\
+\hline
+\java{toUpperCase()}        & \java{String}
+  & Returns a copy of \java{this} string with all the characters converted to upper case. \\
+\hline
+\end{tabularx}
+
+\vspace{1em}
+
+Each method listed above is non-\java{static}.
+That is, they have an implicit parameter named \java{this} that is passed automatically.
 
 
 \quest{15 min}
 
 
-\Q TODO
+\Q \label{strAPI} If \java{str} contains the string \java{"hello world"}, then what is the return value of the following method calls?
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item \java{str.charAt(6)} \ans{\chr{w}}
+%\item \java{str.equals("hello")} \ans{\tt false}
+\item \java{str.indexOf("ll")} \ans{2}
+\item \java{str.length()} \ans{11}
+\item \java{str.substring(4, 7)} \ans{\str{o w}}
+\item \java{str.toUpperCase()} \ans{\str{HELLO WORLD}}
+\end{enumerate}
+\end{multicols}
+
+
+\Q Explain what precedes the \java{.} (dot) operator in the expressions above.
+What does it have to do with the keyword \java{this} in the model?
 
 \begin{answer}
+The variable containing the string precedes the dot operator. It is passed as the implicit {\tt this} parameter to the non-{\tt static} method.
 \end{answer}
 
 
-\Q To compare strings, you should use either the \java{String.equals} or \java{String.compareTo} method.
+\Q How many arguments does each method call in \ref{strAPI} have?
+(Hint: None of them have zero.)
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item \ans{2}
+%\item \ans{2}
+\item \ans{2}
+\item \ans{1}
+\item \ans{3}
+\item \ans{1}
+\end{enumerate}
+\end{multicols}
+
+
+\Q To compare strings, you must use either the \java{String.equals} or \java{String.compareTo} method.
 Predict the output of the following code.
 
 \begin{javalst}
@@ -26,14 +87,28 @@ if (name1 == name2) {
 } else {
     System.out.println("name1 and name2 are NOT identical");
 }
+\end{javalst}
 
+\vspace{-3ex}
+\begin{answer}[1em]
+\tt \hspace{1em} name1 and name2 are identical ~ \normalfont Note: compiler optimization
+\end{answer}
+
+\begin{javalst}
 // compare "Mark" and "Mark"
 if (name1.equals(name2)) {
     System.out.println("name1 and name2 are equal");
 } else {
     System.out.println("name1 and name2 are NOT equal");
 }
+\end{javalst}
 
+\vspace{-3ex}
+\begin{answer}[1em]
+\tt \hspace{1em} name1 and name2 are equal
+\end{answer}
+
+\begin{javalst}
 // compare "Mark" and "Mary"
 if (name1.equals(name3)) {
     System.out.println("name1 and name3 are equal");
@@ -42,8 +117,18 @@ if (name1.equals(name3)) {
 }
 \end{javalst}
 
+\vspace{-3ex}
+\begin{answer}[1em]
+\tt \hspace{1em} name1 and name3 are NOT equal
+\end{answer}
+
 
 \Q What is the difference between \emph{identical} and \emph{equal} in the previous question?
 
 \begin{answer}
+``Identical'' means the variables refer to the same \java{String} object.
+``Equal'' means the strings have the same characters, in the \java{Arrays.equals} sense.
 \end{answer}
+
+
+%\Q Solve the \java{stringMatch} problem (see attached page) using \java{length} and \java{substring}.

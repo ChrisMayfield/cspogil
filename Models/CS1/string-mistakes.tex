@@ -36,13 +36,13 @@ System.out.println(letter);
 \end{table}
 
 
-\quest{15 min}
+\quest{10 min}
 
 
 \Q Write the output of each program in the space under the table above.
 What is the logic error you see when you run Program A?
 
-\begin{answer}
+\begin{answer}[3em]
 Hello world is still lowercase.
 \end{answer}
 
@@ -55,101 +55,34 @@ A new string is returned, but its value is not saved anywhere.
 \end{answer}
 
 
-\Q List two different ways you can fix the logic error in \ref{errorA}.
+\Q Describe two different ways you can fix the logic error in \ref{errorA}.
 
 \begin{answer}
+\vspace{-1ex}
+\begin{javaans}
+greeting = greeting.toUpperCase();    // or just combine the two lines
+System.out.println(greeting);         System.out.println(greeting.toUpperCase());
+\end{javaans}
 \end{answer}
 
 
 \Q In general, what happens to \java{this} string when calling the methods in \ref{CS1/string-methods}?
 
 \begin{answer}
+It is passed as the implicit first argument, but nothing happens to {\tt this} because strings cannot be modified.
 \end{answer}
 
 
 \Q \label{errorB} In what cases will Program B crash? What is the error message displayed?
 
 \begin{answer}
+If the user enters a blank line, then there will be no character at position 1. It will show the out of bounds exception and display the stack trace.
 \end{answer}
 
 
-\Q List two different ways you can fix the run-time error in \ref{errorB}.
+\Q Describe two different ways you can fix the run-time error in \ref{errorB}.
 
 \begin{answer}[3em]
+1. Check if the string is long enough: ~{\tt if (line.length >= 2)} \\
+2. Keep asking for input until valid: ~{\tt do \{~...~\} while (line.length < 2);}
 \end{answer}
-
-
-%\Q Solve the \java{stringYak} problem (see attached page) using \java{charAt}.
-
-
-\newpage
-
-[CodingBat] Given two strings, return the number of positions where they contain the same substring of length two. So \java{"xxcaazz"} and \java{"xxbaaz"} yields 3, since the \java{"xx"}, \java{"aa"}, and \java{"az"} substrings appear in the same place in both strings.
-
-\medskip
-\begin{javalst}
-public int stringMatch(String a, String b) {
-\end{javalst}
-
-\vspace{-1em}
-\begin{answer}[18em]
-\begin{javaans}
-    // figure which string is shorter
-    int len = Math.min(a.length(), b.length());
-    int count = 0;
-
-    // Look at both substrings starting at i
-    for (int i = 0; i < len - 1; i++) {
-        String aSub = a.substring(i, i + 2);
-        String bSub = b.substring(i, i + 2);
-        if (aSub.equals(bSub)) {
-            count++;
-        }
-    }
-
-    return count;
-\end{javaans}
-\end{answer}
-
-\begin{javalst}
-}
-\end{javalst}
-
-\vfill
-
-[CodingBat] Suppose the string \java{"yak"} is unlucky. Given a string, return a version where all the \java{"yak"} are removed, but the \java{'a'} can be any character. The \java{"yak"} strings will not overlap.
-
-\bigskip
-
-\java{stringYak("yakpak")} $\rightarrow$ \java{"pak"}
-
-\java{stringYak("pakyak")} $\rightarrow$ \java{"pak"}
-
-\java{stringYak("yak123ya")} $\rightarrow$ \java{"123ya"}
-
-\medskip
-\begin{javalst}
-public String stringYak(String str) {
-\end{javalst}
-
-\vspace{-1em}
-\begin{answer}[16em]
-\begin{javaans}
-    String result = "";
-
-    for (int i = 0; i < str.length(); i++) {
-        if (i + 2 < str.length() && str.charAt(i) == 'y'
-                                 && str.charAt(i + 2) == 'k') {
-            i = i + 2;
-        } else {
-            result += str.charAt(i);
-        }
-    }
-
-    return result;
-\end{javaans}
-\end{answer}
-
-\begin{javalst}
-}
-\end{javalst}

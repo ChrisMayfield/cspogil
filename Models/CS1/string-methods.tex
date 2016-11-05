@@ -31,9 +31,9 @@
 
 Each method listed above is non-\java{static}.
 That is, they have an implicit parameter named \java{this} that is passed automatically.
+(Note: There are many other \java{String} methods not listed above.)
 
-
-\quest{15 min}
+\quest{20 min}
 
 
 \Q \label{strAPI} If \java{str} contains the string \java{"hello world"}, then what is the return value of the following method calls?
@@ -131,4 +131,94 @@ if (name1.equals(name3)) {
 \end{answer}
 
 
-%\Q Solve the \java{stringMatch} problem (see attached page) using \java{length} and \java{substring}.
+\Q Discuss the \java{stringMatch} problem on the next page.
+What three \java{String} methods will you need to solve it?
+(If you have time during the activity, complete the method.)
+
+\begin{answer}
+\java{String.length} for the loop, and \java{String.substring} and \java{String.equals} for the comparison.
+\end{answer}
+
+
+\Q Discuss the \java{stringYak} problem on the next page.
+What two \java{String} methods will you need to solve it?
+(If you have time during the activity, complete the method.)
+
+\begin{answer}
+\java{String.length} for the loop, and \java{String.charAt} to identify \chr{y} and \chr{k}.
+\end{answer}
+
+
+\newpage
+
+[CodingBat] Given two strings, return the number of positions where they contain the same substring of length two. So \java{"xxcaazz"} and \java{"xxbaaz"} yields 3, since the \java{"xx"}, \java{"aa"}, and \java{"az"} substrings appear in the same place in both strings.
+
+\medskip
+\begin{javalst}
+public int stringMatch(String a, String b) {
+\end{javalst}
+
+\vspace{-1em}
+\begin{answer}[18em]
+\begin{javaans}
+    // figure which string is shorter
+    int len = Math.min(a.length(), b.length());
+    int count = 0;
+
+    // look at both substrings starting at i
+    for (int i = 0; i < len - 1; i++) {
+        String aSub = a.substring(i, i + 2);
+        String bSub = b.substring(i, i + 2);
+        if (aSub.equals(bSub)) {
+            count++;
+        }
+    }
+
+    return count;
+\end{javaans}
+\end{answer}
+
+\begin{javalst}
+}
+\end{javalst}
+
+\vfill
+
+[CodingBat] Suppose the string \java{"yak"} is unlucky. Given a string, return a version where all the \java{"yak"} are removed, but the \java{'a'} can be any character. The \java{"yak"} strings will not overlap.
+
+\bigskip
+
+\java{stringYak("yakpak")} $\rightarrow$ \java{"pak"}
+
+\java{stringYak("pakyak")} $\rightarrow$ \java{"pak"}
+
+\java{stringYak("yak123ya")} $\rightarrow$ \java{"123ya"}
+
+\medskip
+\begin{javalst}
+public String stringYak(String str) {
+\end{javalst}
+
+\vspace{-1em}
+\begin{answer}[16em]
+\begin{javaans}
+    String result = "";
+
+    for (int i = 0; i < str.length(); i++) {
+        if (i + 2 < str.length() && str.charAt(i) == 'y'
+                                 && str.charAt(i + 2) == 'k') {
+            i = i + 2;
+        } else {
+            result += str.charAt(i);
+        }
+    }
+
+    return result;
+\end{javaans}
+\end{answer}
+
+\begin{javalst}
+}
+\end{javalst}
+
+\newpage

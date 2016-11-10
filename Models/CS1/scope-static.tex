@@ -1,0 +1,54 @@
+% based on Model 1 of "Improved Scope" activity by Helen Hu
+
+\model{Variable Scope}
+
+It's important for programmers to be aware of a variable's \emph{scope}: where the variable is accessible and visible. In Java, we have four levels of scope:
+
+\newsavebox{\localVars}
+\begin{lrbox}{\localVars}
+\begin{javalst}
+for (int i = 0; i<5; i++) {
+    System.out.println(i);
+}
+// i is not valid here
+\end{javalst}
+\end{lrbox}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\tr &
+\tr \textbf{Where declared?} &
+\tr \textbf{Where used?} &
+\tr \textbf{Example} \\
+\hline
+\textbf{static variables} \par (``class variables'') &
+declared outside of all methods (typically at start of file) &
+anywhere in class &
+\java{PI} from the \java{Math} class \\
+\hline
+\textbf{instance variables} \par (``attributes'') &
+declared outside of all methods (typically at start of file) &
+any non-static method, only in static methods if another object has been created (this) &
+\java{radius} from the \java{Circle} class \\
+\hline
+\textbf{parameters} &
+declared inside ()'s in method header &
+anywhere within method where they are declared &
+\java{radius} in \java{Circle.setRadius} \\
+\hline
+\textbf{local variables} &
+declared inside the method (possibly inside a code block) &
+anywhere within method or code block after they are declared &
+\usebox{\localVars} \\
+\hline
+\end{tabularx}
+\end{center}
+
+\quest{15 min}
+
+
+\Q TODO
+
+\begin{answer}
+\end{answer}

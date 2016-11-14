@@ -44,7 +44,7 @@ How would you instantiate a circle with a radius of 1.0 and assign it to \java{u
 
 \Q Write the code for \java{getRadius}. (Don't worry about Javadoc comments for this activity.)
 
-\begin{answer}[5em]
+\begin{answer}[6em]
 \begin{javaans}
     public double getRadius() {
         return radius;
@@ -53,9 +53,9 @@ How would you instantiate a circle with a radius of 1.0 and assign it to \java{u
 \end{answer}
 
 
-\Q Write the code for \java{setRadius}. Note there are two variables named \java{radius}: the parameter of \java{setRadius}, and \java{this.radius} for the object itself. Before you set the radius, first check if the parameter is negative, and if it is, set the radius to zero instead.
+\Q Write the code for \java{setRadius}. Note there are two variables named \java{radius}: the parameter of \java{setRadius}, and \java{this.radius} for the object itself. Before you set the radius, first check if the parameter is negative, and if it is, set \java{this.radius} to zero instead.
 
-\begin{answer}[11em]
+\begin{answer}[12em]
 \begin{javaans}
     public void setRadius(double radius) {
         if (radius >= 0) {
@@ -73,7 +73,7 @@ How would you instantiate a circle with a radius of 1.0 and assign it to \java{u
 The area of a circle is $\pi r^2$, and the circumference is $2 \pi r$.
 Ideally, each method should be one line of code.
 
-\begin{answer}[10em]
+\begin{answer}[12em]
 \begin{javaans}
     public double area() {
         return Math.PI * radius * radius;
@@ -88,7 +88,7 @@ Ideally, each method should be one line of code.
 
 \Q Write a \java{main} method that creates a \java{Circle} object with a radius of 2.0 and displays its area and circumference on the screen.
 
-\begin{answer}[7em]
+\begin{answer}[8em]
 \begin{javaans}
     public static void main(String[] args) {
         Circle big = new Circle(2.0);

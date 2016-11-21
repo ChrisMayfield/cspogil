@@ -1,0 +1,195 @@
+% based on "Exploring The 8-Puzzle" (2015) by Greg Keim
+
+\newcommand{\LG}[1]{%
+\ifthenelse{\equal{#1}{ }}%
+{\cellcolor{LightGray}}{#1}}
+
+\newcommand{\board}[9]{
+\begin{tabular}{|C{1em}|C{1em}|C{1em}|}
+\hline
+\LG{#1} & \LG{#2} & \LG{#3} \\
+\hline
+\LG{#4} & \LG{#5} & \LG{#6} \\
+\hline
+\LG{#7} & \LG{#8} & \LG{#9} \\
+\hline
+\end{tabular}
+}
+
+
+\model{The 8-Puzzle}
+
+Imagine a 3x3 grid of tiles numbered 1 to 8 that can slide horizontally or vertically.
+The gray square below represents the empty space into which adjacent tiles can move.
+
+\begin{center}
+\begin{tabular}{C{85pt}C{85pt}C{85pt}C{85pt}}
+\board
+{1}{2}{3}
+{4}{5}{6}
+{7}{8}{ }
+&
+\board
+{1}{2}{ }
+{4}{5}{3}
+{7}{8}{6}
+&
+\board
+{7}{4}{8}
+{1}{5}{3}
+{ }{6}{2}
+&
+\board
+{1}{ }{3}
+{5}{2}{6}
+{4}{7}{8}
+\\
+A (goal) &
+B (easy) &
+C (hard) &
+D (easy) \\
+\end{tabular}
+\end{center}
+
+Explore the puzzle a bit by visiting \href{http://mypuzzle.org/sliding}{mypuzzle.org/sliding}, and make sure you understand how the tile movement works.
+Don't spend too much time actually trying to solve the puzzles yet.
+
+
+\quest{20 min}
+
+
+\Q How many different tiles can be moved in examples B and C? How many in example D?
+Describe a general way of classifying the number of moves from any given layout.
+
+\begin{answer}
+In B and C, two tiles can be moved (2 and 3, or 1 and 6).
+In D, three tiles can be moved (1, 2, and 3).
+If the space is in a corner, two tiles can be moved.
+If it's in the middle of a side, three tiles can be moved.
+In the center position, four tiles can be moved.
+\end{answer}
+
+
+\Q \label{tree} In the center of the space below, copy the grid from example B. Then draw the possible next grids, one on each side of B, and draw a line between B and each neighbor. Imagine you can transform the puzzle from one grid to another by traveling along the lines. Continue this process for all possible moves two steps from the original example B grid.
+
+\begin{answer}[14em]
+\begin{center}
+\board
+{1}{2}{3}
+{4}{5}{6}
+{7}{8}{ }
+~---~
+\board
+{1}{2}{3}
+{4}{5}{ }
+{7}{8}{6}
+~---~
+\board
+{1}{2}{ }
+{4}{5}{3}
+{7}{8}{6}
+~---~
+\board
+{1}{ }{2}
+{4}{5}{3}
+{7}{8}{6}
+~---~
+\board
+{ }{1}{2}
+{4}{5}{3}
+{7}{8}{6}
+
+\medskip
+{\bf $|$}
+\hspace{197pt}
+{\bf $|$}
+\medskip
+
+\board
+{1}{2}{3}
+{4}{ }{5}
+{7}{8}{6}
+\hspace{121pt}
+\board
+{1}{5}{2}
+{4}{ }{3}
+{7}{8}{6}
+\end{center}
+\end{answer}
+
+
+\Q Imagine repeating \ref{tree} for example C. How big might the drawing get?
+
+\begin{answer}
+There could certainly be dozens of board configurations.
+You wouldn't have to draw new ones every time, because some could be reached via multiple paths.
+\end{answer}
+
+
+\Q What makes example C harder to solve than B and D?
+
+\begin{answer}
+Looking at B and D, one can see the solution in just 2--3 moves.
+It's unclear how many moves it will take to solve C without doing it on paper.
+\end{answer}
+
+
+\Q Assuming you could remove all the tiles and then place them back on the grid, how many different puzzle layouts are there?
+
+\begin{answer}
+Counting the empty space, there are a total of nine items to place.
+The first item has nine possible positions, the second has eight, the third has seven, and so forth.
+So there are $9! = 362,880$ possible boards.
+\end{answer}
+
+
+%\Q If you can shuffle the board by removing and replacing the tiles (rather than sliding them), are there some layouts that would not be solvable? Why or why not? (Hint: Consider the ``3-Puzzle'' in a 2x2 grid.)
+
+%\begin{answer}
+%Some configurations are not solvable; some numbers may be rotated such that they can't be fixed.
+%In general the matrix needs to have an even number of inversions for it to be solvable.
+%\end{answer}
+
+
+\Q Now consider the game of Tic-Tac-Toe (or see \href{http://playtictactoe.org/}{playtictactoe.org} if you're unfamiliar with it).
+Draw a diagram similar to \ref{tree} for the first two moves, assuming X moves first, starting from an empty 3x3 grid.
+Don't worry about completely drawing all possible boards, but do sketch enough to illustrate you know how it works.
+
+\begin{answer}[10em]
+\begin{center}
+\board
+{X}{}{}
+{}{O}{}
+{}{}{}
+~---~
+\board
+{X}{}{}
+{}{}{}
+{}{}{}
+~---~
+\board
+{X}{}{}
+{}{}{}
+{}{}{O}
+\end{center}
+\end{answer}
+
+
+\Q Name three ways the Tic-Tac-Toe diagram differs from what you did in the 8-Puzzle. 
+
+\begin{answer}[5em]
+Tic-Tac-Toe started with a blank grid, and moves can be placed anywhere.
+It's also a two player game (there are X's and O's, not just tiles).
+As a result it has a lot more board configurations, making it a harder game to solve.
+\end{answer}
+
+
+\Q Would it be possible for a computer to store the solution for all possible 8-tile and tic-tac-toe games? Why or why not?
+
+\begin{answer}[5em]
+For each of these games, there are only a few hundred thousand board configurations.
+A computer program could be written to generate each possible configuration and connect ``adjacent'' boards like we did in the diagrams.
+\end{answer}
+
+%\vspace{1em}
+%\comment{While these toy problems are well within the processing power of modern computers, in general we need to limit the search to find answers in a reasonable time. In the next section, we'll explore how we might do this.}

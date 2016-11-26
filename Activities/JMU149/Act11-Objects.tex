@@ -10,114 +10,12 @@
 
 \maketitle
 
-All programs require some amount of memory (RAM) to run.
-Computers are designed to run many different programs at the same time.
-Since memory is limited and shared, the operating system \emph{allocates} memory to programs as needed.
+TODO
 
-
-%TODO model with UML diagram and memory diagram
-%TODO given other code, draw UML and memory diagram
-
-
-%TODO H10. Class design: UML, getters, fields, tostring
-%TODO Add scope from H11?
-
-
-\model{Memory Allocation}
-
-\begin{javalst}
-import java.awt.Color;
-
-public class Polygon {
-    
-    public static final int MIN_SIDES = 3;
-    public static final int MAX_SIDES = 100;
-    
-    private String name;
-    private int sides;
-    private Color color;
-    
-    public Polygon(String name, int sides, Color color) {
-        this.name = name;
-        this.sides = sides;
-        this.color = color;
-    }
-    
-    public String toString() {
-        return this.name + " (" + this.sides + " sides)";
-    }
-    
-    public static void main(String[] args) {
-        Polygon p1 = new Polygon("triangle", 3, Color.RED);
-        Polygon p2 = new Polygon("rectangle", 4, Color.BLUE);
-        System.out.println(p1);
-        System.out.println(p2);
-    }
-    
-}
-\end{javalst}
-
-\quest{30 min}
-
-\Q Review and discuss the attached source code for Polygon.
-For each variable declaration, indicate where its contents will be stored: in the data (D), on the stack (S), or in the heap (H).
-
-\begin{center}
-Number of variable declarations in Polygon.java: \blank
-\end{center}
-
-\Q In the space below, draw a memory diagram to show the state of the \java{Polygon} program at the end of the main method.
-Make sure you put each box in the right segment.
-
-\Q Draw a UML diagram for the \java{Polygon} class.
-Refer to examples from last week's activity and/or the current programming assignment.
-
-\Q What information does the UML diagram convey?
-In contrast, what information does the memory diagram convey?
-
-\Q Based on your answer to \textbf{TODO}, what is the difference between a class and an object?
-
-\Q Based on your answer to \textbf{TODO}, explain what the following compiler error means.
-
-\begin{quote}
-\begin{javalst}
-public static void main(String[] args) {
-    Polygon.sides = 4;
-}
-\end{javalst}
-
-\it Error: non-static variable sides cannot be referenced from a static context
-\end{quote}
-
-\Q In your own words, explain what \java{static} means with respect to classes and objects.
-
-
-\model{Memory Usage}
-
-When you declare a variable of a primitive type, Java immediately knows how much memory it will need to reserve for that variable.
-
-\begin{javalst}
-char letter;   // 2 bytes (16-bit Unicode)
-int count;     // 4 bytes (32-bit integer)
-double score;  // 8 bytes (64-bit floating-point)
-\end{javalst}
-
-When you declare a variable of a class type, Java needs to allocate memory twice: once for the reference, and once for the object. In the latter case, Java may not know how much memory it will need to reserve until the program runs.
-
-\begin{javalst}
-String name;           // 8 bytes for reference (on 64-bit machines)
-name = in.nextLine();  // memory usage depends on what the user types
-\end{javalst}
-
-\quest{10 min}
-
-\Q To the right of each box on your memory diagram, write the number of bytes needed for that box. Note that each class and each object requires 16 bytes for overhead, and each method call requires 8 bytes to store the return information.
-
-\Q Determine how much memory the Polygon program will need (in bytes).
-
-\begin{center}
-Data: \blank  +  Stack: \blank  +  Heap: \blank  =  Total: \blank
-\end{center}
-
+\input{CS1B/class-design.tex}
+\newpage
+\input{CS1B/class-object.tex}
+\newpage
+\input{CS1B/scope-static.tex}
 
 \end{document}

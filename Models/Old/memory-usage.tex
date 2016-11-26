@@ -1,0 +1,34 @@
+All programs require some amount of memory (RAM) to run.
+Computers are designed to run many different programs at the same time.
+Since memory is limited and shared, the operating system \emph{allocates} memory to programs as needed.
+
+
+\model{Memory Usage}
+
+When you declare a variable of a primitive type, Java immediately knows how much memory it will need to reserve for that variable.
+
+\begin{javalst}
+char letter;   // 2 bytes (16-bit Unicode)
+int count;     // 4 bytes (32-bit integer)
+double score;  // 8 bytes (64-bit floating-point)
+\end{javalst}
+
+When you declare a variable of a class type, Java needs to allocate memory twice: once for the reference, and once for the object. In the latter case, Java may not know how much memory it will need to reserve until the program runs.
+
+\begin{javalst}
+String name;           // 8 bytes for reference (on 64-bit machines)
+name = in.nextLine();  // memory usage depends on what the user types
+\end{javalst}
+
+
+\quest{10 min}
+
+
+\Q To the right of each box on your memory diagram, write the number of bytes needed for that box. Note that each class and each object requires 16 bytes for overhead, and each method call requires 8 bytes to store the return information.
+
+
+\Q Determine how much memory the Polygon program will need (in bytes).
+
+\begin{center}
+Data: \blank  +  Stack: \blank  +  Heap: \blank  =  Total: \blank
+\end{center}

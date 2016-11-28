@@ -2,8 +2,8 @@
 
 \model{Variable Scope}
 
-Study the \java{Circle} and \java{SwapDriver} classes included at the end of the questions.
-For each variable, identify its \emph{scope} based on the table below.
+As a team, review and discuss the \java{Circle} and \java{SwapDriver} classes found on the next page at the end of the questions.
+Identify the \emph{scope} of each variable based on the table below.
 
 \begin{center}
 \small
@@ -38,66 +38,71 @@ anywhere within the method or code block after they are declared &
 \end{center}
 
 
-\quest{15 min}
+\quest{20 min}
 
 
-\Q Identify one static variable from the Circle class.
+\Q Identify one static variable from the \java{Circle} class.
 \begin{enumerate}
-\item What is the variable name of the static variable, and how is it being used?
+\item What is the name and purpose of the variable?
 \item What is the scope of the variable?
 \item What is one example of somewhere it cannot be used?
 \end{enumerate}
 
 
-\Q Identify one static variable from the SwapDriver class. 
+\Q Identify one instance variable from the \java{Circle} class.
 \begin{enumerate}
-\item What is the variable name of the static variable? 
-\item What is the scope of the variable, and why does it differ from your answer to the previous question?
-\item What syntax would you use to access to this variable in the Circle class?
-\end{enumerate}
-
-
-\Q Identify one instance variable from the two files. 
-\begin{enumerate}
-\item What is the variable name of the instance variable?
+\item What is the name and purpose of the variable?
 \item What is the scope of the variable?
 \item What is one example of somewhere it cannot be used?
 \end{enumerate}
 
 
-\Q Identify a local variable from the Circle class.
+\Q Identify an example of where an instance variable is used within a static method.
 \begin{enumerate}
-\item What is the variable name of the local variable? 
+\item In which method does this occur?
+\item Why is the method able to access these instance variables, even though they are private?
+\item Explain how this method is not a violation of the rule that instance variables cannot be accessed inside a static method.
+\end{enumerate}
+
+
+\Q Identify one parameter from the \java{Circle} class.
+\begin{enumerate}
+\item What is the name and purpose of the variable?
 \item What is the scope of the variable?
 \item Where can the variable not be used?
 \end{enumerate}
 
 
-\Q Identify a local variable from the SwapDriver class that is \emph{not} declared at the start of the method.
+\Q Identify one local variable from the \java{Circle} class.
 \begin{enumerate}
-\item What is the variable name of the local variable? 
+\item What is the name and purpose of the variable?
 \item What is the scope of the variable?
 \item Where can the variable not be used?
 \end{enumerate}
 
+\Q In the space below, predict the output of the \java{SwapDriver} program. Why are the results different when swapping integers and swapping Circle objects?
 
-\Q Identify a variable that is declared inside a code block in the Circle class.
-\begin{enumerate}
-\item What is the variable name of the local variable? 
-\item What is the scope of the variable?
-\item Where can the variable not be used?
-\end{enumerate}
+\begin{answer}[20em]
+\begin{javaans}
+BEFORE swap:
+a = 7  b = 4
+    Inside swapInts
+    swapping integers 7 and 4
+    finished swapping 4 and 7
+AFTER swap:
+a = 7  b = 4
 
+BEFORE swap:
+first = Circle(7)  second = Circle(4)
+    Inside swapCircles
+    swapping circles Circle(7) and Circle(4)
+    finished swapping Circle(4) and Circle(7)
+AFTER swap:
+first = Circle(4)  second = Circle(7)
 
-%\Q Of the four kinds of variable listed in the above Model, which variables were labeled with the access modifiers public and private? Describe in your own words what the words public and private allow you to control.
-
-
-\Q Review your answers to earlier questions and make sure you know which variables are instance variables. Identify an example of where an instance variable is used within a static method.
-\begin{enumerate}
-\item What method does this occur in? 
-\item Explain how this is not a violation of the rule that instance variables cannot be accessed inside a static method.
-\end{enumerate}
-
+This program created 2 circles
+\end{javaans}
+\end{answer}
 
 \newpage
 

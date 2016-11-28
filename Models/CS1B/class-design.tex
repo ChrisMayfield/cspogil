@@ -3,15 +3,15 @@
 \model{Designing a Class}
 
 Classes are often used to represent abstract data types, such as \java{Color} or \java{String}.
-They are also used to represent objects in the real world, such \java{Person} or \java{CreditCard}.
-UML class diagrams summarize the attributes and methods of a class.
+They are also used to represent objects in the real world, such as a \java{Person} or \java{CreditCard}.
+%UML class diagrams summarize the attributes and methods of a class.
 
 \begin{center}
 \includegraphics{CS1/Die.pdf}
 \includegraphics{CS1/Circle.pdf}
 \end{center}
 
-Methods in a class generally fall into one of five categories:
+Classes generally include the following kinds of methods:
 \begin{itemize}[itemsep=0pt]
 \item \textbf{constructor} methods that initialize new objects
 \item \textbf{accessor} methods (getters) that return attributes
@@ -21,34 +21,41 @@ Methods in a class generally fall into one of five categories:
 \end{itemize}
 
 
-\quest{15 min}
+\quest{20 min}
 
 
-\Q Identify a mutator method in the Color class.
+\Q Identify a constructor in the \java{Color} class. 
 \begin{enumerate}
-\item Which data field did it set?
-\item What arguments did the method take?
+\item What arguments do the method take?
 \item What does the method return?
 \end{enumerate}
 
 
-\Q Identify an accessor method in the Color class. 
+\Q Identify an accessor method in the \java{Color} class. 
 \begin{enumerate}
-\item Which data field did it get?
-\item What arguments did the method take?
+\item Which instance variable does it get?
+\item What arguments does the method take?
 \item What does the method return?
 \end{enumerate}
 
 
-\vspace{1em}
-For the next few questions, consider a class that will be used to represent an individual's credit card.
+\Q Identify a mutator method in the \java{Color} class.
+\begin{enumerate}
+\item Which instance variable does it set?
+\item What arguments does the method take?
+\item What does the method return?
+\end{enumerate}
+
+
 \begin{center}
+\textit{For the remaining questions, you will design a class that represents an individual's credit card.}
+\bigskip\par
 % https://www.bankofamerica.com/credit-cards/
 \includegraphics{CS1B/credit-card.png}
 \end{center}
 
 
-\Q Give two data fields that would be appropriate for this CreditCard class.
+\Q List two or more attributes that would be appropriate for this \java{CreditCard} class. For each attribute, indicate what data type would be most appropriate.
 
 \begin{enumerate}
 \item 
@@ -56,7 +63,7 @@ For the next few questions, consider a class that will be used to represent an i
 \end{enumerate}
 
 
-\Q For each data field, what data type would be appropriate?
+\Q When constructing (or updating) a \java{CreditCard} object, what values would you need to check? Are there any invalid values for the attributes?
 
 \begin{enumerate}
 \item 
@@ -64,7 +71,8 @@ For the next few questions, consider a class that will be used to represent an i
 \end{enumerate}
 
 
-\Q Are there any invalid values for the two data fields?
+\Q List two accessor methods would be appropriate for the CreditCard class.
+Include arguments and return values, using the format in the UML diagram.
 
 \begin{enumerate}
 \item 
@@ -72,25 +80,10 @@ For the next few questions, consider a class that will be used to represent an i
 \end{enumerate}
 
 
-\Q Give two mutator methods would be appropriate for the CreditCard class.
-Include arguments and return values, using the same format used for methods in the UML diagram in Model 1.
+\Q List two mutator methods would be appropriate for the \java{CreditCard} class.
+Include arguments and return values, using the format in the UML diagram.
 
 \begin{enumerate}
 \item 
 \item 
 \end{enumerate}
- 
-
-\Q Give two accessor methods would be appropriate for the CreditCard class.
-Include arguments and return values, using the same UML format.
-
-\begin{enumerate}
-\item 
-\item 
-\end{enumerate}
-
-
-\Q Which of your four methods will need to handle invalid values? How would your group like to handle those values? Justify your answer.
-
-\begin{answer}
-\end{answer}

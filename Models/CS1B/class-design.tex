@@ -28,22 +28,23 @@ Classes generally include the following kinds of methods:
 \Q Identify the constructors for the \java{Color} class. What is the difference between them? What arguments do they take? What do these methods return?
 
 \begin{answer}
+There are two constructors: one that takes three integers for the RGB values, and other that takes a Color object. The latter is called a \emph{copy constructor}. Constructors do not return values.
 \end{answer}
 
 
 \Q Identify an accessor method in the \java{Point} class. 
-\begin{enumerate}[itemsep=0pt]
-\item Which instance variable does it get?
-\item What arguments does the method take?
-\item What does the method return?
+\begin{enumerate}[itemsep=1pt]
+\item Which instance variable does it get? \ans{{\tt this.x} or {\tt this.y}}
+\item What arguments does the method take? \ans{none}
+\item What does the method return? \ans{The value of \java{x} or \java{y}}
 \end{enumerate}
 
 
 \Q Identify a mutator method in the \java{Point} class.
-\begin{enumerate}[itemsep=0pt]
-\item Which instance variable does it set?
-\item What arguments does the method take?
-\item What does the method return?
+\begin{enumerate}[itemsep=1pt]
+\item Which instance variable does it set? \ans{{\tt this.x} or {\tt this.y}}
+\item What arguments does the method take? \ans{The value of \java{x} or \java{y}}
+\item What does the method return? \ans{nothing}
 \end{enumerate}
 
 
@@ -57,33 +58,39 @@ Classes generally include the following kinds of methods:
 
 \Q List two or more attributes that would be necessary for this \java{CreditCard} class. For each attribute, indicate what data type would be most appropriate.
 
-\begin{enumerate}
-\item 
-\item 
-\end{enumerate}
+\begin{answer}[5em]
+Answers may include \verb|number:long|, \verb|expire:Date|, \verb|name:String|, \verb|code:int|, etc.
+\end{answer}
 
 
 \Q When constructing (or updating) a \java{CreditCard} object, what values would you need to check? What are the valid ranges of values for each attribute?
 
-\begin{enumerate}
-\item 
-\item 
-\end{enumerate}
+\begin{answer}[5em]
+The number should have 16 digits, dates need to have valid months and days, names should be at most 22 letters and not contain digits or other characters, code should be 3--4 digits.
+\end{answer}
 
 
 \Q List two accessor methods would be appropriate for the \java{CreditCard} class.
 Include arguments and return values, using the same format as a UML diagram.
 
-\begin{enumerate}
-\item 
-\item 
-\end{enumerate}
+\begin{answer}[5em]
+\begin{verbatim}
++getNumber(): long
++getExpire(): Date
++getName(): String
++getCode(): int
+\end{verbatim}
+\end{answer}
 
 
 \Q List two mutator methods would be appropriate for the \java{CreditCard} class.
 Include arguments and return values, using the same format as a UML diagram.
 
-\begin{enumerate}
-\item 
-\item 
-\end{enumerate}
+\begin{answer}[5em]
+\begin{verbatim}
++setNumber(number:long): void
++setExpire(expire:Date): void
++setName(name:String): void
++setCode(code:int): void
+\end{verbatim}
+\end{answer}

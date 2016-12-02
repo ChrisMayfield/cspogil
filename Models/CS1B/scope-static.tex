@@ -44,63 +44,104 @@ anywhere within the method or code block after they are declared &
 \Q Identify one static variable from the \java{Circle} class.
 \begin{enumerate}
 \item What is the name and purpose of the variable?
+\\ \ans{\java{circleCount} -- tracks the number of \java{Circle} objects that have been created} \\[-2em]
+
 \item What is the scope of the variable?
+\\ \ans{{\tt private static} -- it can be used anywhere within the \java{Circle} class only} \\[-2em]
+
 \item What is one example of somewhere it cannot be used?
+\\ \ans{\tt SwapDriver.main} \\[-2em]
+
 \end{enumerate}
 
 
 \Q Identify one instance variable from the \java{Circle} class.
 \begin{enumerate}
 \item What is the name and purpose of the variable?
+\\ \ans{\java{radius} -- stores the radius of {\tt this} circle} \\[-2em]
+
 \item What is the scope of the variable?
+\\ \ans{{\tt private} and non-{\tt static} -- it can only be used in \java{Circle} in non-static contexts} \\[-2em]
+
 \item What is one example of somewhere it cannot be used?
+\\ \ans{\tt SwapDriver.main} \\[-2em]
 \end{enumerate}
 
 
 \Q Identify an example of where an instance variable is used within a static method.
 \begin{enumerate}
 \item In which method does this occur?
+\\ \ans{\java{radius} is used in the \java{swapCircles} method} \\[-2em]
+
 \item Why is the method able to access these instance variables, even though they are private?
+\\ \ans{\java{swapCircles} belongs to the \java{Circle} class} \\[-2em]
+
 \item Explain how this method is not a violation of the rule that instance variables cannot be accessed inside a static method.
+\\ \ans{You can't use {\tt this}.radius in a {\tt static} method, but it's okay to use \java{c1.radius}} \\[-2em]
 \end{enumerate}
 
 
 \Q Identify one parameter from the \java{Circle} class.
 \begin{enumerate}
 \item What is the name and purpose of the variable?
+\\ \ans{Possible answers include: \java{radius} (in the constructor), \java{x} and \java{y}, \java{c1} and \java{c2}} \\[-2em]
+
 \item What is the scope of the variable?
+\\ \ans{The variable exists throughout the entire method (but not other methods).} \\[-2em]
+
 \item Where can the variable not be used?
+\\ \ans{It can't be used in other methods, e.g., you can't refer to \java{x} in \java{swapCircles}.} \\[-2em]
 \end{enumerate}
 
 
 \Q Identify one local variable from the \java{Circle} class.
 \begin{enumerate}
 \item What is the name and purpose of the variable?
+\\ \ans{Possible answers include: \java{temp} and \java{r} (both used for swapping values)} \\[-2em]
+
 \item What is the scope of the variable?
+\\ \ans{The variable exists from when it's declared until the end of the method.} \\[-2em]
+
 \item Where can the variable not be used?
+\\ \ans{It cannot be used in other methods and/or before it has been declared.} \\[-2em]
 \end{enumerate}
 
 \Q In the space below, predict the output of the \java{SwapDriver} program.
 Why are the results different when swapping integers and swapping Circle objects?
 
-\begin{answer}[20em]
+\begin{answer}[14em]
+\begin{minipage}{190pt}
+
 \begin{javaans}
 BEFORE swap:
-a = 7  b = 4
+a = 7
+b = 4
     Inside swapInts
     swapping integers 7 and 4
     finished swapping 4 and 7
 AFTER swap:
-a = 7  b = 4
+a = 7
+b = 4
+\end{javaans}
 
+\end{minipage}
+\hspace{1em}
+\begin{minipage}{290pt}
+
+\begin{javaans}
 BEFORE swap:
-first = Circle(7)  second = Circle(4)
+first = Circle(7)
+second = Circle(4)
     Inside swapCircles
     swapping circles Circle(7) and Circle(4)
     finished swapping Circle(4) and Circle(7)
 AFTER swap:
-first = Circle(4)  second = Circle(7)
+first = Circle(4)
+second = Circle(7)
+\end{javaans}
 
+\end{minipage}
+\begin{javaans}
 This program created 2 circles
 \end{javaans}
 \end{answer}

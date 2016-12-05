@@ -8,9 +8,6 @@
 \begin{javalst}
 /**
  * Simulates a Die object.
- * 
- * @author Chris Mayfield
- * @version 11/14/2016
  */
 public class Die {
     
@@ -20,7 +17,16 @@ public class Die {
      * Constructs a new die with a random face value.
      */
     public Die() {
-        roll();
+        face = 1;
+    }
+    
+    /**
+     * Gets the current face value of the die.
+     *
+     * @return current face value of the die
+     */
+    public int getFace() {
+        return face;
     }
     
     /**
@@ -33,17 +39,12 @@ public class Die {
         return face;
     }
     
-    /**
-     * Gets the current face value of the die.
-     *
-     * @return current face value of the die
-     */
-    public int getFace() {
-        return face;
-    }
-    
 }
 \end{javalst}
+
+\vspace*{-128pt}
+% https://commons.wikimedia.org/wiki/File:2-Dice-Icon.svg
+\hfill\includegraphics[width=2in]{CS1/dice.png}
 \end{quote}
 
 

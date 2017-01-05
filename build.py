@@ -44,8 +44,11 @@ def build(path, name):
     if name == "_TEMP_.tex":
         return
     print os.path.join(path, name)
-    # create temp activity
-    if path.startswith("Models/"):
+    if "\\documentclass" in open(name).read():
+        # copy original activity file
+        shutil.copyfile(name, "_TEMP_.tex")
+    else:
+        # create activity for model
         temp = open("_TEMP_.tex", 'w')
         temp.write("\\documentclass[12pt]{article}\n")
         temp.write("\\title{}\n")
@@ -56,8 +59,6 @@ def build(path, name):
         temp.write("\\input{" + name + "}\n")
         temp.write("\\end{document}\n")
         temp.close()
-    else:
-        shutil.copyfile(name, "_TEMP_.tex")
     # build teacher version
     status = latex(name, "Teacher")
     if status:
@@ -73,7 +74,7 @@ def build(path, name):
 def main(pattern):
     """Find and build all files."""
     cwd = os.getcwd()
-    for root in ["Models", "Activities"]:
+    for root in ["JMU101", "JMU149"]:
         for path, dirs, files in os.walk(root):
             for name in files:
                 # build tex files

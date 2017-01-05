@@ -10,11 +10,16 @@
 
 \begin{document}
 
-\setcounter{section}{3}
-\setcounter{question}{9}
+\setcounter{section}{2}
+\setcounter{question}{5}
 
-%\def\Teacher{}
+\def\Teacher{}
 
-\input{CS1/hello-world.tex}
+\makeatletter
+\def\input@path{{JMU149/Act01/}}
+\graphicspath{{JMU149/Act01/}}
+\makeatother
+
+\input{hello-world.tex}
 
 \end{document}

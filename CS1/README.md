@@ -1,14 +1,14 @@
-# JMU149
+# About CS1
 
-CS 149 is the "CS1" course at James Madison University.
-It is the first course in a three-semester Java sequence (programming fundamentals, object-oriented design, data structures and algorithms).
+This folder contains activities for CS 149 at James Madison University.
+149 is the first course in a three-semester Java sequence (programming fundamentals, object-oriented design, data structures and algorithms).
 
 Course website: https://w3.cs.jmu.edu/mayfiecs/cs149/
 
 # Contents
 
-Each folder contains a PDF of the activity along with the LaTeX source.
-Instructor's guides (content/process objectives, facilitation notes) for each activity are currently under development.
+Each subfolder contains a PDF of the activity along with the LaTeX source.
+Instructor's guides (content/process objectives, facilitation notes) are currently under development.
 
 1. [Introduction](Act01) -- team roles, computer hardware, hello world, employability skills
 2. [Arithmetic](Act02) -- process skills, dividing numbers, variables/types, order of operations

@@ -1,14 +1,14 @@
-# JMU101
+# About CS0
 
-CS 101 is the "CS0" course at James Madison University.
-It is a survey course that uses Python and aligns with AP CS Principles.
+This folder contains activities for CS 101 at James Madison University.
+101 is a survey course that uses Python and aligns with AP CS Principles.
 
 Course website: https://w3.cs.jmu.edu/mayfiecs/cs101/
 
 # Contents
 
-Each folder contains a PDF of the activity along with the LaTeX source.
-Instructor's guides (content/process objectives, facilitation notes) for each activity are currently under development.
+Each subfolder contains a PDF of the activity along with the LaTeX source.
+Instructor's guides (content/process objectives, facilitation notes) are currently under development.
 
 1. [Introduction](Act01) -- team roles, hi-lo game, algorithms and complexity
 2. [Bits and Bytes](Act02) -- logic gates, digital circuits, binary and hexadecimal

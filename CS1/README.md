@@ -10,9 +10,9 @@ Course website: https://w3.cs.jmu.edu/mayfiecs/cs149/
 Each subfolder contains a PDF of the activity along with the LaTeX source.
 Instructor's guides (content/process objectives, facilitation notes) are currently under development.
 
-1. [Introduction](Act01) -- team roles, computer hardware, hello world, employability skills
-2. [Arithmetic](Act02) -- process skills, dividing numbers, variables/types, order of operations
-3. [Data Types](Act03) -- the % operator, primitive types, reference types, memory diagrams
+1. [Introduction](Act01) -- team roles, hello world, variables/types, assignment
+2. [Arithmetic](Act02) -- the % operator, dividing numbers, order of operations
+3. [Data Types](Act03) -- primitive types, reference types, professional skills
 4. [Methods](Act04) -- invoke and return, Math class, parameters, arguments, stack diagrams
 5. [Boolean](Act05) -- relational operators, conditional operators, honor code case studies
 6. [Recursion](Act06) -- factorial, base case, recursive step, summation, temporary variables

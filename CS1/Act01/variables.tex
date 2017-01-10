@@ -1,10 +1,18 @@
 % Based on Model 1 of "Activity 02 Declaration" by Helen Hu
 
-\model{Variable Declarations}
-\label{variable-declare}
+\model{Variables}
+\label{variable}
 
-In addition to \textbf{literal} numbers like 1 or 2.3, most Java programs involve \textbf{variables} (named values that can be changed).
-The following code \textbf{declares} and \textbf{assigns} three variables:
+Most programs store and manipulate data, and we use \textit{variables} to give the data meaningful names.
+The following code \emph{declares} and \emph{assigns} three variables.
+Each variable is stored in the computer's memory, represented by the boxes on the right.
+
+\vspace{1em}
+\begin{minipage}[t]{0.45\textwidth}
+
+\begin{center}
+\textbf{Java code}
+\end{center}
 
 \begin{javabox}
 int dollars;
@@ -13,8 +21,40 @@ double grams;
 
 dollars = 1;
 cents = 90;
-grams = 3;
+grams = 3.5;
 \end{javabox}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+
+\begin{center}
+\textbf{Computer memory}
+\end{center}
+
+\begin{tabular}{R{50pt}|C{20pt}|}
+\cline{2-2}
+\java{dollars} & \java{1} \\
+\cline{2-2}
+\end{tabular}
+
+\vspace{1em}
+
+\begin{tabular}{R{50pt}|C{20pt}|}
+\cline{2-2}
+\java{cents} & \java{90} \\
+\cline{2-2}
+\end{tabular}
+
+\vspace{1em}
+
+\begin{tabular}{R{50pt}|C{20pt}|}
+\cline{2-2}
+\java{grams} & \java{3.5} \\
+\cline{2-2}
+\end{tabular}
+
+\end{minipage}
 
 
 \quest{10 min}
@@ -24,18 +64,19 @@ grams = 3;
 
 \begin{enumerate}
 \item an integer: \ans{int}
-\item a floating-point number: \ans{double}
+\item a real number: \ans{double}
 \end{enumerate}
 
 
-\Q Consider numbers of dollar bills, cents, and grams. Which of these units only makes sense as an integer, and why?
+\Q Consider numbers of dollar bills, cents, and grams.
+Which of these units only makes sense as an integer, and why?
 
 \begin{answer}
-Cents makes sense (ha ha) only as an integer, because at the end of the day you can't pay with a fractional amount.
+Cents makes sense (ha ha) only as an integer, because at the end of the day, you can't pay with a fractional amount. (It is possible to make a similar argument for dollars, but not for grams.)
 \end{answer}
 
 
-\Q What would you expect the following statements to print out? (Hint: Refer to \ref{dividing-numbers}.)
+\Q What would you expect the following statements to print out?
 
 \begin{enumerate}
 \item \java{System.out.println(dollars);} \ans{1}
@@ -51,7 +92,6 @@ It tells the computer how to interpret and display the value.
 \end{answer}
 
 
-\newpage
 \Q Consider the statement: ~ \java{cents = dollars;}
 
 \begin{enumerate}

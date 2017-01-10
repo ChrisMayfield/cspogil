@@ -1,13 +1,151 @@
 \model{Assignment}
+\label{assignment}
 
-TODO
+Declaring a variable instructs the computer to reserve space for it in memory.
+
+\vspace{1em}
+\hfill
+\begin{minipage}[t]{0.5\textwidth}
+
+\textbf{Java code}
+\vspace{1ex}
+
+\begin{javalst}
+int dollars;
+int cents;
+\end{javalst}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth}
+
+\textbf{Computer memory}
+\vspace{1em}
+
+\var{dollars}{}
+\par\vspace{1em}
+\var{cents}{}
+
+\end{minipage}
+
+\vspace{1em}
+Variables cannot be used until they are \textit{initialized} (assigned for the first time).
+
+\vspace{1em}
+\hfill
+\begin{minipage}[t]{0.5\textwidth}
+
+\vspace{-1em}
+\begin{javalst}
+dollars = 2;
+System.out.println(dollars);  // OK
+System.out.println(cents);    // error
+\end{javalst}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth}
+
+\var{dollars}{2}
+\par\vspace{1em}
+\var{cents}{}
+
+\end{minipage}
+
+\vspace{1em}
+Each time you assign a variable, you are \emph{updating} its value stored in memory.
+
+\vspace{1em}
+\hfill
+\begin{minipage}[t]{0.5\textwidth}
+
+\vspace{-1em}
+\begin{javalst}
+dollars = 3;
+dollars = 4;
+cents = 49;
+\end{javalst}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth}
+
+\var{dollars}{4}
+\par\vspace{1em}
+\var{cents}{49}
+
+\end{minipage}
+\vspace{1ex}
 
 
 \quest{10 min}
 
 
-\Q TODO
+\Q How many times is each variable in \ref{assignment} assigned?
 
 \begin{answer}
-TODO
+The variable \java{dollars} is assigned three times, but \java{cents} is assigned only once.
+\end{answer}
+
+
+\Q What is the error in the second \java{System.out.println} statement? (Don't just repeat the text in the model; explain in your own words what the problem is.)
+
+\begin{answer}
+The variable \java{cents} is not initialized, so Java does not know what value to print.
+\end{answer}
+
+
+\Q What is the value of \java{dollars} right before it's assigned for the last time?
+What is the value of \java{cents} before it's assigned for the last time?
+
+\begin{answer}
+Just before the ~\java{dollars = 4;} statement, ~\java{dollars} is 3.
+And before the ~\java{cents = 49;} statement, ~\java{cents} is uninitialized.
+\end{answer}
+
+
+% The following Qs are based on "Activity 02 - Declaration and Assignments" by Helen Hu
+
+
+\Q Consider the statement: ~\java{cents = dollars;}
+
+\begin{enumerate}
+
+\item Compare this code to lines 6--8 in \ref{assignment}.
+What value do you think \java{cents} and \java{dollars} will have after running this statement?
+
+\ans{The variable \java{cents} will be 4, and \java{dollars} will remain unchanged.}
+
+\item Which side of the equals sign (left or right) was assigned a new value?
+
+\ans{The left side.}
+
+\end{enumerate}
+
+
+\Q In Java, the \java{+} and \java{-} symbols are used to perform addition and subtraction. For example, the statement ~\java{dollars = dollars + 1;} adds one to the current value of \java{dollars}.
+
+\begin{enumerate}
+
+\item What is the value of \java{dollars} (in memory) after running this statement?
+\ans{5}
+
+\item Do you consider the equals sign in Java an operation to be performed? (like \java{+})
+\\ If so, explain the operation. If not, explain why not.
+
+\ans{Yes; it executes the assignment operation which stores a value in memory.}
+
+\item Do you consider the equals sign in mathematics an operation to be performed?
+\\ If so, explain the operation. If not, explain why not.
+
+\ans{No; it simply states the proposition that two values are equal.}
+
+\end{enumerate}
+
+
+\Q In your own words, explain how you should read the \java{=} sign in Java.
+For example, the Java statement ~\java{x = a + b;} should be read as ``x \_\_\_\_\_\_\_\_ a plus b.''
+
+\begin{answer}
+Answers may include ``x \emph{gets} a plus b'', ``x \emph{becomes} a plus b'', etc.
 \end{answer}

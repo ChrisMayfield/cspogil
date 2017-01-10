@@ -156,3 +156,12 @@
 \else
     \leavevmode\phantom{\usebox{\ansbox}}%
 \fi}
+
+% variable diagram
+\newcommand{\var}[2]{
+\begin{tabular}{R{50pt}|C{20pt}|}
+\cline{2-2}
+\texttt{#1} & \texttt{#2} \\
+\cline{2-2}
+\end{tabular}
+}

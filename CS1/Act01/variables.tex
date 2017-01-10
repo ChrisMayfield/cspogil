@@ -1,20 +1,19 @@
-% Based on Model 1 of "Activity 02 Declaration" by Helen Hu
+% Based on Model 1 of "Activity 02 - Declaration and Assignments" by Helen Hu
 
 \model{Variables}
-\label{variable}
 
-Most programs store and manipulate data, and we use \textit{variables} to give the data meaningful names.
+Most programs store and manipulate data values, and we use \textit{variables} to give them meaningful names.
 The following code \emph{declares} and \emph{assigns} three variables.
 Each variable is stored in the computer's memory, represented by the boxes on the right.
 
 \vspace{1em}
-\begin{minipage}[t]{0.45\textwidth}
+\hfill
+\begin{minipage}[t]{0.5\textwidth}
 
-\begin{center}
 \textbf{Java code}
-\end{center}
+\vspace{1ex}
 
-\begin{javabox}
+\begin{javalst}
 int dollars;
 int cents;
 double grams;
@@ -22,37 +21,20 @@ double grams;
 dollars = 1;
 cents = 90;
 grams = 3.5;
-\end{javabox}
+\end{javalst}
 
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.45\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
 
-\begin{center}
 \textbf{Computer memory}
-\end{center}
-
-\begin{tabular}{R{50pt}|C{20pt}|}
-\cline{2-2}
-\java{dollars} & \java{1} \\
-\cline{2-2}
-\end{tabular}
-
 \vspace{1em}
 
-\begin{tabular}{R{50pt}|C{20pt}|}
-\cline{2-2}
-\java{cents} & \java{90} \\
-\cline{2-2}
-\end{tabular}
-
-\vspace{1em}
-
-\begin{tabular}{R{50pt}|C{20pt}|}
-\cline{2-2}
-\java{grams} & \java{3.5} \\
-\cline{2-2}
-\end{tabular}
+\var{dollars}{1}
+\par\vspace{1em}
+\var{cents}{90}
+\par\vspace{1em}
+\var{grams}{3.5}
 
 \end{minipage}
 
@@ -60,7 +42,7 @@ grams = 3.5;
 \quest{10 min}
 
 
-\Q Identify the Java \textbf{keyword} used in a variable declaration to indicate
+\Q Identify the Java \emph{keyword} used in a variable declaration to indicate
 
 \begin{enumerate}
 \item an integer: \ans{int}
@@ -81,52 +63,42 @@ Cents makes sense (ha ha) only as an integer, because at the end of the day, you
 \begin{enumerate}
 \item \java{System.out.println(dollars);} \ans{1}
 \item \java{System.out.println(cents);} \ans{90}
-\item \java{System.out.println(grams);} \ans{3.0}
+\item \java{System.out.println(grams);} \ans{3.5}
 \end{enumerate}
 
 
-\Q What do you think the purpose of a variable declaration is?
+\Q In the previous question, how does the third printed line (c) differ from the first two?
+
+\begin{answer}
+The third line prints a double, and the first two print an integer.
+\end{answer}
+
+
+\Q What do you think is the purpose of a variable declaration?
 
 \begin{answer}
 It tells the computer how to interpret and display the value.
 \end{answer}
 
 
-\Q Consider the statement: ~ \java{cents = dollars;}
+\Q What is output by the following code, and why?
 
-\begin{enumerate}
+\begin{minipage}[t]{0.33\linewidth}
 
-\item Compare this code to lines 5--7 in \ref{variable-declare}.
-What value do you think cents and dollars will have after running this statement?
+\vspace{-2ex}
+\begin{javalst}
+double one;
+one = 1;
+System.out.println(one);
+\end{javalst}
 
-\ans{The variable \java{cents} will be 1, and \java{dollars} will remain unchanged.}
-
-\item Which side of the equals sign (left or right) was assigned a new value?
-\ans{The left side.}
-
-\end{enumerate}
-
-
-\Q Examples of Java operators include \java{+} and \java{-}; they describe an operation to be executed (e.g., addition or subtraction).
-
-\begin{enumerate}
-
-\item Do you consider the equals sign in Java an operator (an operation to be executed)?
-\\ If so, explain the operation. If not, explain why not.
-
-\ans{Yes; it executes the assignment operation which stores a value in memory.}
-
-\item Do you consider the equals sign in mathematics an operator (an operation to be executed)?
-\\ If so, explain the operation. If not, explain why not.
-
-\ans{No; it simply states the proposition that two values are equal.}
-
-\end{enumerate}
-
-
-\Q In your own words, explain how you should read the \java{=} sign in Java.
-For example, the Java statement ~ \java{x = a + b;} ~ should be read as ``x \_\_\_\_\_ a plus b.''
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.66\linewidth}
 
 \begin{answer}
-Answers may include ``x \emph{gets} a plus b'', ``x \emph{becomes} a plus b'', etc.
+The output is 1.0, because {\tt one} is a {\tt double}.
+The type of variable determines the output format.
 \end{answer}
+
+\end{minipage}

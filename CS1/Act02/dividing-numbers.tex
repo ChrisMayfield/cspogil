@@ -1,4 +1,4 @@
-% Based on Models 3 and 4 of "Activity 01 Operators" by Helen Hu
+% Based on Models 3 and 4 of "Activity 01 - Operators" by Helen Hu
 
 \model{Dividing Numbers}
 \label{dividing-numbers}
@@ -45,6 +45,7 @@
 \hline
 \end{tabular}
 \end{center}
+\vspace{-1ex}
 
 
 \quest{15 min}
@@ -55,7 +56,7 @@ What is significant about the number of answers you have written down?
 
 \begin{answer}
 12, 13, 14, and 15.
-There are four answers, and we divided by four.
+There are four answers, because we divided by four.
 \end{answer}
 
 
@@ -101,14 +102,16 @@ At least one number in each row of the second table as a decimal point.
 \vspace{1ex}
 
 
-\Q Dividing numbers with fractional parts (known as \textbf{floating-point} numbers) gives you different results from dividing two integers.
+\Q Dividing real numbers (also known as \emph{floating-point} numbers) gives you different results from dividing integers.
 In the previous question:
 
 \begin{enumerate}
 
-\item Which rows evaluate to an integer? \ans{the first three}
+\item Which rows evaluate to an integer? \ans{only the last row}
 
-\item Which rows evaluate to a floating-point number? \ans{the last one}
+\item Which rows evaluate to a real number? \ans{the first three rows}
+
+\item When will Java perform \emph{integer division}? \ans{when both numbers are integers}
 
 \end{enumerate}
 
@@ -116,18 +119,16 @@ In the previous question:
 \Q Imagine you are writing a Java program that requires division.
 
 \begin{enumerate}
-
-\item What must be true about the \textbf{operands} (the numbers around the \textbf{operators}) for you to get the mathematically correct answer?
+\item What must be true about the \emph{operands} (the numbers before and after the operator) for you to get the mathematically correct answer?
 
 \ans{At least one of them needs to be a floating-point number.}
 
 \item Does it need to be true for both operands? \ans{No}
-
 \end{enumerate}
 
 
 \Q Consider what you know about addition (\java{+}).
-If you add two integers in a Java expression, will the result always be mathematically correct?
+If you add two integers in Java, will the result always be mathematically correct?
 Justify your answer.
 
 \begin{answer}[5em]
@@ -136,7 +137,7 @@ Yes, because adding two integers always results in an integer.
 \end{answer}
 
 
-\Q What about subtraction (\java{-}) and multiplication (\java{*})? If you subtract or multiply two integers, will the answer always be mathematically correct? Justify your answer.
+\Q What about subtraction (\java{-}) and multiplication (\java{*})? If you subtract or multiply two integers in Java, will the answer always be mathematically correct? Justify your answer.
 
 \begin{answer}[5em]
 Yes, because subtraction and multiplication can be rewritten in terms of addition.

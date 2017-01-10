@@ -2,8 +2,8 @@
 
 \model{Order of Operations}
 
-The Java language defines a specific order of execution for math and other operations. For example, multiplication and division take \textbf{precedence} over addition and subtraction. Using parentheses, you can override the order of operations.
-The following table lists some Java operators from highest precedence to lowest precedence.
+Java follows a specific order for math and other operations. For example, multiplication and division take \emph{precedence} over addition and subtraction.
+The following table lists several Java operators from highest precedence to lowest precedence.
 
 \begin{center}
 \begin{tabular}{|L{3in}|L{1in}|}
@@ -15,7 +15,7 @@ Unary (positive or negative signs)
 & \tt + - \\
 \hline
 Multiplicative
-& \tt * / \\
+& \tt * / \% \\
 \hline
 Additive
 & \tt + - \\
@@ -45,8 +45,17 @@ Assignment has the lowest precedence so that all other operations happen first (
 \end{answer}
 
 
+\Q What operator has the lowest precedence?
+Why do you think Java is designed that way?
+
+\begin{answer}
+Parenthesis have the highest precedence so that you can impose a specific order.
+For example, \java{2 * (3 + 4)} will perform addition before multiplication.
+\end{answer}
+
+
 \Q The \java{+} and \java{-} operators show up twice in the table of operator precedence.
-For the Java expression ~ \java{x = 5 * -3;} ~ explain how you know whether the \java{-} operator is being used as an unary or binary operator in this expression.
+For the Java statement ~\java{x = 5 * -3;} explain how you know whether the \java{-} operator is being used as an unary or binary operator.
 
 \begin{answer}
 It matters what is to the left or right of the operator.
@@ -56,7 +65,7 @@ In this example, the \java{-} is preceded by a \java{*}, so it must be unary.
 
 \Q Give the order of operations in the Java expression: ~ \java{x = 5 * -3;}
 
-\begin{enumerate}
+\begin{enumerate}[itemsep=2pt]
 \item First operator to be evaluated: \ans{\java{-}}
 \item Second operator: \ans{\java{*}}
 \item Third operator: \ans{\java{=}}
@@ -65,7 +74,7 @@ In this example, the \java{-} is preceded by a \java{*}, so it must be unary.
 
 \Q Give the order of operations in the Java expression: ~ \java{y = 9 / 2;}
 
-\begin{enumerate}
+\begin{enumerate}[itemsep=2pt]
 \item First operator to be evaluated: \ans{\java{/}}
 \item Second operator: \ans{\java{=}}
 \end{enumerate}
@@ -74,7 +83,7 @@ In this example, the \java{-} is preceded by a \java{*}, so it must be unary.
 \Q Based on your answer to the previous question, explain why the variable \java{y} would be assigned 4.0 (as opposed to 4 or 4.5).
 
 \begin{answer}
-If \java{y} is a floating-point variable, the integer result 4 would be stored as 4.0 in memory.
+Since \java{y} is a floating-point variable, the integer result 4 would be stored as 4.0 in memory.
 \end{answer}
 
 

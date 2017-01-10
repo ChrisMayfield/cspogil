@@ -1,4 +1,4 @@
-% Based on Model 2 of "Activity 01 Operators" by Helen Hu
+% Based on Model 2 of "Activity 01 - Operators" by Helen Hu
 
 \model{The \% Operator}
 
@@ -46,7 +46,7 @@
 \end{center}
 
 
-\quest{10 min}
+\quest{15 min}
 
 
 \Q Which numbers \% 4 evaluate to 0 in the table above?
@@ -84,6 +84,32 @@ They differ by one.
 \end{center}
 
 
+\Q Consider how you were taught to do long division in elementary school.
+Finish solving for $79 \div 5$.
+What is the answer?
+
+\begin{center}
+\includegraphics[scale=0.65]{div79by5.png}
+\end{center}
+
+\begin{answer}[3em]
+We first bring the 9 down, then 5 goes into 29 five times, and so we subtract 25. The final answer is 15 remainder 4.
+\end{answer}
+
+
+\Q Imagine that you are given candy mints to divide evenly among your team members.
+
+\begin{enumerate}
+\item If your team receives 11 mints, how many mints are left over?
+
+\ans{\java{11 \% 4} is 3 ~~or~~ \java{11 \% 5} is 1}
+
+\item If your team receives 2 mints, how many mints are left over?
+
+\ans{\java{2 \% 4} is 2 ~~or~~ \java{2 \% 5} is 2}
+\end{enumerate}
+
+
 \Q Describe what the \% operator does.
 How are the / and \% operators related?
 
@@ -92,14 +118,11 @@ Both operators divide two numbers: \% returns the remainder, and / returns the q
 \end{answer}
 
 
-\Q Would it make sense to apply the \% operator to floating-point numbers?
+\Q Would it make sense to apply the \% operator to real numbers?
 Why or why not?
 
 \begin{answer}
 Not really, since the concept of remainder is based on integer division.
 
-(Floating-point modulus is defined in IEEE 754, but its use is rare.)
+(BTW floating-point modulo is defined in IEEE 754, but its use is rare.)
 \end{answer}
-
-
-%TODO introduce the term ``modulus'' when reporting out

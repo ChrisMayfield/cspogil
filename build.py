@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 """Compiles student and teacher PDFs for each LaTeX source file."""
+from __future__ import print_function
 
 import os
 import shutil
@@ -13,23 +14,23 @@ CLEAN = True
 
 def latex(name, suff):
     """Run latex and rename pdf."""
-    print "  " + suff + "...",
+    print("  " + suff + "...", end=' ')
     sys.stdout.flush()
     # check timestamp
     pdf = name[:-4] + "_" + suff + ".pdf"
     if os.path.isfile(pdf):
         if os.path.getmtime(pdf) > os.path.getmtime(name):
-            print "SKIP"
+            print("SKIP")
             return
     # pass suffix to latex
     cmd = LATEX + " '\\def\\" + suff + "{}\\input{_TEMP_.tex}'"
     status = os.system(cmd + " > _TEMP_1.run")
     status = os.system(cmd + " > _TEMP_2.run")
     if status == 0:
-        print "OK"
+        print("OK")
         os.rename("_TEMP_.pdf", pdf)
     else:
-        print "ERROR"
+        print("ERROR")
         return status
     # clean up temp files
     if CLEAN:
@@ -43,7 +44,7 @@ def build(path, name):
     """Build the given source file."""
     if name == "_TEMP_.tex":
         return
-    print os.path.join(path, name)
+    print(os.path.join(path, name))
     if "\\documentclass" in open(name).read():
         # copy original activity file
         shutil.copyfile(name, "_TEMP_.tex")
@@ -89,12 +90,12 @@ def main(pattern):
                 if pattern == "clean" and name.endswith(".pdf"):
                     if name[-12:-4] in ["_Student", "_Teacher"]:
                         pathname = os.path.join(path, name)
-                        print pathname
+                        print(pathname)
                         os.remove(pathname)
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
         main(sys.argv[1])
     else:
-        print "Usage: build.py {all | clean | NAME}"
-        print "NAME is any substring of the file(s)"
+        print("Usage: build.py {all | clean | NAME}")
+        print("NAME is any substring of the file(s)")

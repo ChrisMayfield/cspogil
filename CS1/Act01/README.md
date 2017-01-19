@@ -17,7 +17,7 @@ There are no prerequisites.
 * Provide feedback on how well team members are working. (Teamwork)
 
 **Acknowledgements**  
-Models 3 and 4 are based on Model 1 of [Activity 02 - Declaration and Assignments](https://docs.google.com/document/d/1MseZXgtWI5s_EG03rozFTm-KJkiRPRmUo6SD0sqJ1uA) by Helen Hu.
+Models 3 and 4 are based on Model 1 of [Activity 02 - Declaration and Assignments](https://docs.google.com/document/d/1tXPvWq7Zxd0HS4l7tOkB20SjApn8Zj4vwuMtPPrSI0I/pub) by Helen Hu.
 
 
 ## Facilitation Notes

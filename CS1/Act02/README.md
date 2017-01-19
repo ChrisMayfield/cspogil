@@ -15,7 +15,8 @@ This activity focuses on integer and floating-point division and operator preced
 * Evaluate a Java command in the order a computer would execute it. (Information Processing)
 
 **Acknowledgements**  
-Models 1 and 2 are based on Models 2--4 of [Activity 01 - Operators](https://docs.google.com/document/d/1HRFYEOdTHUuDka3GGJAvf1grOCBLZ6xXjR9pOFKic5w) by Helen Hu, and Model 3 is based on Model 2 of [Activity 02 - Declaration and Assignments](https://docs.google.com/document/d/1MseZXgtWI5s_EG03rozFTm-KJkiRPRmUo6SD0sqJ1uA).
+Models 1 and 2 are based on Models 2--4 of [Activity 01 - Operators](https://docs.google.com/document/d/1tXPvWq7Zxd0HS4l7tOkB20SjApn8Zj4vwuMtPPrSI0I/pub) by Helen Hu.
+Model 3 is based on Model 2 of [Activity 02 - Declaration and Assignments](https://docs.google.com/document/d/1tXPvWq7Zxd0HS4l7tOkB20SjApn8Zj4vwuMtPPrSI0I/pub) by Helen Hu.
 
 
 ## Facilitation Notes

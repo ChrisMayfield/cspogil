@@ -67,22 +67,65 @@ One of the 256 values is the number zero. So 128 negatives, plus 1 zero, plus 12
 
 \begin{quote}
 \begin{multicols}{3}
-1.14159 \ans{double} \\[1ex]
-0       \ans{int} \\[1ex]
--1.0F   \ans{float} \\[1ex]
-123     \ans{int}
+1.14159    \ans{double}  \\[1ex]
+0          \ans{int}     \\[1ex]
+-1.0F      \ans{float}   \\[1ex]
+123        \ans{int}
 
-7.2E-4  \ans{double} \\[1ex]
-0.0     \ans{double} \\[1ex]
--13L    \ans{long} \\[1ex]
-'0'     \ans{char}
+7.2E-4     \ans{double}  \\[1ex]
+0.0        \ans{double}  \\[1ex]
+-13L       \ans{long}    \\[1ex]
+\qs{H}\qs  \ans{char}
 
--128    \ans{int} \\[1ex]
-false   \ans{boolean} \\[1ex]
-true    \ans{boolean} \\[1ex]
-"0"     \ans{String}
+-128       \ans{int}     \\[1ex]
+\qs{0}\qs  \ans{char}    \\[1ex]
+false      \ans{boolean} \\[1ex]
+true       \ans{boolean}
 \end{multicols}
 \end{quote}
+
+
+\Q \label{allow} Based on the examples below, when does Java allow you to assign one type of primitive variable to another?
+
+% Based on example from Stoney Jackson
+\begin{multicols}{2}
+\begin{javalst}
+    int int_ = 3;
+    long long_ = 3L;
+    float float_ = 3.0F;
+    double double_ = 3.0;
+    
+    int_ = int_;
+    int_ = long_;      // illegal
+    int_ = float_;     // illegal
+    int_ = double_;    // illegal
+    
+    long_ = int_;
+    long_ = long_;
+    long_ = float_;    // illegal
+    long_ = double_;   // illegal
+
+    float_ = int_;
+    float_ = long_;
+    float_ = float_;
+    float_ = double_;  // illegal
+    
+    double_ = int_;
+    double_ = long_;
+    double_ = float_;
+    double_ = double_;
+    
+    int_ = '0';
+    int_ = false;      // illegal
+    double_ = '0';
+    double_ = false;   // illegal
+\end{javalst}
+\end{multicols}
+
+\vspace{-1em}
+\begin{answer}
+The types have to be compatible (e.g., you can't assign numeric to boolean), and you can only assign from smaller to larger (e.g., from float to double, or int to double).
+\end{answer}
 
 
 \Q Given the following variable declarations, which of the assignments are not allowed?
@@ -110,8 +153,8 @@ sum = total;
 total = sum;
 checking = miles;
 sum = checking;
-sum = days;
-days = "0";
+flag = minutes;
+days = '0';
 \end{javalst}
 
 \columnbreak
@@ -119,27 +162,25 @@ days = "0";
 \begin{answer}
 All are okay except:
 \\ \hspace*{1em} \texttt{total = sum;}
-\\ \hspace*{1em} \texttt{days = "0";}
+\\ \hspace*{1em} \texttt{flag = minutes;}
+\\ \hspace*{1em} \texttt{days = \chr{0};}
+
+\medskip
+Note that assigning \chr{0} to \java{days} is legal,
+but the value is actually stored as 48L.
 \end{answer}
 
 \end{multicols}
 \end{quote}
 
 
-\Q \label{allow} In general, when does Java allow you to assign one type of numeric variable to another?
-
-\begin{answer}
-The types have to be compatible (e.g., you can't assign numeric to boolean), and you can only assign from smaller to larger (e.g., from float to double, or int to double).
-\end{answer}
-
-
-\Q Based on your answer to \ref{allow}, list all possible assignments for \java{int}, \java{long}, \java{float}, and \java{double} values in this format: \java{long} $\gets$ \java{int}
-
-\begin{answer}[5em]
-\setlength{\tabcolsep}{12pt}
-\begin{tabular}{llll}
-&  long   $\gets$ int  &                       &                        \\
-&  float  $\gets$ int  &  float  $\gets$ long  &                        \\
-&  double $\gets$ int  &  double $\gets$ long  &  double $\gets$ float  \\
-\end{tabular}
-\end{answer}
+%\Q Based on your answer to \ref{allow}, list all possible assignments for \java{int}, \java{long}, \java{float}, and \java{double} values in this format: \java{long} $\gets$ \java{int}
+%
+%\begin{answer}[5em]
+%\setlength{\tabcolsep}{12pt}
+%\begin{tabular}{llll}
+%&  long   $\gets$ int  &                       &                        \\
+%&  float  $\gets$ int  &  float  $\gets$ long  &                        \\
+%&  double $\gets$ int  &  double $\gets$ long  &  double $\gets$ float  \\
+%\end{tabular}
+%\end{answer}

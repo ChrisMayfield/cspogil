@@ -22,7 +22,7 @@ in = new Scanner(System.in);
 
 Java has eight primitive types (see \ref{primitive-types}).
 All other types of data are called \emph{reference} types, because \textbf{their value is a memory address}.
-When drawing state diagrams, use an arrow to \emph{reference} other memory locations (rather than make up integer values for the actual addresses).
+When drawing memory diagrams, use an arrow to \emph{reference} other memory locations (rather than make up integer values for the actual addresses).
 
 
 \quest{15 min}
@@ -42,7 +42,7 @@ Primitive types are lowercase, and reference types are capitalized.
 \end{answer}
 
 
-\Q Variables in Java can use at most eight bytes of memory. Explain why \java{"Beyonce"} and \java{System.in} cannot be stored directly in the memory locations for \java{name} and \java{in}.
+\Q Variables in Java can use at most eight bytes of memory. Explain why the values \java{"Beyonce"} and \java{System.in} cannot be stored directly in the memory locations for \java{name} and \java{in}.
 
 \begin{answer}
 Both values are much larger than eight bytes, so they need to be stored somewhere else.
@@ -71,7 +71,7 @@ In the case of reference types, it only copies the memory location.
 \end{answer}
 
 
-\Q Draw a state diagram for the following code. Make sure your answer is consistent with what you wrote for \ref{assign}.
+\Q Draw a memory diagram for the following code. Make sure your answer is consistent with what you wrote for \ref{assign}.
 
 \begin{multicols}{2}
 
@@ -108,5 +108,5 @@ System.out.println(other);
 \end{javalst}
 
 \begin{answer}
-Taylor, because changing the value (i.e., reference) of \java{first} does not affect the value of \java{other}.
+The output is \texttt{Taylor}, because changing the value (i.e., reference) of \java{first} does not affect the value of \java{other}.
 \end{answer}

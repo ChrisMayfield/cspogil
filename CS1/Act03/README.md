@@ -1,4 +1,4 @@
-# Instructor's Guide
+# Activity 3: Instructor's Guide
 
 This activity focuses on primitive types, literals, and assignment statements.
 By the end of the activity students will be able to identify the types of

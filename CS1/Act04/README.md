@@ -1,4 +1,4 @@
-# Instructor's Guide
+# Activity 4: Instructor's Guide
 
 This activity focuses on methods: declaration, invocation, call semantics,
 memory model, and parameters vs. arguments.

@@ -1,4 +1,4 @@
-# Instructor's Guide
+# Activity 1: Instructor's Guide
 
 This activity is designed for the first day/week of CS1.
 There are no prerequisites.

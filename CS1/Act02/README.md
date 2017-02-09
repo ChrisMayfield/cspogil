@@ -1,6 +1,7 @@
 # Activity 2: Instructor's Guide
 
-This activity focuses on integer and floating-point division and operator precedence. Students should understand how to declare and assign variables before completing this activity.
+This activity focuses on integer and floating-point division and operator precedence.
+Students should understand how to declare and assign variables before completing this activity.
 
 **Content Learning Objectives**  
 *After completing this activity, students should be able to:*

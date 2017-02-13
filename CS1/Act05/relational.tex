@@ -2,8 +2,8 @@
 
 \model{Relational Operators}
 
-When you leave out the semicolon in the Interactions pane, it will display the \emph{value} of the expression you have entered.
-Fill in the below table (the first four rows are completed for you).
+When you omit the semicolon in the Interactions pane, DrJava will display the \emph{value} of the expression you have entered.
+In the table below, predict what values DrJava will display and identify the relational operator (the first four rows are completed for you).
 
 \begin{center}
 \begin{tabular}{|L{200pt}|C{110pt}|C{110pt}|}
@@ -38,6 +38,15 @@ Fill in the below table (the first four rows are completed for you).
 
 \quest{10 min}
 
+\Q List the four unique \emph{boolean expressions} used in the model.
+
+\begin{answer}[3em]
+\begin{javaans}
+    three > four    three == four    three < four    three <= four
+\end{javaans}
+\end{answer}
+
+
 \Q Examine the fifth line of Java code in the above model.
 
 \begin{enumerate}
@@ -47,19 +56,10 @@ Fill in the below table (the first four rows are completed for you).
 
 \item Write two lines of code, ending with semicolons, that would perform these same actions (but in two lines instead of a single line).
 
-\ans{boolean isLarger;} \\
-\ans{isLarger = three > four;}
+\ans{\tt boolean isLarger;} \\
+\ans{\tt isLarger = three > four;}
 
 \end{enumerate}
-
-
-\Q List the four unique boolean expressions used in the model.
-
-\begin{answer}[3em]
-\begin{javaans}
-    three > four    three == four    three < four    three <= four
-\end{javaans}
-\end{answer}
 
 
 \Q The \java{!=} operator means ``not equals''.
@@ -70,7 +70,7 @@ Give an example of a boolean expression that uses \java{!=} and evaluates to fal
 \end{answer}
 
 
-\Q Explain why the same boolean expression \java{three == four} resulted with two different boolean values in this Model.
+\Q Explain why the same boolean expression \java{three == four} resulted with two different boolean values in the table.
 
 \begin{answer}
 The line \java{three = four} assigned the value of four to three, making the two variables equal.

@@ -1,15 +1,14 @@
 \model{Arrays and Loops}
 
 The real power of arrays is the ability to process them using loops, i.e., performing the same task for multiple elements.
-Here is the standard form of iteration:
 
 \begin{javalst}
     for (int i = 0; i < array.length; i++) {
-       ... process array[i] ...
+       // ... process array[i] ...
     }
 \end{javalst}
 
-For example:
+Here are two specific examples:
 
 \begin{javalst}
     // set all of the elements of x to -1.0
@@ -25,10 +24,11 @@ For example:
 \end{javalst}
 
 
-\quest{15 min}
+\quest{20 min}
 
 
-\Q What is the value of \java{array} and \java{accumulator} after the following iteration? Trace the loop by hand in the space below.
+\Q What is the value of \java{array} and \java{accumulator} at the end of the following code?
+Trace the loop by hand in the space below.
 
 \begin{javalst}
 int[] array = {5, 26, 13, 12, 37, 15, 16, 4, 1, 3};
@@ -90,7 +90,7 @@ accumulator:
 
 
 \newpage
-\Q Implement the following method that creates and returns a \java{new} array.
+\Q Implement the following method that creates and returns a new array.
 
 \begin{javalst}
 /**

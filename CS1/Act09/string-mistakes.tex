@@ -66,14 +66,14 @@ System.out.println(greeting);         System.out.println(greeting.toUpperCase())
 \end{answer}
 
 
-\Q In general, what happens to \java{this} string when calling the methods in \ref{string-methods}?
+%\Q In general, what happens to \java{this} string when calling the methods in \ref{string-methods}?
+%
+%\begin{answer}
+%It is passed as the implicit first argument, but nothing happens to {\tt this} because strings cannot be modified.
+%\end{answer}
 
-\begin{answer}
-It is passed as the implicit first argument, but nothing happens to {\tt this} because strings cannot be modified.
-\end{answer}
 
-
-\Q \label{errorB} In what cases will Program B crash? What is the error message displayed?
+\Q \label{errorB} In what cases will Program B throw an exception? What is the error message displayed?
 
 \begin{answer}
 If the user enters a blank line, then there will be no character at position 1. It will show the out of bounds exception and display the stack trace.

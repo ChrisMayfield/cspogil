@@ -68,6 +68,29 @@ Array elements are accessed by \emph{index} number, starting at zero:
 \end{enumerate}
 
 
+\Q What are the type and value for each of the four \emph{expressions} below?
+
+\begin{javalst}
+int[] a = {3, 6, 15, 22, 100, 0};
+double[] b = {3.5, 4.5, 2.0, 2.0, 2.0};
+String[] c = {"alpha", "beta", "gamma"};
+\end{javalst}
+
+\begin{enumerate}
+\item \java{a[3] + a[2]}
+\ans{Type: {\tt int}, Value: {\tt 37}}
+
+\item \java{b[2] - b[0] + a[4]}
+\ans{Type: {\tt double}, Value: {\tt 98.5}}
+
+\item \java{c[1].charAt(a[0])}
+\ans{Type: {\tt char}, Value: {\tt \qs{a}\qs}}
+
+\item \java{a[4] * b[1] <= a[5] * a[0]}
+\ans{Type: {\tt boolean}, Value: {\tt false}}
+\end{enumerate}
+
+
 \begin{tabularx}{\linewidth}{|X|}
 \hline
 Array variables can be initialized without the \java{new} keyword: \\
@@ -133,27 +156,4 @@ However, if the variable is already declared, \java{new} is required: \\
 \vspace{1ex}
 \ans{\tt double[] b = \{3.23, 1.52, 4.23, 32.5, 2.45, 5.23, 3.33\};}
 
-\end{enumerate}
-
-
-\Q What are the type and value for each of the four \emph{expressions} below?
-
-\begin{javalst}
-int[] a = {3, 6, 15, 22, 100, 0};
-double[] b = {3.5, 4.5, 2.0, 2.0, 2.0};
-String[] c = {"alpha", "beta", "gamma"};
-\end{javalst}
-
-\begin{enumerate}
-\item \java{a[3] + a[2]}
-\ans{Type: {\tt int}, Value: {\tt 37}}
-
-\item \java{b[2] - b[0] + a[4]}
-\ans{Type: {\tt double}, Value: {\tt 98.5}}
-
-\item \java{c[1].charAt(a[0])}
-\ans{Type: {\tt char}, Value: {\tt \qs{a}\qs}}
-
-\item \java{a[4] * b[1] <= a[5] * a[0]}
-\ans{Type: {\tt boolean}, Value: {\tt false}}
 \end{enumerate}

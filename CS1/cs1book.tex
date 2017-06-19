@@ -1,0 +1,162 @@
+\documentclass[12pt,twoside,openright]{report}
+
+\title{IntroCS POGIL Activities for Java}
+\author{Chris Mayfield, Helen Hu, Clif Kussmaul}
+\date{July 2017}
+
+\input{../cspogil.sty}
+
+\usepackage{bookmark}
+\usepackage{pdfpages}
+\usepackage{setspace}
+
+% remove page numbers
+\makeatletter
+\let\ps@plain\ps@empty
+\makeatother
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+
+\vspace*{10em}
+\includegraphics[scale=1]{IntroCS.pdf}
+
+\makeatletter
+
+\vspace*{2em}
+\LARGE \@title
+
+\vspace*{2em}
+\large \@author
+
+\vspace*{1em}
+\large \@date
+
+\makeatother
+
+\normalsize
+
+\vspace*{5em}
+\includegraphics[scale=1]{by-nc-sa.png}
+
+\vspace*{1ex}
+Copyright \textcopyright\ 2017.
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+
+\end{titlepage}
+
+\onehalfspacing
+\belowpdfbookmark{Contents}{Contents}
+\tableofcontents
+\singlespacing
+
+%TODO fix bookmarks (page numbers and hyperlinks)
+
+%------------------------------------------------------------------------------%
+\chapter*{Instructor Guides}
+\addcontentsline{toc}{chapter}{Instructor Guides}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 1: Introduction}
+\includepdf[pages=-]{Act01/Act01-Introduction_Teacher.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 2: Arithmetic}
+\includepdf[pages=-]{Act02/Act02-Arithmetic_Teacher.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 3: Data Types}
+\includepdf[pages=-]{Act03/Act03-DataTypes_Teacher.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 4: Methods}
+\includepdf[pages=-]{Act04/Act04-Methods_Teacher.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 5: Boolean Logic}
+\includepdf[pages=-]{Act05/Act05-Boolean_Teacher.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 6: Recursion}
+\includepdf[pages=-]{Act06/Act06-Recursion_Teacher.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 7: Loops}
+\includepdf[pages=-]{Act07/Act07-Iteration_Teacher.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 8: Arrays}
+\includepdf[pages=-]{Act08/Act08-Arrays_Teacher.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 9: Strings}
+\includepdf[pages=-]{Act09/Act09-Strings_Teacher.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 10: Classes}
+\includepdf[pages=-]{Act10/Act10-Classes_Teacher.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 11: Objects}
+\includepdf[pages=-]{Act11/Act11-Objects_Teacher.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 12: Arrays of Objects}
+\includepdf[pages=-]{Act12/Act12-ObjectArray_Teacher.pdf}
+
+%------------------------------------------------------------------------------%
+\chapter*{Student Activities}
+\addcontentsline{toc}{chapter}{Student Activities}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 1: Introduction}
+\includepdf[pages=-]{Act01/Act01-Introduction_Student.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 2: Arithmetic}
+\includepdf[pages=-]{Act02/Act02-Arithmetic_Student.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 3: Data Types}
+\includepdf[pages=-]{Act03/Act03-DataTypes_Student.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 4: Methods}
+\includepdf[pages=-]{Act04/Act04-Methods_Student.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 5: Boolean Logic}
+\includepdf[pages=-]{Act05/Act05-Boolean_Student.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 6: Recursion}
+\includepdf[pages=-]{Act06/Act06-Recursion_Student.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 7: Loops}
+\includepdf[pages=-]{Act07/Act07-Iteration_Student.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 8: Arrays}
+\includepdf[pages=-]{Act08/Act08-Arrays_Student.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 9: Strings}
+\includepdf[pages=-]{Act09/Act09-Strings_Student.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 10: Classes}
+\includepdf[pages=-]{Act10/Act10-Classes_Student.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 11: Objects}
+\includepdf[pages=-]{Act11/Act11-Objects_Student.pdf}
+
+\cleardoublepage
+\addcontentsline{toc}{section}{Activity 12: Arrays of Objects}
+\includepdf[pages=-]{Act12/Act12-ObjectArray_Student.pdf}
+
+%------------------------------------------------------------------------------%
+\end{document}

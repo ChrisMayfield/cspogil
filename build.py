@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 """Compiles student and teacher PDFs for each LaTeX source file."""
+
 from __future__ import print_function
 
 import os
@@ -13,7 +14,7 @@ LATEX = "pdflatex -interaction=nonstopmode"
 CLEAN = True
 
 def latex(name, suff):
-    """Run latex and rename pdf."""
+    """Run latex and rename pdf file."""
     print("  " + suff + "...", end=' ')
     sys.stdout.flush()
     # check timestamp
@@ -76,7 +77,7 @@ def main(pattern):
     """Find and build all files."""
     cwd = os.getcwd()
     for root in ["CS0", "CS1"]:
-        for path, dirs, files in os.walk(root):
+        for path, dirs, files in sorted(os.walk(root)):
             for name in files:
                 # build tex files
                 if pattern != "clean" and name.endswith(".tex"):

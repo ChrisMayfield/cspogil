@@ -22,7 +22,7 @@ public class Die {
      * Constructs a new die with a random face value.
      */
     public Die() {
-        face = 1;
+        this.face = 1;
     }
     
     /**
@@ -31,7 +31,7 @@ public class Die {
      * @return current face value of the die
      */
     public int getFace() {
-        return face;
+        return this.face;
     }
     
     /**
@@ -40,8 +40,8 @@ public class Die {
      * @return new face value of the die
      */
     public int roll() {
-        face = (int) (Math.random() * 6) + 1;
-        return face;
+        this.face = (int) (Math.random() * 6) + 1;
+        return this.face;
     }
     
 }

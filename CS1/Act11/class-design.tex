@@ -7,12 +7,12 @@ They are also used to represent objects in the real world, such as \java{CreditC
 %UML class diagrams summarize the attributes and methods of a class.
 
 \begin{center}
-\includegraphics{Color.pdf}
+\includegraphics{Color.pdf}  % immutable
 ~~~~~
-\includegraphics{Point.pdf}
+\includegraphics{Point.pdf}  % mutable
 \end{center}
 
-Classes generally include the following kinds of methods:
+Classes generally include the following kinds of methods (in addition to others):
 \begin{itemize}[itemsep=0pt]
 \item \textbf{constructor} methods that initialize new objects
 \item \textbf{accessor} methods (getters) that return attributes
@@ -22,10 +22,10 @@ Classes generally include the following kinds of methods:
 \end{itemize}
 
 
-\quest{15 min}
+\quest{20 min}
 
 
-\Q Identify the constructors for the \java{Color} class. What is the difference between them? What arguments do they take? What do these methods return?
+\Q Identify the constructors for the \java{Color} class. What is the difference between them? What arguments do they take?
 
 \begin{answer}
 There are two constructors: one that takes three integers for the RGB values, and other that takes a Color object. The latter is called a \emph{copy constructor}. Constructors do not return values.

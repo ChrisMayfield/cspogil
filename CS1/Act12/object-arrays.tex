@@ -1,71 +1,95 @@
-\model{Yahtzee Dice}
+\model{Hand of Cards}
 
 Creating an array of objects is typically a 3-step process:
 
 \begin{center}
-%TODO where did this image come from? Ralph Grove?
-\includegraphics[width=5.5in]{yahtzee-array.png}
+\begin{minipage}[t]{155pt}
+
+1. Declare the array \\[1ex]
+\java{Card[] hand;}
+
+\end{minipage}
+\begin{minipage}[t]{155pt}
+
+2. Instantiate the array \\[1ex]
+\java{hand = new Card[5];}
+
+\end{minipage}
+\begin{minipage}[t]{155pt}
+
+3. Instantiate each object \\[1ex]
+\java{hand[0] = new Card(4, 2);}
+\java{hand[1] = new Card(3, 1);}
+
+\end{minipage}
+\end{center}
+
+\begin{center}
+\includegraphics[width=465pt]{cards-array.pdf}
 \end{center}
 
 
-\quest{15 min}
+\quest{20 min}
 
 
-\Q What is the type of the local variable \java{yahtzee}?
-What is its initial value? (Hint: it's not \java{null}.)
+\Q What is the type of the local variable \java{hand}?
+What is the value of \java{hand} \emph{before} step 2?
+What is the value of \java{hand} \emph{after} step 2?
 
 \begin{answer}
-It's an array of \java{Die} objects. Until it's assigned for the first time, it's uninitialized (meaning you that can't read its value).
+The variable \java{hand} is an array of \java{Card} objects.
+Before step 2, it's uninitialized (i.e., you can't read its value).
+After step 2, its value is the memory location of the first array element.
 \end{answer}
 
 
-\Q When you create an array (e.g., ~\java{new Die[5]}) what is the initial value of each element?
+\Q When you create an array (e.g., ~\java{new Card[5]}) what is the initial value of each element?
 
 \begin{answer}
 The initial values are automatically set to null (for reference types). For arrays of integers, it's 0; for doubles, it's 0.0; for booleans, it's {\tt false}; for characters, it's the unicode character \chr{\textbackslash u0000}.
 \end{answer}
 
 
-\Q When you construct a new object (e.g., ~\java{new Die()}) what are the initial values of its attributes (e.g., ~\java{this.face})?
+\Q When you construct a new object (e.g., ~\java{new Card(4, 2)}) what are the initial values of its attributes (e.g., ~\java{this.rank})?
 
 \begin{answer}
-All attributes are initialized to the value of ``zero'' for that data type.
-So references are {\tt null}, integers are 0, doubles are 0.0, and so forth.
+It depends on the constructor. For the \java{Card} class, the attributes \java{rank} and \java{suit} are initialized from the parameters. If there is no constructor, Java automatically initializes attributes to zero.
 \end{answer}
 
 
 \Q Describe in your own words what the following statement does. Be sure to explain how the random part works.
 
 \begin{center}
-\java{yahtzee[(int) (Math.random() * yahtzee.length)] = null;}
+\java{hand[(int) (Math.random() * hand.length)] = null;}
 \end{center}
 
 \begin{answer}
 \java{Math.random()} returns a value in the range [0, 1).
-Multiplying that value by \java{yahtzee.length} and then casting it to an integer gives a value in the range 0..5 inclusive.
-So this statement randomly sets of the dice references to {\tt null}.
+Multiplying that value by \java{hand.length} and then casting it to an integer gives a value in the range 0..5 inclusive.
+So this statement randomly sets of the \java{Card} references to {\tt null}.
 \end{answer}
 
 
-\Q \label{fordie} What is the result of running the loop below?
+\Q \label{forcard} What is the result of running the loop below?
 What is the purpose of the nested if-statement?
 
 \begin{javalst}
-for (int i = 0; i < yahtzee.length; i++) {
-    if (yahtzee[i] != null) {
-        yahtzee[i].roll();
+for (int i = 0; i < hand.length; i++) {
+    if (hand[i] != null) {
+        int suit = hand[i].getSuit();
+        System.out.println("The suit of #" + i + " is " + Card.SUITS[suit]);
     }
 }
 \end{javalst}
 \vspace{-1ex}
 
 \begin{answer}
-This loop rolls the dice in the array.
-Because some of the dice are {\tt null}, the if-statement prevents {\tt NullPointerException}.
+The loop prints the suits of all cards in the hand.
+Because some of the cards are {\tt null}, the if-statement prevents {\tt NullPointerException}.
 \end{answer}
 
 
-\Q The enhanced for loop allows you to iterate the elements of an array.
+\Q The \textit{enhanced for loop} allows you to iterate the elements of an array.
 Another name for this structure is the ``for each'' loop.
 Rewrite the following example using a standard for loop.
 
@@ -90,20 +114,21 @@ for (int i = 0; i < days.length; i++) {
 \Q In contrast to enhanced for loops, what does a standard for loop typically iterate?
 Why would it be misleading to name the enhanced for loop variable \java{i} instead of \java{day}?
 
-\begin{answer}
+\begin{answer}[3em]
 Standard for loops typically iterate indexes; that's why the variable is almost always named \java{i}.
 \end{answer}
 
 
-\Q Rewrite the loop in \ref{fordie} using an enhanced for loop.
-Use an appropriate variable name for the \java{Die} object (i.e., not \java{i}).
+\Q Rewrite the loop in \ref{forcard} using an enhanced for loop.
+Use an appropriate variable name for the \java{Card} object (i.e., not \java{i}).
+For simplicity, you may omit the \java{System.out.println} line.
 
 \vspace{-1ex}
 \begin{answer}[7em]
 \begin{javaans}
-for (Die die : yahtzee) {
-    if (die != null) {
-        die.roll();
+for (Card card : hand) {
+    if (card != null) {
+        int suit = card.getSuit();
     }
 }
 \end{javaans}

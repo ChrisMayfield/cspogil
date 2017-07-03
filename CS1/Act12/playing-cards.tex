@@ -1,8 +1,8 @@
-\model{Playing Cards}
+\model{Deck of Cards}
 
-Now let's play a different game.
-In this section, we'll create an array of face cards.
-(Note: The array is one-dimensional, but the cards are displayed on four lines for convenience.)
+There are 52 cards in a standard deck.
+Each card belongs to one of four suits (Clubs, Diamonds, Hearts, and Spades) and one of 13 ranks (Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, and King).
+The array below is one-dimensional, but the cards are displayed on four lines for convenience.
 
 \begin{center}
 % http://www.milefoot.com/math/discrete/counting/cardfreq.htm
@@ -10,7 +10,7 @@ In this section, we'll create an array of face cards.
 \end{center}
 
 
-\quest{15 min}
+\quest{20 min}
 
 
 \Q Implement the following constructor.
@@ -81,7 +81,7 @@ public static Card[] sort(Card[] deck) {
     }
     Card[] sorted = new Card[deck.length];
     for (Card card : deck) {
-        int index = card.position();
+        int index = card.position();       // returns suit * 13 + rank - 1
         sorted[index] = card;
     }
     return sorted;

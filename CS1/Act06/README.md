@@ -21,6 +21,8 @@ Models 1 and 2 are based on [Activity 12 - Recursion](https://docs.google.com/do
 
 ## Facilitation Notes
 
+Be sure to point out that ! in mathematics means factorial, but ! in Java means NOT. It's unfortunately common for operators to have slightly different meanings in different languages.
+
 It's important to let students wrestle with these difficult concepts and not give too much help on individual questions. Keep an eye on questions 1--4, and if a team is getting off track, have them compare answers with a neighboring team.
 
 Report out on #5 and #8 by having teams write their answers on the board. Ideally there will be multiple (incorrect) answers, which will lead to a discussion. Then paste the code in #5 into [Java Visualizer](http://pythontutor.com/java.html) and step through the code as a live demo.

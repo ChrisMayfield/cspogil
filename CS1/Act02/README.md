@@ -26,6 +26,8 @@ Question #6 refers to the instructor (hypothetically) giving mints to teams to d
 
 Report out on questions #7 and #8. Introduce the terms **modulo operation** (and/or **modulus**) and **remainder operator**. Explain that "x % y" can be pronounced "x mod y".
 
+On Model 2, you may need to point out (after students work for a while) that it makes no difference whether a floating-point number ends with a zero. In other words, `4.` is the same value as `4.0`.
+
 For question #18, have at least 2-3 teams share their answers with the class to encourage different ways of thinking about the concepts (and how to put them into words).
 
 On Model 3, help students understand that assignment is an operation (as opposed to the equals sign in mathematics). At the end of the activity, ask teams to discuss what the operation is in terms of what comptuer hardware does.

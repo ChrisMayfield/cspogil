@@ -76,7 +76,7 @@ def build(path, name):
 def main(pattern):
     """Find and build all files."""
     cwd = os.getcwd()
-    for root in ["CS0", "CS1"]:
+    for root in ["CS1"]:
         for path, dirs, files in sorted(os.walk(root)):
             for name in files:
                 # build tex files

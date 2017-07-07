@@ -1,0 +1,83 @@
+% Based on Model 1 of Lists activity by Clif Kussmaul
+
+\model{List Interface}
+
+In computer science, a \textit{list} is a group of items with an \textit{index} (or position) for each item.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\tr \textbf{index:} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & \ldots \\
+\hline
+\tr \textbf{item:} & \str{Mer} & \str{Ven} & \str{Ear} & \str{Mar} & \str{Jup} & \str{Sat} & \str{Ura} & \str{Nep} & \ldots \\
+\hline
+\end{tabular}
+\end{center}
+
+Since we know which item is first, second, etc., we say that the list is \textit{ordered}.
+%This does \textbf{not} mean that the items have been sorted in any way.
+The first item is at the \textit{head} of the list; the last item is at the \textit{tail} of the list.
+Here is a subset of methods from \java{interface List<E>} in the Java API.
+
+\begin{center}
+\includegraphics[width=0.85\linewidth]{figs/ListAPI.pdf}
+\end{center}
+
+
+\quest{15 min}
+
+
+\Q Give several examples of lists from everyday life.
+
+\begin{answer}
+Grocery list, playlist on Spotify, to-do lists, etc.
+\end{answer}
+
+
+\Q What is the index of the head of a list?
+In general, what is the index of the tail of a list?
+
+\begin{answer}[3em]
+The head is at index 0, the tail is at index size - 1.
+\end{answer}
+
+
+\Q In Java lists, what does the \java{<E>} represent?
+
+\begin{answer}
+\java{<E>} is a generic type, i.e., the type of the list items.
+Notice that \java{add} takes an \java{E} as a parameter, and \java{get} returns an element of type \java{E}.
+\end{answer}
+
+
+\Q Of the seven methods shown from the Java API, how many change the contents of the list?
+
+\begin{answer}[3em]
+Four: \java{add} (at the end), \java{add} (at a position), \java{remove}, and \java{set}.
+\end{answer}
+
+
+\Q Fill in the table below using the methods from the Java API.
+
+\vspace{-1ex}
+\begin{center}
+%TODO need solution (convert table to LaTeX?)
+\includegraphics[width=0.85\linewidth]{figs/JavaAPIQuestionTable.pdf}
+\end{center}
+\vspace{-1ex}
+
+
+\Q When adding or removing elements at the beginning, what do you have to do with the existing elements in the list?
+
+\begin{answer}
+To keep the list in order, existing elements need to be shifted down by one to the right for adding and to the left for removing.
+\end{answer}
+
+
+\Q In your own words, describe what a \java{List} collection is from a programmer's perspective.
+
+\begin{answer}[5em]
+A \java{List} is an ordered collection of elements (also known as a sequence).
+The user of this interface has precise control over where  each element is inserted.
+You can access elements by their integer index and search for elements in the list.
+\end{answer}

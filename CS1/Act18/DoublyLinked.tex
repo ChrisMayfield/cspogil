@@ -1,0 +1,55 @@
+\model{Doubly-Linked Lists}
+
+Java's implementation of \java{LinkedList} stores two references in each node: one for the \textit{previous}, and one for the \textit{next}.
+In addition, both the head and the tail are stored in the wrapper class.
+
+\begin{center}
+\includegraphics[scale=0.35]{figs/list4.png}
+\end{center}
+
+
+\quest{10 min}
+
+
+\Q How many operations are required to add an element \textit{at the start} of this list?
+
+\begin{answer}[5em]
+In general, 3 operations: one to create the element, one to copy the reference to the next node, and one to change the reference from the head to the new element.
+(If it's the first node, then the tail reference would also need to be set.)
+\end{answer}
+
+\Q How many operations are required to add an element \textit{at the end} of this list?
+
+\begin{answer}
+In general, 3 operations: one to create the element, one to create the reference to the previous node, and one to change the reference from the tail to the new element.
+\end{answer}
+
+\Q How much memory is required for each node?
+How does that amount compare with using an \java{ArrayList}?
+
+\begin{answer}
+Each element requires two references, so there is $N \times 8$ bytes of extra overhead (where $N$ is the length of the list).
+\end{answer}
+
+
+\Q What problems of singly-linked lists do doubly-linked lists solve? (In other words, what do the \java{previous} and \java{tail} make possible?)
+
+\begin{answer}
+They allow for quick access to things at the end of the list, so adding/removing at either end is fast.
+They also allow for the list to be traversed backwards.
+\end{answer}
+
+
+%\Q Why does Java provide multiple implementations of its collection interfaces?
+%
+%\begin{answer}
+%Each has their pros and cons; it depends on how they're being used in a program and what the most common operations will be.
+%\end{answer}
+
+
+\Q If your program requires a \java{List} collection, how would you decide which implementation to use? (\java{ArrayList} vs ~\java{LinkedList})
+
+\begin{answer}
+If adding items at the end and accessing random elements, use ArrayList.
+If inserting items in the middle and only accessing at the two ends, use LinkedList.
+\end{answer}

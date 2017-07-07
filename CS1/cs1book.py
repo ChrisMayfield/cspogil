@@ -16,7 +16,7 @@ def main(suff):
         print ""
         print "\\cleardoublepage\\phantomsection"
         print "\\addcontentsline{toc}{section}" + title
-        print "\\includepdf[pages=-]{" + name[:-4] + "_" + suff + ".pdf}"
+        print "\\includepdf[pages=-, pagecommand={}]{" + name[:-4] + "_" + suff + ".pdf}"
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:

@@ -3,6 +3,7 @@
 *.log
 *.out
 *.synctex.gz
+*.toc
 
 # Java / Python
 *.class

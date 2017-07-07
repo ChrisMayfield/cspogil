@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Act08 {
+public class Exercises {
     
     /**
      * Return a new array containing the pairwise maximum value of

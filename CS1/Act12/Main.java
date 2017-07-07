@@ -1,4 +1,4 @@
-public class Act12 {
+public class Main {
     
     public static void main(String[] args) { 
         Die[] yahtzee = new Die[5];

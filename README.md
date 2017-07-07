@@ -12,6 +12,6 @@ Activities are designed by including (with \input) a sequence of models.
 You can browse each of the models and activities separately.
 The build.py script compiles student and teacher PDFs for each LaTeX source file.
 
-Unless otherwise noted, this work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+Unless otherwise noted, this work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-For more information, see http://pogil.org and http://cspogil.org.
+For more information, see http://pogil.org, http://cspogil.org, and http://introcspogil.org/.

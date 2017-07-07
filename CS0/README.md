@@ -7,7 +7,7 @@ Course website: https://w3.cs.jmu.edu/mayfiecs/cs101/
 
 # Contents
 
-Each subfolder contains a PDF of the activity along with the LaTeX source.
+Each subfolder contains the LaTeX source for the activity.
 Instructor's guides (content/process objectives, facilitation notes) are currently under development.
 
 1. [Introduction](Act01) -- team roles, hi-lo game, algorithms and complexity
@@ -23,5 +23,5 @@ Instructor's guides (content/process objectives, facilitation notes) are current
 11. Database Systems
 12. [Artificial Intelligence](Act12) -- 8-puzzle, tic-tac-toe, search trees, heuristics
 
-Activities 7--11 have not yet been written; check back in Fall 2017.
+Activities 7--11 have not yet been written; check back in Spring 2018.
 The [Meta](Meta) folder contains additional models for team development.

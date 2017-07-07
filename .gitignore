@@ -7,3 +7,6 @@
 # Java / Python
 *.class
 *.pyc
+
+# PDF builds
+Act*.pdf

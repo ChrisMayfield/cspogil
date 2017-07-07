@@ -1,8 +1,8 @@
 \documentclass[12pt]{article}
 
-\title{Activity 9: Strings}
-\author{Dr. Chris Mayfield}
-\date{CS 149, Spring 2017}
+\title{Activity 9: Object-Oriented}
+\author{Chris Mayfield and Helen Hu}
+\date{July 2017}
 
 \input{../../cspogil.sty}
 
@@ -12,6 +12,20 @@
 
 Internally, the library class \java{java.lang.String} stores an array of characters.
 It also provides a variety of useful methods for comparing, manipulating, and searching text in general.
+
+\guide{
+  \item Explain how characters and strings are represented in memory.
+  \item Predict the output of string methods, including boundary cases.
+  \item Recognize common mistakes when working with the String API.
+}{
+  \item Working with all team members to reach consensus on hard questions. (Teamwork)
+}{
+TODO
+
+Report out on Question 3 and make connections to previous activities about strings and arrays. Note that when drawing strings in the future, students will not need to use this level of detail. Point out that methods from the String class make it much easier to manipulate character arrays.
+
+Question 11 introduces the concept of \texttt{this} as an implicit argument. It may help to show students an incorrect static way of designing these methods, for example: \java{String.charAt(str, 8)}. Both parameters (\texttt{str} and \texttt{8}) are necessary, but the object-oriented way is simpler: \texttt{str.charAt(8)} where \texttt{str} becomes \texttt{this}.
+}
 
 \input{string-chararray.tex}
 \input{string-methods.tex}

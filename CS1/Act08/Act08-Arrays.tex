@@ -1,8 +1,8 @@
 \documentclass[12pt]{article}
 
-\title{Activity 8: Arrays}
-\author{Dr. Chris Mayfield}
-\date{CS 149, Spring 2017}
+\title{Activity 7: Arrays}
+\author{Chris Mayfield and Helen Hu}
+\date{July 2017}
 
 \input{../../cspogil.sty}
 
@@ -12,6 +12,24 @@
 
 Programs often need to store multiple values of the same type, such as a list of 1000 phone numbers or the names of your top 20 favorite songs.
 Rather than create a separate variable for each one, we can store them together using an array.
+
+\guide{
+  \item Explain course policies about academic honesty.
+  \item Declare and initialize array variables of primitive types.
+  \item Draw a memory digram of an array of reference types.
+  \item Write a for loop that iterates the contents of an array.
+}{
+  \item Developing algorithms that loop through two arrays to compute a result. (Problem Solving)
+}{
+This activity introduces arrays for the first time, with a focus on array syntax and memory diagrams.
+Students learn about zero-based indexing array processing using loops.
+
+Be sure to discuss \#4 and \#5 while reporting out. Students often confuse \textbf{expressions} with \textbf{statements}. Explain how Java generally requires the \texttt{new} operator when creating arrays.
+
+In Model 2, explain how the \texttt{new} operator automatically zeros-out memory for the array. Therefore, the default value will be 0 for integers, 0.0 for doubles, \texttt{null} for strings, etc.
+
+Students may have the most trouble with Model 3, particularly if writing code on paper. One way to jump start the process is to report out before teams write their solution. Give each team 2--3 minutes to develop an algorithm and have the presenter describe it to the class. If short on time, have half of the teams work on \#11 and the other half work on \#12.
+}
 
 \input{array-syntax.tex}
 \input{array-diagrams.tex}

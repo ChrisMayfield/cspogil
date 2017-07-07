@@ -4,7 +4,7 @@
 \author{Chris Mayfield}
 \date{SIGCSE 2017}
 
-\input{../cspogil.sty}
+\input{../../cspogil.sty}
 
 \begin{document}
 
@@ -13,10 +13,15 @@
 %Previously, you worked through ``Activity 6: Recursion'' as students.
 %We now invite you as instructors to take a closer look at the activity design.
 
+\makeatletter
+\def\input@path{{../../CS1/Act02/}{../../CS1/Act03/}{../../CS1/Act04/}}
+\graphicspath{{../../CS1/Act02/}{../../CS1/Act03/}{../../CS1/Act04/}}
+\makeatother
+
 \input{act-structure.tex}
 \newpage
 \input{group-vs-team.tex}
 \input{disruptions.tex}
-\input{../CS1/Act03/employ-skills.tex}
+\input{employ-skills.tex}
 
 \end{document}

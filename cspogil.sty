@@ -1,5 +1,12 @@
 %\ProvidesPackage{cspogil}
 
+% metadata
+\makeatletter
+\newcommand{\thetitle}{\@title}
+\newcommand{\theauthor}{\@author}
+\newcommand{\thedate}{\@date}
+\makeatother
+
 % fonts
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -35,7 +42,7 @@
 \definecolor{comment}{HTML}{007C00}
 \definecolor{keyword}{HTML}{0000FF}
 \definecolor{strings}{HTML}{B20000}
-\definecolor{answers}{HTML}{C0C0C0}
+\definecolor{answers}{HTML}{A9A9A9}
 
 % table headers
 \newcommand{\tr}{\bf\cellcolor{Yellow!10}}
@@ -94,6 +101,8 @@
   urlcolor=blue
 }
 \makeatother
+
+%------------------------------------------------------------------------------%
 
 % titles
 \makeatletter
@@ -164,4 +173,51 @@
 \texttt{#1} & \texttt{#2} \\
 \cline{2-2}
 \end{tabular}
+}
+
+%------------------------------------------------------------------------------%
+
+% instructor's guide template
+\newcommand{\guide}[3]{
+\subsection*{Content Learning Objectives}
+\textit{After completing this activity, students should be able to:}
+
+\begin{itemize}[itemsep=0pt,after=]
+#1
+\end{itemize}
+
+\subsection*{Process Skill Goals}
+\textit{During the activity, students should make progress toward:}
+
+\begin{itemize}[itemsep=0pt,after=]
+#2
+\end{itemize}
+
+\ifdefined\Teacher
+\vspace*{-13pt}\color{answers}
+\subsection*{Facilitation Notes}
+\vspace{-\bigskipamount}
+\setlength{\parskip}{\bigskipamount}
+#3
+\setlength{\parskip}{0pt}
+\normalcolor
+\fi
+
+%\usepackage{xstring}
+%\IfSubStr{\theauthor}{ and }
+%  {\subsection*{Activity Authors}}
+%  {\subsection*{Activity Author}}
+%\theauthor
+
+\vfill
+\begin{minipage}{0.14\linewidth}
+\includegraphics[width=\linewidth]{../by-nc-sa.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.84\linewidth}
+\small
+Copyright \textcopyright\ 2017 \theauthor.
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+\end{minipage}
+\clearpage
 }

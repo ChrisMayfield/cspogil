@@ -11,7 +11,7 @@
 \maketitle
 
 Now that you've written a few programs, let's take a step back and discuss how to do basic arithmetic.
-Notice how the behavior of Java operators (+, -, *, /, \%) depends on the data type.
+The behavior of Java operators (+, -, *, /, \%) depends on the type of data you have.
 
 \guide{
   \item Summarize the benefits of working as a team.
@@ -24,24 +24,21 @@ Notice how the behavior of Java operators (+, -, *, /, \%) depends on the data t
 This activity focuses on integer and floating-point division and operator precedence.
 Students should understand how to declare and assign variables before completing this activity.
 
-Question \#6 refers to the instructor (hypothetically) giving mints to teams to divide among themselves. Consider bringing mints to build rapport with the class, or you can use other small objects like pennies.
+\ref{mints} refers to the instructor hypothetically giving mints to teams to divide among themselves. Consider bringing real mints to build rapport with the class. You can use other small objects like paperclips.
 
-Report out on questions \#7 and \#8. Introduce the terms \textbf{modulo operation} (and/or \textbf{modulus}) and \textbf{remainder operator}. Explain that "x \% y" can be pronounced "x mod y".
+Report out on \ref{modoper} and \ref{modreal}. Introduce the terms \emph{modulo operation} (and/or \emph{modulus}) and \emph{remainder operator}. Explain that ``x \% y'' can be pronounced ``x mod y''.
 
-On Model 2, you may need to point out (after students work for a while) that it makes no difference whether a floating-point number ends with a zero. In other words, \java{4.} is the same value as \java{4.0}.
+On \ref{dividing-numbers.tex}, you may need to point out (after students work for a while) that it makes no difference whether a floating-point number ends with a zero. In other words, \java{4.} is the same value as \java{4.0}.
 
-For question \#18, have at least 2--3 teams share their answers with the class to encourage different ways of thinking about the concepts (and how to put them into words).
+For \ref{intdiv}, have at least 2--3 teams share their answers with the class to encourage different ways of thinking about the concepts (and how to put them into words).
 
-On Model 3, help students understand that assignment is an operation (as opposed to the equals sign in mathematics). At the end of the activity, ask teams to discuss what the operation is in terms of what computer hardware does.
+On \ref{order-operations.tex}, help students understand that assignment is an operation (as opposed to the equals sign in mathematics). At the end of the activity, ask teams to discuss what the \emph{assignment operation} is in terms of what computer hardware does.
 }
 
-%TODO always use .0 for floating-point? (i.e., change 4. to 4.0)
-
 \input{group-vs-team.tex}
-\input{modulus-operator.tex}
+\input{modulo-operator.tex}
 \newpage
 \input{dividing-numbers.tex}
-\newpage
-\input{oper-precedence.tex}
+\input{order-operations.tex}
 
 \end{document}

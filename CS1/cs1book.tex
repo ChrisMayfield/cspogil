@@ -8,18 +8,20 @@
 
 \input{../cspogil.sty}
 
-\usepackage{pdfpages}
-\usepackage{setspace}
-
 % remove page numbers
 \makeatletter
 \let\ps@plain\ps@empty
 \makeatother
 
+% dots in toc chapters
+\usepackage{tocloft}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
 % include activity pdf
+\usepackage{pdfpages}
 \newcommand{\act}[2]{
   \cleardoublepage\phantomsection
-  \addcontentsline{toc}{section}{#1}
+  \addcontentsline{toc}{chapter}{#1}
   \ifdefined\Teacher
     \includepdf[pages=-, pagecommand={}]{#2_Teacher.pdf}
   \else
@@ -29,6 +31,7 @@
 
 \begin{document}
 
+\pdfbookmark{Title Page}{title}
 \begin{titlepage}
 \centering
 
@@ -72,9 +75,9 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAl
 
 \end{titlepage}
 
-\doublespacing
+\cleardoublepage
+\pdfbookmark{\contentsname}{toc}
 \tableofcontents
-\singlespacing
 
 \act{Activity 1: Introduction}{Act01/Act01-Introduction}
 \act{Activity 2: Arithmetic}{Act02/Act02-Arithmetic}

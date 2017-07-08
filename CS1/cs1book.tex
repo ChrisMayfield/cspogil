@@ -1,3 +1,5 @@
+\def\Teacher{}  % comment out for student version
+
 \documentclass[12pt,twoside,openright]{report}
 
 \title{Activities for CS1 in Java}
@@ -14,18 +16,39 @@
 \let\ps@plain\ps@empty
 \makeatother
 
+% include activity pdf
+\newcommand{\act}[2]{
+  \cleardoublepage\phantomsection
+  \addcontentsline{toc}{section}{#1}
+  \ifdefined\Teacher
+    \includepdf[pages=-, pagecommand={}]{#2_Teacher.pdf}
+  \else
+    \includepdf[pages=-, pagecommand={}]{#2_Student.pdf}
+  \fi
+}
+
 \begin{document}
 
 \begin{titlepage}
 \centering
 
 \vspace*{8em}
-\includegraphics{IntroCS.pdf}
+\includegraphics{../IntroCS.pdf}
 
 \makeatletter
 
 \vspace*{4em}
 \huge \textbf{\@title}
+
+\vspace*{2pt}
+\ifdefined\Teacher
+\color{DarkRed}
+\Large \textbf{Instructor's Guide with Solutions}
+\else
+\color{ForestGreen}
+\Large \textbf{Student Workbook}
+\fi
+\normalcolor
 
 \vspace*{2em}
 \large Project Directors
@@ -41,7 +64,7 @@
 \normalsize
 
 \vspace*{5em}
-\includegraphics{by-nc-sa.png}
+\includegraphics{../by-nc-sa.png}
 
 \vspace*{1ex}
 Copyright \textcopyright\ 2017.
@@ -53,59 +76,18 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAl
 \tableofcontents
 \singlespacing
 
-%------------------------------------------------------------------------------%
+\act{Activity 1: Introduction}{Act01/Act01-Introduction}
+\act{Activity 2: Arithmetic}{Act02/Act02-Arithmetic}
+\act{Activity 3: Data Types}{Act03/Act03-DataTypes}
+\act{Activity 4: Boolean Logic}{Act04/Act04-BooleanLogic}
+\act{Activity 5: Loops}{Act05/Act05-Loops}
+\act{Activity 6: Methods}{Act06/Act06-Methods}
+\act{Activity 7: Arrays}{Act07/Act07-Arrays}
+\act{Activity 8: Recursion}{Act08/Act08-Recursion}
+\act{Activity 9: Object-Oriented}{Act09/Act09-ObjectOriented}
+\act{Activity 10: Classes and UML}{Act10/Act10-ClassesAndUML}
+\act{Activity 11: Designing Classes}{Act11/Act11-DesigningClasses}
+\act{Activity 12: Arrays of Objects}{Act12/Act12-ArraysOfObjects}
+\act{Activity 18: Linked Structures}{Act18/Act18-LinkedStructures}
 
-\cleardoublepage\phantomsection
-\addcontentsline{toc}{section}{Activity 1: Introduction}
-\includepdf[pages=-, pagecommand={}]{Act01/Act01-Introduction_Teacher.pdf}
-
-\cleardoublepage\phantomsection
-\addcontentsline{toc}{section}{Activity 2: Arithmetic}
-\includepdf[pages=-, pagecommand={}]{Act02/Act02-Arithmetic_Teacher.pdf}
-
-\cleardoublepage\phantomsection
-\addcontentsline{toc}{section}{Activity 3: Data Types}
-\includepdf[pages=-, pagecommand={}]{Act03/Act03-DataTypes_Teacher.pdf}
-
-\cleardoublepage\phantomsection
-\addcontentsline{toc}{section}{Activity 4: Boolean Logic}
-\includepdf[pages=-, pagecommand={}]{Act04/Act04-BooleanLogic_Teacher.pdf}
-
-\cleardoublepage\phantomsection
-\addcontentsline{toc}{section}{Activity 5: Loops}
-\includepdf[pages=-, pagecommand={}]{Act05/Act05-Loops_Teacher.pdf}
-
-\cleardoublepage\phantomsection
-\addcontentsline{toc}{section}{Activity 6: Methods}
-\includepdf[pages=-, pagecommand={}]{Act06/Act06-Methods_Teacher.pdf}
-
-\cleardoublepage\phantomsection
-\addcontentsline{toc}{section}{Activity 7: Arrays}
-\includepdf[pages=-, pagecommand={}]{Act07/Act07-Arrays_Teacher.pdf}
-
-\cleardoublepage\phantomsection
-\addcontentsline{toc}{section}{Activity 8: Recursion}
-\includepdf[pages=-, pagecommand={}]{Act08/Act08-Recursion_Teacher.pdf}
-
-\cleardoublepage\phantomsection
-\addcontentsline{toc}{section}{Activity 9: Object-Oriented}
-\includepdf[pages=-, pagecommand={}]{Act09/Act09-ObjectOriented_Teacher.pdf}
-
-\cleardoublepage\phantomsection
-\addcontentsline{toc}{section}{Activity 10: Classes and UML}
-\includepdf[pages=-, pagecommand={}]{Act10/Act10-ClassesAndUML_Teacher.pdf}
-
-\cleardoublepage\phantomsection
-\addcontentsline{toc}{section}{Activity 11: Designing Classes}
-\includepdf[pages=-, pagecommand={}]{Act11/Act11-DesigningClasses_Teacher.pdf}
-
-\cleardoublepage\phantomsection
-\addcontentsline{toc}{section}{Activity 12: Arrays of Objects}
-\includepdf[pages=-, pagecommand={}]{Act12/Act12-ArraysOfObjects_Teacher.pdf}
-
-\cleardoublepage\phantomsection
-\addcontentsline{toc}{section}{Activity 18: Linked Structures}
-\includepdf[pages=-, pagecommand={}]{Act18/Act18-LinkedStructures_Teacher.pdf}
-
-%------------------------------------------------------------------------------%
 \end{document}

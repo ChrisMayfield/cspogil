@@ -20,14 +20,24 @@ Java supports two main types of data: \emph{primitive types} like \java{int} and
 }{
   \item Providing feedback on how well other team members are working. (Teamwork)
 }{
-This activity focuses on primitive types, literals, and assignment statements.
-By the end of the activity, students will be able to identify the types of literals, identify illegal assignment statements, and trace a sequence of assignment statements and their effects in memory.
+It's important during \ref{disruptions.tex} to reinforce the importance of roles.
+Successful teams are able to accomplish all the tasks outlined on the \github{Handouts/role-cards-mayfield.pdf}{Role Cards}, and there's too many things for one person to keep track of.
+As the reflector to pay special attention to the team during today's activity.
 
-Question 5: If students are stumbling on the letters used in primitive literals (e.g., L and F), you might direct them back to Model 1 and have them read out loud the primitive types. Now is a good opportunity to introduce `float` as a (broken) floating-point data type and have students explain where the name `double` comes from.
+On \ref{literals}, students may struggle with letters used in primitive values (i.e., F and L).
+Rather than explain what everything means, direct students back to \ref{primitive-types.tex} and have them read out loud the type names.
+During report-out, introduce the term \emph{literal} and explain that \texttt{float} is a (broken) floating-point data type.
+Ask students to figure out where the name \texttt{double} comes from.
 
-Question 6 is good for report-out, allowing students to collectively develop a rule for when an assignment is allowed. It might be helpful to have a couple of assignment statements handy to challenge their definition if it is a little off. But be careful, examples like `short x = 3; byte y = 3; char c = 3;`, which are legal, may challenge their definition, but open a can of worms. If these issues come up, you'll need to explain that javac will check the range of the value, and if it is acceptable, allow the assignment; that means `byte z = 255;` will fail.
+\ref{allowed} is good for report-out, allowing students to collectively develop a rule for when an assignment is allowed.
+It might be helpful to have a couple of examples handy to challenge their assumptions.
+But be careful, examples like \texttt{short x = 3; byte y = 3; char c = 3;} may open a can of worms.
+If these issues come up, you'll need to explain that \texttt{javac} will check the range of the value, and if it is acceptable, allow the assignment (i.e., \texttt{byte z = 255;} will fail).
 
-Model 2 introduces a standard technique for drawing diagrams of variables to show the difference between primitive and reference types. It may be helpful at this point to direct students to [Java Tutor](http://pythontutor.com/java.html) which draws similar diagrams (including stack frames). This tool also has options for "render all objects on the heap" (instead of inlining) and "use text labels for pointers" (instead of drawing arrows), which can help reinforce the concept of memory addresses. On \#14: have 2-3 teams draw their diagrams on the board and address common misconceptions.
+\ref{reference-types.tex} introduces a standard technique for drawing diagrams of variables to show the difference between primitive and reference types.
+On \ref{twostrs}, have 2--3 teams draw their diagrams on the board and address common misconceptions.
+It may be helpful at this point to direct students to \href{http://pythontutor.com/java.html}{Java Tutor}, which draws similar diagrams (including stack frames).
+This tool also has options for ``render all objects on the heap'' (instead of inlining) and ``use text labels for pointers'' (instead of drawing arrows), which can help reinforce the concept of memory addresses.
 }
 
 \input{disruptions.tex}

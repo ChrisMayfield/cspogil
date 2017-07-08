@@ -127,7 +127,8 @@
 \end{center}}
 
 % models
-\newcommand{\model}[1]{\section{#1}\nopagebreak}
+\usepackage{currfile}
+\newcommand{\model}[1]{\section{#1}\label{\currfilename}\nopagebreak}
 \renewcommand{\thesection}{Model~\arabic{section}}
 
 % questions

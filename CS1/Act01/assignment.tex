@@ -2,8 +2,6 @@
 
 Declaring a variable instructs the computer to reserve space for it in memory.
 
-%TODO add line numbers somehow?
-
 \vspace{1em}
 \hfill
 \begin{minipage}[t]{0.5\textwidth}
@@ -11,10 +9,10 @@ Declaring a variable instructs the computer to reserve space for it in memory.
 \textbf{Java code}
 \vspace{1ex}
 
-\begin{javalst}
+\begin{javanum}
 int dollars;
 int cents;
-\end{javalst}
+\end{javanum}
 
 \end{minipage}
 \hfill
@@ -38,11 +36,12 @@ Variables cannot be used until they are \textit{initialized} (assigned for the f
 \begin{minipage}[t]{0.5\textwidth}
 
 \vspace{-1em}
-\begin{javalst}
+\lstset{firstnumber=3}
+\begin{javanum}
 dollars = 2;
 System.out.println(dollars);  // OK
 System.out.println(cents);    // error
-\end{javalst}
+\end{javanum}
 
 \end{minipage}
 \hfill
@@ -63,11 +62,12 @@ Each time you assign a variable, you are \emph{updating} its value stored in mem
 \begin{minipage}[t]{0.5\textwidth}
 
 \vspace{-1em}
-\begin{javalst}
+\lstset{firstnumber=6}
+\begin{javanum}
 dollars = 3;
 dollars = 4;
 cents = 49;
-\end{javalst}
+\end{javanum}
 
 \end{minipage}
 \hfill
@@ -146,7 +146,8 @@ What value do you think \java{cents} and \java{dollars} will have after running 
 \end{enumerate}
 
 
-\Q In your own words, explain how you should read the \java{=} sign in Java.
+\Q \label{xgets}
+In your own words, explain how you should read the \java{=} sign in Java.
 For example, the Java statement ~\java{x = a + b;} should be read as ``x \_\_\_\_\_\_\_\_ a plus b.''
 
 \begin{answer}

@@ -82,6 +82,7 @@
 \newcommand{\java}[1]{\lstinline[language=java]{#1}}%[
 \lstnewenvironment{javaans}{\lstset{language=java,style=lstanswers}}{}
 \lstnewenvironment{javalst}{\lstset{language=java,backgroundcolor=}}{}
+\lstnewenvironment{javanum}{\lstset{language=java,backgroundcolor=,numbers=left}}{}
 \lstnewenvironment{javabox}{\lstset{language=java,frame=single,numbers=left}\quote}{\endquote}
 
 % PDF properties
@@ -195,7 +196,7 @@
 \end{itemize}
 
 \ifdefined\Teacher
-\vspace*{-13pt}\color{answers}
+\vspace*{-13pt}\color{DimGray}
 \subsection*{Facilitation Notes}
 \vspace{-\bigskipamount}
 \setlength{\parskip}{\bigskipamount}
@@ -223,3 +224,6 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAl
 \end{minipage}
 \clearpage
 }
+
+% links on GitHub
+\newcommand{\github}[2]{\href{https://github.com/ChrisMayfield/cspogil/blob/master/#1}{#2}}

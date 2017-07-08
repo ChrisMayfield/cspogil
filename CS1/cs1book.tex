@@ -8,6 +8,9 @@
 
 \input{../cspogil.sty}
 
+\usepackage{pdfpages}
+\usepackage{pax}
+
 % remove page numbers
 \makeatletter
 \let\ps@plain\ps@empty
@@ -18,7 +21,6 @@
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 
 % include activity pdf
-\usepackage{pdfpages}
 \newcommand{\act}[2]{
   \cleardoublepage\phantomsection
   \addcontentsline{toc}{chapter}{#1}

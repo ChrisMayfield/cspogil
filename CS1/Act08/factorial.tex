@@ -1,6 +1,5 @@
-% based on Model 1 of Activity 12 - Recursion by Helen Hu, with modifications by Dee Weikle
-
 \model{Factorial}
+% based on Model 1 of Activity 12 - Recursion by Helen Hu, with modifications by Dee Weikle
 
 ''In mathematics, the \emph{factorial} of a non-negative integer $n$, denoted by $n!$, is the product of all positive integers less than or equal to $n$. For example, $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$.''
 
@@ -30,10 +29,11 @@ Source: \url{https://en.wikipedia.org/wiki/Factorial}
 \end{center}
 
 
-\quest{20 min}
+\quest{25 min}
 
 
-\Q \label{fact4} Consider how to calculate $4! = 24$.
+\Q \label{fact4}
+Consider how to calculate $4! = 24$.
 
 \begin{enumerate}
 \item Write out all the numbers that need to be multiplied:
@@ -46,7 +46,8 @@ $4! =$ \ans{4 * 3!}
 \end{enumerate}
 
 
-\Q \label{factn} Write an expression similar to \ref{fact4}b showing how each factorial can be calculated in terms of a simpler factorial.
+\Q \label{factn}
+Write an expression similar to \ref{fact4}b showing how each factorial can be calculated in terms of a simpler factorial.
 
 \begin{enumerate}
 \item $3! =$ \ans{3 * 2!}
@@ -87,7 +88,8 @@ Convert this expression to Java by using the \java{factorial} method instead of 
 \end{enumerate}
 
 
-\Q \label{factjava} Here is a \java{factorial} method that includes output for debugging:
+\Q \label{factjava}
+Here is a \java{factorial} method that includes output for debugging:
 
 \begin{javabox}
 public static int factorial(int n) {
@@ -136,7 +138,8 @@ Four method calls: \java{factorial(3)} $\to$ \java{factorial(2)} $\to$ \java{fac
 \end{answer}
 
 
-\Q Here is the complete output from the program in \ref{factjava}.
+\Q \label{output}
+Here is the complete output from the program in \ref{factjava}.
 Identify which distinct method call printed each line.
 In other words, which lines were printed by \java{factorial(3)}, which lines were printed by \java{factorial(2)}, and so on.
 
@@ -159,7 +162,8 @@ In other words, which lines were printed by \java{factorial(3)}, which lines wer
 \end{center}
 
 
-\Q What happens if you try to calculate the factorial of a negative number?
+\Q \label{stackover}
+What happens if you try to calculate the factorial of a negative number?
 How could you prevent this behavior in the \java{factorial} method?
 
 \begin{answer}

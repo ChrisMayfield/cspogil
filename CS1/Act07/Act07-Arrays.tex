@@ -10,35 +10,36 @@
 
 \maketitle
 
-Programs often need to store multiple values of the same type, such as a list of 1000 phone numbers or the names of your top 20 favorite songs.
+Programs often need to store multiple values of the same type, such as a list of phone numbers, or the names of your top 20 favorite songs.
 Rather than create a separate variable for each one, we can store them together using an array.
 
 \guide{
   \item Explain course policies about academic honesty.
   \item Declare and initialize array variables of primitive types.
-  \item Draw a memory digram of an array of reference types.
+  \item Draw a memory diagram of an array of reference types.
   \item Write a for loop that iterates the contents of an array.
 }{
   \item Developing algorithms that loop through two arrays to compute a result. (Problem Solving)
 }{
-Models 1 and 2 are based on true stories, unfortunately.
-Each team should have a copy of the \github{Handouts/jmu-honor-code.pdf}{Honor Code} or your own institution's policy.
-20 minutes are allocated, but in practice it can take much less time.
+\ref{case1.tex} and \ref{case3.tex} can be helpful to clarify policies and discuss what is appropriate collaboration vs cheating.
+Each team will need a copy of the \github{Handouts/jmu-honor-code.pdf}{Honor Code} or your own institution's document.
+Only 10 minutes are allocated for this discussion, but it could take more time.
 
-This activity introduces arrays for the first time, with a focus on array syntax and memory diagrams.
+\ref{array-syntax.tex} introduces arrays for the first time, with a focus on array syntax and memory diagrams.
 Students learn about zero-based indexing array processing using loops.
+Be sure to discuss \ref{arrayexp} and \ref{arraysta} when reporting out.
+Students often confuse \emph{expressions} with \emph{statements}.
+Explain how Java generally requires the \texttt{new} operator when creating arrays, except in the case of \ref{arraysta}.
 
-Be sure to discuss \#4 and \#5 while reporting out.
-Students often confuse \textbf{expressions} with \textbf{statements}.
-Explain how Java generally requires the \texttt{new} operator when creating arrays.
-
-In Model 2, explain how the \texttt{new} operator automatically zeros-out memory for the array.
+In \ref{array-diagrams.tex}, explain that the \texttt{new} operator automatically zeros-out memory for the array.
 Therefore, the default value will be 0 for integers, 0.0 for doubles, \texttt{null} for strings, etc.
+These values should be present in the team's diagrams.
+You may need to remind students that references (i.e., to string objects) are drawn with an arrow.
 
-Students may have the most trouble with Model 3, particularly if writing code on paper.
+Students will have the most trouble with \ref{array-loops.tex}, particularly if writing code on paper.
 One way to jump start the process is to report out before teams write their solution.
 Give each team 2--3 minutes to develop an algorithm and have the presenter describe it to the class.
-If short on time, have half of the teams work on \#11 and the other half work on \#12.
+Then have students complete \ref{pairwiseMax} and \ref{finalGrade} as an exercise outside of class.
 }
 
 \input{../Honor/case1.tex}

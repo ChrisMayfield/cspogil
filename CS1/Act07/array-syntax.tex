@@ -1,8 +1,7 @@
+\model{Array Syntax}
 % based on Model 1 of Activity 13 - TwoD Arrays by Helen Hu
 
-\model{Array Syntax}
-
-%An \emph{array} allows you to declare a collection of related variables (of the same type) at once.
+An \emph{array} allows you to declare a collection of related variables (of the same type) at once.
 Each value in an array is known as an \emph{element}.
 The programmer must specify the \emph{length} of the array (the number of array elements).
 Once the array is created, its length cannot be changed.
@@ -21,6 +20,7 @@ System.out.println(numberArray.length);      // outputs 365
 
 Array elements are accessed by \emph{index} number, starting at zero:
 
+%TODO draw references to string objects in diagram
 \begin{quote}
 \begin{tabular}{cc}
 \hline
@@ -68,6 +68,8 @@ Array elements are accessed by \emph{index} number, starting at zero:
 \end{enumerate}
 
 
+\newpage
+
 \Q What are the type and value for each of the four \emph{expressions} below?
 
 \begin{javalst}
@@ -105,7 +107,8 @@ However, if the variable is already declared, \java{new} is required: \\
 \vspace{1ex}
 
 
-\Q Write \emph{expressions} that create the following \java{new} arrays. (Do not declare variables.)
+\Q \label{arrayexp}
+Write \emph{expressions} that create the following \java{new} arrays. (Do not declare variables.)
 
 \begin{enumerate}
 
@@ -119,7 +122,7 @@ However, if the variable is already declared, \java{new} is required: \\
 \vspace{1ex}
 \ans{\tt new int[] \{0, 14, 1024, 127, 3, 5521\}}
 
-\item 
+\item
 \begin{tabular}{|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|}
 \hline
 3.23 & 1.52 & 4.23 & 32.5 & 2.45 & 5.23 & 3.33 \\
@@ -132,7 +135,8 @@ However, if the variable is already declared, \java{new} is required: \\
 \end{enumerate}
 
 
-\Q Write \emph{statements} that both declare and initialize variables for these \java{new} arrays.
+\Q \label{arraysta}
+Write \emph{statements} that both declare and initialize variables for these \java{new} arrays.
 
 \begin{enumerate}
 
@@ -146,7 +150,7 @@ However, if the variable is already declared, \java{new} is required: \\
 \vspace{1ex}
 \ans{\tt int[] a = \{0, 14, 1024, 127, 3, 5521\};}
 
-\item 
+\item
 \begin{tabular}{|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|}
 \hline
 3.23 & 1.52 & 4.23 & 32.5 & 2.45 & 5.23 & 3.33 \\

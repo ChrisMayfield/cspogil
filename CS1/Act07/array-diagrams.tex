@@ -1,12 +1,13 @@
 \model{Array Diagrams}
 
-Array elements are stored together in one contiguous block of memory. To show arrays in memory diagrams, we simply draw adjacent boxes.
+Array elements are stored together in one contiguous block of memory.
+To show arrays in memory diagrams, we simply draw adjacent boxes.
 
 \begin{center}
 \java{int[] nums = \{10, 3, 7, -5\};}
 
 \vspace{1ex}
-%TODO need to model default values (see questions below)
+%TODO need to model default values (see questions)
 \includegraphics[width=225pt]{array-diagram1.png}
 \end{center}
 
@@ -16,7 +17,8 @@ Array elements are stored together in one contiguous block of memory. To show ar
 
 \Q Draw a memory diagram for the following array declarations.
 
-%TODO solution for array memory diagrams
+\begin{minipage}{0.46\linewidth}
+
 \begin{enumerate}
 
 \item
@@ -39,8 +41,19 @@ names[1] = "Anita";
 
 \end{enumerate}
 
+\end{minipage}
+\hfill
+\begin{minipage}{0.53\linewidth}
 
-\Q What is the \emph{default} value for uninitialized array elements? (Hint: You should have no empty boxes in your memory diagrams above.)
+\begin{answer}[130pt]
+\includegraphics[width=\linewidth]{decl-array.pdf}
+\end{answer}
+
+\end{minipage}
+
+
+\Q What is the \emph{default} value for uninitialized array elements?
+(Hint: You should have no empty boxes in your memory diagrams above.)
 
 \begin{answer}
 Zero or equivalent value, depending on the data type.
@@ -62,6 +75,7 @@ The memory location of the array. If you assign one array variable to another, y
 String[] greek = {"alpha", "beta", "gamma"};
 \end{javalst}
 
-\begin{answer}
-%TODO string array memory diagram
+\begin{answer}[5em]
+\hspace{4em}
+\includegraphics[height=6em]{string-array.pdf}
 \end{answer}

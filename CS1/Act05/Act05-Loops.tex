@@ -1,3 +1,4 @@
+\def\Teacher{}
 \documentclass[12pt]{article}
 
 \title{Activity 5: Loops}
@@ -20,25 +21,25 @@ Running the same statements over and over again, without making any mistakes, is
 }{
   \item Tracing the execution of while/for loops and predict their final output. (Critical Thinking)
 }{
-TODO
+\ref{assignment.tex} addresses two misconceptions about assignment: what happens when you reassign a variable, and how do you swap two variables. This understanding is essential for loop updates.
 
-Extension activity by Debra Duke:
-Bring a couple of note cards labeled with a large 1 on the first and a large 2 on the second card.
-Have all the students in the team put one hand behind their back, and then hand the cards to two members (student X gets the 1 and student Y gets the 2).
-Ask them to exchange cards.
-When they struggle, say ``What if you had a student Z who could help?''
+Consider bringing a pair of note cards labeled with a large 1 on the first and a large 2 on the second card.
+Have all team members put one hand behind their back, and then hand the cards to two students (student $X$ gets the 1 and student $Y$ gets the 2).
+Ask them to exchange cards, and if they struggle, say ``What if you had a student $Z$ who could help?''
+(Credit: Debra Duke)
 
-When reporting out Model 2, have teams predict the answers to numbers Questions 11, 12, and 15.
+When reporting out \ref{while-loops.tex}, have teams predict the answers to \ref{output}, \ref{value}, and \ref{do99}.
 Then execute the code and have them discuss their results, if incorrect.
+Consider stepping through the code with a debugger (on the projector) during report-out.
 
-On Question 22, students may forget to use a {\tt long} variable to store the factorial.
-If time permits, show the output of the solution when {\tt fact} is declared as {\tt int}.
+Be sure to make connections between the flow charts in \ref{while-loops.tex} and \ref{for-loops.tex}.
+You may need to guide students on \ref{forchar} applying string methods in the context of a loop.
+On \ref{nested}, students might not think to use a {\tt long} variable to store the factorial.
+If time permits, show the output of the solution with {\tt fact} declared as an {\tt int}, and ask them to fix the code.
 }
 
-%TODO add flow charts for loops?
-
 \input{assignment.tex}
-%\newpage
+\vfill
 \input{while-loops.tex}
 \input{for-loops.tex}
 

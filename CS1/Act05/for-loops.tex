@@ -5,6 +5,7 @@ Label each of these components in the two example loops below.
 (Assume the variable \java{number} has already been declared.)
 
 \vspace{1ex}
+\begin{minipage}{0.6\linewidth}
 \begin{javalst}
     // count forwards
     for (number = 1; number <= 10; number++) {
@@ -16,7 +17,12 @@ Label each of these components in the two example loops below.
         System.out.println(number);
     }
 \end{javalst}
-
+\end{minipage}
+\hfill
+\begin{minipage}{0.38\linewidth}
+\centering
+\includegraphics[height=10em]{for.pdf}
+\end{minipage}
 
 \quest{15 min}
 
@@ -38,7 +44,8 @@ Change the second loop: ~\texttt{for (number = 10; number >= 2; number -= 2)}.
 \end{answer}
 
 
-\Q \label{forchar} Write a \java{for} loop that prints each character of a string on a separate line.
+\Q \label{forchar}
+Write a \java{for} loop that prints each character of a string on a separate line.
 You will need to invoke the \java{length()} and \java{charAt()} methods.
 Assume the string variable is named \java{word}.
 
@@ -66,7 +73,8 @@ Assume the string variable is named \java{word}.
 \end{answer}
 
 
-\Q A \emph{nested loop} is one that exists within the scope of another loop.
+\Q \label{nested}
+A \emph{nested loop} is one that exists within the scope of another loop.
 This construct is often used when there are two variables for which all combinations must be examined.
 
 \begin{javalst}

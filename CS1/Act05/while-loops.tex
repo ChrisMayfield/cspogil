@@ -14,6 +14,12 @@ Label each of these components in the two example loops below.
     }                                        } while (number <= 10);
 \end{javalst}
 
+\vspace{2pt}
+\hspace{3em}
+\raisebox{0.5em}{\includegraphics[height=9em]{while.pdf}}
+\hspace{9em}
+\raisebox{0em}{\includegraphics[height=10em]{dowhile.pdf}}
+
 
 \quest{15 min}
 
@@ -26,21 +32,23 @@ And variables cannot be updated until they have an initial value.
 \end{answer}
 
 
-\Q Why is the \java{while} loop called a pre-test and the \java{do while} loop called a post-test?
+\Q Explain why the \java{while} loop is called a \emph{pre-test} and the \java{do while} loop is called a \emph{post-test}.
 
 \begin{answer}
 The \texttt{while} tests its condition before the loop body, whereas the \texttt{do while} tests its condition after the loop body.
 \end{answer}
 
 
-\Q What is output (to the screen) by each loop?
+\Q \label{output}
+What is output (to the screen) by each loop?
 
 \begin{answer}
 They both print the numbers 1 through 10, with each number on its own line.
 \end{answer}
 
 
-\Q What is the final value of \java{number} at the end of each loop?
+\Q \label{value}
+What is the final value of \java{number} at the end of each loop?
 
 \begin{answer}
 At the end of each loop, the value of \java{number} is 11.
@@ -61,7 +69,8 @@ Both loops will print the value 1 forever, since \java{number} never reaches the
 \end{answer}
 
 
-\Q What is output by the loop below?
+\Q \label{do99}
+What is output by the loop below?
 
 \begin{minipage}{0.49\textwidth}
 \begin{javalst}

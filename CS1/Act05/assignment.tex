@@ -113,28 +113,40 @@ Write the value of \java{x} and \java{y} next to each statement below.
 \begin{minipage}[t]{100pt}
 \begin{javalst}
 int x = 5;
+x--;
+x--;
+\end{javalst}
+\end{minipage}
+\begin{minipage}[t]{100pt}
+\begin{answer}
+\begin{javaans}
+x is 5
+x is 4
+x is 3
+\end{javaans}
+\end{answer}
+\end{minipage}
+\begin{minipage}[t]{100pt}
+\begin{javalst}
 int y = -10;
-x--;
 y++;
-x--;
 y++;
 \end{javalst}
 \end{minipage}
 \begin{minipage}[t]{100pt}
-\begin{answer}[8em]
+\begin{answer}
 \begin{javaans}
-x is 5
 y is -10
-x is 4
 y is -9
-x is 3
 y is -8
 \end{javaans}
 \end{answer}
 \end{minipage}
+\vspace{2pt}
 
 
-\Q \label{compound} Like the assignment operator, the \java{++} and \java{--} operators replace the value of a variable.
+\Q \label{compound}
+Like the assignment operator, the \java{++} and \java{--} operators replace the value of a variable.
 Java also has \emph{compound assignment} operators for convenience.
 For example, the statement ~\java{x = x + 2} can be rewritten as ~\java{x += 2}.
 Simplify the following assignment statements.

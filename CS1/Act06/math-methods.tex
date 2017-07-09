@@ -19,9 +19,8 @@ To invoke methods from another class (like \java{Math}), you must first specify 
 \end{javalst}
 
 The period in this example is called the \emph{dot operator}. When reading the above code out loud, you would say ``math dot abs''.
-
 Here is the Java documentation for the methods listed above:
-\nopagebreak
+
 \begin{center}
 \includegraphics[scale=0.90]{math-javadoc.pdf}
 \end{center}
@@ -109,7 +108,8 @@ In the table below, what is the relationship between the last two columns?
 \end{center}
 
 
-\Q Consider the statement \java{System.out.println("Price: " + price);} where the value of \java{price} is 9.99. What is the argument that \texttt{println} receives?
+\Q \label{println}
+Consider the statement \java{System.out.println("Price: " + price);} where the value of \java{price} is 9.99. What is the argument that \texttt{println} receives?
 
 \begin{answer}
 \begin{javaans}
@@ -118,7 +118,8 @@ In the table below, what is the relationship between the last two columns?
 \end{answer}
 
 
-\Q Consider the statement \java{System.out.printf("Price: \%f", price);} where the value of \java{price} is 9.99. Why does \java{println} use \emph{plus} and \java{printf} use \emph{comma} to specify the arguments?
+\Q \label{printf}
+Consider the statement \java{System.out.printf("Price: \%f", price);} where the value of \java{price} is 9.99. Why does \java{println} use \emph{plus} and \java{printf} use \emph{comma} to specify the arguments?
 
 \begin{answer}[5em]
 The \java{println} method requires only one argument, so plus in this context means concatenate.

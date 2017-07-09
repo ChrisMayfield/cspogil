@@ -14,30 +14,33 @@ Java programs are organized into {\em classes}, each of which has one or more {\
 Writing methods allows you to break down a complex program into smaller blocks of reusable code.
 
 \guide{
-  \item Explain the syntax of a method declaration (parameters and return type).
   \item Apply methods from the Math class based on their documentation.
+  \item Explain the syntax of a method declaration (parameters and return type).
   \item Draw a diagram that shows the call stack at a given point of execution.
 }{
   \item Tracing the execution of methods to determine the contents of memory. (Critical Thinking)
 }{
-This activity focuses on methods: declaration, invocation, and call semantics.
-It also introduces the Math class to illustrate parameters vs arguments.
-Model 3 builds on the previous activity for drawing diagrams and memory traces.
+This activity will likely take students longer than they think.
+Remind managers to keep track of the time and presenters to be ready to report out.
 
-For questions 1 and 2, do a quick check of each teams' answer before they get too far along.
-Some misread or misinterpret the question and/or don't get the difference between analyzing the code statically (e.g., how many lines of source code ...) vs dynamically (e.g., how many times ... when the program runs).
+\ref{math-methods.tex} introduces a number of terms, which you should model throughout facilitation.
+\ref{println} and \ref{printf} are good for reporting out to reinforce the concepts of \emph{signature}, \emph{parameters}, and \emph{arguments}.
+Students often confuse \texttt{printf} by using string concatenation within the format string.
 
-Questions 14 and 15 are good for reporting out, to reinforce the concepts of signature, parameters, and arguments.
-Students often confuse printf by using string concatenation with the format string.
+\ref{invoke-return.tex} includes only void methods with no parameters, so that students may focus on the flow of execution.
+For \ref{lines} and \ref{times}, do a quick check of each team's answer before they get too far along.
+Some misread or misinterpret the question and/or don't get the difference between analyzing the code statically (i.e., how many lines) vs dynamically (i.e., how many times).
 
-Quesiton 18 implicitly refers to Model 2 of the previous activity; you may need to remind students that memory diagrams simply include a box for each variable.
-
-Have multiple teams draw their diagram for Question \#20 on the board, to compare different ways students think about this question.
-Address misconceptions and be sure to show the correct solution.
+\ref{stack-diagrams.tex} builds on a previous method for drawing diagrams and memory traces (see Reference Types in Activity 3).
+You may need to remind students that memory diagrams simply include a small box to the right of each variable name.
+Have multiple teams draw their diagram for \ref{drawing} on the board to compare different ways students think about this question.
+Address their misconceptions, and be sure to show the correct solution.
 }
 
+\input{math-methods.tex}
+\vfill
 \input{invoke-return.tex}
-\input{method-declare.tex}
+\newpage
 \input{stack-diagrams.tex}
 
 \end{document}

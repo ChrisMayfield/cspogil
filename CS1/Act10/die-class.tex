@@ -1,4 +1,4 @@
-\model{Die objects}
+\model{The Die Class}
 
 When you define a class in Java, you are defining a new data type.
 Classes have \emph{attributes} (data) and \emph{methods} (code).
@@ -69,7 +69,8 @@ Plus means {\tt public}, minus means {\tt private}, and colon refers to the data
 \end{answer}
 
 
-\Q Write a statement that \emph{declares} a \java{Die} variable named \java{lucky}.
+\Q \label{dievar}
+Write a statement that \emph{declares} a \java{Die} variable named \java{lucky}.
 
 \begin{answer}
 \tt Die lucky;
@@ -101,5 +102,5 @@ It updates the value of the \java{face} attribute.
 \Q What is the purpose of the \java{getFace} method? Show how you would use it in a \java{main} method of another class.
 
 \begin{answer}
-It updates the value of the \java{face} attribute. In a {\tt main} method, you would do something like: {\tt System.out.println(lucky.getFace());}
+In a {\tt main} method, you would do something like: {\tt System.out.println(lucky.getFace());}
 \end{answer}

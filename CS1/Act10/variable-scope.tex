@@ -1,9 +1,8 @@
+\model{Variable Scope}
 % based on Model 1 of "Improved Scope" activity by Helen Hu
 
-\model{Variable Scope}
-
-As a team, review and discuss the \java{Circle} and \java{SwapDriver} classes found on the next page at the end of the questions.
-Identify the \emph{scope} of each variable based on the table below.
+As a team, first review and discuss the \java{SwapCircle} and \java{SwapDriver} classes found at the end of the questions.
+Then identify the \emph{scope} of each variable based on the table below.
 
 \begin{center}
 \small
@@ -17,17 +16,17 @@ Identify the \emph{scope} of each variable based on the table below.
 \textbf{static variables} \par (``class variables'') &
 declared outside of all methods (typically at the start of the class) &
 anywhere in the class (or in other classes if also \java{public}) &
-\java{circleCount} in the \java{Circle} class \\
+\java{circleCount} in the \java{SwapCircle} class \\
 \hline
 \textbf{instance variables} \par (``attributes'') &
 declared outside of all methods (typically after any static variables) &
 any non-static method (or in static methods when another object has been created) &
-\java{radius} in the \java{Circle} class \\
+\java{radius} in the \java{SwapCircle} class \\
 \hline
 \textbf{parameters} &
 declared inside the ()'s of a method signature &
 anywhere within the method where they are declared &
-\java{radius} in the \java{Circle} constructor \\
+\java{radius} in the \java{SwapCircle} constructor \\
 \hline
 \textbf{local variables} &
 declared inside a method (or inside another block of code, like a \java{for} loop) &
@@ -38,16 +37,16 @@ anywhere within the method or code block after they are declared &
 \end{center}
 
 
-\quest{15 min}
+\quest{20 min}
 
 
-\Q Identify one static variable from the \java{Circle} class.
+\Q Identify one static variable from the \java{SwapCircle} class.
 \begin{enumerate}
 \item What is the name and purpose of the variable?
-\\ \ans{\java{circleCount} -- tracks the number of \java{Circle} objects that have been created} \\[-2em]
+\\ \ans{\java{circleCount} -- tracks the number of \java{SwapCircle} objects that have been created} \\[-2em]
 
 \item What is the scope of the variable?
-\\ \ans{{\tt private static} -- it can be used anywhere within the \java{Circle} class only} \\[-2em]
+\\ \ans{{\tt private static} -- it can be used anywhere within the \java{SwapCircle} class only} \\[-2em]
 
 \item What is one example of somewhere it cannot be used?
 \\ \ans{\tt SwapDriver.main} \\[-2em]
@@ -55,18 +54,20 @@ anywhere within the method or code block after they are declared &
 \end{enumerate}
 
 
-\Q Identify one instance variable from the \java{Circle} class.
+\Q Identify one instance variable from the \java{SwapCircle} class.
 \begin{enumerate}
 \item What is the name and purpose of the variable?
-\\ \ans{\java{radius} -- stores the radius of {\tt this} circle} \\[-2em]
+\\ \ans{\java{radius} -- stores the radius of {\tt this} SwapCircle} \\[-2em]
 
 \item What is the scope of the variable?
-\\ \ans{{\tt private} and non-{\tt static} -- it can only be used in \java{Circle} in non-static contexts} \\[-2em]
+\\ \ans{{\tt private} and non-{\tt static} -- it can only be used in \java{SwapCircle} in non-static contexts} \\[-2em]
 
 \item What is one example of somewhere it cannot be used?
 \\ \ans{\tt SwapDriver.main} \\[-2em]
 \end{enumerate}
 
+
+\newpage
 
 \Q Identify an example of where an instance variable is used within a static method.
 \begin{enumerate}
@@ -74,14 +75,14 @@ anywhere within the method or code block after they are declared &
 \\ \ans{\java{radius} is used in the \java{swapCircles} method} \\[-2em]
 
 \item Why is the method able to access these instance variables, even though they are private?
-\\ \ans{\java{swapCircles} belongs to the \java{Circle} class} \\[-2em]
+\\ \ans{\java{swapCircles} belongs to the \java{SwapCircle} class} \\[-2em]
 
 \item Explain how this method is not a violation of the rule that instance variables cannot be accessed inside a static method.
 \\ \ans{You can't use {\tt this}.radius in a {\tt static} method, but it's okay to use \java{c1.radius}} \\[-2em]
 \end{enumerate}
 
 
-\Q Identify one parameter from the \java{Circle} class.
+\Q Identify one parameter from the \java{SwapCircle} class.
 \begin{enumerate}
 \item What is the name and purpose of the variable?
 \\ \ans{Possible answers include: \java{radius} (in the constructor), \java{x} and \java{y}, \java{c1} and \java{c2}} \\[-2em]
@@ -94,7 +95,7 @@ anywhere within the method or code block after they are declared &
 \end{enumerate}
 
 
-\Q Identify one local variable from the \java{Circle} class.
+\Q Identify one local variable from the \java{SwapCircle} class.
 \begin{enumerate}
 \item What is the name and purpose of the variable?
 \\ \ans{Possible answers include: \java{temp} and \java{r} (both used for swapping values)} \\[-2em]
@@ -106,8 +107,10 @@ anywhere within the method or code block after they are declared &
 \\ \ans{It cannot be used in other methods and/or before it has been declared.} \\[-2em]
 \end{enumerate}
 
-\Q In the space below, predict the output of the \java{SwapDriver} program.
-Why are the results different when swapping integers and swapping Circle objects?
+
+\Q \label{predict}
+In the space below, predict the output of the \java{SwapDriver} program.
+Why are the results different when swapping integers and swapping objects?
 
 \begin{answer}[14em]
 \begin{minipage}{190pt}
@@ -132,9 +135,9 @@ b = 4
 BEFORE swap:
 first = Circle(7)
 second = Circle(4)
-    Inside swapCircles
-    swapping circles Circle(7) and Circle(4)
-    finished swapping Circle(4) and Circle(7)
+	Inside swapCircles
+	swapping circles Circle(7) and Circle(4)
+	finished swapping Circle(4) and Circle(7)
 AFTER swap:
 first = Circle(4)
 second = Circle(7)
@@ -146,16 +149,17 @@ This program created 2 circles
 \end{javaans}
 \end{answer}
 
+
 \newpage
 
 \begin{javabox}
-public class Circle {
+public class SwapCircle {
     
     private static int circleCount = 0;
     
     private double radius;
     
-    public Circle(double radius) {
+    public SwapCircle(double radius) {
         circleCount++;
         if (radius > 0) {
             this.radius = radius;
@@ -181,7 +185,7 @@ public class Circle {
         System.out.println("\tfinished swapping " + x + " and " + y);
     }
     
-    public static void swapCircles(Circle c1, Circle c2) {
+    public static void swapCircles(SwapCircle c1, SwapCircle c2) {
         System.out.println("\tInside swapCircles");
         System.out.println("\tswapping circles " + c1 + " and " + c2);
         double r = c1.radius;
@@ -196,6 +200,7 @@ public class Circle {
 }
 \end{javabox}
 
+
 \newpage
 
 \begin{javabox}
@@ -208,30 +213,28 @@ public class SwapDriver {
         System.out.println("BEFORE swap:");
         System.out.println("a = " + a);
         System.out.println("b = " + b);
-        Circle.swapInts(a, b);
+        SwapCircle.swapInts(a, b);
         System.out.println("AFTER swap:");
         System.out.println("a = " + a);
         System.out.println("b = " + b);
         System.out.println();
         
-        // next try swapping Circle radii
-        Circle first, second;
-        first = new Circle(7);
-        second = new Circle(4);
+        // next try swapping SwapCircle radii
+        SwapCircle first, second;
+        first = new SwapCircle(7);
+        second = new SwapCircle(4);
         System.out.println("BEFORE swap:");
         System.out.println("first = " + first);
         System.out.println("second = " + second);
-        Circle.swapCircles(first, second);
+        SwapCircle.swapCircles(first, second);
         System.out.println("AFTER swap:");
         System.out.println("first = " + first);
         System.out.println("second = " + second);
         System.out.println();
         
         System.out.printf("This program created %d circles",
-                          Circle.getCircleCount());
+                          SwapCircle.getCircleCount());
         System.out.println();
     }
 }
 \end{javabox}
-
-\newpage

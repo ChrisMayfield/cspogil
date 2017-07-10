@@ -1,8 +1,5 @@
 /**
  * Geometric shape defined by a radius value.
- * 
- * @author Chris Mayfield
- * @version 11/14/2016
  */
 public class Circle {
     

@@ -20,15 +20,20 @@ It also provides a variety of useful methods for comparing, manipulating, and se
 }{
   \item Working with all team members to reach consensus on hard questions. (Teamwork)
 }{
-TODO
-
-Report out on Question 3 and make connections to previous activities about strings and arrays.
+This activity takes an inside look at the \java{String} class to introduce object-oriented programming concepts.
+Report out on \ref{encap} and \ref{diagram}, and help students make connections to previous activities about arrays and memory diagrams.
 Note that when drawing strings in the future, students will not need to use this level of detail.
-Point out that methods from the String class make it much easier to manipulate character arrays.
+Point out that methods from the \java{String} class make it easier to manipulate character arrays.
 
-Question 11 introduces the concept of \texttt{this} as an implicit argument.
-It may help to show students an incorrect static way of designing these methods, for example: \java{String.charAt(str, 8)}.
-Both parameters (\texttt{str} and \texttt{8}) are necessary, but the object-oriented way is simpler: \texttt{str.charAt(8)} where \texttt{str} becomes \texttt{this}.
+\ref{howmany} introduces the concept of \texttt{this} as an implicit argument.
+It may help to show students a \texttt{static} (and incorrect) way of designing these methods, for example: \java{String.charAt(str, 8)}.
+Both arguments (\texttt{str} and \texttt{8}) are necessary to perform the method, but the object-oriented way is simpler: \texttt{str.charAt(8)} where the explicit argument \texttt{str} becomes the implicit argument \texttt{this}.
+
+Students likely won't have time to complete the CodingBat problems in \ref{stringMatch} and \ref{stringYak}, but they should do so exercises outside of class.
+Have teams focus their discussions on the algorithms for these problems, instead of writing a bunch of incorrect syntax on paper.
+
+\ref{string-mistakes.tex} should be a quick review of errors students have previously seen at some point in the course.
+When reporting out, have teams discuss why these errors occur in the context of what they have learned in \ref{string-chararray.tex} and \ref{string-methods.tex}.
 }
 
 \input{string-chararray.tex}

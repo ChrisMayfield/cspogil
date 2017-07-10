@@ -1,0 +1,52 @@
+\model{Credit Card}
+% based on Model 2 of "Activity 10 - Class Design" by Helen Hu
+
+\begin{center}
+\textit{For the remaining questions, you will design a class that represents an individual's credit card.}
+\bigskip\par
+% https://www.bankofamerica.com/credit-cards/
+\includegraphics{credit-card.png}
+\end{center}
+
+
+\quest{15 min}
+
+
+\Q List two or more attributes that would be necessary for this \java{CreditCard} class. For each attribute, indicate what data type would be most appropriate.
+
+\begin{answer}[5em]
+Answers may include \verb|number:long|, \verb|expire:Date|, \verb|name:String|, \verb|code:int|, etc.
+\end{answer}
+
+
+\Q When constructing (or updating) a \java{CreditCard} object, what values would you need to check? What are the valid ranges of values for each attribute?
+
+\begin{answer}[5em]
+The number should have 16 digits, dates need to have valid months and days, names should be at most 22 letters and not contain digits or other characters, code should be 3--4 digits.
+\end{answer}
+
+
+\Q List two accessor methods would be appropriate for the \java{CreditCard} class.
+Include arguments and return values, using the same format as a UML diagram.
+
+\begin{answer}[5em]
+\begin{verbatim}
++getNumber(): long
++getExpire(): Date
++getName(): String
++getCode(): int
+\end{verbatim}
+\end{answer}
+
+
+\Q List two mutator methods would be appropriate for the \java{CreditCard} class.
+Include arguments and return values, using the same format as a UML diagram.
+
+\begin{answer}[5em]
+\begin{verbatim}
++setNumber(number:long): void
++setExpire(expire:Date): void
++setName(name:String): void
++setCode(code:int): void
+\end{verbatim}
+\end{answer}

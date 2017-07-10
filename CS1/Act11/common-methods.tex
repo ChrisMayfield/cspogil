@@ -1,0 +1,45 @@
+\model{Common Methods}
+
+Classes are often used to represent abstract data types, such as \java{Color} or \java{Point}.
+They are also used to represent objects in the real world, such as \java{CreditCard} (see \ref{credit-card.tex}) or \java{Person}.
+
+\begin{center}
+\includegraphics{Color.pdf}  % immutable
+~~~~~
+\includegraphics{Point.pdf}  % mutable
+\end{center}
+
+Classes generally include the following kinds of methods (in addition to others):
+\begin{itemize}[itemsep=0pt]
+\item \textbf{constructor} methods that initialize new objects
+\item \textbf{accessor} methods (getters) that return attributes
+\item \textbf{mutator} methods (setters) that modify attributes
+\item \textbf{object} methods such as \java{equals} and \java{toString}
+\item \textbf{utility} methods which are generally static
+\end{itemize}
+
+
+\quest{20 min}
+
+
+\Q Identify the constructors for the \java{Color} class. What is the difference between them? What arguments do they take?
+
+\begin{answer}
+There are two constructors: one that takes three integers for the RGB values, and other that takes a Color object. The latter is called a \emph{copy constructor}. Constructors do not return values.
+\end{answer}
+
+
+\Q Identify an accessor method in the \java{Point} class.
+\begin{enumerate}[itemsep=1pt]
+\item Which instance variable does it get? \ans{{\tt this.x} or {\tt this.y}}
+\item What arguments does the method take? \ans{none}
+\item What does the method return? \ans{The value of \java{x} or \java{y}}
+\end{enumerate}
+
+
+\Q Identify a mutator method in the \java{Point} class.
+\begin{enumerate}[itemsep=1pt]
+\item Which instance variable does it set? \ans{{\tt this.x} or {\tt this.y}}
+\item What arguments does the method take? \ans{The value of \java{x} or \java{y}}
+\item What does the method return? \ans{nothing}
+\end{enumerate}

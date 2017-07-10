@@ -1,9 +1,9 @@
 \model{Credit Card}
 % based on Model 2 of "Activity 10 - Class Design" by Helen Hu
 
+In the following questions, you will design a class that represents an individual's credit card.
+
 \begin{center}
-\textit{For the remaining questions, you will design a class that represents an individual's credit card.}
-\bigskip\par
 % https://www.bankofamerica.com/credit-cards/
 \includegraphics{credit-card.png}
 \end{center}
@@ -12,16 +12,18 @@
 \quest{15 min}
 
 
-\Q List two or more attributes that would be necessary for this \java{CreditCard} class. For each attribute, indicate what data type would be most appropriate.
+\Q List two or more attributes that would be necessary for the \java{CreditCard} class.
+For each attribute, indicate what data type would be most appropriate.
 
-\begin{answer}[5em]
+\begin{answer}
 Answers may include \verb|number:long|, \verb|expire:Date|, \verb|name:String|, \verb|code:int|, etc.
 \end{answer}
 
 
-\Q When constructing (or updating) a \java{CreditCard} object, what values would you need to check? What are the valid ranges of values for each attribute?
+\Q When constructing (or updating) a \java{CreditCard} object, what values would you need to check?
+What are the valid ranges of values for each attribute?
 
-\begin{answer}[5em]
+\begin{answer}
 The number should have 16 digits, dates need to have valid months and days, names should be at most 22 letters and not contain digits or other characters, code should be 3--4 digits.
 \end{answer}
 
@@ -49,4 +51,12 @@ Include arguments and return values, using the same format as a UML diagram.
 +setName(name:String): void
 +setCode(code:int): void
 \end{verbatim}
+\end{answer}
+
+
+\Q Describe how you would implement the \java{equals} and \java{toString} methods of the \java{CreditCard} class (i.e., what they would do and which attributes they would use).
+
+\begin{answer}[5em]
+Two credit cards would be considered equal if they have the same account number, assuming there are no duplicates in the bank.
+The \java{toString} would print the account number, expiration date, and cardholder's name, each separated by a comma.
 \end{answer}

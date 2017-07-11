@@ -57,7 +57,13 @@ It depends on the constructor. For the \java{Card} class, the attributes \java{r
 \end{answer}
 
 
-\Q Describe in your own words what the following statement does. Be sure to explain how the random part works.
+\comment{The \java{new} operator requests a memory location to store an array or object.
+Java automatically determines how much memory is needed and initializes the contents of the corresponding memory cells to zero.
+That's why array elements and object attributes have default values, whereas local variables (not allocated with \java{new}) must be initialized before they are used.}
+
+
+\Q \label{random}
+Describe in your own words what the following statement does. Be sure to explain how the random part works.
 
 \begin{center}
 \java{hand[(int) (Math.random() * hand.length)] = null;}
@@ -70,7 +76,8 @@ So this statement randomly sets of the \java{Card} references to {\tt null}.
 \end{answer}
 
 
-\Q \label{forcard} What is the result of running the loop below?
+\Q \label{forcard}
+What is the result of running the loop below?
 What is the purpose of the nested if-statement?
 
 \begin{javalst}
@@ -119,7 +126,8 @@ Standard for loops typically iterate indexes; that's why the variable is almost 
 \end{answer}
 
 
-\Q Rewrite the loop in \ref{forcard} using an enhanced for loop.
+\Q \label{foreach}
+Rewrite the loop in \ref{forcard} using an enhanced for loop.
 Use an appropriate variable name for the \java{Card} object (i.e., not \java{i}).
 For simplicity, you may omit the \java{System.out.println} line.
 

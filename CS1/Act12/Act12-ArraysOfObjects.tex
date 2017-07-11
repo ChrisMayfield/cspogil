@@ -1,3 +1,4 @@
+\def\Teacher{}
 \documentclass[12pt]{article}
 
 \title{Activity 12: Arrays of Objects}
@@ -20,17 +21,25 @@ It's not only possible to have arrays of objects, but also objects of arrays, ob
 }{
   \item Developing algorithms for constructing and searching arrays of objects. (Problem Solving)
 }{
-TODO
+The first two objectives apply to \ref{hand-of-cards.tex}.
+Students should understand the differences in syntax (i.e., using square brackets vs parentheses) as well as what happens behind the scenes (i.e., \texttt{new} invokes a constructor for objects but not arrays).
+
+Keep an eye on what students write down for \ref{random}.
+If their answer is superficial, challenge them to be more specific.
+Report out on \ref{foreach}, and ask students why \java{i} is not an appropriate variable name for this loop (\java{i} typically stands for index or iteration).
 
 This activity makes use of a simple Card class.
-Be sure to take a look at the source code before facilitating.
+Be sure to take a look at the \github{CS1/Act12/Card.java}{source code} before facilitating.
 It stores both the rank and suit as integers, and it does not perform any validation.
+\ref{cnstr} in \ref{deck-of-cards.tex} asks students to implement a simple default value replacement.
+This question can optionally be extended by having students call a setter method instead.
 
-Question \#9 can optionally be extended by having students call a setter method that performs validation.
-That way, this.rank is guaranteed to be between 1 and 13, and this.suit between 0 and 3.
+\ref{build} and \ref{search} are the most important questions.
+Make sure students have enough time to develop the algorithms, and if possible, write the complete source code.
+Consider reporting out after \ref{build} to bring the class back in sync, since there is so much time allocated for \ref{deck-of-cards.tex}.
 }
 
-\input{object-arrays.tex}
-\input{playing-cards.tex}
+\input{hand-of-cards.tex}
+\input{deck-of-cards.tex}
 
 \end{document}

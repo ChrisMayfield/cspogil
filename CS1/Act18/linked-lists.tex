@@ -69,20 +69,20 @@ Instead of working with nodes directly, we can design a wrapper class to handle 
 \vspace{1ex}
 
 
-\quest{12 min}
+\quest{15 min}
 
 
-\Q How many operations are required to add 14 \textit{at the start} of an empty list?
+\Q How many assignment operations are required to add 14 \textit{at the front} of an empty list? Note that creating a \java{Node} takes two assignments (one for \java{value} and one for \java{next}).
 
 \begin{answer}
-3 operations: 1 to create the new element, another to copy the reference to the current front, and a third to move the head reference to the new element.
+3 operations: 1 to assign the \java{value}, 1 to assign null to \java{next}, and 1 to assign the reference of the new Node to the head variable (node3 in this case).
 \end{answer}
 
 
-\Q How many operations are required to add 22 after 14 and 6 have been added?
+\Q How many operations are required to add 22 at the front, after 14 and 6 have been added?
 
 \begin{answer}
-Still just 3: same as the first insert. No shifting is required.
+Still just 3, in fact the same as the first insert. Note that no shifting is required.
 \end{answer}
 
 
@@ -96,15 +96,17 @@ Still just 3: same as the first insert. No shifting is required.
 \Q How much memory is needed to store each element in the \java{LinkedList}?
 How does that amount compare with using an \java{ArrayList}?
 
-\begin{answer}[5em]
-The amount needed to store a single element of that type, plus room to store the \java{next} reference of each element.
-In this case, 16 bytes for the \java{Integer} object, and 8 bytes for the \java{next} reference.
-Arrays require 8 bytes for each reference plus 16 bytes for each object, so it's a wash.
+\begin{answer}
+Linked lists need to store two references per node (one for \java{value} and one for \java{next}).
+In contrast, array lists only need to store the \java{value} references.
+At a conceptual level, array lists take up about half as much space as linked lists (not counting empty cells and object overhead).
 \end{answer}
 
 
-\Q Discuss why \java{LinkedList} is a poor choice of \java{List} in the program below.
+\Q \label{LinksAreBad}
+Discuss why \java{LinkedList} is a poor choice of \java{List} in the program below.
 
+\vspace{1ex}
 \begin{javabox}
 import java.util.LinkedList;
 import java.util.List;
@@ -134,3 +136,8 @@ public class LinksAreBad
     }
 }
 \end{javabox}
+\vspace{-1ex}
+
+\begin{answer}[3em]
+Each insertion in the middle of the list takes $n/2$ operations (where $n$ is the current size of the collection) in order to find the \java{next} references to assign.
+\end{answer}

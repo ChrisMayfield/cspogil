@@ -25,11 +25,20 @@ If arrays were good enough, Java wouldn't need a collections framework.
 }{
   \item Making connections between linked list diagrams and Java source code. (Information Processing)
 }{
-TODO
+\ref{list-interface.tex} should be a quick review based on students' prior experience with \java{ArrayList}s.
+Report out \ref{listtable} by projecting (or drawing) the table on the board and asking presenters to fill in rows.
 
-The figures and source code examples in this activity are based on presentation materials by Nathan Sprague. Used with permission.
+Within the first five minutes of \ref{array-lists.tex}, report out on \ref{arrayopers} to make sure students understand what is meant by ``operations'' (assignments).
+Note that \ref{linked-lists.tex} continues this idea to include assigning references.
+Avoid discussing low-level details such as memory management and object overhead.
+After reporting out \ref{ArraysAreBad} and \ref{LinksAreBad}, run one of them for about 10 seconds.
+Then terminate the program, change the list type in \java{main}, and rerun the program.
 
-\github{CS1/Act18/util}{Java library source code}
+At the end of \ref{doubly-linked.tex}, it is helpful to show the \github{CS1/Act18/util}{Java library source code} for List, ArrayList, and LinkedList.
+Help students make connections from the models in this activity to their actual implementation in Java.
+For example, you can display the private methods of LinkedList and ask presenters to discuss their team's answer to \ref{whydoubly}.
+
+\textbf{Acknowledgements:} The figures and source code in this activity are based on presentation materials by Nathan Sprague, and \ref{list-interface.tex} is based on a Lists activity by Clif Kussmaul.
 }
 
 \input{list-interface.tex}

@@ -55,7 +55,7 @@ If the array fills up, \java{ArrayList} automatically creates a new array about 
 All current values must be copied into the new array, and the old array is then garbage collected.
 
 
-\quest{12 min}
+\quest{10 min}
 
 
 \Q Why does the Java Collections Framework use the name \java{ArrayList}?
@@ -76,10 +76,11 @@ In general, the first word tells how it's implemented, and the second word is th
 %\end{answer}
 
 
-\Q How many array operations are required to add 49 and 79 to the \java{numbers} collection above?
+\Q \label{arrayopers}
+How many array operations (i.e., integer assignments) were required to add 49 and 79 to the front of the second diagram in \ref{\currfilename}?
 
 \begin{answer}
-There are 7 total array operations:
+There are 9 total array operations:
 49 takes 4 (3 shifts + 1 add), and 74 takes 5 (4 shifts + 1 add).
 \end{answer}
 
@@ -102,8 +103,10 @@ Finally, the old array is garbage collected.
 \end{answer}
 
 
-\Q Discuss why \java{ArrayList} is a poor choice of \java{List} in the program below.
+\Q \label{ArraysAreBad}
+Discuss why \java{ArrayList} is a poor choice of \java{List} in the program below.
 
+\vspace{1ex}
 \begin{javabox}
 import java.util.ArrayList;
 import java.util.List;
@@ -133,6 +136,11 @@ public class ArraysAreBad
     }
 }
 \end{javabox}
+\vspace{-1ex}
+
+\begin{answer}[3em]
+Each insertion at the beginning of the array takes $n$ operations (where $n$ is the current size of the collection) in order to shift existing elements down.
+\end{answer}
 
 
 \Q Arrays are simple and effective. Why would we want any other implementation?

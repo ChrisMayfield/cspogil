@@ -1,8 +1,7 @@
+\model{List Interface}
 % Based on Model 1 of Lists activity by Clif Kussmaul
 
-\model{List Interface}
-
-In computer science, a \textit{list} is a group of items with an \textit{index} (or position) for each item.
+In computer science, a \textit{list} is a sequence of items with an \textit{index} (or position) for each item.
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
@@ -24,7 +23,7 @@ Here is a subset of methods from \java{interface List<E>} in the Java API.
 \end{center}
 
 
-\quest{15 min}
+\quest{10 min}
 
 
 \Q Give several examples of lists from everyday life.
@@ -57,17 +56,40 @@ Four: \java{add} (at the end), \java{add} (at a position), \java{remove}, and \j
 \end{answer}
 
 
-\Q Fill in the table below using the methods from the Java API.
+\Q \label{listtable}
+Fill in the table below to show the contents of the list after each method call.
+Note that the \java{add} method returns \java{true} if the list changes as a result, and the \java{set} method returns the element previously at the specified position.
 
-\vspace{-1ex}
 \begin{center}
-%TODO need solution (convert table to LaTeX?)
-\includegraphics[width=0.85\linewidth]{figs/JavaAPIQuestionTable.pdf}
+\begin{tabular}{|l|C{4pt}|C{24pt}|C{24pt}|C{24pt}|C{24pt}|C{24pt}|C{4pt}|c|}
+\hline
+\tr Method Call      & \tg & \tr  0  & \tr  1  & \tr  1  & \tr  3  & \tr 4 & \tg & \tr Return Value \\
+\hline
+\java{add(0, "A")}   & \tg &      A  &         &         &         &       & \tg & true \\
+\hline
+\java{size()}        & \tg &      A  &         &         &         &       & \tg & 1 \\
+\hline
+\java{add("N")}      & \tg &      A  &      N  &         &         &       & \tg & true \\
+\hline
+\java{add(0, "R")}   & \tg & \ans{R} & \ans{A} & \ans{N} &         &       & \tg & \ans{true} \\
+\hline
+\java{add("G")}      & \tg & \ans{R} & \ans{A} & \ans{N} & \ans{G} &       & \tg & \ans{true} \\
+\hline
+\java{size()}        & \tg & \ans{R} & \ans{A} & \ans{N} & \ans{G} &       & \tg & \ans{4} \\
+\hline
+\java{remove(0)}     & \tg & \ans{A} & \ans{N} & \ans{G} &         &       & \tg & \ans{R} \\
+\hline
+\java{get(0)}        & \tg & \ans{A} & \ans{N} & \ans{G} &         &       & \tg & \ans{A} \\
+\hline
+\java{get(size()-1)} & \tg & \ans{A} & \ans{N} & \ans{G} &         &       & \tg & \ans{G} \\
+\hline
+\java{set(1, "U")}   & \tg & \ans{A} & \ans{U} & \ans{G} &         &       & \tg & \ans{N} \\
+\hline
+\end{tabular}
 \end{center}
-\vspace{-1ex}
 
 
-\Q When adding or removing elements at the beginning, what do you have to do with the existing elements in the list?
+\Q When adding or removing elements at the beginning, what did you have to do with the existing elements in the list?
 
 \begin{answer}
 To keep the list in order, existing elements need to be shifted down by one to the right for adding and to the left for removing.

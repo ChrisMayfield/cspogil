@@ -16,9 +16,8 @@ def main(suff):
         if suff == "tex":
             print "\\act{" + title + "}{" + name[:-4] + "}"
         else:
-            title = title[title.find(":")+2:]
             name = name[:name.find("/")]
-            print "[" + title + "](" + name + ")"
+            print "* [" + title + "](" + name + ")"
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:

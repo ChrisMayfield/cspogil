@@ -81,10 +81,18 @@ public class Point {
      * Example use of Point objects.
      */
     public static void main(String[] args) {
-        Point p1 = new Point(0, 0);
-        Point p2 = new Point(1, 2);
-        System.out.println("p1 is at " + p1);
-        System.out.println("p2 is at " + p2);
+        Point p1 = new Point();
+        Point p2 = new Point(0, 0);
+        Point p3 = new Point(3, 3);
+        
+        System.out.println( p1 == p1 );
+        System.out.println( p1.equals(p1) );
+        System.out.println( p1 == p2 );
+        System.out.println( p1.equals(p2) );
+        System.out.println( p1.equals(p3) );
+        System.out.println( p2.toString() );
+        System.out.println( p2.equals("(3, 3)") );
+        System.out.println( p3.equals("(3, 3)") );
     }
     
 }

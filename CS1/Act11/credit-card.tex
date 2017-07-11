@@ -1,7 +1,7 @@
 \model{Credit Card}
 % based on Model 2 of "Activity 10 - Class Design" by Helen Hu
 
-In the following questions, you will design a class that represents an individual's credit card.
+In this section, you will design a new class that represents an individual's credit card.
 
 \begin{center}
 % https://www.bankofamerica.com/credit-cards/
@@ -31,7 +31,7 @@ The number should have 16 digits, dates need to have valid months and days, name
 \Q List two accessor methods would be appropriate for the \java{CreditCard} class.
 Include arguments and return values, using the same format as a UML diagram.
 
-\begin{answer}[5em]
+\begin{answer}[6em]
 \begin{verbatim}
 +getNumber(): long
 +getExpire(): Date
@@ -44,7 +44,7 @@ Include arguments and return values, using the same format as a UML diagram.
 \Q List two mutator methods would be appropriate for the \java{CreditCard} class.
 Include arguments and return values, using the same format as a UML diagram.
 
-\begin{answer}[5em]
+\begin{answer}[6em]
 \begin{verbatim}
 +setNumber(number:long): void
 +setExpire(expire:Date): void
@@ -54,7 +54,7 @@ Include arguments and return values, using the same format as a UML diagram.
 \end{answer}
 
 
-\Q Describe how you would implement the \java{equals} and \java{toString} methods of the \java{CreditCard} class (i.e., what they would do and which attributes they would use).
+\Q Describe how you would implement the \java{equals} and \java{toString} methods of the \java{CreditCard} class (i.e., what you would define them to return based on which attributes).
 
 \begin{answer}[5em]
 Two credit cards would be considered equal if they have the same account number, assuming there are no duplicates in the bank.

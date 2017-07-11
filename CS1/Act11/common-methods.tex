@@ -57,7 +57,8 @@ The \java{Point} class also has a default constructor, which initializes attribu
 \end{enumerate}
 
 
-\Q The \java{Color} class does not have accessors or mutators, but it provides methods that return lighter or darker \texttt{Color} objects.
+\Q \label{immutable}
+The \java{Color} class does not have accessors or mutators, but it provides methods that return lighter or darker \texttt{Color} objects.
 Why do you think the class was designed this way?
 
 \begin{answer}
@@ -68,54 +69,69 @@ The \java{String} class is also designed this way.
 
 
 \vspace{2em}
-\textit{In the following questions, consider the implementation of the \java{equals} method from each class.}
+\hrulefill
+
+\vspace{1ex}
+\textit{For the following questions, consider the source code of \java{equals} and \java{toString} from the \java{Point} class.}
 \vspace{1ex}
 
-\begin{minipage}[t]{0.53\linewidth}
-\begin{tabular}{|l|}
-\hline
-\textbf{Point.java}
-\end{tabular}
-\begin{javalst}
-public boolean equals(Object obj) {
-    if (obj instanceof Color) {
-        Color other = (Color) obj;
-        return this.red == other.red
-            && this.green == other.green
-            && this.blue == other.blue;
-    }
-    return false;
-}
-\end{javalst}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.46\linewidth}
-\begin{tabular}{|l|}
-\hline
-\textbf{Color.java}
-\end{tabular}
 \begin{javalst}
 public boolean equals(Object obj) {
     if (obj instanceof Point) {
         Point p = (Point) obj;
-        return this.x == p.x
-            && this.y == p.y;
+        return this.x == p.x && this.y == p.y;
     }
     return false;
 }
+
+public String toString() {
+    return String.format("(%d, %d)", this.x, this.y);
+}
 \end{javalst}
-\end{minipage}
+
+\hrulefill
+\vspace{1em}
 
 
-\Q TODO
+\Q \label{expr}
+What is the value of each expression below? (Don't just guess; read the source code above.)
+\begin{javalst}
+Point p1 = new Point();  Point p2 = new Point(0, 0);  Point p3 = new Point(3, 3);
+\end{javalst}
 
-\begin{answer}
-TODO
+\begin{multicols}{2}
+\begin{enumerate}
+\item \java{p1 == p1} \ans{true}
+\item \java{p1.equals(p1)} \ans{true}
+\item \java{p1 == p2} \ans{false}
+\item \java{p1.equals(p2)} \ans{true}
+\item \java{p1.equals(p3)} \ans{false}
+\item \java{p2.toString()} \ans{"(0, 0)"}
+\item \java{p2.equals("(3, 3)")} \ans{false}
+\item \java{p3.equals("(3, 3)")} \ans{false}
+\end{enumerate}
+\end{multicols}
+
+
+\Q What is the purpose of the \texttt{equals} and \texttt{toString} methods?
+
+\begin{answer}[5em]
+The \java{equals} method determines whether two objects have the same attribute values, and the \java{toString} method returns a \texttt{String} representation of the \texttt{Point} object.
+These methods make it easier to work with user-defined data types.
 \end{answer}
 
 
-\Q TODO
+\Q What is the purpose of the \java{if}-statement in the \texttt{equals} method?
 
 \begin{answer}
-TODO
+Since \java{equals} can take any type of \java{Object}, you need to check if the argument is a \java{Point} instance before using it as such.
+\end{answer}
+
+
+\Q How could you modify the \java{equals} method to cause both \ref{expr}d and \ref{expr}h to return \java{true}?
+
+\begin{answer}[5em]
+Change the last line to ~\texttt{return this.toString().equals(obj);}
+
+You could instead add ~\texttt{if (obj instanceof String)}, but since the \texttt{String.equals} method takes an \texttt{Object}, there's no need to convert the \java{obj} parameter before calling \texttt{String.equals}.
 \end{answer}

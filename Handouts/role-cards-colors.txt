@@ -1,0 +1,14 @@
+# POGIL workshop
+
+Manager   = yellow
+Recorder  = pink
+Presenter = blue
+Reflector = green
+
+
+# JMU copy center
+
+Manager   = yellow
+Recorder  = orange
+Presenter = purple
+Reflector = green

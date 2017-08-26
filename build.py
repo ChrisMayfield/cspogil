@@ -73,10 +73,10 @@ def build(path, name):
     if CLEAN:
         os.remove("_TEMP_.tex")
 
-def main(pattern):
+def main(courses, pattern):
     """Find and build all files."""
     cwd = os.getcwd()
-    for root in ["CS1"]:
+    for root in courses:
         for path, dirs, files in sorted(os.walk(root)):
             for name in files:
                 # build tex files
@@ -96,7 +96,10 @@ def main(pattern):
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
-        main(sys.argv[1])
+        main(["CS0", "CS1"], sys.argv[1])
+    elif len(sys.argv) == 3:
+        main([sys.argv[1]], sys.argv[2])
     else:
-        print("Usage: build.py {all | clean | NAME}")
+        print("Usage: build.py [COURSE] {all | clean | NAME}")
+        print("COURSE is CS0, CS1, or blank for all")
         print("NAME is any substring of the file(s)")

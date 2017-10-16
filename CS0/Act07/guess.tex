@@ -1,0 +1,130 @@
+\model{Guessing Game}
+
+Create a new file named \texttt{guess.py} and enter the following code.
+Replace the name in Line~2 with your own name.
+Be careful to type the code \emph{exactly} as shown.
+
+\begin{pythbox}
+name = raw_input("What is your name? ")
+if name == "Taylor":
+    print name, "is a great name!"
+else:
+    print name, "is an okay name."
+\end{pythbox}
+
+Note: \verb|raw_input| is a \textbf{function} that displays a prompt on the screen and reads a line from the keyboard.
+In this program, the result of \verb|raw_input| is stored in the \textbf{variable} \pyth{name}.
+
+
+\quest{15 min}
+
+
+\Q What is the prompt? Why is there a space at the end of it?
+
+\begin{answer}
+The prompt is \str{What is your name? }.
+The space at the end makes it so that the input isn't ``touching'' the question mark when the user types.
+\end{answer}
+
+
+\Q Run the program a few times, entering a different name each time. Feel free to modify the messages as you see fit.
+
+\vspace{1em}
+
+
+\Q Enter each of these lines into the IDLE shell, and explain where the syntax error occurs.
+
+\begin{enumerate}
+\item \verb|name? = raw_input("What is your name?")|
+\ans{question mark}
+
+\item \verb|your name = raw_input("What is your name?")|
+\ans{space between your and name}
+
+\item \verb|1st_name = raw_input("What is your name?")|
+\ans{the word 1st}
+
+\item \verb|from = raw_input("Where were you born?")|
+\ans{the equals sign (from is a keyword)}
+\end{enumerate}
+
+
+\Q Based on the errors in the previous question and the following correct examples, describe three rules that need to be followed when naming a variable.
+
+\begin{pythlst}
+    name2 = raw_input("What is your name?")
+    your_name = raw_input("What is your name?")
+    firstName = raw_input("What is your name?")
+\end{pythlst}
+
+\begin{answer}
+Answers may include: it can't have punctuation or other symbols, it has to be one word, it can't start with a number, and it can't be a keyword.
+\end{answer}
+
+
+\Q \label{vars} At the end of your \texttt{guess.py} program, create two new variables named \pyth{number} and \pyth{guess}.
+Set the value of \pyth{number} to be an integer between 1 and 100 (of your choice).
+Ask the user to guess your number, and store the result in \pyth{guess}.
+Write your statements in the space below.
+
+\begin{answer}
+\begin{pythans}
+number = 74  # or some other value
+guess = raw_input("Guess my number: ")
+\end{pythans}
+\end{answer}
+
+
+\Q Add the following logic to your program:
+If the guess is too high, display the message \str{Too high!};
+if the guess is too low, display the message \str{Too low!};
+if the user guessed the number, display \str{You got it!}.
+Write your statements in the space below.
+
+\begin{answer}[9em]
+\begin{pythans}
+    if guess < number:
+        print "Too low!"
+    if guess > number:
+        print "Too high!"
+    if guess == number:
+        print "You got it!"
+\end{pythans}
+\end{answer}
+
+
+\Q What is the difference between \pyth{=} and \pyth{==} in the programs you have written today?
+
+\begin{answer}
+The \pyth{=} operator is used to \emph{assign} values to variables, whereas the \pyth{==} operator is used to \emph{compare} values for equality.
+\end{answer}
+
+
+\Q At this point, you should have a program that allows the user to make only one guess.
+Rather than run this program over and over again, you can use a \pyth{while} loop to make it repeat the guessing part.
+Add the following line of code between the two lines you wrote in \ref{vars}.
+
+\begin{pythlst}
+    while guess != number:
+\end{pythlst}
+
+\vspace{1em}
+
+
+\Q What did you have to do after inserting the \pyth{while} loop.
+In other words, how did you make the \pyth{raw_input} and \pyth{if} statements part of the \pyth{while} loop?
+
+\begin{answer}
+You need to indent the corresponding lines of code underneath it.
+Select the rest of the program lines, and then press the Tab key.
+\end{answer}
+
+
+\Q Rather than guess the same number every time, you can have the computer select a random number for you.
+\begin{itemize}
+\item At the top of your program, add the line ``\pyth{import random}'' (without the quotes).
+\item Then change the line where you set value of \pyth{number} to use this example instead:
+\begin{pythlst}
+number = random.randrange(100) + 1
+\end{pythlst}
+\end{itemize}

@@ -79,12 +79,19 @@
     stringstyle=\color{answers},
 }
 
-% code environments
+% Java environments
 \newcommand{\java}[1]{\lstinline[language=java]{#1}}%[
 \lstnewenvironment{javaans}{\lstset{language=java,style=lstanswers}}{}
 \lstnewenvironment{javalst}{\lstset{language=java,backgroundcolor=}}{}
 \lstnewenvironment{javanum}{\lstset{language=java,backgroundcolor=,numbers=left}}{}
 \lstnewenvironment{javabox}{\lstset{language=java,frame=single,numbers=left}\quote}{\endquote}
+
+% Python environments
+\newcommand{\pyth}[1]{\lstinline[language=java]{#1}}%[
+\lstnewenvironment{pythans}{\lstset{language=python,style=lstanswers}}{}
+\lstnewenvironment{pythlst}{\lstset{language=python,backgroundcolor=}}{}
+\lstnewenvironment{pythnum}{\lstset{language=python,backgroundcolor=,numbers=left}}{}
+\lstnewenvironment{pythbox}{\lstset{language=python,frame=single,numbers=left}\quote}{\endquote}
 
 % PDF properties
 \usepackage[pdftex]{hyperref}

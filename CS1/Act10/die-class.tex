@@ -88,7 +88,8 @@ Write a statement that \emph{declares} a \java{Die} variable named \java{lucky}.
 This method has no return type and has the same name as the class itself. What does the \java{Die} constructor do?
 
 \begin{answer}
-It ``rolls'' the die by calling the \java{roll} method.
+It initializes the \java{face} attribute to 1.
+(Without this constructor, the default value would be 0, which is invalid for dice.)
 \end{answer}
 
 

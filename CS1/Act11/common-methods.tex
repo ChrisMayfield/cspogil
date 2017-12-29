@@ -72,25 +72,30 @@ The \java{String} class is also designed this way.
 \hrulefill
 
 \vspace{1ex}
-\textit{For the following questions, consider the source code of \java{equals} and \java{toString} from the \java{Point} class.}
+\textit{For the following questions, consider this source code from the \java{Point} class.}
 \vspace{1ex}
 
 \begin{javalst}
-public boolean equals(Object obj) {
-    if (obj instanceof Point) {
-        Point p = (Point) obj;
-        return this.x == p.x && this.y == p.y;
+    public Point() {
+        this.x = 0;
+        this.y = 0;
     }
-    return false;
-}
 
-public String toString() {
-    return String.format("(%d, %d)", this.x, this.y);
-}
+    public boolean equals(Object obj) {
+        if (obj instanceof Point) {
+            Point p = (Point) obj;
+            return this.x == p.x && this.y == p.y;
+        }
+        return false;
+    }
+
+    public String toString() {
+        return String.format("(%d, %d)", this.x, this.y);
+    }
 \end{javalst}
 
-\hrulefill
-\vspace{1em}
+%\hrulefill
+%\vspace{1em}
 
 
 \Q \label{expr}

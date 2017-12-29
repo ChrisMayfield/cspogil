@@ -4,9 +4,11 @@
 Consider the following Java statements. What is the resulting value of each variable?
 
 \begin{center}
-\vspace{-1em}
-\begin{tabular}{p{120pt}p{120pt}p{120pt}}
+\vspace{-6pt}
+\begin{tabular}{cp{120pt}cp{120pt}cp{120pt}}
 
+\textsf{A:}
+&
 \vspace{-1em}
 \begin{javalst}
 int x, y;
@@ -16,6 +18,9 @@ y = x;
 x = y;
 
 \end{javalst}
+
+&
+\textsf{B:}
 &
 \vspace{-1em}
 \begin{javalst}
@@ -26,23 +31,28 @@ z = y;
 y = x;
 x = z;
 \end{javalst}
+
+&
+\textsf{C:}
 &
 \vspace{-1em}
 \begin{javalst}
-int z, a;
+int z, y;
 z = 2;
 z = z + 1;
 z = z + 1;
-a = a + 1;
+y = y + 1;
 
 \end{javalst}
 
 \\[-1em]
+&
 Value of x: \blank \ans{1}
 
 \vspace{1em}
 Value of y: \blank \ans{1}
 
+&
 &
 Value of x: \blank \ans{2}
 
@@ -53,20 +63,21 @@ Value of y: \blank \ans{1}
 Value of z: \blank \ans{2}
 
 &
+&
 Value of z: \blank \ans{4}
 
 \vspace{1em}
-Value of a: \blank \ans{?}
+Value of y: \blank \ans{?}
 
 \end{tabular}
-\vspace{-1em}
+\vspace{-14pt}
 \end{center}
 
 
 \quest{15 min}
 
 
-\Q Why is the value of \java{x} not 2 in the first section of code?
+\Q In program~\textsf{A}, why is the value of \java{x} not 2?
 
 \begin{answer}
 Each statement is executed one after the other, so the third assignment changes the value of \java{y} to 1.
@@ -74,31 +85,31 @@ The last assignment then assigns 1 to the value \java{x}.
 \end{answer}
 
 
-\Q What happens to the values of \java{x} and \java{y} in the second section of code?
+\Q In program~\textsf{B}, what happens to the values of \java{x} and \java{y}?
 
 \begin{answer}
 They get swapped; \java{x} was 1 and \java{y} was 2, but in the end \java{x} was 2 and \java{y} was 1.
 \end{answer}
 
 
-\Q What is the purpose of the variable \java{z} in the second section of code?
+\Q In program~\textsf{B}, what is the purpose of the variable \java{z}?
 
 \begin{answer}
 It is a temporary variable that makes it possible to swap the values of \java{x} and \java{y}.
 \end{answer}
 
 
-\Q What happens to the value of \java{z} in the third section of code?
+\Q If program~\textsf{C} runs, what happens to the value of \java{z}?
 
 \begin{answer}
 It gets incremented twice; the value starts at 2, then it becomes 3, and then it becomes 4.
 \end{answer}
 
 
-\Q Why is it possible to increment \java{z} but not \java{a} in the third section of code?
+\Q In program~\textsf{C}, why is it possible to increment \java{z} but not \java{y}?
 
 \begin{answer}
-The variable \java{z} was initialized, but \java{a} was not.
+The variable \java{z} was initialized, but \java{y} was not.
 Java doesn't know what value to increment.
 \end{answer}
 

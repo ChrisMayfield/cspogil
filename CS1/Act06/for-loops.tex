@@ -49,7 +49,7 @@ Write a \java{for} loop that prints each character of a string on a separate lin
 You will need to invoke the \java{length()} and \java{charAt()} methods.
 Assume the string variable is named \java{word}.
 
-\begin{answer}[6em]
+\begin{answer}
 \vspace{-1ex}
 \begin{javaans}
     for (int i = 0; i < word.length(); i++) {
@@ -61,13 +61,28 @@ Assume the string variable is named \java{word}.
 
 \Q Rewrite your \java{for} loop in \ref{forchar} as a \java{while} loop.
 
-\begin{answer}[8em]
+\begin{answer}[6em]
 \vspace{-1ex}
 \begin{javaans}
     int i = 0;
     while (i < word.length()) {
         System.out.println(word.charAt(i));
         i++;
+    }
+\end{javaans}
+\end{answer}
+
+
+\Q Write a loop that computes the factorial of a given integer \java{n}.
+Recall that $n! = n * (n-1) * (n-2) * \ldots * 1$.
+Store your result in a variable named \java{fact}.
+
+\begin{answer}[6em]
+\vspace{-1ex}
+\begin{javaans}
+    long fact = 1;  // not int
+    for (int i = n; i > 1; i--) {
+        fact *= i;
     }
 \end{javaans}
 \end{answer}
@@ -80,24 +95,23 @@ This construct is often used when there are two variables for which all combinat
 \begin{javalst}
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 10; j++) {
-            System.out.printf("The product of %d and %d is %d\n",
-                              i, j, i * j);
+            System.out.printf("The product of %d and %d is %d\n", i, j, i * j);
         }
+        System.out.println();
     }
 \end{javalst}
 
-Write loops that compute and display the factorial of each integer from 1 to 20.
-Recall that $n! = n * (n-1) * (n-2) * \ldots * 1$.
+Write nested loops that compute and display the factorial of each integer from 1 to 20.
+(Reuse your code from the previous question.)
 Your output should be in this format:
 
+\vspace{-1ex}
 \begin{verbatim}
     The factorial of 1 is 1
     The factorial of 2 is 2
     The factorial of 3 is 6
     The factorial of 4 is 24
-    The factorial of 5 is 120
 \end{verbatim}
-
 \vspace{-3ex}
 
 \begin{answer}[10em]

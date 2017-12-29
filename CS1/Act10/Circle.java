@@ -21,7 +21,7 @@ public class Circle {
      * @return current radius value
      */
     public double getRadius() {
-        return radius;
+        return this.radius;
     }
     
     /**

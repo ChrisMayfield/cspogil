@@ -28,8 +28,9 @@
 \vspace{1em}
 
 Each method listed above is non-\java{static}.
-That is, they have an implicit parameter named \java{this} that is passed automatically.
+That is, they have an \emph{implicit} parameter named \java{this} that is passed automatically.
 (Note: There are many other \java{String} methods not listed above.)
+
 
 \quest{20 min}
 
@@ -55,6 +56,32 @@ What does it have to do with the keyword \java{this} in \ref{\currfilename}?
 \begin{answer}
 The variable containing the string precedes the dot operator. It is passed as the implicit {\tt this} parameter to the non-{\tt static} method.
 \end{answer}
+
+
+\comment{\normalfont
+
+To call a \java{static} method, you write \emph{ClassName.methodName},
+for example: ~\java{Math.abs(-5);}
+
+\vspace{1ex}
+To call a non-\java{static} method, you write \emph{objectName.methodName},
+for example: ~\java{str.length();}
+
+\vspace{1ex}
+Non-\java{static} methods make the code easier to read, because they associate the method with the object itself.
+From the \java{charAt} method's point of view, ~\java{str} becomes \java{this} object.
+
+\begin{center}
+\begin{tabular}{c|c}
+\tr Static (\java{str} passed explicitly) &
+\tr Non-Static (\java{str} passed implicitly) \\
+\hline
+\java{String.charAt(str, 8)  // wrong}
+& \java{str.charAt(8)} \\
+\end{tabular}
+\end{center}
+
+} % end comment
 
 
 \Q \label{howmany}

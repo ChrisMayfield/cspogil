@@ -2,31 +2,31 @@
 
 \vspace{-1ex}
 \begin{table}[h!]
-\begin{tabularx}{\linewidth}{|X|X|X|X|}
+\begin{tabularx}{\linewidth}{|X|X|X|X|l|}
 \hline
-\tr Keyword    & \tr Size & \tr Min Value & \tr Max Value \\
+\tr Keyword    & \tr Size & \tr Min Value          & \tr Max Value         & \tr Example              \\
 \hline
-\java{byte}    & 1 byte   & $-128$    & $127$ \\
+\java{byte}    & 1 byte   & $-128$                 & $127$                 & \java{(byte) 123}        \\
 \hline
-\java{short}   & 2 bytes  & $-32,768$ & $32,767$ \\
+\java{short}   & 2 bytes  & $-32,768$              & $32,767$              & \java{(short) 12345}     \\
 \hline
-\java{int}     & 4 bytes  & $-2^{31}$ & $2^{31}-1$ \\
+\java{int}     & 4 bytes  & $-2^{31}$              & $2^{31}-1$            & \java{1234567890}        \\
 \hline
-\java{long}    & 8 bytes  & $-2^{63}$ & $2^{63}-1$ \\
+\java{long}    & 8 bytes  & $-2^{63}$              & $2^{63}-1$            & \java{123456789012345L}  \\
 \hline
-\java{float}   & 4 bytes  & $\pm 3.4 \times 10^{-38}$  & $\pm 3.4 \times 10^{38}$ \\
+\java{float}   & 4 bytes  & $-3.4 \times 10^{38}$  & $3.4 \times 10^{38}$  & \java{3.14159F}          \\
 \hline
-\java{double}  & 8 bytes  & $\pm 1.7 \times 10^{-308}$ & $\pm 1.7 \times 10^{308}$ \\
+\java{double}  & 8 bytes  & $-1.8 \times 10^{308}$ & $1.8 \times 10^{308}$ & \java{3.141592653589793} \\
 \hline
-\java{boolean} & N/A      & \java{false}     & \java{true} \\
+\java{boolean} & 1 byte   & N/A                    & N/A                   & \java{true}              \\
 \hline
-\java{char}    & 2 bytes  & \java{'\\u0000'} & \java{'\\uffff'} \\
+\java{char}    & 2 bytes  & 0                      & 65,535                & \java{'A'}               \\
 \hline
 \end{tabularx}
 \end{table}
 
 Note that 1 byte is 8 bits, i.e., eight ``ones and zeros'' in computer memory.
-Since there are only two options for each bit, with 8 bits you can represent $2^8 = 256$ possible values.
+Since there are only two options for each bit, you can represent $2^8 = 256$ possible values with 1 byte.
 
 
 \quest{15 min}

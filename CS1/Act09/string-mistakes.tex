@@ -50,7 +50,7 @@ The \str{hello world} greeting is still lowercase.
 In Program A, what is returned by the string method?
 What happens to the return value?
 
-\begin{answer}
+\begin{answer}[3em]
 A new string is returned, but its value is not saved anywhere.
 \end{answer}
 
@@ -83,7 +83,15 @@ If the user enters a blank line, then there will be no character at position 1. 
 
 \Q Describe two different ways you can fix the run-time error in \ref{errorB}.
 
-\begin{answer}[3em]
+\begin{answer}
 1. Check if the string is long enough: ~{\tt if (line.length() >= 2)} \\
 2. Keep asking for input until valid: ~{\tt do \{~...~\} while (line.length() < 2);}
+\end{answer}
+
+
+\Q Explain why these errors occur based on what you learned in \ref{string-methods.tex} and \ref{string-chararray.tex}.
+
+\begin{answer}
+The \java{toUpperCase} method returns a copy of {\tt this} string; it doesn't actually change the original string.
+The \java{charAt} method reads the internal character array; if the index is out of bounds, you'll get an exception.
 \end{answer}

@@ -8,9 +8,9 @@ Once the array is created, its length cannot be changed.
 
 \begin{quote}
 \begin{javalst}
-String[] wordArray = {"hello", "world"};
-System.out.println(wordArray[0]);            // outputs hello
-System.out.println(wordArray.length);        // outputs 2
+char[] letterArray = {'H', 'i'};
+System.out.println(letterArray[0]);          // outputs H
+System.out.println(letterArray.length);      // outputs 2
 
 double[] numberArray = new double[365];
 System.out.println(numberArray[0]);          // outputs 0.0
@@ -20,17 +20,16 @@ System.out.println(numberArray.length);      // outputs 365
 
 Array elements are accessed by \emph{index} number, starting at zero:
 
-%TODO draw references to string objects in diagram
 \begin{quote}
-\begin{tabular}{cc}
+\begin{tabular}{C{2em}C{2em}}
 \hline
-\multicolumn{1}{|c|}{\java{"hello"}} &
-\multicolumn{1}{ c|}{\java{"world"}} \\
+\multicolumn{1}{|c|}{\java{'H'}} &
+\multicolumn{1}{ c|}{\java{'i'}} \\
 \hline
 \fs 0 & \fs 1 \\
 \end{tabular}
 \hspace{3em}
-\begin{tabular}{ccC{4em}c}
+\begin{tabular}{C{2em}C{2em}C{4em}C{2em}}
 \hline
 \multicolumn{1}{|c|}{\java{0.0}} &
 \multicolumn{1}{ c|}{\java{0.0}} &
@@ -48,9 +47,9 @@ Array elements are accessed by \emph{index} number, starting at zero:
 \Q Examine the results of the above code.
 
 \begin{enumerate}
-\item What is the index for the element \java{"world"}? \ans{1}
-\item What is the length of the \java{wordArray}? \ans{2}
-\item What is the length of the \java{numberArray}? \ans{365}
+\item What is the index for the element \java{'i'}? \ans{1}
+\item What is the length of \java{letterArray}? \ans{2}
+\item What is the length of \java{numberArray}? \ans{365}
 \item How would you access the last element of \java{numberArray}? \ans{\java{numberArray[364]}}
 \end{enumerate}
 
@@ -62,9 +61,9 @@ Array elements are accessed by \emph{index} number, starting at zero:
 
 \vspace{-1ex}
 \begin{answer}[2em]
-1) To declare the type: {\tt String[]}.
+1) To declare the type: {\tt double[]}.
 2) To specify the length: {\tt double[365]}.
-3) To access an element: {\tt wordArray[0]}.
+3) To access an element: {\tt numberArray[0]}.
 \end{answer}
 
 \item In contrast, how are curly braces \{\} used for an array?

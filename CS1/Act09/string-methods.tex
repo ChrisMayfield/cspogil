@@ -69,7 +69,7 @@ for example: ~\java{str.length();}
 
 \vspace{1ex}
 Non-\java{static} methods make the code easier to read, because they associate the method with the object itself.
-From the \java{charAt} method's point of view, ~\java{str} becomes \java{this} object.
+From the \java{charAt} method's point of view, ~\java{str} is ~\java{this} object.
 
 \begin{center}
 \begin{tabular}{c|c}
@@ -104,10 +104,11 @@ How many arguments does each method call in \ref{strAPI} have?
 Predict the output of the following code.
 
 \begin{javalst}
-String name1 = "Mark";
-String name2 = "Ma" + "rk";
-String name3 = "Mary";
+String name1 = new String("Mark");
+String name2 = new String("Mark");
+\end{javalst}
 
+\begin{javalst}
 // compare name1 and name2
 if (name1 == name2) {
     System.out.println("name1 and name2 are identical");
@@ -116,9 +117,9 @@ if (name1 == name2) {
 }
 \end{javalst}
 
-\vspace{-3ex}
+\vspace{-2ex}
 \begin{answer}[1em]
-\tt \hspace{1em} name1 and name2 are identical ~ \normalfont Note: compiler optimization
+\tt \hspace{1em} name1 and name2 are NOT identical
 \end{answer}
 
 \begin{javalst}
@@ -130,23 +131,9 @@ if (name1.equals(name2)) {
 }
 \end{javalst}
 
-\vspace{-3ex}
+\vspace{-2ex}
 \begin{answer}[1em]
 \tt \hspace{1em} name1 and name2 are equal
-\end{answer}
-
-\begin{javalst}
-// compare "Mark" and "Mary"
-if (name1.equals(name3)) {
-    System.out.println("name1 and name3 are equal");
-} else {
-    System.out.println("name1 and name3 are NOT equal");
-}
-\end{javalst}
-
-\vspace{-3ex}
-\begin{answer}[1em]
-\tt \hspace{1em} name1 and name3 are NOT equal
 \end{answer}
 
 
@@ -184,7 +171,7 @@ What two \java{String} methods will you need to solve it?
 
 \medskip
 \begin{javalst}
-public int stringMatch(String a, String b) {
+public static int stringMatch(String a, String b) {
 \end{javalst}
 
 \vspace{-1em}
@@ -219,13 +206,13 @@ public int stringMatch(String a, String b) {
 
 \java{stringYak("yakpak")} $\rightarrow$ \java{"pak"}
 
-\java{stringYak("pakyak")} $\rightarrow$ \java{"pak"}
+\java{stringYak("pikyik")} $\rightarrow$ \java{"pik"}
 
 \java{stringYak("yak123ya")} $\rightarrow$ \java{"123ya"}
 
 \medskip
 \begin{javalst}
-public String stringYak(String str) {
+public static String stringYak(String str) {
 \end{javalst}
 
 \vspace{-1em}

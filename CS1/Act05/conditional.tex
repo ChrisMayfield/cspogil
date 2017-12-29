@@ -1,8 +1,10 @@
 \model{Conditional Operators}
 % based on Model 3 of Activity 4 Boolean by Helen Hu
 
-Boolean expressions may also use conditional operators to implement basic logic.
-Relational operators are always executed first, so there is generally no need for parentheses.
+Boolean expressions use conditional operators to implement basic logic.
+If all three operators appear in the same expression, Java will evaluate \java{!} first, then \java{&&}, and finally \java{||}.
+If there are multiples of the same operator, they are evaluated from left to right.
+Relational operators are evaluated before ~\java{&&} and \java{||}, so there is generally no need for parentheses.
 
 \begin{center}
 \begin{tabular}{|C{100pt}|C{100pt}|}
@@ -17,9 +19,6 @@ Relational operators are always executed first, so there is generally no need fo
 \hline
 \end{tabular}
 \end{center}
-
-If all three operators appear in the same expression, Java will evaluate the \java{!} first, then \java{&&}, and finally \java{||}.
-If there are multiples of the same operator, they are evaluated from left to right.
 
 \smallskip
 \begin{multicols}{2}

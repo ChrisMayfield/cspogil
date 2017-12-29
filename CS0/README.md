@@ -23,5 +23,5 @@ Instructor's guides (content/process objectives, facilitation notes) are current
 11. Database Systems
 12. [Artificial Intelligence](Act12) -- 8-puzzle, tic-tac-toe, search trees, heuristics
 
-Activities 7--11 have not yet been written; check back in Spring 2018.
+Activities 8--11 have not yet been written; check back in Fall 2018.
 The [Meta](Meta) folder contains additional models for team development.

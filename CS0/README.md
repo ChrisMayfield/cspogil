@@ -16,7 +16,7 @@ Instructor's guides (content/process objectives, facilitation notes) are current
 4. [Operating Systems](Act04) -- screenshots, interaction with apps and hardware
 5. [Computer Networking](Act05) -- IP, DNS, bandwidth and latency, speed tests
 6. [Information Security](Act06) -- encryption, Caesar cipher, Vigenère cipher
-7. Algorithms and Python
+7. [Algorithms and Python](Act07) -- using IDLE, print, raw_input, guessing game
 8. Programming Languages
 9. Software Engineering
 10. Data Structures

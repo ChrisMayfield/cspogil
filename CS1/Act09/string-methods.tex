@@ -61,14 +61,15 @@ The variable containing the string precedes the dot operator. It is passed as th
 \comment{\normalfont
 
 To call a \java{static} method, you write \emph{ClassName.methodName},
-for example: ~\java{Math.abs(-5);}
+for example: ~\java{Math.abs(-5)}
 
 \vspace{1ex}
 To call a non-\java{static} method, you write \emph{objectName.methodName},
-for example: ~\java{str.length();}
+for example: ~\java{str.charAt(8)}
 
 \vspace{1ex}
-Non-\java{static} methods make the code easier to read, because they associate the method with the object itself.
+Methods can be designed either way. Most \java{String} methods are non-\java{static}, because that makes the code easier to read.
+%, because they associate the method with the object itself.
 From the \java{charAt} method's point of view, ~\java{str} is ~\java{this} object.
 
 \begin{center}

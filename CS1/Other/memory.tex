@@ -1,7 +1,5 @@
 %TODO define macros for memory diagrams
 
-\usepackage{amsmath}
-
 
 \begin{minipage}{0.49\textwidth}
 \begin{javalst}
@@ -29,7 +27,11 @@ array = new char[] {'f', 'o', 'o', 'd'};
 \begin{minipage}{0.50\textwidth}
 \begin{tabular}{c|C{20pt}|c}
 \cline{2-2}
-array & & \hspace{-2em}$\xrightarrow{\hspace*{3em}}$\hspace{-8pt} \\
+
+%\usepackage{amsmath}
+%array & & \hspace{-2em}$\xrightarrow{\hspace*{3em}}$\hspace{-8pt} \\
+array & & \hspace{-2em}$\rightarrow{\hspace*{3em}}$\hspace{-8pt} \\
+
 \cline{2-2}
 \multicolumn{3}{c}{} \\
 \end{tabular}

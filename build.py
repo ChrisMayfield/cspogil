@@ -13,6 +13,9 @@ LATEX = "pdflatex -interaction=nonstopmode"
 # remove temporary output files
 CLEAN = True
 
+# default course paths to build
+PATHS = ["CS0", "CS1"]
+
 def latex(name, suff):
     """Run latex and rename pdf file."""
     print("  " + suff + "...", end=' ')
@@ -44,7 +47,9 @@ def latex(name, suff):
 def build(path, name):
     """Build the given source file."""
     if name == "_TEMP_.tex":
-        return
+        return  # ignore previous build
+    if path in PATHS:
+        return  # ignore top-level files
     print(os.path.join(path, name))
     if "\\documentclass" in open(name).read():
         # copy original activity file
@@ -96,7 +101,7 @@ def main(courses, pattern):
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
-        main(["CS0", "CS1"], sys.argv[1])
+        main(PATHS, sys.argv[1])
     elif len(sys.argv) == 3:
         main([sys.argv[1]], sys.argv[2])
     else:

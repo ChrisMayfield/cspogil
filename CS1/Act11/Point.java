@@ -8,7 +8,7 @@ public class Point {
     private int y;
     
     /**
-     * Constructs a point a the origin.
+     * Constructs a point at the origin.
      */
     public Point() {
         this.x = 0;
@@ -46,14 +46,14 @@ public class Point {
      * Gets the x value.
      */
     public double getX() {
-        return x;
+        return this.x;
     }
     
     /**
      * Gets the y value.
      */
     public double getY() {
-        return y;
+        return this.y;
     }
     
     /**

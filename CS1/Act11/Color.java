@@ -34,10 +34,10 @@ public class Color {
      */
     private static int check(int value) {
         if (value < 0) {
-            return 0;
+            value = 0;
         }
         if (value > 255) {
-            return 255;
+            value = 255;
         }
         return value;
     }

@@ -1,8 +1,11 @@
+%comment out for student version
+\ifdefined\Student\relax\else\def\Teacher{}\fi
+
 \documentclass[12pt,twoside,openright]{report}
 
 \title{Activities for CS1 in Java}
-\author{Chris Mayfield and others}
-\date{Spring 2018}
+\author{Chris Mayfield and Helen Hu}
+\date{Summer 2018}
 
 \input{../cspogil.sty}
 
@@ -10,9 +13,9 @@
 \usepackage{pax}
 
 % remove page numbers
-\makeatletter
-\let\ps@plain\ps@empty
-\makeatother
+%\makeatletter
+%\let\ps@plain\ps@empty
+%\makeatother
 
 % dots in toc chapters
 \usepackage{tocloft}
@@ -30,6 +33,9 @@
 }
 
 \begin{document}
+
+\pagenumbering{roman}
+\setcounter{page}{1}
 
 \pdfbookmark{Title Page}{title}
 \begin{titlepage}
@@ -54,10 +60,10 @@
 \normalcolor
 
 \vspace*{2em}
-\large Chris Mayfield, Ph.D.
+\large \@author
 
 \vspace*{4pt}
-\small With contributions from Helen Hu, Dee Weikle, Stoney Jackson, \\ Debra Duke, Nancy Harris, Clif Kussmaul, and Nathan Sprague
+\small With contributions from Dee Weikle, Stoney Jackson, \\ Debra Duke, Nancy Harris, Clif Kussmaul, and Nathan Sprague
 
 \vspace*{2em}
 \Large \@date
@@ -78,6 +84,12 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAl
 \cleardoublepage
 \pdfbookmark{\contentsname}{toc}
 \tableofcontents
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\cleardoublepage
+
+\pagestyle{plain}
+\pagenumbering{arabic}
+\setcounter{page}{1}
 
 \act{Activity 1: Introduction}{Act01/Act01-Introduction}
 \act{Activity 2: Arithmetic}{Act02/Act02-Arithmetic}
@@ -91,6 +103,6 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAl
 \act{Activity 10: Classes and UML}{Act10/Act10-ClassesAndUML}
 \act{Activity 11: Designing Classes}{Act11/Act11-DesigningClasses}
 \act{Activity 12: Arrays of Objects}{Act12/Act12-ArraysOfObjects}
-%\act{Activity 18: Linked Structures}{Act18/Act18-LinkedStructures}
+\act{Activity 18: Linked Structures}{Act18/Act18-LinkedStructures}
 
 \end{document}

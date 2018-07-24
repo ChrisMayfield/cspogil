@@ -28,7 +28,6 @@
 \usepackage{multicol}
 \usepackage{multirow}
 \usepackage{tabularx}
-\usepackage{wrapfig}
 
 % fixed-width columns
 \usepackage{array}
@@ -36,9 +35,10 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
-% syntax colors
+% syntax colors (based on DrJava)
 \usepackage[svgnames,table]{xcolor}
 \definecolor{bgcolor}{HTML}{FAFAFA}
+\definecolor{builtin}{HTML}{900090}
 \definecolor{comment}{HTML}{007C00}
 \definecolor{keyword}{HTML}{0000FF}
 \definecolor{strings}{HTML}{B20000}
@@ -52,6 +52,7 @@
 \usepackage{textcomp}
 \newcommand{\fs}{\footnotesize}
 \newcommand{\bs}{\textbackslash}
+\newcommand{\n}{\textbackslash n}
 \newcommand{\qs}{\textquotesingle}
 \newcommand{\chr}[1]{\texttt{\qs{#1}\qs}}
 \newcommand{\str}[1]{\texttt{"{#1}"}}
@@ -61,7 +62,7 @@
 \lstset{
     basicstyle=\ttfamily,
     backgroundcolor=\color{bgcolor},
-    numberstyle=\scriptsize\color{comment},
+    numberstyle=\scriptsize\color{answers},
     commentstyle=\color{comment},
     keywordstyle=\color{keyword},
     stringstyle=\color{strings},
@@ -72,26 +73,38 @@
     tabsize=4,
     upquote=true
 }
+\lstdefinestyle{morepython}{
+    language=python,
+    morekeywords={False,True},
+    deletekeywords={print},
+    morekeywords=[2]{print},
+    keywordstyle=[2]{\color{builtin}}
+}
 \lstdefinestyle{lstanswers}{
     backgroundcolor=,
     commentstyle=\color{answers},
     keywordstyle=\color{answers},
-    stringstyle=\color{answers},
+    keywordstyle=[2]{\color{answers}},
+    stringstyle=\color{answers}
 }
 
 % Java environments
 \newcommand{\java}[1]{\lstinline[language=java]{#1}}%[
+\newcommand{\jans}[1]{\lstinline[language=java,style=lstanswers]{#1}}%[
 \lstnewenvironment{javaans}{\lstset{language=java,style=lstanswers}}{}
 \lstnewenvironment{javalst}{\lstset{language=java,backgroundcolor=}}{}
 \lstnewenvironment{javanum}{\lstset{language=java,backgroundcolor=,numbers=left}}{}
 \lstnewenvironment{javabox}{\lstset{language=java,frame=single,numbers=left}\quote}{\endquote}
+\newcommand{\jafile}[1]{\lstinputlisting[language=java,backgroundcolor=,numbers=left]{#1}}
 
 % Python environments
-\newcommand{\pyth}[1]{\lstinline[language=python]{#1}}%[
-\lstnewenvironment{pythans}{\lstset{language=python,style=lstanswers}}{}
-\lstnewenvironment{pythlst}{\lstset{language=python,backgroundcolor=}}{}
-\lstnewenvironment{pythnum}{\lstset{language=python,backgroundcolor=,numbers=left}}{}
-\lstnewenvironment{pythbox}{\lstset{language=python,frame=single,numbers=left}\quote}{\endquote}
+\newcommand{\pyth}[1]{\lstinline[style=morepython]{#1}}%[
+\newcommand{\pans}[1]{\lstinline[style=morepython,style=lstanswers]{#1}}%[
+\lstnewenvironment{pythans}{\lstset{style=morepython,style=lstanswers}}{}
+\lstnewenvironment{pythlst}{\lstset{style=morepython,backgroundcolor=}}{}
+\lstnewenvironment{pythnum}{\lstset{style=morepython,backgroundcolor=,numbers=left}}{}
+\lstnewenvironment{pythbox}{\lstset{style=morepython,frame=single,numbers=left}\quote}{\endquote}
+\newcommand{\pyfile}[1]{\lstinputlisting[style=morepython,backgroundcolor=,numbers=left]{#1}}
 
 % PDF properties
 \usepackage[pdftex]{hyperref}
@@ -112,6 +125,22 @@
 \makeatother
 
 %------------------------------------------------------------------------------%
+
+%% headers and footers
+%\usepackage{fancyhdr}
+%\usepackage{lastpage}
+%\pagestyle{fancy}
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{0pt}
+%\definecolor{headers}{HTML}{808080}
+%\makeatletter
+%\lhead{\footnotesize\textcolor{headers}{\@title}}
+%\chead{}
+%\rhead{\footnotesize\textcolor{headers}{Page \thepage\ of \pageref*{LastPage}}}
+%\lfoot{}
+%\cfoot{}
+%\rfoot{}
+%\makeatother
 
 % titles
 \makeatletter
@@ -139,6 +168,7 @@
 \usepackage{currfile}
 \newcommand{\model}[1]{\section{#1}\label{\currfilename}\nopagebreak}
 \renewcommand{\thesection}{Model~\arabic{section}}
+\DeclareTextFontCommand{\emph}{\bfseries\em}
 
 % questions
 \newcommand{\blank}[1][3em]{\rule{#1}{0.5pt}}
@@ -151,6 +181,7 @@
 \usepackage{enumitem}
 \setenumerate[1]{label=\alph*)}
 \setlist{itemsep=1em,after=\vspace{1ex}}
+\newcommand{\bull}{\par\hspace{3ex}\raisebox{0.25ex}{\footnotesize$\bullet$}~~}
 
 % inline answers
 \newcommand{\ans}[1]{%
@@ -227,7 +258,7 @@
 \hfill
 \begin{minipage}{0.853\linewidth}
 \small
-Copyright \textcopyright\ 2017 \theauthor.
+Copyright \textcopyright\ 2018 \theauthor.
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 \end{minipage}
 \clearpage

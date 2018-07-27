@@ -183,6 +183,10 @@
 \setlist{itemsep=1em,after=\vspace{1ex}}
 \newcommand{\bull}{\par\hspace{3ex}\raisebox{0.25ex}{\footnotesize$\bullet$}~~}
 
+% homework exercises
+\newcommand{\prob}[3]{\vspace{1em}\textbf{#1}~~(#2)\ifx&#3&\else\ -- \textit{#3}\fi}
+\newcommand{\exer}[2]{\vspace{1em}\textbf{#1}~~#2}
+
 % inline answers
 \newcommand{\ans}[1]{%
 \ifdefined\Teacher

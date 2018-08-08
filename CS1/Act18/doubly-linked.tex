@@ -1,6 +1,6 @@
 \model{Doubly-Linked Lists}
 
-Java's implementation of \java{LinkedList} stores two references in each node: one for the \textit{previous}, and one for the \textit{next}.
+Java's implementation of \java{LinkedList} stores two references in each node: one for the {\it previous}, and one for the {\it next}.
 In addition, both the head and the tail are stored in the wrapper class.
 
 \begin{center}
@@ -11,14 +11,14 @@ In addition, both the head and the tail are stored in the wrapper class.
 \quest{10 min}
 
 
-\Q How many operations are required to add an element \textit{at the start} of this list?
+\Q How many operations are required to add an element {\it at the start} of this list?
 
 \begin{answer}[5em]
 In general, 3 operations: one to create the element, one to copy the reference to the next node, and one to change the reference from the head to the new element.
 (If it's the first node, then the tail reference would also need to be set.)
 \end{answer}
 
-\Q How many operations are required to add an element \textit{at the end} of this list?
+\Q How many operations are required to add an element {\it at the end} of this list?
 
 \begin{answer}
 In general, 3 operations: one to create the element, one to create the reference to the previous node, and one to change the reference from the tail to the new element.

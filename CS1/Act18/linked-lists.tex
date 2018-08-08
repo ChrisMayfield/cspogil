@@ -1,7 +1,7 @@
 \model{Linked Lists}
 
 Linked structures ``chain'' elements using references.
-Each element of the list is called a \textit{node}.
+Each element of the list is called a \emph{node}.
 
 \vspace{1ex}
 \begin{minipage}{0.40\linewidth}
@@ -72,7 +72,7 @@ Instead of working with nodes directly, we can design a wrapper class to handle 
 \quest{15 min}
 
 
-\Q How many assignment operations are required to add 14 \textit{at the front} of an empty list? Note that creating a \java{Node} takes two assignments (one for \java{value} and one for \java{next}).
+\Q How many assignment operations are required to add 14 {\it at the front} of an empty list? Note that creating a \java{Node} takes two assignments (one for \java{value} and one for \java{next}).
 
 \begin{answer}
 3 operations: 1 to assign the \java{value}, 1 to assign null to \java{next}, and 1 to assign the reference of the new Node to the head variable (node3 in this case).
@@ -86,7 +86,7 @@ Still just 3, in fact the same as the first insert. Note that no shifting is req
 \end{answer}
 
 
-\Q Using this model, how many operations are required to add another element \textit{at the end} of the current list?
+\Q Using this model, how many operations are required to add another element {\it at the end} of the current list?
 
 \begin{answer}
 5 operations: 3 to find where the new element goes (by following the references to the end of the list), one to create the new node, and one to change the reference of the previous last element.

@@ -7,4 +7,5 @@
 #   sudo apt install libfile-which-perl
 #   pdfannotextractor --install
 
-for f in Act*/Act*.pdf; do pdfannotextractor $f; done
+for f in */Act*_Teacher.pdf; do pdfannotextractor $f; done
+for f in */Act*_Student.pdf; do pdfannotextractor $f; done

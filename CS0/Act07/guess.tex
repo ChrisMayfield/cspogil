@@ -12,7 +12,7 @@ else:
     print name, "is an okay name."
 \end{pythbox}
 
-Note: \verb|raw_input| is a \textbf{function} that displays a prompt on the screen and reads a line from the keyboard.
+Note: \verb|raw_input| is a \textbf{function} that displays a \textbf{prompt} on the screen and reads a line from the keyboard.
 In this program, the result of \verb|raw_input| is stored in the \textbf{variable} \pyth{name}.
 
 
@@ -65,7 +65,8 @@ Answers may include: it can't have punctuation or other symbols, it has to be on
 \Q \label{vars} At the end of your \texttt{guess.py} program, create two new variables named \pyth{number} and \pyth{guess}.
 Set the value of \pyth{number} to be an integer between 1 and 100 (of your choice).
 Ask the user to guess your number, and store the result in \pyth{guess}.
-Write your statements in the space below.
+When asking for numbers, use \pyth{input} instead of \pyth{raw_input}.
+Write your two statements in the space below.
 
 \begin{answer}
 \begin{pythans}
@@ -102,17 +103,18 @@ The \pyth{=} operator is used to \emph{assign} values to variables, whereas the 
 
 \Q At this point, you should have a program that allows the user to make only one guess.
 Rather than run this program over and over again, you can use a \pyth{while} loop to make it repeat the guessing part.
-Add the following line of code between the two lines you wrote in \ref{vars}.
+Insert the following two lines before the \pyth{input} line you wrote in \ref{vars}.
 
 \begin{pythlst}
+    guess = -1
     while guess != number:
 \end{pythlst}
 
 \vspace{1em}
 
 
-\Q What did you have to do after inserting the \pyth{while} loop.
-In other words, how did you make the \pyth{raw_input} and \pyth{if} statements part of the \pyth{while} loop?
+\Q What did you have to do after inserting the \pyth{while} loop to make it work?
+In other words, how did you make the \pyth{input} and \pyth{if} statements part of the \pyth{while} loop?
 
 \begin{answer}
 You need to indent the corresponding lines of code underneath it.
@@ -120,11 +122,11 @@ Select the rest of the program lines, and then press the Tab key.
 \end{answer}
 
 
-\Q Rather than guess the same number every time, you can have the computer select a random number for you.
-\begin{itemize}
+\Q Rather than guess the same number every time, you can have the computer select a random number for you:
+\begin{itemize}[itemsep=2pt]
 \item At the top of your program, add the line ``\pyth{import random}'' (without the quotes).
 \item Then change the line where you set value of \pyth{number} to use this example instead:
 \begin{pythlst}
-number = random.randrange(100) + 1
+number = random.randint(1, 100)
 \end{pythlst}
 \end{itemize}

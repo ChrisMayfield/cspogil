@@ -1,0 +1,80 @@
+\model{High-Level Languages}
+
+In addition to adding the numbers from 1 to 10, this program displays (prints) the result on the screen.
+
+\begin{center}
+\begin{minipage}[t]{186pt}
+%\hrulefill
+
+\textbf{Standard C} \\
+(3rd Generation)
+
+\begin{verbatim}
+#include <stdio.h>
+
+int main()
+{
+    int upper = 11;
+    int sum = 1;
+    int next = 2;
+
+    while (next < upper)
+    {
+        sum = sum + next;
+        next++;
+    }
+
+    printf("Sum = %d\n", sum);
+
+    return 0;
+}
+\end{verbatim}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{156pt}
+%\hrulefill
+
+\textbf{Python} \\
+(4th Generation)
+
+\begin{verbatim}
+
+
+
+
+upper = 11
+isum = 1
+inext = 2
+
+while inext < upper:
+
+    isum = isum + inext
+    inext = inext + 1
+
+
+print("Sum = " + str(isum))
+\end{verbatim}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{124pt}
+%\hrulefill
+
+\textbf{Python} \\
+(One-liner)
+
+\begin{verbatim}
+print("Sum = " +
+str(sum(range(11))))
+\end{verbatim}
+\end{minipage}
+\end{center}
+
+
+\quest{10 min}
+
+
+\Q TODO
+
+\begin{answer}
+TODO
+\end{answer}

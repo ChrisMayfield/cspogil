@@ -1,0 +1,110 @@
+\model{Low-Level Languages}
+
+The following program, shown in three different languages, calculates the sum of numbers from 1 to 10.
+
+\begin{center}
+\begin{minipage}[t]{168pt}
+%\hrulefill
+
+\textbf{Machine Code} \\
+(1st Generation)
+
+\begin{verbatim}
+0x000:
+0x000: 700001000000000000
+
+0x100:
+0x100:
+0x100: 30f00b00000000000000
+0x10a: 30f30100000000000000
+0x114: 30f10200000000000000
+0x11e: 30f20100000000000000
+
+0x128: 2017
+0x12a: 6107
+0x12c: 734601000000000000
+
+0x135:
+0x135: 6013
+0x137: 6021
+
+0x139: 2017
+0x13b: 6107
+0x13d: 743501000000000000
+
+0x146:
+0x146: 00
+\end{verbatim}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{144pt}
+%\hrulefill
+
+\textbf{Y86-64 Assembly} \\
+(2nd Generation)
+
+\begin{verbatim}
+.pos 0 code
+    jmp _start
+
+.pos 0x100 code
+_start:
+    irmovq  $0xb,  %rax
+    irmovq  $1,    %rbx
+    irmovq  $2,    %rcx
+    irmovq  $1,    %rdx
+
+    rrmovq  %rcx,  %rdi
+    subq    %rax,  %rdi
+    je      done
+
+loop:
+    addq    %rcx,  %rbx
+    addq    %rdx,  %rcx
+
+    rrmovq  %rcx,  %rdi
+    subq    %rax,  %rdi
+    jne     loop
+
+done:
+    halt
+\end{verbatim}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{162pt}
+%\hrulefill
+
+\textbf{Standard C} \\
+(3rd Generation)
+
+\begin{verbatim}
+
+
+
+int main()
+{
+    int upper = 11;
+    int sum = 1;
+    int next = 2;
+
+    while (next < upper)
+    {
+        sum = sum + next;
+        next++;
+    }
+
+    return 0;
+}
+\end{verbatim}
+\end{minipage}
+\end{center}
+
+
+\quest{10 min}
+
+
+\Q TODO
+
+\begin{answer}
+TODO
+\end{answer}

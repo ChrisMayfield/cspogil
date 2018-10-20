@@ -1,6 +1,6 @@
 \model{High-Level Languages}
 
-In addition to adding the numbers from 1 to 10, this program displays (prints) the result on the screen.
+In addition to adding the numbers from 1 to 10, this program prints (displays) the result on the screen using Standard I/O.
 
 \begin{center}
 \begin{minipage}[t]{186pt}
@@ -16,22 +16,20 @@ int main()
 {
     int upper = 11;
     int sum = 1;
-    int next = 2;
+    int val = 2;
 
-    while (next < upper)
+    while (val < upper)
     {
-        sum = sum + next;
-        next++;
+        sum = sum + val;
+        val++;
     }
 
     printf("Sum = %d\n", sum);
-
-    return 0;
 }
 \end{verbatim}
 \end{minipage}
-\hfill
-\begin{minipage}[t]{156pt}
+\hspace{1ex}\vline\hspace{1ex}
+\begin{minipage}[t]{168pt}
 %\hrulefill
 
 \textbf{Python} \\
@@ -44,27 +42,15 @@ int main()
 
 upper = 11
 isum = 1
-inext = 2
+val = 2
 
-while inext < upper:
+while val < upper:
 
-    isum = isum + inext
-    inext = inext + 1
+    isum = isum + val
+    val = val + 1
 
 
 print("Sum = " + str(isum))
-\end{verbatim}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{124pt}
-%\hrulefill
-
-\textbf{Python} \\
-(One-liner)
-
-\begin{verbatim}
-print("Sum = " +
-str(sum(range(11))))
 \end{verbatim}
 \end{minipage}
 \end{center}
@@ -73,8 +59,62 @@ str(sum(range(11))))
 \quest{10 min}
 
 
-\Q TODO
+\Q Compare the C code with the Python code.
+
+\begin{enumerate}
+\item Circle the lines of C code that were not present in \ref{low-level.tex}.
+\ans{{\tt \#include} and {\tt printf}}
+
+\item Which lines of C are not present (i.e., needed) in Python?
+\ans{{\tt \#include} and {\tt int main}}
+
+\item What punctuation used in C is not required in Python?
+\ans{braces, semicolons, parens}
+
+\end{enumerate}
+
+
+\Q Without using braces, how does Python know which lines are part of the \verb|while| loop?
 
 \begin{answer}
-TODO
+It uses indentation (and a colon to indicate the start of a new block).
+\end{answer}
+
+
+\Q Why does Python use the name \verb|isum| instead of \verb|sum|?
+Hint: type \verb|sum| into a Python shell.
+
+\begin{answer}
+In Python, {\tt sum} is a built-in function.
+It's best to avoid using these names for variables.
+\end{answer}
+
+
+\Q In Python, the \pyth{range} function can be used to generate a sequence of numbers.
+Use a Python shell to answer this question.
+
+\begin{enumerate}
+\item What is the result of \pyth{list(range(5))}?  \ans{\tt [0, 1, 2, 3, 4]}
+\item What is the result of \pyth{str(range(5))}? ~ \pans{'[0, 1, 2, 3, 4]'}
+\item What do the \pyth{list} and \pyth{str} functions do?  \ans{Convert to list or string}
+\item What is the result of \pyth{sum(range(5))}? ~ \ans{10}
+\item What does the \pyth{sum} function do? \ans{It adds the given numbers}
+\end{enumerate}
+
+
+\Q Rewrite the entire program of \ref{\currfilename} using one line of Python code.
+Hint: you'll need to use \verb|print|, \verb|str|, \verb|sum|, and \verb|range|.
+
+\begin{answer}
+\begin{pythans}
+print("Sum = " + str(sum(range(11))))
+\end{pythans}
+\end{answer}
+
+
+\Q Based on \ref{low-level.tex} and \ref{\currfilename}, what does it mean to be low-level vs high-level?
+
+\begin{answer}
+Low-level languages mimic the hardware and require a lot of simple instructions.
+High-level languages focus more on the big picture, using fewer and more complex instructions.
 \end{answer}

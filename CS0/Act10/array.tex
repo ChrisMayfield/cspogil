@@ -1,0 +1,110 @@
+\model{Array}
+
+% http://www.the-horoscope.com/general-horoscope/leo-lucky-numbers.asp
+
+Consider a list of numbers:
+
+\begin{quote}
+\begin{pythlst}
+lucky = [29, 16, 23, 47, 37]
+\end{pythlst}
+\end{quote}
+
+The easiest way to store these numbers in memory is to put them side by side.
+For example, if the list were to begin at memory address 40:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{rcccccccccccc}
+\textit{Address:~~} &
+& 40 & 41 & 42 & 43 & 44 & 45 & 46 & 47 & 48 & 49 &
+\\ \cline{2-13}
+\textit{Value:~~} &
+\multicolumn{1}{c|}{~~$\cdots$~~} &
+\multicolumn{1}{c|}{29} &
+\multicolumn{1}{c|}{16} &
+\multicolumn{1}{c|}{23} &
+\multicolumn{1}{c|}{47} &
+\multicolumn{1}{c|}{37} &
+\multicolumn{1}{c|}{} &
+\multicolumn{1}{c|}{} &
+\multicolumn{1}{c|}{} &
+\multicolumn{1}{c|}{} &
+\multicolumn{1}{c|}{} &
+~~$\cdots$~~
+\\ \cline{2-13}
+\textit{Index:~~} &
+& \ans{0}
+& \ans{1}
+& \ans{2}
+& \ans{3}
+& \ans{4}
+& \ans{.}
+& \ans{.}
+& \ans{.}
+& \ans{.}
+& \ans{.}
+&
+\end{tabular}
+\end{center}
+
+When programming, we can access individual numbers by their \emph{index}.
+For example, the value of \pyth{lucky[1]} is \pyth{16}, and \pyth{lucky[5]} is out of range.
+
+
+\quest{10 min}
+
+
+\Q In the diagram above, write the index below each value.
+
+\vspace{1em}
+
+
+\Q We call the beginning of the list the \emph{head} and the end of the list the \emph{tail}.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item What is the address of the head? \ans{40}
+\item What is the address of the tail? \ans{44}
+\item What is the index of the head? \ans{0}
+\item What is the index of the tail? \ans{4}
+\end{enumerate}
+\end{multicols}
+
+
+\Q What is the relationship between the index and the corresponding memory address?
+
+\begin{answer}
+The index is relative to the first address.
+It counts the number of cells over from the head.
+\end{answer}
+
+
+\Q Based on your answer to the previous question, why do indexes start at 0 instead of 1?
+
+\begin{answer}
+Starting at zero makes it easier to compute the memory address of list items.
+We simply add \pans{head + index}.
+\end{answer}
+
+
+\Q There are (currently) five numbers in the list. Why is \pyth{lucky[5]} out of range?
+
+\begin{answer}
+The indexes range from 0 to 4.
+\end{answer}
+
+
+\Q The statement \pyth{lucky.insert(2, 13)} changes the list to \pyth{[29, 16, 13, 23, 47, 37]}.
+What is the address of the head and tail after inserting 13?
+
+\begin{answer}
+The head is 40 (unchanged), and the tail is 45.
+\end{answer}
+
+
+\Q In terms of memory operations, what does it take to insert values in the middle of an array?
+
+\begin{answer}
+All subsequent values in the array need to be shifted over by one memory cell, resulting in multiple LOAD and STORE operations.
+\end{answer}

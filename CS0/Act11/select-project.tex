@@ -1,0 +1,102 @@
+% subscript for relational algebra
+\newcommand{\sub}[1]{$_{\mbox{\small #1}}$}
+
+\model{Select and Project}
+
+In relational databases, data is organized as tables.
+We use \emph{SELECT} to work with rows and \emph{PROJECT} to work with columns.
+
+% http://vendinghow.com/article/what-are-the-most-popular-items-to-stock-in-a-vending-machine
+
+\vspace{-1ex}
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\multicolumn{4}{l}{{\bf snacks}} \\
+\hline
+\tr name      & \tr owner & \tr calories & \tr price \\ \hline
+\hline
+Snickers      & Mars      & 215          & 1.25      \\ \hline
+Peanut M\&M's & Mars      & 250          & 1.00      \\ \hline
+Twix          & Mars      & 286          & 1.25      \\ \hline
+Reeses Pieces & Hershey   & 234          & 1.00      \\ \hline
+Butterfinger  & Nestle    & 275          & 1.25      \\ \hline
+Milk Duds     & Hershey   & 218          & 1.50      \\ \hline
+Milky Way     & Mars      & 264          & 1.25      \\ \hline
+Baby Ruth     & Ferrero   & 275          & 1.50      \\ \hline
+Doritos       & Frito-Lay & 140          & 0.75      \\ \hline
+Cheetos       & Frito-Lay & 160          & 0.75      \\ \hline
+\end{tabular}
+\end{center}
+
+\emph{Examples:}
+
+\begin{multicols}{2}
+\centering
+
+\vfill
+SELECT \sub{price $\geq$ 1.50} (snacks)
+
+\vspace*{1ex}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\tr name      & \tr owner & \tr calories & \tr price \\ \hline
+\hline
+Milk Duds     & Hershey   & 218          & 1.50      \\ \hline
+Baby Ruth     & Ferrero   & 275          & 1.50      \\ \hline
+\end{tabular}
+
+\vfill
+SELECT \sub{price $<$ 0} (snacks)
+
+\vspace*{1ex}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\tr name      & \tr owner & \tr calories & \tr price \\ \hline
+\hline
+\end{tabular}
+
+\vfill
+PROJECT \sub{name} $\big($SELECT \sub{price = 0.75} (snacks)$\big)$
+
+\vspace*{1ex}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\tr name \\ \hline
+\hline
+Doritos  \\ \hline
+Cheetos  \\ \hline
+\end{tabular}
+
+\columnbreak
+
+\vfill
+PROJECT \sub{owner, calories} (snacks)
+
+\vspace*{1ex}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\tr owner & \tr calories \\ \hline
+\hline
+Mars      & 215          \\ \hline
+Mars      & 250          \\ \hline
+Mars      & 286          \\ \hline
+Hershey   & 234          \\ \hline
+Nestle    & 275          \\ \hline
+Hershey   & 218          \\ \hline
+Mars      & 264          \\ \hline
+Ferrero   & 275          \\ \hline
+Frito-Lay & 140          \\ \hline
+Frito-Lay & 160          \\ \hline
+\end{tabular}
+
+\end{multicols}
+
+
+\quest{10 min}
+
+
+\Q TODO
+
+\begin{answer}
+TODO
+\end{answer}

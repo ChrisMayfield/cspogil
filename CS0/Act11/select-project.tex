@@ -1,10 +1,8 @@
-% subscript for relational algebra
-\newcommand{\sub}[1]{$_{\mbox{\small #1}}$}
-
 \model{Select and Project}
 
-In relational databases, data is organized as tables.
+In relational databases, \emph{data} is organized as tables.
 We use \emph{SELECT} to work with rows and \emph{PROJECT} to work with columns.
+The names of the columns are called the \emph{schema}.
 
 % http://vendinghow.com/article/what-are-the-most-popular-items-to-stock-in-a-vending-machine
 
@@ -29,11 +27,11 @@ Cheetos       & Frito-Lay & 160          & 0.75      \\ \hline
 \end{center}
 
 \emph{Examples:}
+\vspace{1ex}
 
 \begin{multicols}{2}
 \centering
 
-\vfill
 SELECT \sub{price $\geq$ 1.50} (snacks)
 
 \vspace*{1ex}
@@ -45,7 +43,8 @@ Milk Duds     & Hershey   & 218          & 1.50      \\ \hline
 Baby Ruth     & Ferrero   & 275          & 1.50      \\ \hline
 \end{tabular}
 
-\vfill
+\vspace{2em}
+
 SELECT \sub{price $<$ 0} (snacks)
 
 \vspace*{1ex}
@@ -55,11 +54,12 @@ SELECT \sub{price $<$ 0} (snacks)
 \hline
 \end{tabular}
 
-\vfill
+\vspace{2em}
+
 PROJECT \sub{name} $\big($SELECT \sub{price = 0.75} (snacks)$\big)$
 
 \vspace*{1ex}
-\begin{tabular}{|l|l|l|l|}
+\begin{tabular}{|l|}
 \hline
 \tr name \\ \hline
 \hline
@@ -69,11 +69,10 @@ Cheetos  \\ \hline
 
 \columnbreak
 
-\vfill
 PROJECT \sub{owner, calories} (snacks)
 
 \vspace*{1ex}
-\begin{tabular}{|l|l|l|l|}
+\begin{tabular}{|l|l|}
 \hline
 \tr owner & \tr calories \\ \hline
 \hline
@@ -95,8 +94,54 @@ Frito-Lay & 160          \\ \hline
 \quest{10 min}
 
 
-\Q TODO
+\Q How many rows and columns are in:
+
+\begin{enumerate}[itemsep=1ex]
+\item the original snacks table? \ans{10 rows, 4 cols}
+\item selecting price $\geq$ 1.50? \ans{2 rows, 4 cols}
+\item selecting price $<$ 0? \ans{0 rows, 4 cols}
+\item projecting owner and calories? \ans{10 rows, 2 cols}
+\end{enumerate}
+
+
+\Q Which operation (SELECT or PROJECT) affects the schema? Justify your answer.
 
 \begin{answer}
-TODO
+The PROJECT operation reduces the table to fewer columns.
 \end{answer}
+
+
+\Q The bottom-left example in \ref{\currfilename} uses both SELECT and PROJECT.
+Describe the data source of each operation (the part in parentheses):
+
+\begin{enumerate}
+\item SELECT \sub{\ldots} (which data?) \ans{the original snacks table}
+\item PROJECT \sub{\ldots} (which data?) \ans{the result of the SELECT}
+\end{enumerate}
+
+
+\Q In addition to the data source, what other information (the part in \sub{subscript}) is required for:
+
+\begin{enumerate}
+\item a SELECT operation? \ans{a condition for which rows to select}
+\item a PROJECT operation? \ans{a list of columns to project (retain)}
+\end{enumerate}
+
+
+\Q Explain what is wrong with this example: ~ SELECT \sub{price = 0.75} $\big($PROJECT \sub{name} (snacks)$\big)$
+
+\begin{answer}
+The PROJECT operation removes all columns except for name, so you can't SELECT based on price anymore.
+\end{answer}
+
+
+\Q Write the following \emph{queries} using SELECT and/or PROJECT:
+
+\begin{enumerate}
+\item List the name and price of all snacks.
+  \ans{PROJECT \sub{name, price} (snacks)}
+\item Find snacks with less than 200 calories.
+  \ans{SELECT \sub{calories $<$ 200} (snacks)}
+\item Which company makes Twix?
+  \ans{PROJECT \sub{owner} $\big($SELECT \sub{name = \qs{Twix}\qs} (snacks)$\big)$}
+\end{enumerate}

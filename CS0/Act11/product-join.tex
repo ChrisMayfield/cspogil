@@ -1,13 +1,195 @@
 \model{Product and Join}
 
-TODO
+Mathematically speaking, we combine tables by ``multiplying'' them.
+Every row in the right table is appended to every row in the left table:
+
+\begin{multicols}{3}
+\centering
+
+\begin{tabular}{|l|}
+\multicolumn{1}{l}{{\bf A}} \\
+\hline
+\tr let  \\ \hline
+\hline
+A        \\ \hline
+B        \\ \hline
+C        \\ \hline
+\end{tabular}
+
+\columnbreak
+
+\begin{tabular}{|l|}
+\multicolumn{1}{l}{{\bf B}} \\
+\hline
+\tr num  \\ \hline
+\hline
+1        \\ \hline
+2        \\ \hline
+\end{tabular}
+
+\columnbreak
+
+A $\times$ B
+
+\vspace*{1ex}
+\begin{tabular}{|l|l|}
+\hline
+\tr let  & \tr num  \\ \hline
+\hline
+A        & 1        \\ \hline
+A        & 2        \\ \hline
+B        & 1        \\ \hline
+B        & 2        \\ \hline
+C        & 1        \\ \hline
+C        & 2        \\ \hline
+\end{tabular}
+
+\end{multicols}
+
+In relational databases, a \emph{join} operation is a product followed by a condition.
+The condition is used to specify which of the combined rows should be part of the result.
+
+\begin{multicols}{3}
+\centering
+\small
+
+\begin{tabular}{|l|l|l|}
+\multicolumn{3}{l}{{\bf course}} \\
+\hline
+\tr cid  & \tr dept  & \tr num  \\ \hline
+\hline
+13466    & CS        & 101      \\ \hline
+13468    & CS        & 149      \\ \hline
+56482    & MATH      & 231      \\ \hline
+%67606    & SCOM      & 123      \\ \hline
+\end{tabular}
+
+\columnbreak
+
+\begin{tabular}{|l|l|}
+\multicolumn{2}{l}{{\bf teach}} \\
+\hline
+\tr cid  & \tr pid  \\ \hline
+\hline
+13466    & 2774       \\ \hline
+13468    & 2774       \\ \hline
+13466    & 9036       \\ \hline
+13468    & 9036       \\ \hline
+%56482    & 1158       \\ \hline
+\end{tabular}
+
+\columnbreak
+
+\begin{tabular}{|l|l|l|}
+\multicolumn{3}{l}{{\bf professor}} \\
+\hline
+\tr pid  & \tr dept  & \tr name  \\ \hline
+\hline
+2774    & CS        & Mayfield  \\ \hline
+9036    & CS        & Stewart   \\ \hline
+1158    & MATH      & Taalman   \\ \hline
+5241    & SCOM      & Hazard    \\ \hline
+\end{tabular}
+
+\end{multicols}
+
+\vspace{2pt}
+
+\begin{multicols}{2}
+\centering
+\small
+
+course $\times$ teach
+
+\vspace*{1ex}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\tr cid  & \tr dept  & \tr num  & \tr cid  & \tr pid  \\ \hline
+\hline
+13466    & CS        & 101      & 13466    & 2774     \\ \hline
+13466    & CS        & 101      & 13468    & 2774     \\ \hline
+13466    & CS        & 101      & 13466    & 9036     \\ \hline
+13466    & CS        & 101      & 13468    & 9036     \\ \hline
+13468    & CS        & 149      & 13466    & 2774     \\ \hline
+13468    & CS        & 149      & 13468    & 2774     \\ \hline
+13468    & CS        & 149      & 13466    & 9036     \\ \hline
+13468    & CS        & 149      & 13468    & 9036     \\ \hline
+56482    & MATH      & 231      & 13466    & 2774     \\ \hline
+56482    & MATH      & 231      & 13468    & 2774     \\ \hline
+56482    & MATH      & 231      & 13466    & 9036     \\ \hline
+56482    & MATH      & 231      & 13468    & 9036     \\ \hline
+\end{tabular}
+
+\columnbreak
+
+JOIN \sub{course.cid = teach.cid} (course, teach)
+
+\vspace*{1ex}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\tr cid  & \tr dept  & \tr num  & \tr cid  & \tr pid  \\ \hline
+\hline
+13466    & CS        & 101      & 13466    & 2774     \\ \hline
+13466    & CS        & 101      & 13466    & 9036     \\ \hline
+13468    & CS        & 149      & 13468    & 2774     \\ \hline
+13468    & CS        & 149      & 13468    & 9036     \\ \hline
+\end{tabular}
+
+
+\end{multicols}
 
 
 \quest{10 min}
 
 
-\Q TODO
+\Q How many rows and columns are in:
+
+\begin{enumerate}[itemsep=1ex]
+\item the course table? \ans{3 rows, 3 cols}
+\item the teach table? \ans{4 rows, 2 cols}
+\item course $\times$ teach? \ans{12 rows, 5 cols}
+\end{enumerate}
+
+
+\Q Consider a table with $i$ rows and $j$ columns, and another table with $k$ rows and $l$ columns.
+
+\begin{enumerate}[itemsep=1ex]
+\item how many rows will be in the product? \ans{$i * k$}
+\item how many columns will be in the product? \ans{$j + l$}
+\end{enumerate}
+
+
+\Q Discuss how the results of ``course $\times$ teach'' are different from the JOIN operation.
+Then in \ref{\currfilename}, draw an arrow from each result in the JOIN to the corresponding row in the product.
+
+\begin{answer}[2em]
+There should be four arrows: row 1 $\leftarrow$ row 1, row 3 $\leftarrow$ row 2, row 6 $\leftarrow$ row 3, row 8 $\leftarrow$ row 4.
+\end{answer}
+
+
+\Q What is the result of JOIN \sub{teach.pid = professor.pid} (teach, professor)?
+Don't forget to include the column names.
+
+\begin{answer}[12em]
+\begin{quote}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\tr cid  & \tr pid  & \tr pid  & \tr dept  & \tr name  \\ \hline
+\hline
+13466    & 2774        & 2774      & CS    & Mayfield     \\ \hline
+13468    & 2774        & 2774      & CS    & Mayfield     \\ \hline
+13466    & 9036        & 9036      & CS    & Stewart     \\ \hline
+13468    & 9036        & 9036      & CS    & Stewart     \\ \hline
+\end{tabular}
+\end{quote}
+\end{answer}
+
+
+\Q Describe what relational operations you would have to use to find the names of all professors who teach CS 101.
+(The results should have 2 rows and 1 column.)
 
 \begin{answer}
-TODO
+You would first have to join the course, teach, and professor tables using the conditions ``cid = cid'' and ``pid = pid''.
+Then you would need to apply a selection on the rows with ``CS 101''.
+Finally, you would need to project the ``name'' column.
 \end{answer}

@@ -5,7 +5,7 @@ public class ArraysAreBad
 {
     public static void main(String[] args)
     {
-        ArrayList<String> arrayList = new ArrayList<>();
+        List<String> arrayList = new ArrayList<>();
         
         System.out.println("ArrayList: ");
         addAndRemoveAtStart(arrayList);

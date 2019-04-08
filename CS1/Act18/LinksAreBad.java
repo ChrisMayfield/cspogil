@@ -5,7 +5,7 @@ public class LinksAreBad
 {
     public static void main(String[] args)
     {
-        LinkedList<String> linkedList = new LinkedList<>();
+        List<String> linkedList = new LinkedList<>();
         
         System.out.println("LinkedList: ");
         addAndGet(linkedList);

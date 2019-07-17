@@ -5,7 +5,7 @@
 
 \title{Activities for CS1 in Java}
 \author{Chris Mayfield}
-\date{Fall 2018}
+\date{Fall 2019}
 
 \input{../cspogil.sty}
 
@@ -22,13 +22,14 @@
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 
 % include activity pdf
-\newcommand{\act}[2]{
+\newcommand{\act}[3]{
   \cleardoublepage\phantomsection
-  \addcontentsline{toc}{chapter}{#1}
+  \addcontentsline{toc}{chapter}{#2}
+  \addtocontents{toc}{\bigskip{#3}\par}
   \ifdefined\Teacher
-    \includepdf[pages=-, pagecommand={}]{#2_Teacher.pdf}
+    \includepdf[pages=-, pagecommand={}]{#1_Teacher.pdf}
   \else
-    \includepdf[pages=-, pagecommand={}]{#2_Student.pdf}
+    \includepdf[pages=-, pagecommand={}]{#1_Student.pdf}
   \fi
 }
 
@@ -76,7 +77,7 @@
 \includegraphics{../by-nc-sa.png}
 
 \vspace*{1ex}
-Copyright \textcopyright\ 2018.
+Copyright \textcopyright\ 2019.
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 
 \ifdefined\Teacher
@@ -100,18 +101,78 @@ Source documents available in Overleaf
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-\act{Activity 1: Introduction}{Act01/Act01-Introduction}
-\act{Activity 2: Arithmetic}{Act02/Act02-Arithmetic}
-\act{Activity 3: Data Types}{Act03/Act03-DataTypes}
-\act{Activity 4: Methods}{Act04/Act04-Methods}
-\act{Activity 5: Boolean Logic}{Act05/Act05-BooleanLogic}
-\act{Activity 6: Loops}{Act06/Act06-Loops}
-\act{Activity 7: Arrays}{Act07/Act07-Arrays}
-\act{Activity 8: Recursion}{Act08/Act08-Recursion}
-\act{Activity 9: Object-Oriented}{Act09/Act09-ObjectOriented}
-\act{Activity 10: Classes and UML}{Act10/Act10-ClassesAndUML}
-\act{Activity 11: Designing Classes}{Act11/Act11-DesigningClasses}
-\act{Activity 12: Arrays of Objects}{Act12/Act12-ArraysOfObjects}
-\act{Activity 18: Linked Structures}{Act18/Act18-LinkedStructures}
+\newcommand{\mod}[1]{\hspace*{1.5em}Model~#1~~}
+
+\act{Act01/Act01-Introduction}{Introduction to Java}{
+\mod{1} Team Roles \\
+\mod{2} Hello, World! \\
+\mod{3} Variables \\
+\mod{4} Assignment
+}
+\act{Act02/Act02-Arithmetic}{Arithmetic Operators}{
+\mod{1} Group vs Team \\
+\mod{2} The \% Operator \\
+\mod{3} Dividing Numbers \\
+\mod{4} Order of Operations
+}
+\act{Act03/Act03-DataTypes}{Data Types}{
+\mod{1} Team Disruptions \\
+\mod{2} Primitive Types \\
+\mod{3} Reference Types
+}
+\act{Act04/Act04-Methods}{Multiple Methods}{
+\mod{1} Math Methods \\
+\mod{2} Invoke and Return \\
+\mod{3} Stack Diagrams
+}
+\act{Act05/Act05-BooleanLogic}{Boolean Logic}{
+\mod{1} What Employers Want \\
+\mod{2} Relational Operators \\
+\mod{3} Conditional Operators
+}
+\act{Act06/Act06-Loops}{Loops and Iteration}{
+\mod{1} Assignment \\
+\mod{2} While Loops \\
+\mod{3} For Loops
+}
+
+\addtocontents{toc}{\newpage}
+
+\act{Act07/Act07-Arrays}{Arrays of Numbers}{
+\mod{1} Case Study: Panic Attack \\
+\mod{2} Case Study: Oops! \\
+\mod{3} Array Syntax \\
+\mod{4} Array Diagrams \\
+\mod{5} Arrays and Loops ~ (optional)
+}
+\act{Act08/Act08-Recursion}{Recursive Methods}{
+\mod{1} Factorial \\
+\mod{2} Summation
+}
+\act{Act09/Act09-ObjectOriented}{Object-Oriented}{
+\mod{1} Character Arrays \\
+\mod{2} String Methods \\
+\mod{3} Common Mistakes
+}
+\act{Act10/Act10-ClassesAndUML}{Classes and UML}{
+\mod{1} The Die Class \\
+\mod{2} The Circle Class \\
+\mod{3} Variable Scope
+}
+\act{Act11/Act11-DesigningClasses}{Designing Classes}{
+\mod{1} POGIL Research \\
+\mod{2} Common Methods \\
+\mod{3} Credit Card
+}
+\act{Act12/Act12-ArraysOfObjects}{Arrays of Objects}{
+\mod{1} Hand of Cards \\
+\mod{2} Deck of Cards
+}
+\act{Act18/Act18-LinkedStructures}{Linked Structures}{
+\mod{1} List Interface \\
+\mod{2} Array Lists \\
+\mod{3} Linked Lists \\
+\mod{4} Doubly-Linked Lists
+}
 
 \end{document}

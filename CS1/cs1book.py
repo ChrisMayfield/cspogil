@@ -14,10 +14,22 @@ def main(suff):
                 break
         # output results
         if suff == "tex":
-            print "\\act{" + title + "}{" + name[:-4] + "}"
+            print "\\act{" + name[:-4] + "}{" + title + "}"
         else:
             name = name[:name.find("/")]
             print "* [" + title + "](" + name + ")"
+            continue
+        # get model names (LaTeX only)
+        mods = []
+        path = name[:name.rfind('/') + 1]
+        for line in open(name):
+            if line.startswith("\\input"):
+                if not line.endswith(".sty}\n"):
+                    mods.append(path + line[7:-2])
+        for name in mods:
+            for line in open(name):
+                if line.startswith("\\model"):
+                    print line[7:-2]
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:

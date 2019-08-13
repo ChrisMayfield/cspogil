@@ -18,12 +18,9 @@ Instructor's guides (content/process objectives, facilitation notes) are under d
 6. [Information Security](Act06) -- basic encryption, Caesar cipher, Vigenère cipher
 7. [Algorithms and Python](Act07) -- using IDLE, print, raw_input, guessing game
 8. [Programming Languages](Act08) -- Y86-64 assembly vs Standard C vs Python
-9. Software Engineering -- software dev life cycle, waterfall vs iterative
+9. [Software Engineering](Act09) -- software dev life cycle, waterfall vs iterative
 10. [Data Structures](Act10) -- contiguous arrays, indexes, linked lists, pointers, null
 11. [Database Systems](Act11) -- select and project, Cartesian product and theta join
 12. [Artificial Intelligence](Act12) -- 8-puzzle, tic-tac-toe, search trees, heuristics
-
-Activity 9 has not yet been written; check back in Fall 2019.
-I'm currently using Clif Kussmaul's "Software Dev Life Cycles" activity (see [cspogil.org](http://cspogil.org/Software%20Engineering)).
 
 The [Meta](Meta) folder contains additional models for team development.

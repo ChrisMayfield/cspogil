@@ -1,0 +1,55 @@
+% based on Model A of Software Development Life Cycles by Clif Kussmaul
+
+\model{Finding \& Fixing Errors}
+
+Estimate how long (seconds, minutes, hours, days, weeks, months, or years) it typically takes to correct an error in software when it is found by:
+
+\begin{center}
+\begin{tabularx}{\textwidth}{|l|X|l|}
+\hline
+a. & a \textbf{compiler}, seconds after the file was edited
+   & seconds
+\\ \hline
+b. & a \textbf{compiler}, later the same day or during a nightly build
+   & hours/days
+\\ \hline
+c. & a \textbf{pair programming} partner, seconds after the error was made
+   & \ans{seconds}
+\\ \hline
+d. & a \textbf{code review}, days or weeks after the file was edited
+   & \ans{days/weeks}
+\\ \hline
+e. & a \textbf{customer} or other user, months after the software is released
+   & \ans{months}
+\\ \hline
+f. & a \textbf{unit test}, minutes after the file was edited
+   & \ans{minutes}
+\\ \hline
+g. & a \textbf{unit test}, later the same day or during a nightly build
+   & \ans{hours/days}
+\\ \hline
+h. & a \textbf{system test}, shortly before software is released
+     (weeks or months after the file was edited)
+   & \ans{weeks/months}
+\\ \hline
+\end{tabularx}
+\end{center}
+
+
+\quest{5 min}
+
+
+\Q Describe (or sketch a graph of) the relationship between the time to \textbf{find an error} and the time and cost to \textbf{repair an error}.
+
+\begin{answer}[10em]
+The longer it takes to find an error, the longer and more costly is is to repair.
+
+NOTE: Ambler (2009) and Boehm (1978) contain graphs of this relationship.
+\end{answer}
+
+
+\Q Explain why we should use an SDLC that finds and fixes errors as quickly as possible.
+
+\begin{answer}
+The faster we find errors, the faster and less expensive it is to fix them.
+\end{answer}

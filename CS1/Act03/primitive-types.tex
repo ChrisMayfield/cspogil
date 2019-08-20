@@ -68,22 +68,25 @@ One of the 256 values is the number zero. So 128 negatives, plus 1 zero, plus 12
 What is the data type for each of the following values?
 
 \begin{quote}
-\begin{multicols}{3}
-1.14159    \ans{double}  \\[1ex]
-0          \ans{int}     \\[1ex]
--1.0F      \ans{float}   \\[1ex]
-123        \ans{int}
+\begin{tabular}{R{4em}L{6em}R{4em}L{6em}R{4em}L{6em}}
 
-7.2E-4     \ans{double}  \\[1ex]
-0.0        \ans{double}  \\[1ex]
--13L       \ans{long}    \\[1ex]
-\qs{H}\qs  \ans{char}
+1.14159   & \ans[5em]{double}  &
+7.2E-4    & \ans[5em]{double}  &
+-128      & \ans[5em]{int}     \\
 
--128       \ans{int}     \\[1ex]
-\qs{0}\qs  \ans{char}    \\[1ex]
-false      \ans{boolean} \\[1ex]
-true       \ans{boolean}
-\end{multicols}
+0         & \ans[5em]{int}     &
+0.0       & \ans[5em]{double}  &
+\qs{0}\qs & \ans[5em]{char}    \\
+
+-1.0F     & \ans[5em]{float}   &
+-13L      & \ans[5em]{long}    &
+false     & \ans[5em]{boolean} \\
+
+123       & \ans[5em]{int}     &
+\qs{H}\qs & \ans[5em]{char}    &
+true      & \ans[5em]{boolean} \\
+
+\end{tabular}
 \end{quote}
 
 
@@ -162,7 +165,7 @@ days = '0';
 
 \columnbreak
 
-\begin{answer}
+\begin{answer}[10em]
 All are okay except:
 \\ \hspace*{1em} \texttt{total = sum;}
 \\ \hspace*{1em} \texttt{flag = minutes;}

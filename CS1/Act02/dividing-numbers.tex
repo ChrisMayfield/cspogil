@@ -85,15 +85,15 @@ At least one number in each row of the second table as a decimal point.
 \Q Complete the table:
 \hspace{2em}
 \begin{minipage}{0.5\textwidth}
-\begin{tabular}[t]{|C{45pt}|C{65pt}|C{45pt}|}
+\begin{tabular}[t]{|C{45pt}|C{65pt}|C{50pt}|}
 \hline
-14. / 4. & \textit{evaluates to} & \ans{3.5} \\
+14. / 4. & \textit{evaluates to} & \ans[3em]{3.5} \\
 \hline
-14. / 4  & \textit{evaluates to} & \ans{3.5} \\
+14. / 4  & \textit{evaluates to} & \ans[3em]{3.5} \\
 \hline
-14  / 4. & \textit{evaluates to} & \ans{3.5} \\
+14  / 4. & \textit{evaluates to} & \ans[3em]{3.5} \\
 \hline
-14  / 4  & \textit{evaluates to} & \ans{3}   \\
+14  / 4  & \textit{evaluates to} & \ans[3em]{3}   \\
 \hline
 \end{tabular}
 \end{minipage}
@@ -116,12 +116,16 @@ In the previous question:
 
 \Q Imagine you are writing a Java program that requires division.
 
-\begin{enumerate}
+\begin{enumerate}[itemsep=1ex]
+
 \item What must be true about the \emph{operands} (the numbers before and after the operator) for you to get the mathematically correct answer?
 
-\ans{At least one of them needs to be a floating-point number.}
+\begin{answer}[1em]
+At least one of them needs to be a floating-point number.
+\end{answer}
 
-\item Does it need to be true for both operands? \ans{No}
+\item Does it need to be true for both operands? \ans[5em]{No}
+
 \end{enumerate}
 
 
@@ -129,7 +133,7 @@ In the previous question:
 If you add two integers in Java, will the result always be mathematically correct?
 Justify your answer.
 
-\begin{answer}[5em]
+\begin{answer}
 Yes, because adding two integers always results in an integer.
 (Unless the number gets too large and the arithmetic overflows.)
 \end{answer}
@@ -137,7 +141,7 @@ Yes, because adding two integers always results in an integer.
 
 \Q What about subtraction (\java{-}) and multiplication (\java{*})? If you subtract or multiply two integers in Java, will the answer always be mathematically correct? Justify your answer.
 
-\begin{answer}[5em]
+\begin{answer}
 Yes, because subtraction and multiplication can be rewritten in terms of addition.
 Division is the only special case, because it has both a quotient and a remainder.
 \end{answer}
@@ -146,6 +150,6 @@ Division is the only special case, because it has both a quotient and a remainde
 \Q \label{intdiv}
 Summarize what you have learned about the difference between integer division and floating-point division.
 
-\begin{answer}[5em]
+\begin{answer}
 Integer division simply ignores the decimal part of the answer, whereas floating-point division gives you the mathematically correct answer.
 \end{answer}

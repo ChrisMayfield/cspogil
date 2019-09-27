@@ -91,7 +91,7 @@
 % Java environments
 \newcommand{\java}[1]{\lstinline[language=java]{#1}}%[
 \newcommand{\jans}[1]{\lstinline[language=java,style=lstanswers]{#1}}%[
-\lstnewenvironment{javaans}{\lstset{language=java,style=lstanswers}}{}
+\lstnewenvironment{javaans}{\lstset{language=java,style=lstanswers}\vspace{-1ex}}{}
 \lstnewenvironment{javalst}{\lstset{language=java,backgroundcolor=}}{}
 \lstnewenvironment{javanum}{\lstset{language=java,backgroundcolor=,numbers=left}}{}
 \lstnewenvironment{javabox}{\lstset{language=java,frame=single,numbers=left}\quote}{\endquote}
@@ -100,7 +100,7 @@
 % Python environments
 \newcommand{\pyth}[1]{\lstinline[style=morepython]{#1}}%[
 \newcommand{\pans}[1]{\lstinline[style=morepython,style=lstanswers]{#1}}%[
-\lstnewenvironment{pythans}{\lstset{style=morepython,style=lstanswers}}{}
+\lstnewenvironment{pythans}{\lstset{style=morepython,style=lstanswers}\vspace{-1ex}}{}
 \lstnewenvironment{pythlst}{\lstset{style=morepython,backgroundcolor=}}{}
 \lstnewenvironment{pythnum}{\lstset{style=morepython,backgroundcolor=,numbers=left}}{}
 \lstnewenvironment{pythbox}{\lstset{style=morepython,frame=single,numbers=left}\quote}{\endquote}
@@ -187,39 +187,45 @@
 \newcommand{\prob}[3]{\vspace{1em}\textbf{#1}~~(#2)\ifx&#3&\else\ -- \textit{#3}\fi}
 \newcommand{\exer}[2]{\vspace{1em}\textbf{#1}~~#2}
 
+% answer frames (Teacher mode)
+\renewcommand\fbox{\fcolorbox{GhostWhite}{GhostWhite}}
+\setlength{\fboxrule}{0.4pt}  %0.4pt
+\setlength{\fboxsep}{2.25pt}  %3.0pt
+
 % inline answers [optional width]
 \newcounter{answer}
-\newcommand{\ans}[2][15em]{%
+\newlength{\width}
+\newcommand{\ans}[2][15em]{
 \ifdefined\Teacher
-    \hspace*{1ex}\makebox[#1][l]{\textcolor{answers}{#2}}\hspace*{1ex}%
+    \leavevmode%
+    \setlength{\width}{#1}\addtolength{\width}{-5.3pt}%
+    \fbox{\parbox[c][13pt][c]{\width}{\textcolor{answers}{#2}}}%
 \else
-    \leavevmode%\phantom{\hspace*{1ex}\textcolor{answers}{#2}\hspace*{1ex}}%
+    \leavevmode%
     \refstepcounter{answer}%
-    \TextField[bordercolor=answers,height=11pt,width=#1,
+    \TextField[bordercolor=answers,height=13pt,width=#1,
                name=ans\arabic{answer}]{}%
 \fi}
 
 % longer answers [optional height]
 \newsavebox{\ansbox}
 \newlength{\depth}
-\newlength{\width}
 \newenvironment{answer}[1][4em]{
 \nopagebreak
 \begin{lrbox}{\ansbox}
-\begin{minipage}[t][#1]{\linewidth}
+\setlength{\width}{\linewidth}\addtolength{\width}{-8.3pt}
+\begin{minipage}[t][#1]{\width}
 \color{answers}
 }{
 \end{minipage}
 \end{lrbox}
 \ifdefined\Teacher
-    \usebox{\ansbox}%
+    \par\vspace{-3pt}\fbox{\usebox{\ansbox}}\vspace{3.3pt}%
 \else
-    %\leavevmode\phantom{\usebox{\ansbox}}
     \settodepth{\depth}{\usebox{\ansbox}}%
-    \settowidth{\width}{\usebox{\ansbox}}%
     \refstepcounter{answer}%
     \par\vspace{1ex}%
-    \TextField[bordercolor=answers,height=\depth,width=\width,multiline=true,
+    \TextField[bordercolor=answers,height=1.05\depth,width=\linewidth,multiline=true,
                name=ans\arabic{answer}]{}%
 \fi}
 

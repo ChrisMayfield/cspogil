@@ -47,27 +47,27 @@ y = y + 1;
 
 \\[-1em]
 &
-Value of x: \blank \ans{1}
+Value of x: \ans[3em]{1}
 
 \vspace{1em}
-Value of y: \blank \ans{1}
+Value of y: \ans[3em]{1}
 
 &
 &
-Value of x: \blank \ans{2}
+Value of x: \ans[3em]{2}
 
 \vspace{1em}
-Value of y: \blank \ans{1}
+Value of y: \ans[3em]{1}
 
 \vspace{1em}
-Value of z: \blank \ans{2}
+Value of z: \ans[3em]{2}
 
 &
 &
-Value of z: \blank \ans{4}
+Value of z: \ans[3em]{4}
 
 \vspace{1em}
-Value of y: \blank \ans{?}
+Value of y: \ans[3em]{?}
 
 \end{tabular}
 \vspace{-14pt}
@@ -79,7 +79,7 @@ Value of y: \blank \ans{?}
 
 \Q In program~\textsf{A}, why is the value of \java{x} not 2?
 
-\begin{answer}
+\begin{answer}[3em]
 Each statement is executed one after the other, so the third assignment changes the value of \java{y} to 1.
 The last assignment then assigns 1 to the value \java{x}.
 \end{answer}
@@ -87,28 +87,28 @@ The last assignment then assigns 1 to the value \java{x}.
 
 \Q In program~\textsf{B}, what happens to the values of \java{x} and \java{y}?
 
-\begin{answer}
+\begin{answer}[3em]
 They get swapped; \java{x} was 1 and \java{y} was 2, but in the end \java{x} was 2 and \java{y} was 1.
 \end{answer}
 
 
 \Q In program~\textsf{B}, what is the purpose of the variable \java{z}?
 
-\begin{answer}
+\begin{answer}[3em]
 It is a temporary variable that makes it possible to swap the values of \java{x} and \java{y}.
 \end{answer}
 
 
 \Q If program~\textsf{C} runs, what happens to the value of \java{z}?
 
-\begin{answer}
+\begin{answer}[3em]
 It gets incremented twice; the value starts at 2, then it becomes 3, and then it becomes 4.
 \end{answer}
 
 
 \Q In program~\textsf{C}, why is it possible to increment \java{z} but not \java{y}?
 
-\begin{answer}
+\begin{answer}[3em]
 The variable \java{z} was initialized, but \java{y} was not.
 Java doesn't know what value to increment.
 \end{answer}
@@ -119,16 +119,16 @@ For example, ~\java{x++} is the same as ~\java{x = x + 1}, and \java{y--} is the
 Write the value of \java{x} and \java{y} next to each statement below.
 
 \vspace{-1ex}
-\hspace{2em}
-\begin{minipage}[t]{100pt}
+\begin{center}
+\begin{minipage}{90pt}
 \begin{javalst}
 int x = 5;
 x--;
 x--;
 \end{javalst}
 \end{minipage}
-\begin{minipage}[t]{100pt}
-\begin{answer}
+\begin{minipage}{100pt}
+\begin{answer}[3.5em]
 \begin{javaans}
 x is 5
 x is 4
@@ -136,15 +136,16 @@ x is 3
 \end{javaans}
 \end{answer}
 \end{minipage}
-\begin{minipage}[t]{100pt}
+\hspace{3em}
+\begin{minipage}{90pt}
 \begin{javalst}
 int y = -10;
 y++;
 y++;
 \end{javalst}
 \end{minipage}
-\begin{minipage}[t]{100pt}
-\begin{answer}
+\begin{minipage}{100pt}
+\begin{answer}[3.5em]
 \begin{javaans}
 y is -10
 y is -9
@@ -152,7 +153,8 @@ y is -8
 \end{javaans}
 \end{answer}
 \end{minipage}
-\vspace{2pt}
+\end{center}
+\vspace{-1em}
 
 
 \Q \label{compound}
@@ -162,8 +164,8 @@ For example, the statement ~\java{x = x + 2} can be rewritten as ~\java{x += 2}.
 Simplify the following assignment statements.
 
 \vspace{-1ex}
-\hspace{2em}
-\begin{minipage}[t]{150pt}
+\begin{center}
+\begin{minipage}{150pt}
 \begin{javalst}
 step = step + 5;
 size = size - 3;
@@ -172,7 +174,7 @@ change = change / 10;
 hours = hours % 24;
 \end{javalst}
 \end{minipage}
-\begin{minipage}[t]{150pt}
+\begin{minipage}{150pt}
 \begin{answer}[6em]
 \begin{javaans}
 step += 5;
@@ -183,13 +185,15 @@ hours %= 24;
 \end{javaans}
 \end{answer}
 \end{minipage}
+\end{center}
+\vspace{-1em}
 
 
 \Q Which of the following assignment statements can also be rewritten like the ones in \ref{compound}?
 
 \vspace{-1ex}
-\hspace{2em}
-\begin{minipage}[t]{150pt}
+\begin{center}
+\begin{minipage}{150pt}
 \begin{javalst}
 step = 5 + step;
 size = 3 - size;
@@ -198,7 +202,7 @@ change = 10 / change;
 hours = 24 % hours;
 \end{javalst}
 \end{minipage}
-\begin{minipage}[t]{150pt}
+\begin{minipage}{150pt}
 \begin{answer}[6em]
 \begin{javaans}
 step += 5;
@@ -209,3 +213,5 @@ NO
 \end{javaans}
 \end{answer}
 \end{minipage}
+\end{center}
+\vspace{-1em}

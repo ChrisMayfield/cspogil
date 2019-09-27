@@ -50,7 +50,6 @@ You will need to invoke the \java{length()} and \java{charAt()} methods.
 Assume the string variable is named \java{word}.
 
 \begin{answer}
-\vspace{-1ex}
 \begin{javaans}
     for (int i = 0; i < word.length(); i++) {
         System.out.println(word.charAt(i));
@@ -62,7 +61,6 @@ Assume the string variable is named \java{word}.
 \Q Rewrite your \java{for} loop in \ref{forchar} as a \java{while} loop.
 
 \begin{answer}[6em]
-\vspace{-1ex}
 \begin{javaans}
     int i = 0;
     while (i < word.length()) {
@@ -77,8 +75,7 @@ Assume the string variable is named \java{word}.
 Recall that $n! = n * (n-1) * (n-2) * \ldots * 1$.
 Store your result in a variable named \java{fact}.
 
-\begin{answer}[6em]
-\vspace{-1ex}
+\begin{answer}[5em]
 \begin{javaans}
     long fact = 1;  // not int
     for (int i = n; i > 1; i--) {
@@ -112,9 +109,9 @@ Your output should be in this format:
     The factorial of 3 is 6
     The factorial of 4 is 24
 \end{verbatim}
-\vspace{-3ex}
+\vspace{-1ex}
 
-\begin{answer}[10em]
+\begin{answer}[9em]
 \begin{javaans}
     for (int n = 1; n <= 20; n++) {
         long fact = 1;  // not int

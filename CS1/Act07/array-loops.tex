@@ -107,8 +107,8 @@ Implement the following method that creates and returns a new array.
 public static double[] pairwiseMax(double[] x, double[] y) {
 \end{javalst}
 
-\vspace{-3ex}
-\begin{answer}[11.3em]
+\vspace{-2ex}
+\begin{answer}[11em]
 \begin{javaans}
     double[] z = new double[x.length];
     for (int i = 0; i < x.length; i++) {
@@ -121,6 +121,11 @@ public static double[] pairwiseMax(double[] x, double[] y) {
     return z;
 \end{javaans}
 \end{answer}
+\ifdefined\Teacher
+\vspace{-2ex}
+\else
+\vspace{-2em}
+\fi
 
 \begin{javalst}
 }
@@ -143,8 +148,8 @@ Implement the following method that reads through two integer arrays.
 public static double finalGrade(int[] labs, int[] exams) {
 \end{javalst}
 
-\vspace{-3ex}
-\begin{answer}[13.7em]
+\vspace{-2ex}
+\begin{answer}[13em]
 \begin{javaans}
     int labSum = 0;
     for (int score : labs) {
@@ -159,6 +164,11 @@ public static double finalGrade(int[] labs, int[] exams) {
     return 0.40 * labGrade + 0.60 * examGrade;
 \end{javaans}
 \end{answer}
+\ifdefined\Teacher
+\vspace{-2ex}
+\else
+\vspace{-2em}
+\fi
 
 \begin{javalst}
 }

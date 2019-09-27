@@ -47,9 +47,9 @@ Relational operators are evaluated before ~\java{&&} and \java{||}, so there is 
 
 
 \Q What are the values (true or false) of the example expressions?
-\ans{true, true, false, true, false}
 
-\vspace{1em}
+\vspace{1ex}
+\hspace{15pt} \ans{true, true, false, true, false}
 
 
 \Q Give different examples of boolean expressions that:
@@ -77,13 +77,13 @@ Relational operators are evaluated before ~\java{&&} and \java{||}, so there is 
 \hline
 \tr \java{p} & \tr \java{q} & \tr \java{p && q} & \tr \java{p || q} & \tr \java{!p} \\
 \hline
-false & false & \ans{false} & \ans{false} & \ans{true}  \\
+false & false & \ans[3em]{false} & \ans[3em]{false} & \ans[3em]{true}  \\
 \hline
-false & true  & \ans{false} & \ans{true}  & \ans{true}  \\
+false & true  & \ans[3em]{false} & \ans[3em]{true}  & \ans[3em]{true}  \\
 \hline
-true  & false & \ans{false} & \ans{true}  & \ans{false} \\
+true  & false & \ans[3em]{false} & \ans[3em]{true}  & \ans[3em]{false} \\
 \hline
-true  & true  & \ans{true}  & \ans{true}  & \ans{false} \\
+true  & true  & \ans[3em]{true}  & \ans[3em]{true}  & \ans[3em]{false} \\
 \hline
 \end{tabular}
 \end{center}
@@ -102,11 +102,11 @@ In other words, show your work as you evaluate the code in the same order that J
 \hline
 1st & \java{>}  & \java{a > c} & false \\
 \hline
-2nd & \ans{\java{!}}  & \ans{\java{!}false} & \ans{true} \\
+2nd & \ans[3em]{\java{!}}  & \ans{\java{!}false} & \ans[3em]{true} \\
 \hline
-3rd & \ans{\java{>}}  & \ans{\java{b > c}}  & \ans{false} \\
+3rd & \ans[3em]{\java{>}}  & \ans{\java{b > c}}  & \ans[3em]{false} \\
 \hline
-4th & \ans{\java{&&}} & \ans{true \java{&&} false} & \ans{false} \\
+4th & \ans[3em]{\java{&&}} & \ans{true \java{&&} false} & \ans[3em]{false} \\
 \hline
 \end{tabular}
 \end{center}
@@ -142,13 +142,17 @@ If \java{p} is true, you know the expression will be true.
 If the expression \java{p} is more likely to be true than the expression \java{q}, which one should you place on the left of each operator to avoid doing extra work?
 
 \begin{enumerate}
-\item left of the \java{&&} expression: \ans{\java{q} --- if it's false, then \java{p} won't be evaluated}
-\item left of the \java{||} expression: \ans{\java{p} --- if it's true, then \java{q} won't be evaluated}
+\item left of the \java{&&} expression:
+\ans[25em]{\java{q} --- if it's false, then \java{p} won't be evaluated}
+\item left of the \java{||} expression:
+\ans[25em]{\java{p} --- if it's true, then \java{q} won't be evaluated}
 \end{enumerate}
 
 
 \Q What is the result of the following expressions?
 \begin{enumerate}
-\item \java{1 + 0 > 0 && 1 / 0 > 0} \ans{java.lang.ArithmeticException: / by zero}
-\item \java{1 + 0 > 0 || 1 / 0 > 0} \ans{true}
+\item \java{1 + 0 > 0 && 1 / 0 > 0}
+\ans[24em]{java.lang.ArithmeticException: / by zero}
+\item \java{1 + 0 > 0 || 1 / 0 > 0}
+\ans[24em]{true}
 \end{enumerate}

@@ -44,8 +44,12 @@
 \definecolor{strings}{HTML}{B20000}
 \definecolor{answers}{HTML}{A9A9A9}
 
+% text highlighting
+\usepackage{soul}
+\sethlcolor{Yellow}
+
 % table backgrounds
-\newcommand{\tr}{\bf\cellcolor{Yellow!10}}
+\newcommand{\tr}{\bf\cellcolor{Orange!10}}
 \newcommand{\tg}{\bf\cellcolor{Gray!10}}
 
 % special characters
@@ -174,7 +178,7 @@
 \newcommand{\blank}[1][3em]{\rule{#1}{0.5pt}}
 \newcommand{\quest}[1]{\subsection*{Questions~ (#1) \hfill Start time: \blank[4em]}}
 \newcounter{question}
-\newcommand{\Q}{\vspace{1em}\refstepcounter{question}\arabic{question}.~ }
+\newcommand{\Q}{\vspace{1em}\refstepcounter{question}\textbf{\arabic{question}}.~ }
 \renewcommand{\thequestion}{\#\arabic{question}}
 
 % sub-question lists
@@ -186,6 +190,7 @@
 % homework exercises
 \newcommand{\prob}[3]{\vspace{1em}\textbf{#1}~~(#2)\ifx&#3&\else\ -- \textit{#3}\fi}
 \newcommand{\exer}[2]{\vspace{1em}\textbf{#1}~~#2}
+\newcommand{\code}[1]{\colorbox{WhiteSmoke}{\textcolor{Maroon}{\texttt{#1}}}}
 
 % answer frames (Teacher mode)
 \renewcommand\fbox{\fcolorbox{GhostWhite}{GhostWhite}}

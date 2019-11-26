@@ -1,84 +1,56 @@
 \model{Relational Operators}
 % based on Model 2 of Activity 4 Boolean by Helen Hu
 
-Some IDEs (including DrJava) have an ``Interactions'' feature that allows you to enter a single line of code and see what it does.
-If you type an \emph{expression} like 1 + 2 and leave off the semicolon, it will display the resulting \emph{value} (i.e., 3).
-In the table below, predict what values will be displayed and identify the relational operator.
-The first four rows are completed for you.
+In \ref{employers.tex}, you determined the top three attributes by comparing percentages.
+We can declare variables to represent these percentages in Java:
+
+\begin{javalst}
+    double written = 82.0;   // Communication skills (written)
+    double problem = 80.9;   // Problem-solving skills
+    double teamwork = 78.7;  // Ability to work in a team
+\end{javalst}
+
+In the table below, predict the result of each expression and identify the operator (if any).
+The first three rows are completed for you.
 
 \begin{center}
-\begin{tabular}{|L{200pt}|C{110pt}|C{110pt}|}
+\setlength{\defaultwidth}{8.5em}
+\begin{tabular}{|L{12em}|C{10em}|C{10em}|}
 \hline
-\tr Interactions & \tr Value displayed & \tr Relational operator \\
-\hline
-\java{int three = 3}                   & none        & none            \\
-\hline
-\java{int four = 4}                    & none        & none            \\
-\hline
-\java{System.out.println(four)}        & 4           & none            \\
-\hline
-\java{three > four}                    & false       & \java{>}        \\
-\hline
-\java{boolean isLarger = three > four} & \ans[8em]{none}  & \ans[8em]{\java{>}}  \\
-\hline
-\java{System.out.println(isLarger)}    & \ans[8em]{false} & \ans[8em]{none}      \\
-\hline
-\java{three == four}                   & \ans[8em]{false} & \ans[8em]{\java{==}} \\
-\hline
-\java{three < four}                    & \ans[8em]{true}  & \ans[8em]{\java{<}}  \\
-\hline
-\java{three <= four}                   & \ans[8em]{true}  & \ans[8em]{\java{<=}} \\
-\hline
-\java{three = four}                    & \ans[8em]{4}     & \ans[8em]{none}      \\
-\hline
-\java{three == four}                   & \ans[8em]{true}  & \ans[8em]{\java{==}} \\
-\hline
+\tr Expression              & \tr Result    & \tr Operator \\ \hline
+\java{written}              &       82.0    &       none   \\ \hline
+\java{written > problem}    &       true    &       >      \\ \hline
+\java{problem < teamwork}   &       false   &       <      \\ \hline
+\java{82.0 < written}       &  \ans{false}  &  \ans{<}     \\ \hline
+\java{82.0 > written}       &  \ans{false}  &  \ans{>}     \\ \hline
+\java{82.0 == written}      &  \ans{true}   &  \ans{==}    \\ \hline
+\java{problem == written}   &  \ans{false}  &  \ans{==}    \\ \hline
+\java{teamwork == problem}  &  \ans{false}  &  \ans{==}    \\ \hline
+\java{teamwork = problem}   &  \ans{80.9}   &  \ans{=}     \\ \hline
+\java{teamwork == problem}  &  \ans{true}   &  \ans{==}    \\ \hline
+\java{problem}              &  \ans{80.9}   &  \ans{none}  \\ \hline
+\java{teamwork}             &  \ans{80.9}   &  \ans{none}  \\ \hline
 \end{tabular}
+\setlength{\defaultwidth}{15em}
 \end{center}
 
 
 \quest{15 min}
 
-\Q List the four unique \emph{boolean expressions} used in \ref{\currfilename}.
+\Q A \emph{relational operator} compares two values; the result is either \java{true} or \java{false}.
+Identify the three relational operators used in the table above.
 
-\begin{answer}[3em]
+\begin{answer}[2em]
 \begin{javaans}
-    three > four    three == four    three < four    three <= four
+    >    <    ==
 \end{javaans}
 \end{answer}
 
 
-\Q Examine the fifth line of Java code in the above model.
-
-\begin{enumerate}
-
-\item What three actions are performed in this single line of code?
-
-\begin{answer}[2em]
-It declares the variable \java{isLarger}, compares the values of \java{three} and \java{four}, and assigns the result to \java{isLarger}.
-\end{answer}
-
-\item Write two lines of code, ending with semicolons, that would perform these same actions (but in two lines instead of a single line).
-
-\ans{\tt boolean isLarger;}
-
-\ans{\tt isLarger = three > four;}
-
-\end{enumerate}
-
-
-\Q The \java{!=} operator means ``not equals''.
-Give an example of a boolean expression that uses \java{!=} and evaluates to false.
-
-\begin{answer}[2em]
-\java{5 != 5} is false (because they {\it are} equal)
-\end{answer}
-
-
-\Q Explain why the same boolean expression \java{three == four} resulted with two different values in the table.
+\Q Explain why the same expression \java{teamwork == problem} resulted with two different values in the table.
 
 \begin{answer}
-The line \java{three = four} assigned the value of four to three, making the two variables equal.
+The line \java{teamwork = problem} assigned the value of \java{problem} to \java{teamwork}, making the two variables equal.
 They started out not being equal, but they ended up with the same value.
 \end{answer}
 
@@ -90,9 +62,25 @@ The \java{=} operator assigns a value to a variable, and the \java{==} operator 
 \end{answer}
 
 
-\Q List the six relational operators that can be used in a boolean expression.
-(Five have been used so far, but you should be able to guess the sixth.)
-Explain briefly what each one means.
+\Q The \java{!=} relational operator means ``not equals''.
+Give an example of a boolean expression that uses \java{!=} and evaluates to false.
+
+\begin{answer}[2em]
+\java{5 != 5} is false (because they {\it are} equal)
+\end{answer}
+
+
+\Q The \java{>=} relational operator means ``greater than or equal to''.
+Give an example of a boolean expression that uses \java{>=} and evaluates to true.
+
+\begin{answer}[2em]
+\java{5 >= 5} is true (because they {\it are} equal)
+\end{answer}
+
+
+\Q Java has six relational operators.
+Only five have been mentioned, but you should be able to guess the sixth.
+List all six below, and explain briefly what each one means.
 
 \begin{answer}
 \begin{tabular}{lll}

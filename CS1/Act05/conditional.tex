@@ -1,10 +1,7 @@
 \model{Conditional Operators}
 % based on Model 3 of Activity 4 Boolean by Helen Hu
 
-Boolean expressions use conditional operators to implement basic logic.
-If all three operators appear in the same expression, Java will evaluate \java{!} first, then \java{&&}, and finally \java{||}.
-If there are multiples of the same operator, they are evaluated from left to right.
-Relational operators are evaluated before ~\java{&&} and \java{||}, so there is generally no need for parentheses.
+Boolean expressions, like \java{written > problem} and \java{teamwork < 75.0}, can be combined using the \emph{conditional operators}:
 
 \begin{center}
 \begin{tabular}{|C{100pt}|C{100pt}|}
@@ -20,25 +17,30 @@ Relational operators are evaluated before ~\java{&&} and \java{||}, so there is 
 \end{tabular}
 \end{center}
 
+If all three operators appear in the same expression, Java will evaluate \java{!} first, then \java{&&}, and finally \java{||}.
+If there are multiples of the same operator, they are evaluated from left to right.
+Relational operators are evaluated before ~\java{&&} and \java{||}, so there is generally no need for parentheses.
+
+
 \smallskip
 \begin{multicols}{2}
 \centering
 
 \textbf{Example Variables:} \\[1ex]
-\java{int a = 3;} \\
-\java{int b = 4;} \\
-\java{int c = 5;} \\
-\java{boolean funny = true;} \\
-\java{boolean weird = false;} \\
+\java{double initiative = 74.2;} \\
+\java{double analytical = 71.9;} \\
+\java{double workEthic  = 70.8;} \\
+\java{boolean hired = true;} \\
+\java{boolean fired = false;} \\
 
 \columnbreak
 
 \textbf{Example Expressions:} \\[1ex]
-\java{a < b && funny} \\
-\java{a < b && b < c} \\
-\java{c < a || b < a} \\
-\java{funny && a < c} \\
-\java{!funny || weird} \\
+\java{analytical < initiative && fired} \\
+\java{workEthic < 71.0 && 71.0 < initiative} \\
+\java{initiative < 70.0 || workEthic > 70.0} \\
+\java{fired || workEthic < 50.0} \\
+\java{hired && !fired} \\
 
 \end{multicols}
 
@@ -49,28 +51,33 @@ Relational operators are evaluated before ~\java{&&} and \java{||}, so there is 
 \Q What are the values (true or false) of the example expressions?
 
 \vspace{1ex}
-\hspace{15pt} \ans{true, true, false, true, false}
+\hspace{15pt}
+\ans[5em]{false} ~~
+\ans[5em]{true} ~~
+\ans[5em]{true} ~~
+\ans[5em]{false} ~~
+\ans[5em]{true}
 
 
 \Q Give different examples of boolean expressions that:
 
 \begin{enumerate}
-\item uses a, b, and !, and evaluates to false \ans{!(a < b)}
-\item uses b, c, and !, and evaluates to true \ans{!(b > c)}
-\item uses any variables, but evaluates to false \ans{weird}
-\item uses any variables, but evaluates to true \ans{funny}
+\item uses \java{initiative}, \java{analytical}, and \java{!}, and evaluates to false \ans[12em]{!(initiative < analytical)}
+\item uses \java{analytical}, \java{workEthic}, and \java{!}, and evaluates to true \ans[12em]{!(analytical > workEthic)}
+\item uses any variables, and evaluates to false \ans[12em]{fired}
+\item uses any variables, and evaluates to true \ans[12em]{hired}
 \end{enumerate}
 
 
-\Q Using your answers from the previous question, write the boolean expression \java{p && q} where \java{p} is your answer to step a) and \java{q} is your answer to step b).
+\Q Using your answers from the previous question, write a boolean expression ``\java{p && q}'' where \java{p} is your answer to step a) and \java{q} is your answer to step b).
 
 \begin{enumerate}
-\item Your expression: \ans{\java{!(a < b) && !(b > c)}}
+\item Your expression: \ans[30em]{\java{!(initiative < analytical) && !(analytical > workEthic)}}
 \item Result of ~\java{p && q}: \ans{false (no matter what)}
 \end{enumerate}
 
 
-\Q \label{truthtable} Complete the following table:
+\Q \label{truthtable} Complete the following table, which explores all possible values for \java{p} and \java{q}:
 
 \begin{center}
 \begin{tabular}{|C{50pt}|C{50pt}|C{50pt}|C{50pt}|C{50pt}|}
@@ -89,24 +96,24 @@ true  & true  & \ans[3em]{true}  & \ans[3em]{true}  & \ans[3em]{false} \\
 \end{center}
 
 
-\Q Using the values in \ref{\currfilename}, give the result of each operator in the following expression.
+\Q Using the values in \ref{relational.tex}, give the result of each operator below.
 In other words, show your work as you evaluate the code in the same order that Java would.
 
 \begin{center}
-\java{!(a > c) && b > c}
+\java{!(written < teamwork) && problem > teamwork}
 \vspace{1em}
 
 \begin{tabular}{|C{50pt}|C{70pt}|C{200pt}|C{70pt}|}
 \hline
 \tr & \tr Operator & \tr Expression & \tr Result \\
 \hline
-1st & \java{>}  & \java{a > c} & false \\
+1st & \java{<}  & \java{written < teamwork} & false \\
 \hline
 2nd & \ans[3em]{\java{!}}  & \ans{\java{!}false} & \ans[3em]{true} \\
 \hline
-3rd & \ans[3em]{\java{>}}  & \ans{\java{b > c}}  & \ans[3em]{false} \\
+3rd & \ans[3em]{\java{>}}  & \ans{\java{problem > teamwork}}  & \ans[3em]{true} \\
 \hline
-4th & \ans[3em]{\java{&&}} & \ans{true \java{&&} false} & \ans[3em]{false} \\
+4th & \ans[3em]{\java{&&}} & \ans{true \java{&&} true} & \ans[3em]{true} \\
 \hline
 \end{tabular}
 \end{center}
@@ -115,8 +122,8 @@ In other words, show your work as you evaluate the code in the same order that J
 \Q Add parentheses to the boolean expression from the previous question so that the \java{&&} is evaluated before the \java{!}. Then remove any unnecessary parentheses.
 
 \begin{enumerate}
-\item Expression: \ans{\java{!(a > c && b > c)}}
-\item New result: \ans{true}
+\item Expression: \ans[25em]{\java{!(written < teamwork && problem > teamwork)}}
+\item New result: \ans[5em]{true}
 \end{enumerate}
 
 

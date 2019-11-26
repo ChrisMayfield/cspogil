@@ -192,18 +192,26 @@
 \newcommand{\exer}[2]{\vspace{1em}\textbf{#1}~~#2}
 \newcommand{\code}[1]{\colorbox{WhiteSmoke}{\textcolor{Maroon}{\texttt{#1}}}}
 
+% instructor notes
+\newcommand{\note}[1]{\ifdefined\Teacher\hspace*{1ex}\textcolor{answers}{#1}\fi}
+
 % answer frames (Teacher mode)
 \renewcommand\fbox{\fcolorbox{GhostWhite}{GhostWhite}}
 \setlength{\fboxrule}{0.4pt}  %0.4pt
 \setlength{\fboxsep}{2.25pt}  %3.0pt
 
+% dimensions of answer boxes
+\newlength{\depth}
+\newlength{\width}
+\newlength{\defaultwidth}
+\setlength{\defaultwidth}{15em}
+
 % inline answers [optional width]
 \newcounter{answer}
-\newlength{\width}
-\newcommand{\ans}[2][15em]{
+\newcommand{\ans}[2][\defaultwidth]{
 \ifdefined\Teacher
     \leavevmode%
-    \setlength{\width}{#1}\addtolength{\width}{-5.3pt}%
+    \setlength{\width}{#1}\addtolength{\width}{-2.65pt}%
     \fbox{\parbox[c][13pt][c]{\width}{\textcolor{answers}{#2}}}%
 \else
     \leavevmode%
@@ -214,7 +222,6 @@
 
 % longer answers [optional height]
 \newsavebox{\ansbox}
-\newlength{\depth}
 \newenvironment{answer}[1][4em]{
 \nopagebreak
 \begin{lrbox}{\ansbox}
@@ -228,9 +235,10 @@
     \par\vspace{-3pt}\fbox{\usebox{\ansbox}}\vspace{3.3pt}%
 \else
     \settodepth{\depth}{\usebox{\ansbox}}%
+    \addtolength{\depth}{2.65pt}%
     \refstepcounter{answer}%
     \par\vspace{1ex}%
-    \TextField[bordercolor=answers,height=1.05\depth,width=\linewidth,multiline=true,
+    \TextField[bordercolor=answers,height=\depth,width=\linewidth,multiline=true,
                name=ans\arabic{answer}]{}%
 \fi}
 

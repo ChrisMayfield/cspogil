@@ -1,6 +1,6 @@
 # cspogil
 
-**This repository of POGIL activities for computer science is a work in progress.**
+**POGIL activities for CS0 and CS1.**
 
 Many authors have contributed to these activities, including Chris Mayfield, Helen Hu, Clif Kussmaul, and others.
 See individual source files for specific attribution.

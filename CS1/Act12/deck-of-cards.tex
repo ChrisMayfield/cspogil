@@ -57,8 +57,7 @@ public Card(int rank, int suit) {
 
 %   String[] suits = {"clubs", "spades", "hearts", "diamonds"};
 
-\vspace*{-1ex}
-\begin{answer}[3em]
+\begin{answer}[2em]
 \begin{javaans}
     int[] suits = {0, 3, 2, 1};
 \end{javaans}
@@ -71,8 +70,7 @@ Use nested \java{for} loops to construct \java{Card} objects in the order of \re
 Make use of your \java{suits} array from the previous question.
 Discuss with your team how you will keep track of the array index.
 
-\vspace*{-1ex}
-\begin{answer}[11em]
+\begin{answer}[10em]
 \begin{javaans}
 Card[] cards = new Card[52];
 int index = 0;
@@ -113,7 +111,7 @@ public static Card[] sort(Card[] deck) {
 }
 \end{javalst}
 
-\begin{answer}[5em]
+\begin{answer}
 This example sorts an array of cards.
 It first validates the arguments, then it creates a new array of cards and assigns each \java{Card} reference according to its known position in the deck.
 \end{answer}
@@ -134,8 +132,7 @@ It first validates the arguments, then it creates a new array of cards and assig
 \Q \label{search}
 Write a static method named \java{inDeck} that takes a \java{Card[]} representing a deck of cards and a \java{Card} object representing a single card, and that returns \java{true} if the card is somewhere in the deck of cards. Be sure to use the equals method of the \java{Card} object to make comparisons.
 
-\vspace{-1ex}
-\begin{answer}[11em]
+\begin{answer}[10em]
 \begin{javaans}
 public static boolean inDeck(Card[] deck, Card card) {
     for (Card c : deck) {

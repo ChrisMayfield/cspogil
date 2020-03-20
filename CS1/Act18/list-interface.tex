@@ -60,30 +60,32 @@ Four: \java{add} (at the end), \java{add} (at a position), \java{remove}, and \j
 Fill in the table below to show the contents of the list after each method call.
 Note that the \java{add} method returns \java{true} if the list changes as a result, and the \java{set} method returns the element previously at the specified position.
 
+\setlength{\defaultwidth}{1em}
+
 \begin{center}
 \begin{tabular}{|l|C{4pt}|C{24pt}|C{24pt}|C{24pt}|C{24pt}|C{24pt}|C{4pt}|c|}
 \hline
 \tr Method Call      & \tg & \tr  0  & \tr  1  & \tr  1  & \tr  3  & \tr 4 & \tg & \tr Return Value \\
 \hline
-\java{add(0, "A")}   & \tg &      A  &         &         &         &       & \tg & true \\
+\java{add(0, "A")}   & \tg &      A  &         &         &         &        & \tg & true \\
 \hline
-\java{size()}        & \tg &      A  &         &         &         &       & \tg & 1 \\
+\java{size()}        & \tg &      A  &         &         &         &        & \tg & 1 \\
 \hline
-\java{add("N")}      & \tg &      A  &      N  &         &         &       & \tg & true \\
+\java{add("N")}      & \tg &      A  &      N  &         &         &        & \tg & true \\
 \hline
-\java{add(0, "R")}   & \tg & \ans{R} & \ans{A} & \ans{N} &         &       & \tg & \ans{true} \\
+\java{add(0, "R")}   & \tg & \ans{R} & \ans{A} & \ans{N} & \ans{}  & \ans{} & \tg & \ans[3em]{true} \\
 \hline
-\java{add("G")}      & \tg & \ans{R} & \ans{A} & \ans{N} & \ans{G} &       & \tg & \ans{true} \\
+\java{add("G")}      & \tg & \ans{R} & \ans{A} & \ans{N} & \ans{G} & \ans{} & \tg & \ans[3em]{true} \\
 \hline
-\java{size()}        & \tg & \ans{R} & \ans{A} & \ans{N} & \ans{G} &       & \tg & \ans{4} \\
+\java{size()}        & \tg & \ans{R} & \ans{A} & \ans{N} & \ans{G} & \ans{} & \tg & \ans[3em]{4} \\
 \hline
-\java{remove(0)}     & \tg & \ans{A} & \ans{N} & \ans{G} &         &       & \tg & \ans{R} \\
+\java{remove(0)}     & \tg & \ans{A} & \ans{N} & \ans{G} & \ans{}  & \ans{} & \tg & \ans[3em]{R} \\
 \hline
-\java{get(0)}        & \tg & \ans{A} & \ans{N} & \ans{G} &         &       & \tg & \ans{A} \\
+\java{get(0)}        & \tg & \ans{A} & \ans{N} & \ans{G} & \ans{}  & \ans{} & \tg & \ans[3em]{A} \\
 \hline
-\java{get(size()-1)} & \tg & \ans{A} & \ans{N} & \ans{G} &         &       & \tg & \ans{G} \\
+\java{get(size()-1)} & \tg & \ans{A} & \ans{N} & \ans{G} & \ans{}  & \ans{} & \tg & \ans[3em]{G} \\
 \hline
-\java{set(1, "U")}   & \tg & \ans{A} & \ans{U} & \ans{G} &         &       & \tg & \ans{N} \\
+\java{set(1, "U")}   & \tg & \ans{A} & \ans{U} & \ans{G} & \ans{}  & \ans{} & \tg & \ans[3em]{N} \\
 \hline
 \end{tabular}
 \end{center}

@@ -36,7 +36,7 @@ Creating an array of objects is typically a 3-step process:
 What is the value of \java{hand} {\it before} step 2?
 What is the value of \java{hand} {\it after} step 2?
 
-\begin{answer}
+\begin{answer}[3em]
 The variable \java{hand} is an array of \java{Card} objects.
 Before step 2, it's uninitialized (i.e., you can't read its value).
 After step 2, its value is the memory location of the first array element.
@@ -88,9 +88,8 @@ for (int i = 0; i < hand.length; i++) {
     }
 }
 \end{javalst}
-\vspace{-1ex}
 
-\begin{answer}
+\begin{answer}[3em]
 The loop prints the suits of all cards in the hand.
 Because some of the cards are {\tt null}, the if-statement prevents {\tt NullPointerException}.
 \end{answer}
@@ -109,7 +108,7 @@ for (String day : days) {
 \end{javalst}
 \vspace{-1em}
 
-\begin{answer}[5em]
+\begin{answer}
 \begin{javaans}
 for (int i = 0; i < days.length; i++) {
     System.out.println(days[i] + " is a great day!");
@@ -121,8 +120,8 @@ for (int i = 0; i < days.length; i++) {
 \Q In contrast to enhanced for loops, what does a standard for loop typically iterate?
 Why would it be misleading to name the enhanced for loop variable \java{i} instead of \java{day}?
 
-\begin{answer}[3em]
-Standard for loops typically iterate indexes; that's why the variable is almost always named \java{i}.
+\begin{answer}[2em]
+Standard for loops typically iterate indexes; that's why the variable is usually named \java{i}.
 \end{answer}
 
 
@@ -131,7 +130,6 @@ Rewrite the loop in \ref{forcard} using an enhanced for loop.
 Use an appropriate variable name for the \java{Card} object (i.e., not \java{i}).
 For simplicity, you may omit the \java{System.out.println} line.
 
-\vspace{-1ex}
 \begin{answer}[7em]
 \begin{javaans}
 for (Card card : hand) {

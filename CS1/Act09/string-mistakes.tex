@@ -29,8 +29,8 @@ System.out.println(letter);
 \hline
 \usebox{\programA} & \usebox{\programB} \\
 \hline
-\multicolumn{1}{c}{\ans{\tt hello world}} &
-\multicolumn{1}{c}{\ans{\tt StringIndexOutOfBoundsException}} \\[-3ex]
+\multicolumn{1}{c}{\ans[17em]{\tt hello world}} &
+\multicolumn{1}{c}{\ans[17em]{\tt StringIndexOutOfBoundsException}} \\[-3ex]
 \end{tabularx}
 \end{table}
 
@@ -41,7 +41,7 @@ System.out.println(letter);
 \Q Write the output of each program in the space under the table above.
 What is the logic error you see when you run Program A?
 
-\begin{answer}[3em]
+\begin{answer}[2em]
 The \str{hello world} greeting is still lowercase.
 \end{answer}
 
@@ -50,7 +50,7 @@ The \str{hello world} greeting is still lowercase.
 In Program A, what is returned by the string method?
 What happens to the return value?
 
-\begin{answer}[3em]
+\begin{answer}[2em]
 A new string is returned, but its value is not saved anywhere.
 \end{answer}
 
@@ -89,7 +89,7 @@ If the user enters a blank line, then there will be no character at position 1. 
 \end{answer}
 
 
-\Q Explain why these errors occur based on what you learned in \ref{string-methods.tex} and \ref{string-chararray.tex}.
+\Q Explain why these errors occur based on what you learned in \ref{string-chararray.tex} and \ref{string-methods.tex}.
 
 \begin{answer}
 The \java{toUpperCase} method returns a copy of {\tt this} string; it doesn't actually change the original string.

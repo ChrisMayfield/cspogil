@@ -26,7 +26,7 @@ Classes generally include the following kinds of methods (in addition to others)
 What is the difference between them?
 What arguments do they take?
 
-\begin{answer}
+\begin{answer}[3em]
 There are two constructors: one that takes three integers for the RGB values, and other that takes a Color object. The latter is called a \emph{copy constructor}. Constructors do not return values.
 \end{answer}
 
@@ -34,7 +34,7 @@ There are two constructors: one that takes three integers for the RGB values, an
 \Q What kind of constructor does the \java{Point} class have that the \java{Color} class does not?
 What is the purpose of such a constructor?
 
-\begin{answer}
+\begin{answer}[3em]
 The \java{Point} class also has a default constructor, which initializes attributes to their default value (most likely zero).
 \end{answer}
 
@@ -105,7 +105,8 @@ Point p1 = new Point();  Point p2 = new Point(0, 0);  Point p3 = new Point(3, 3)
 \end{javalst}
 
 \begin{multicols}{2}
-\begin{enumerate}
+\setlength{\defaultwidth}{5em}
+\begin{enumerate}[itemsep=1pt]
 \item \java{p1 == p1} \ans{true}
 \item \java{p1.equals(p1)} \ans{true}
 \item \java{p1 == p2} \ans{false}

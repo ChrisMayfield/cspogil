@@ -76,7 +76,9 @@ Arrays and strings are reference types, so their variables contain memory locati
 Draw a memory diagram for the given code.
 (List the name of each variable next to a box containing its value.)
 
-\vspace{1ex}
+\hspace*{1em}
+\begin{minipage}{0.25\linewidth}
+
 \begin{javalst}
 String str;
 str = "Hi!";
@@ -94,11 +96,14 @@ String hmm;
 hmm = str;
 \end{javalst}
 
-\vspace{-3.25in}
+\end{minipage}
+\begin{minipage}{0.65\linewidth}
+
 \begin{answer}[3.1in]
-\hspace{2.2in}
 \includegraphics[height=3in]{string2.pdf}
 \end{answer}
+
+\end{minipage}
 
 
 \Q Recall that the \java{==} operator compares the {\it value} of two variables.

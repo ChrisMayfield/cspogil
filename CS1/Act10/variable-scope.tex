@@ -39,6 +39,8 @@ anywhere within the method or code block after they are declared &
 
 \quest{20 min}
 
+\setlength{\defaultwidth}{37em}
+
 
 \Q Identify one static variable from the \java{SwapCircle} class.
 \begin{enumerate}
@@ -71,40 +73,40 @@ anywhere within the method or code block after they are declared &
 
 \Q Identify an example of where an instance variable is used within a static method.
 \begin{enumerate}
-\item In which method does this occur?
-\\ \ans{\java{radius} is used in the \java{swapCircles} method} \\[-2em]
+\item In which method does this occur? \\[2pt]
+\ans{\java{radius} is used in the \java{swapCircles} method} \\[-2em]
 
-\item Why is the method able to access these instance variables, even though they are private?
-\\ \ans{\java{swapCircles} belongs to the \java{SwapCircle} class} \\[-2em]
+\item Why is the method able to access these instance variables, even though they are private? \\[2pt]
+\ans{\java{swapCircles} belongs to the \java{SwapCircle} class} \\[-2em]
 
-\item Explain how this method is not a violation of the rule that instance variables cannot be accessed inside a static method.
-\\ \ans{You can't use {\tt this}.radius in a {\tt static} method, but it's okay to use \java{c1.radius}} \\[-2em]
+\item Explain how this method is not a violation of the rule that instance variables cannot be accessed inside a static method. \\[1ex]
+\ans{You can't use {\tt this}.radius in a {\tt static} method, but it's okay to use \java{c1.radius}} \\[-2em]
 \end{enumerate}
 
 
 \Q Identify one parameter from the \java{SwapCircle} class.
 \begin{enumerate}
-\item What is the name and purpose of the variable?
-\\ \ans{Possible answers include: \java{radius} (in the constructor), \java{x} and \java{y}, \java{c1} and \java{c2}} \\[-2em]
+\item What is the name and purpose of the variable? \\[2pt]
+\ans{Possible answers include: \java{radius} (in the constructor), \java{x} and \java{y}, \java{c1} and \java{c2}} \\[-2em]
 
-\item What is the scope of the variable?
-\\ \ans{The variable exists throughout the entire method (but not other methods).} \\[-2em]
+\item What is the scope of the variable? \\[2pt]
+\ans{The variable exists throughout the entire method (but not other methods).} \\[-2em]
 
-\item Where can the variable not be used?
-\\ \ans{It can't be used in other methods, e.g., you can't refer to \java{x} in \java{swapCircles}.} \\[-2em]
+\item Where can the variable not be used? \\[2pt]
+\ans{It can't be used in other methods, e.g., you can't refer to \java{x} in \java{swapCircles}.} \\[-2em]
 \end{enumerate}
 
 
 \Q Identify one local variable from the \java{SwapCircle} class.
 \begin{enumerate}
-\item What is the name and purpose of the variable?
-\\ \ans{Possible answers include: \java{temp} and \java{r} (both used for swapping values)} \\[-2em]
+\item What is the name and purpose of the variable? \\[2pt]
+\ans{Possible answers include: \java{temp} and \java{r} (both used for swapping values)} \\[-2em]
 
-\item What is the scope of the variable?
-\\ \ans{The variable exists from when it's declared until the end of the method.} \\[-2em]
+\item What is the scope of the variable? \\[2pt]
+\ans{The variable exists from when it's declared until the end of the method.} \\[-2em]
 
-\item Where can the variable not be used?
-\\ \ans{It cannot be used in other methods and/or before it has been declared.} \\[-2em]
+\item Where can the variable not be used? \\[2pt]
+\ans{It cannot be used in other methods and/or before it has been declared.} \\[-2em]
 \end{enumerate}
 
 

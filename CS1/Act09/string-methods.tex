@@ -40,12 +40,12 @@ If \java{str} contains the string \java{"hello world"}, then what is the return 
 
 \begin{multicols}{2}
 \begin{enumerate}
-\item \java{str.charAt(8)} \ans{\chr{r}}
-%\item \java{str.equals("hello")} \ans{\tt false}
-\item \java{str.indexOf("wo")} \ans{6}
-\item \java{str.length()} \ans{11}
-\item \java{str.substring(4, 7)} \ans{\str{o w}}
-\item \java{str.toUpperCase()} \ans{\str{HELLO WORLD}}
+\item \java{str.charAt(8)} \ans[4em]{\chr{r}}
+%\item \java{str.equals("hello")} \ans[4em]{\tt false}
+\item \java{str.indexOf("wo")} \ans[4em]{6}
+\item \java{str.length()} \ans[4em]{11}
+\item \java{str.substring(4, 7)} \ans[4em]{\str{o w}}
+\item \java{str.toUpperCase()} \ans[8em]{\str{HELLO WORLD}}
 \end{enumerate}
 \end{multicols}
 
@@ -91,12 +91,12 @@ How many arguments does each method call in \ref{strAPI} have?
 
 \begin{multicols}{2}
 \begin{enumerate}
-\item \ans{2}
-%\item \ans{2}
-\item \ans{2}
-\item \ans{1}
-\item \ans{3}
-\item \ans{1}
+\item \ans[3em]{2}
+%\item \ans[3em]{2}
+\item \ans[3em]{2}
+\item \ans[3em]{1}
+\item \ans[3em]{3}
+\item \ans[3em]{1}
 \end{enumerate}
 \end{multicols}
 
@@ -140,7 +140,7 @@ if (name1.equals(name2)) {
 
 \Q What is the difference between \emph{identical} and \emph{equal} in the previous question?
 
-\begin{answer}
+\begin{answer}[3em]
 ``Identical'' means the variables refer to the same \java{String} object.
 ``Equal'' means the strings have the same characters, in the \java{Arrays.equals} sense.
 \end{answer}
@@ -151,7 +151,7 @@ Discuss the \java{stringMatch} problem on the next page.
 What three \java{String} methods will you need to solve it?
 (If you have time during the activity, complete the method.)
 
-\begin{answer}
+\begin{answer}[2em]
 \java{String.length} for the loop, and \java{String.substring} and \java{String.equals} for the comparison.
 \end{answer}
 
@@ -161,7 +161,7 @@ Discuss the \java{stringYak} problem on the next page.
 What two \java{String} methods will you need to solve it?
 (If you have time during the activity, complete the method.)
 
-\begin{answer}
+\begin{answer}[2em]
 \java{String.length} for the loop, and \java{String.charAt} to identify \chr{y} and \chr{k}.
 \end{answer}
 

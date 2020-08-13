@@ -21,7 +21,7 @@ In this program, the result of \verb|raw_input| is stored in the \textbf{variabl
 
 \Q What is the prompt? Why is there a space at the end of it?
 
-\begin{answer}
+\begin{answer}[3em]
 The prompt is \str{What is your name? }.
 The space at the end makes it so that the input isn't ``touching'' the question mark when the user types.
 \end{answer}
@@ -34,7 +34,7 @@ The space at the end makes it so that the input isn't ``touching'' the question 
 
 \Q Enter each of these lines into the IDLE shell, and explain where the syntax error occurs.
 
-\begin{enumerate}
+\begin{enumerate}[itemsep=1ex]
 \item \verb|name? = raw_input("What is your name?")|
 \ans{question mark}
 
@@ -45,7 +45,7 @@ The space at the end makes it so that the input isn't ``touching'' the question 
 \ans{the word 1st}
 
 \item \verb|from = raw_input("Where were you born?")|
-\ans{the equals sign (from is a keyword)}
+\ans{equals sign (from is a keyword)}
 \end{enumerate}
 
 
@@ -68,7 +68,7 @@ Ask the user to guess your number, and store the result in \pyth{guess}.
 When asking for numbers, use \pyth{input} instead of \pyth{raw_input}.
 Write your two statements in the space below.
 
-\begin{answer}
+\begin{answer}[3em]
 \begin{pythans}
 number = 74  # or some other value
 guess = input("Guess my number: ")
@@ -82,7 +82,7 @@ if the guess is too low, display the message \str{Too low!};
 if the user guessed the number, display \str{You got it!}.
 Write your statements in the space below.
 
-\begin{answer}[9em]
+\begin{answer}[8em]
 \begin{pythans}
     if guess < number:
         print "Too low!"
@@ -96,7 +96,7 @@ Write your statements in the space below.
 
 \Q What is the difference between \pyth{=} and \pyth{==} in the programs you have written today?
 
-\begin{answer}
+\begin{answer}[3em]
 The \pyth{=} operator is used to \emph{assign} values to variables, whereas the \pyth{==} operator is used to \emph{compare} values for equality.
 \end{answer}
 

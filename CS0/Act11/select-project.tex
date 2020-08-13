@@ -114,7 +114,7 @@ The PROJECT operation reduces the table to fewer columns.
 \Q The bottom-left example in \ref{\currfilename} uses both SELECT and PROJECT.
 Describe the data source of each operation (the part in parentheses):
 
-\begin{enumerate}
+\begin{enumerate}[itemsep=1ex]
 \item SELECT \sub{\ldots} (which data?) \ans{the original snacks table}
 \item PROJECT \sub{\ldots} (which data?) \ans{the result of the SELECT}
 \end{enumerate}
@@ -122,9 +122,9 @@ Describe the data source of each operation (the part in parentheses):
 
 \Q In addition to the data source, what other information (the part in \sub{subscript}) is required for:
 
-\begin{enumerate}
-\item a SELECT operation? \ans{a condition for which rows to select}
-\item a PROJECT operation? \ans{a list of columns to project (retain)}
+\begin{enumerate}[itemsep=1ex]
+\item a SELECT operation?  \ans[20em]{a condition for which rows to select}
+\item a PROJECT operation? \ans[20em]{a list of columns to project (retain)}
 \end{enumerate}
 
 
@@ -139,9 +139,11 @@ The PROJECT operation removes all columns except for name, so you can't SELECT b
 
 \begin{enumerate}
 \item List the name and price of all snacks.
-  \ans{PROJECT \sub{name, price} (snacks)}
+\ans[20em]{PROJECT \sub{name, price} (snacks)}
+
 \item Find snacks with less than 200 calories.
-  \ans{SELECT \sub{calories $<$ 200} (snacks)}
+\ans[20em]{SELECT \sub{calories $<$ 200} (snacks)}
+
 \item Which company makes Twix?
-  \ans{PROJECT \sub{owner} $\big($SELECT \sub{name = \qs{Twix}\qs} (snacks)$\big)$}
+\ans[23em]{PROJECT \sub{owner} $\big($SELECT \sub{name = \qs{Twix}\qs} (snacks)$\big)$}
 \end{enumerate}

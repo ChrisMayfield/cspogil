@@ -106,17 +106,17 @@ int main()
 \Q Compare the length of each program. Do not count labels (e.g, \verb|0x000:|, \verb|.pos 0 code|) or punctuation (e.g., \verb|{|, \verb|}|).
 
 \begin{enumerate}
-\item How many instructions of machine code?  \ans{14}
-\item How many instructions of assembly code?  \ans{14}
-\item How many non-blank, non-brace lines of C code?  \ans{7}
+\item How many instructions of machine code?          \ans[3em]{14}
+\item How many instructions of assembly code?         \ans[3em]{14}
+\item How many non-blank, non-brace lines of C code?  \ans[3em]{7}
 \end{enumerate}
 
 
 \Q All data values for this program are stored in registers named \verb|%rax|, \verb|%rbx|, etc.
 
 \begin{enumerate}
-\item In which register is the sum stored?  \ans{\tt \%rbx}
-\item In which register is the next value to add stored?  \ans{\tt \%rcx}
+\item In which register is the sum stored?                \ans[3em]{\tt \%rbx}
+\item In which register is the next value to add stored?  \ans[3em]{\tt \%rcx}
 %\item What constant value is stored in register \verb|%rdx|?  \ans{1}
 \end{enumerate}
 
@@ -124,9 +124,9 @@ int main()
 \Q The instruction \verb|irmovq| means ``move immediate value to register''. Immediate values begin with a dollar sign (\verb|$|), and registers begin with a percent sign (\verb|%|).
 
 \begin{enumerate}
-\item What is the value 11 in assembly code?  \ans{\tt \$0xb}
-\item Does assembly use decimal or hexadecimal?  \ans{hexadecimal}
-\item Does Standard C use decimal or hexadecimal?  \ans{decimal}
+\item What is the value 11 in assembly code?       \ans[3em]{\tt \$0xb}
+\item Does assembly use decimal or hexadecimal?    \ans[8em]{hexadecimal}
+\item Does Standard C use decimal or hexadecimal?  \ans[8em]{decimal}
 \end{enumerate}
 
 
@@ -151,8 +151,8 @@ The instruction \verb|rrmovq| means ``move (copy) register to register''.
 \Q The instruction \verb|subq| means ``subtract''. Given two registers $R$ and $T$, \verb|subq| performs $R-T$ and stores the result in $T$.
 
 \begin{enumerate}
-\item What is stored in register \verb|%rax|? \ans{The value 11, which is the upper limit.}
-\item In what case would \verb|%rax| $-$ \verb|%rdi| be zero? \ans{When their values are equal.}
+\item What is stored in register \verb|%rax|? \ans[20em]{The value 11, which is the upper limit.}
+\item In what case would \verb|%rax| $-$ \verb|%rdi| be zero? \ans[18em]{When their values are equal.}
 \end{enumerate}
 
 

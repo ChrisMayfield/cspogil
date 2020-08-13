@@ -23,7 +23,7 @@ Hi-Lo is a number guessing game with simple rules, played by school children.
 \quest{20 min}
 
 
-\Q How many different answers can player $A$ give? \ans{Three (too high, too low, you win).}
+\Q How many different answers can player $A$ give? \ans[18em]{Three (too high, too low, you win).}
 
 \vspace{1ex}
 
@@ -47,11 +47,11 @@ In computer science, we call such strategies \textbf{algorithms}.
 Try to have a mixture of simple and clever algorithms, including ones that young children could use.
 
 \begin{enumerate}
-\item \ans{Randomly guess numbers until you get the right one.}
-\item \ans{Start at 100 and count down by 1 to the correct answer.}
-\item \ans{Count up by 10 until too high, and then count down by 1.}
-\item \ans{Count up by 25, then count down by 5, and finally count up by 1.}
-\item \ans{Start at 50, if too high search 1--49, or if too low search 51-100, etc.}
+\item \ans[465pt]{Randomly guess numbers until you get the right one.}
+\item \ans[465pt]{Start at 100 and count down by 1 to the correct answer.}
+\item \ans[465pt]{Count up by 10 until too high, and then count down by 1.}
+\item \ans[465pt]{Count up by 25, then count down by 5, and finally count up by 1.}
+\item \ans[465pt]{Start at 50, if too high search 1--49, or if too low search 51-100, etc.}
 \end{enumerate}
 
 
@@ -76,22 +76,23 @@ In this particular example:
 \end{answer}
 
 
-\Q For each algorithm ($a$ to $e$), plot its fast and easy values on the graph:
+\Q For each algorithm ($a$ to $e$), plot its fast and easy values on the graph below. (Put each letter in the corresponding location.)
 
-\newcommand{\X}{\ans{X}}
+\newcommand{\B}{\ans[20pt]{}}
+\newcommand{\X}{\ans[20pt]{X}}
 
 \begin{table}[h]
 \centering
 \renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{275pt}{X C{28pt} | C{28pt} C{28pt} C{28pt} C{28pt} C{28pt}}
-Hard & 5 & \X                    \\
-     & 4 &    & \X               \\
-     & 3 &    &   & \X           \\
-     & 2 &    &   &   & \X       \\
-Easy & 1 &    &   &   &   & \X   \\
+\begin{tabularx}{280pt}{X C{28pt} | C{28pt} C{28pt} C{28pt} C{28pt} C{28pt}}
+Hard & 5 & \X & \B & \B & \B & \B   \\
+     & 4 & \B & \X & \B & \B & \B   \\
+     & 3 & \B & \B & \X & \B & \B   \\
+     & 2 & \B & \B & \B & \X & \B   \\
+Easy & 1 & \B & \B & \B & \B & \X   \\
 \hline
-     & & 1    & 2 & 3 & 4 & 5    \\
-     & & Fast &   &   &   & Slow \\
+     & & 1    & 2  & 3  & 4  & 5    \\
+     & & Fast &    &    &    & Slow \\
 \end{tabularx}
 \end{table}
 

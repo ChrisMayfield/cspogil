@@ -2,46 +2,36 @@
 
 \textit{Write the name of the operating system under each screenshot:}
 
-\begin{center}
-\begin{tabularx}{\textwidth}{cXcXc}
+\setlength{\defaultwidth}{8em}
+
+\newcommand{\os}[2]{%
+\hfill
+\begin{minipage}{0.32\linewidth}
+\centering
+\includegraphics[height=93pt]{#1}
+\par\vspace{1ex}\ans{#2}
+\end{minipage}
+}
+
+\vspace{1em}
 
 % source: https://play.google.com/store/apps/details?id=com.acr.screenshothd
-\includegraphics[height=93pt]{android.jpg}
-&&
+\os{android.jpg}{Android}
 % source: http://www.omgchrome.com/simpler-app-launcher-lands-in-chromeos-dev/
-\includegraphics[height=93pt]{chrome.jpg}
-&&
+\os{chrome.jpg}{Chrome OS}
 % source: http://www.cultofmac.com/230954/ios-7-in-action-gallery/
-\includegraphics[height=93pt]{ios.jpg}
+\os{ios.jpg}{iOS}
 
-\\
-\ans{Android}
-&&
-\ans{Chrome OS}
-&&
-\ans{iOS}
-\vspace{1ex}
+\vspace{1em}
 
-\\
 % source: http://blog.linuxmint.com/?p=3026
-\includegraphics[height=93pt]{mint.png}
-&&
+\os{mint.png}{Linux}
 % source: http://www.macworld.com/article/2987618/os-x/how-to-take-screenshots-on-your-mac.html
-\includegraphics[height=93pt]{macos.jpg}
-&&
+\os{macos.jpg}{maxOS}
 % source: http://www.pcmag.com/article2/0,2817,2488631,00.asp
-\includegraphics[height=93pt]{windows.jpg}
+\os{windows.jpg}{Windows}
 
-\\
-\ans{Linux Mint}
-&&
-\ans{Mac OS}
-&&
-\ans{Windows}
 \vspace{1ex}
-
-\end{tabularx}
-\end{center}
 
 
 \quest{10 min}
@@ -67,6 +57,6 @@ They each have their own set of features, strengths, and weaknesses.
 
 \Q Based on your experience as a computer user, what does an operating system do?
 
-\begin{answer}
+\begin{answer}[3em]
 The OS ``runs'' the computer: it manages the hardware, starts and stops applications, and provides the overall look and feel of the user experience.
 \end{answer}

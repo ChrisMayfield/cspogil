@@ -8,6 +8,8 @@ The cards represent four binary digits, or in other words, a 4-bit number.
 
 \newcommand{\bin}[4]{#1\hspace{64pt}#2\hspace{64pt}#3\hspace{64pt}#4}
 
+\setlength{\defaultwidth}{3em}
+
 \begin{center}
 \begin{tabular}{|c|C{1in}|}
 \hline
@@ -94,6 +96,8 @@ Decimal & Binary & Hex \\
 
 \Q \emph{Hexadecimal} is shorthand for binary. For example, 0xD5 in hex is 1101 0101.
 
+\setlength{\defaultwidth}{10em}
+
 \begin{enumerate}
 \item What is 0x2E in binary? \ans{0010 1110}
 \item What is 0x74 in binary? \ans{0111 0100}
@@ -120,14 +124,27 @@ So there are only two types of people in the world.
 
 
 \Q Typically computers group 8 bits together at a time (8 bits are also called 1 \emph{byte}).
-Fill in the number of dots for the four new cards: \ans{128 ~ 64 ~ 32 ~ 16}
+Fill in the number of dots for the four new cards:
 
 \begin{center}
 \includegraphics[width=\textwidth]{binary5.png}
 \end{center}
 
+\setlength{\defaultwidth}{2em}
+
+\vspace{-5em}
+\hspace{1.0em}\ans{128}
+\hspace{2.5em}\ans{64}
+\hspace{2.5em}\ans{32}
+\hspace{2.5em}\ans{16}
+\vspace{3em}
+
 
 \Q What is the largest number that can be represented by:
+
+\setlength{\defaultwidth}{4em}
+
+\begin{multicols}{2}
 \begin{enumerate}
 \item five bits? \ans{31}
 \item six bits? \ans{63}
@@ -135,6 +152,7 @@ Fill in the number of dots for the four new cards: \ans{128 ~ 64 ~ 32 ~ 16}
 \item eight bits? \ans{255}
 \item $n$ bits? \ans{$2^n - 1$}
 \end{enumerate}
+\end{multicols}
 
 
 \Q Most computers built since the year 2000 have 64-bit processors.

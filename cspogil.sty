@@ -35,13 +35,13 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
-% syntax colors (based on DrJava)
+% syntax colors (based on Eclipse)
 \usepackage[svgnames,table]{xcolor}
 \definecolor{bgcolor}{HTML}{FAFAFA}
 \definecolor{builtin}{HTML}{900090}
-\definecolor{comment}{HTML}{007C00}
-\definecolor{keyword}{HTML}{0000FF}
-\definecolor{strings}{HTML}{B20000}
+\definecolor{comment}{HTML}{3F7F5F}
+\definecolor{keyword}{HTML}{7F0055}
+\definecolor{strings}{HTML}{2A00FF}
 \definecolor{answers}{HTML}{A9A9A9}
 
 % text highlighting
@@ -77,6 +77,10 @@
     tabsize=4,
     upquote=true
 }
+\lstdefinestyle{morejava}{
+    language=java,
+    morekeywords={enum}
+}
 \lstdefinestyle{morepython}{
     language=python,
     morekeywords={False,True},
@@ -93,13 +97,13 @@
 }
 
 % Java environments
-\newcommand{\java}[1]{\lstinline[language=java]{#1}}%[
-\newcommand{\jans}[1]{\lstinline[language=java,style=lstanswers]{#1}}%[
-\lstnewenvironment{javaans}{\lstset{language=java,style=lstanswers}\vspace{-1ex}}{}
-\lstnewenvironment{javalst}{\lstset{language=java,backgroundcolor=}}{}
-\lstnewenvironment{javanum}{\lstset{language=java,backgroundcolor=,numbers=left}}{}
-\lstnewenvironment{javabox}{\lstset{language=java,frame=single,numbers=left}\quote}{\endquote}
-\newcommand{\jafile}[1]{\lstinputlisting[language=java,backgroundcolor=,numbers=left]{#1}}
+\newcommand{\java}[1]{\lstinline[style=morejava]{#1}}%[
+\newcommand{\jans}[1]{\lstinline[style=morejava,style=lstanswers]{#1}}%[
+\lstnewenvironment{javaans}{\lstset{style=morejava,style=lstanswers}\vspace{-1ex}}{}
+\lstnewenvironment{javalst}{\lstset{style=morejava,backgroundcolor=}}{}
+\lstnewenvironment{javanum}{\lstset{style=morejava,backgroundcolor=,numbers=left}}{}
+\lstnewenvironment{javabox}{\lstset{style=morejava,frame=single,numbers=left}\quote}{\endquote}
+\newcommand{\jafile}[1]{\lstinputlisting[style=morejava,backgroundcolor=,numbers=left]{#1}}
 
 % Python environments
 \newcommand{\pyth}[1]{\lstinline[style=morepython]{#1}}%[
@@ -176,14 +180,14 @@
 
 % questions
 \newcommand{\blank}[1][3em]{\rule{#1}{0.5pt}}
-\newcommand{\quest}[1]{\subsection*{Questions~ (#1) \hfill Start time: \blank[4em]}}
+\newcommand{\quest}[1]{\subsection*{Questions~ (#1) \hfill Start time: \ans[3.5em]}}
 \newcounter{question}
 \newcommand{\Q}{\vspace{1em}\refstepcounter{question}\textbf{\arabic{question}}.~ }
 \renewcommand{\thequestion}{\#\arabic{question}}
 
 % sub-question lists
 \usepackage{enumitem}
-\setenumerate[1]{label=\alph*)}
+\setenumerate[1]{label=\alph*),itemsep=1ex}
 \setlist{itemsep=1em,after=\vspace{1ex}}
 \newcommand{\bull}{\par\hspace{3ex}\raisebox{0.25ex}{\footnotesize$\bullet$}~~}
 
@@ -270,7 +274,7 @@
 \end{itemize}
 
 \ifdefined\Teacher
-\vspace*{-13pt}\color{DarkGray}
+\vspace*{-13pt}\color{answers}
 \subsection*{Facilitation Notes}
 \vspace{-\bigskipamount}
 \setlength{\parskip}{\bigskipamount}
@@ -293,7 +297,7 @@
 \hfill
 \begin{minipage}{0.853\linewidth}
 \small
-Copyright \textcopyright\ 2019 \theauthor.
+Copyright \textcopyright\ 2020 \theauthor.
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 \end{minipage}
 \clearpage

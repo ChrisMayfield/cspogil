@@ -2,6 +2,7 @@
 
 This folder contains activities for CS 101 at James Madison University.
 CS 101 is a survey course that provides a broad introduction to the field.
+It uses Python, but it is *not* an introductory programming course in Python.
 
 Course website: https://w3.cs.jmu.edu/mayfiecs/cs101/
 
@@ -22,5 +23,3 @@ Use the build.py script to compile student and teacher PDFs.
 10. [Data Structures](Act10) -- contiguous arrays, indexes, linked lists, pointers, null
 11. [Database Systems](Act11) -- select and project, Cartesian product and theta join
 12. [Artificial Intelligence](Act12) -- 8-puzzle, tic-tac-toe, search trees, heuristics
-
-The [Meta](Meta) folder contains additional models for team development.

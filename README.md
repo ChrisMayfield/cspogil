@@ -6,8 +6,8 @@ Many authors have contributed to these activities, including Chris Mayfield, Hel
 See individual source files for specific attribution.
 
 The documents in this repository are written in LaTeX.
-Each source file contains a single model and its accompanying critical thinking questions.
-Activities are designed by including (with \input) a sequence of models.
+Each source file contains a single model and its accompanying questions.
+Activities are composed by including (with \input) a sequence of models.
 
 You can browse each of the models and activities separately.
 The build.py script compiles student and teacher PDFs for each LaTeX source file.

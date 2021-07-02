@@ -1,13 +1,18 @@
 \model{Assignment}
 
-Declaring a variable instructs the computer to reserve space for it in memory.
+The following eight lines of code are executed one at a time, in order.
+The boxes on the right show the state of the (same) two variables after each step.
+
+\vspace{1em}
+
+Declaring a variable instructs the computer to reserve space for it in memory:
 
 \vspace{1em}
 \hfill
 \begin{minipage}[t]{0.5\textwidth}
 
-\textbf{Java code}
-\vspace{1ex}
+%\textbf{Java code}
+%\vspace{1ex}
 
 \begin{javanum}
 int dollars;
@@ -18,8 +23,8 @@ int cents;
 \hfill
 \begin{minipage}[t]{0.4\textwidth}
 
-\textbf{Computer memory}
-\vspace{1em}
+%\textbf{Computer memory}
+%\vspace{1em}
 
 \var{dollars}{}
 \par\vspace{1em}
@@ -29,7 +34,7 @@ int cents;
 
 
 \vspace{2em}
-Variables cannot be used until they are \emph{initialized} (assigned for the first time).
+Variables cannot be used until they are \emph{initialized} (assigned for the first time):
 
 \vspace{1em}
 \hfill
@@ -55,7 +60,7 @@ System.out.println(cents);    // error
 
 
 \vspace{2em}
-Each time you assign a variable, you are \emph{updating} its value stored in memory.
+Each time you assign a variable, you are \emph{updating} its value stored in memory:
 
 \vspace{1em}
 \hfill
@@ -86,7 +91,7 @@ cents = 49;
 
 \Q How many times is each variable in \ref{\currfilename} assigned?
 
-\begin{answer}
+\begin{answer}[3em]
 The variable \java{dollars} is assigned three times, but \java{cents} is assigned only once.
 \end{answer}
 
@@ -148,7 +153,7 @@ What value do you think \java{cents} and \java{dollars} will have after running 
 
 \Q \label{xgets}
 In your own words, explain how you should read the \java{=} sign in Java.
-For example, the Java statement ~\java{x = a + b;} should be read as ``x \_\_\_\_\_\_\_\_ a plus b.''
+For example, the Java statement ~\java{x = a + b;} should be read out loud as ``x \_\_\_\_\_\_\_\_ a plus b.''
 
 \begin{answer}
 Answers may include ``x {\it gets} a plus b'', ``x {\it becomes} a plus b'', etc.

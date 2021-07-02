@@ -155,6 +155,21 @@
 \renewcommand{\maketitle}{\begin{center}\LARGE\@title\end{center}}
 \makeatother
 
+% role names
+\newcommand{\rolenames}{
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}L{54pt}XL{54pt}X@{}}
+  Manager: & \ans{} &
+Presenter: & \ans{} \\
+\end{tabularx}
+\par\medskip
+\begin{tabularx}{\linewidth}{@{}L{54pt}XL{54pt}X@{}}
+ Recorder: & \ans{} &
+Reflector: & \ans{} \\
+\end{tabularx}
+\end{center}
+}
+
 % boxes [optional height]
 \newcommand{\emptybox}[1][10em]{
 \vspace{1em}
@@ -297,7 +312,7 @@
 \hfill
 \begin{minipage}{0.853\linewidth}
 \small
-Copyright \textcopyright\ 2020 \theauthor.
+Copyright \textcopyright\ 2021 \theauthor.
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 \end{minipage}
 \clearpage

@@ -53,21 +53,23 @@ The initial values are automatically set to null (for reference types). For arra
 \Q When you construct a new object (e.g., ~\java{new Card(4, 2)}) what are the initial values of its attributes (e.g., ~\java{this.rank})?
 
 \begin{answer}
-It depends on the constructor. For the \java{Card} class, the attributes \java{rank} and \java{suit} are initialized from the parameters. If there is no constructor, Java automatically initializes attributes to zero.
+It depends on the constructor. For the \java{Card} class, the attributes \java{rank} and \java{suit} are initialized from the parameters. If there is no constructor, Java automatically initializes attributes to zero (or equivalent).
 \end{answer}
 
 
-\comment{The \java{new} operator requests a memory location to store an array or object.
+\comment{The \java{new} operator finds a memory location to store an array or object.
 Java automatically determines how much memory is needed and initializes the contents of the corresponding memory cells to zero.
 That's why array elements and object attributes have default values, whereas local variables (not allocated with \java{new}) must be initialized before they are used.}
 
 
 \Q \label{random}
-Describe in your own words what the following statement does. Be sure to explain how the random part works.
+Describe in your own words what the following code does.
+Be sure to explain how the random part works.
 
-\begin{center}
-\java{hand[(int) (Math.random() * hand.length)] = null;}
-\end{center}
+\begin{quote}
+\java{int index = (int) (Math.random() * hand.length);} \\
+\java{hand[index] = null;}
+\end{quote}
 
 \begin{answer}
 \java{Math.random()} returns a value in the range [0, 1).
@@ -78,7 +80,7 @@ So this statement randomly sets one of the \java{Card} references to {\tt null}.
 
 \Q \label{forcard}
 What is the result of running the loop below?
-What is the purpose of the nested if-statement?
+Explain why the if-statement is necessary.
 
 \begin{javalst}
 for (int i = 0; i < hand.length; i++) {
@@ -117,7 +119,7 @@ for (int i = 0; i < days.length; i++) {
 \end{answer}
 
 
-\Q In contrast to enhanced for loops, what does a standard for loop typically iterate?
+\Q In contrast to enhanced for loops, what does a standard for loop iterate?
 Why would it be misleading to name the enhanced for loop variable \java{i} instead of \java{day}?
 
 \begin{answer}[2em]

@@ -5,7 +5,7 @@
 
 \title{Arrays of Objects}
 \author{Chris Mayfield}
-\date{Fall 2019}
+\date{Summer 2021}
 
 \input{../../cspogil.sty}
 
@@ -16,8 +16,10 @@
 With arrays and objects, you can represent pretty much any type of data.
 It's not only possible to have arrays of objects, but also objects of arrays, objects of objects, arrays of arrays, arrays of objects of arrays, and so forth.
 
+\rolenames
+
 \guide{
-  \item Explain the differences when instantiating an array and an object.
+  \item Explain the difference of instantiating an array and an object.
   \item Rewrite a for loop (over an array) using an enhanced for loop.
   \item Use enhanced for loops to construct and search arrays of objects.
 }{
@@ -28,16 +30,17 @@ Students should understand the differences in syntax (i.e., using square bracket
 
 Keep an eye on what students write down for \ref{random}.
 If their answer is superficial, challenge them to be more specific.
-Report out on \ref{foreach}, and ask students why \java{i} is not an appropriate variable name for this loop (\java{i} typically stands for index or iteration).
+Report out on \ref{foreach}, and ask students why ``\java{i}'' is not an appropriate variable name for this loop (``\java{i}'' typically stands for index or iteration).
 
 This activity makes use of a simple \java{Card} class.
 It stores both the rank and suit as integers, but it does not perform any validation in the constructor.
 Consider projecting the \github{CS1/Act12/Card.java}{source code} while you facilitate \ref{deck-of-cards.tex}.
-Question~\ref{cnstr} asks students to implement a default value replacement, and it can be extended by having students call a setter method.
+%Question~\ref{cnstr} asks students to implement a default value replacement, and it can be extended by having students define and call setter methods.
+Keep an eye on answers to the first question, in case teams get off track.
 
-\ref{build} and \ref{search} are the most important questions.
-Make sure students have enough time to develop the algorithms, and if possible, write the complete source code.
-Consider reporting out after \ref{build} to bring the class back in sync, since there is so much time allocated for \ref{deck-of-cards.tex}.
+\ref{build} and \ref{sort} are the most important questions.
+Make sure students have enough time to work through the algorithms.
+Consider reporting out after \ref{search} to bring the class back in sync, since there is so much time allocated for \ref{deck-of-cards.tex}.
 }
 
 \input{hand-of-cards.tex}

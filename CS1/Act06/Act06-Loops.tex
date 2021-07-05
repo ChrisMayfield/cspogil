@@ -5,7 +5,7 @@
 
 \title{Loops and Iteration}
 \author{Chris Mayfield and Helen Hu}
-\date{Fall 2019}
+\date{Summer 2021}
 
 \input{../../cspogil.sty}
 
@@ -16,14 +16,16 @@
 Computers are often used to perform repetitive tasks.
 Running the same statements over and over again, without making any mistakes, is something that computers do very well.
 
+\rolenames
+
 \guide{
   \item Explain what happens when re-assigning a variable.
   \item Identify the three main components of a while loop.
-  \item Implement the factorial function using a for loop.
+  \item Rewrite a while loop as a for loop (and vice versa).
 }{
   \item Tracing the execution of while/for loops and predict their final output. (Critical Thinking)
 }{
-\ref{assignment.tex} addresses two misconceptions about assignment: what happens when you reassign a variable, and how do you swap two variables. This understanding is essential for loop updates.
+\ref{assignment.tex} addresses two misconceptions about assignment: what happens when you reassign a variable, and how to swap two variables. This understanding is essential for loop updates.
 
 Consider bringing a pair of note cards labeled with a large 1 on the first and a large 2 on the second card.
 Have all team members put one hand behind their back, and then hand the cards to two students (student $X$ gets the 1 and student $Y$ gets the 2).
@@ -34,16 +36,16 @@ When reporting out \ref{while-loops.tex}, have teams predict the answers to \ref
 Then execute the code and have them discuss their results, if incorrect.
 Consider stepping through the code with a debugger (on the projector) during report-out.
 
-%Be sure to make connections between the flow charts in \ref{while-loops.tex} and \ref{for-loops.tex}.
-You may need to guide students on \ref{forchar} when applying string methods in the context of a loop.
-For example, you could write \java{word.length} and \java{word.charAt(i)} on the board.
-On \ref{nested}, students might not think to use a {\tt long} variable to store the factorial.
-If time permits, show the output of the solution with {\tt fact} declared as an {\tt int}, and ask them to fix the code.
+\ref{for-loops.tex} is a quick introduction to for loops.
+Be sure to point out that the update step happens after the loop body.
+If time permits, have students run their code on a computer to check their work.
+You could also ask teams to discuss which loop syntax they like better, and why.
 }
 
 \input{assignment.tex}
 \vfill
 \input{while-loops.tex}
+\vfill
 \input{for-loops.tex}
 
 \end{document}

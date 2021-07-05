@@ -1,9 +1,12 @@
 # About CS1
 
-This folder contains activities for CS 149 at James Madison University.
-CS 149 is the first course in a three-semester Java sequence (programming fundamentals, object-oriented design, data structures and algorithms).
+This folder contains activities for CS 149 and CS 159 at James Madison University.
+CS 149 focuses on the fundamentals, and CS 159 focuses on object-oriented programming.
+Together, they present the traditional [CS1](https://dl.acm.org/doi/10.1145/1734263.1734335) curriculum and other topics.
 
-Course website: https://w3.cs.jmu.edu/mayfiecs/cs149/
+Course websites:
+* https://w3.cs.jmu.edu/mayfiecs/cs149/
+* https://w3.cs.jmu.edu/mayfiecs/cs159/
 
 # Contents
 
@@ -25,4 +28,4 @@ Use the build.py script to compile student and teacher PDFs.
 * [Linked Structures](Act18)
 
 The [Honor](Honor) folder includes case studies of cheating on CS assignments.
-The [Other](Other) folder is a collection of old/unused portions of activities.
+The [Meta](Meta) folder includes meta activities for team building and buy-in.

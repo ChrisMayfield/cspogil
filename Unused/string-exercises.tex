@@ -1,0 +1,100 @@
+%Students likely won't have time to complete the CodingBat problems in \ref{stringMatch} and \ref{stringYak}, but they might continue working on them outside of class.
+%Have teams outline the algorithms for these problems first, before writing Java syntax on paper.
+
+
+\section*{Exercises}
+
+
+\Q \label{stringMatch}
+Discuss the \java{stringMatch} problem on the next page.
+What three \java{String} methods will you need to solve it?
+(If you have time during the activity, complete the method.)
+
+\begin{answer}[3em]
+\java{String.length} for the loop, and \java{String.substring} and \java{String.equals} for the comparison.
+\end{answer}
+
+
+\Q \label{stringYak}
+Discuss the \java{stringYak} problem on the next page.
+What two \java{String} methods will you need to solve it?
+(If you have time during the activity, complete the method.)
+
+\begin{answer}[3em]
+\java{String.length} for the loop, and \java{String.charAt} to identify \chr{y} and \chr{k}.
+\end{answer}
+
+
+\newpage
+
+[CodingBat] Given two strings, return the number of positions where they contain the same substring of length two. So \java{"xxcaazz"} and \java{"xxbaaz"} yields 3, since the \java{"xx"}, \java{"aa"}, and \java{"az"} substrings appear in the same place in both strings.
+
+\medskip
+\begin{javalst}
+public static int stringMatch(String a, String b) {
+\end{javalst}
+
+\vspace{-1ex}
+\begin{answer}[18em]
+\begin{javaans}
+    // figure which string is shorter
+    int len = Math.min(a.length(), b.length());
+    int count = 0;
+
+    // look at both substrings starting at i
+    for (int i = 0; i < len - 1; i++) {
+        String aSub = a.substring(i, i + 2);
+        String bSub = b.substring(i, i + 2);
+        if (aSub.equals(bSub)) {
+            count++;
+        }
+    }
+
+    return count;
+\end{javaans}
+\end{answer}
+\vspace{-1ex}
+
+\begin{javalst}
+}
+\end{javalst}
+
+\vfill
+
+[CodingBat] Suppose the string \java{"yak"} is unlucky. Given a string, return a version where all the \java{"yak"} are removed, but the \java{'a'} can be any character. The \java{"yak"} strings will not overlap.
+
+\bigskip
+
+\java{stringYak("yakpak")} $\rightarrow$ \java{"pak"}
+
+\java{stringYak("pikyik")} $\rightarrow$ \java{"pik"}
+
+\java{stringYak("yak123ya")} $\rightarrow$ \java{"123ya"}
+
+\medskip
+\begin{javalst}
+public static String stringYak(String str) {
+\end{javalst}
+
+\vspace{-1ex}
+\begin{answer}[16em]
+\begin{javaans}
+    String result = "";
+
+    for (int i = 0; i < str.length(); i++) {
+        if (i + 2 < str.length() && str.charAt(i) == 'y'
+                                 && str.charAt(i + 2) == 'k') {
+            i = i + 2;
+        } else {
+            result += str.charAt(i);
+        }
+    }
+
+    return result;
+\end{javaans}
+\end{answer}
+\vspace{-1ex}
+
+\begin{javalst}
+}
+\end{javalst}

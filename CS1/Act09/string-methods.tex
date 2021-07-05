@@ -1,4 +1,4 @@
-\model{String Methods}
+\model{Non-Static Methods}
 % Based on Model 2 of Activity 5 - Strings by Helen Hu
 
 \begin{tabularx}{\linewidth}{|p{128pt}|p{72pt}|X|}
@@ -36,7 +36,7 @@ That is, they have an \emph{implicit parameter} named \java{this} that is passed
 
 
 \Q \label{strAPI}
-If \java{str} contains the string \java{"hello world"}, then what is the return value of the following method calls?
+If the variable \java{str} references the string \java{"hello world"}, then what is the return value of the following method calls?
 
 \begin{multicols}{2}
 \begin{enumerate}
@@ -54,8 +54,24 @@ If \java{str} contains the string \java{"hello world"}, then what is the return 
 What does it have to do with the keyword \java{this} in \ref{\currfilename}?
 
 \begin{answer}
-The variable containing the string precedes the dot operator. It is passed as the implicit {\tt this} parameter to the non-{\tt static} method.
+The variable referencing the string precedes the dot operator. It is passed as the implicit {\tt this} parameter to the non-{\tt static} method.
 \end{answer}
+
+
+\Q \label{howmany}
+How many arguments does each method call in \ref{strAPI} have?
+(Hint: None of them have zero; don't forget to count the implicit argument.)
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item \ans[3em]{2}
+%\item \ans[3em]{2}
+\item \ans[3em]{2}
+\item \ans[3em]{1}
+\item \ans[3em]{3}
+\item \ans[3em]{1}
+\end{enumerate}
+\end{multicols}
 
 
 \comment{\normalfont
@@ -70,7 +86,7 @@ for example: ~\java{str.charAt(8)}
 \vspace{1ex}
 Methods can be designed either way. Most \java{String} methods are non-\java{static}, because that makes the code easier to read.
 %, because they associate the method with the object itself.
-From the \java{charAt} method's point of view, ~\java{str} is ~\java{this} object.
+%From the \java{charAt} method's point of view, ~\java{str} is ~\java{this} object.
 
 \begin{center}
 \begin{tabular}{c|c}
@@ -85,157 +101,84 @@ From the \java{charAt} method's point of view, ~\java{str} is ~\java{this} objec
 } % end comment
 
 
-\Q \label{howmany}
-How many arguments does each method call in \ref{strAPI} have?
-(Hint: None of them have zero.)
+\Q \label{nonstatic}
+Label each method below as \java{static} or non-\java{static} (based on how it is called).
 
 \begin{multicols}{2}
 \begin{enumerate}
-\item \ans[3em]{2}
-%\item \ans[3em]{2}
-\item \ans[3em]{2}
-\item \ans[3em]{1}
-\item \ans[3em]{3}
-\item \ans[3em]{1}
+
+\item \java{color.indexOf("RED")}
+\ans[5em]{non-static}
+
+\item \java{String.format("\%3d", x)}
+\ans[5em]{static}
+
+\item \java{title.substring(0, 10)}
+\ans[5em]{non-static}
+
+\item \java{String.valueOf(3.14)}
+\ans[5em]{static}
+
+\item \java{name.charAt(0)}
+\ans[5em]{non-static}
+
 \end{enumerate}
 \end{multicols}
 
 
-\Q To compare strings, you must use either the \java{String.equals} or \java{String.compareTo} method.
-Predict the output of the following code.
+\Q Consider the following statement and compiler error.
+Why is it impossible to call \java{charAt} this way?
+How would you correct the error?
 
+\begin{quote}
 \begin{javalst}
-String name1 = new String("Mark");
-String name2 = new String("Mark");
+char c = String.charAt(0);
 \end{javalst}
+\textit{Error:~} non-static method charAt(int) cannot be referenced from a static context
+\end{quote}
 
-\begin{javalst}
-// compare name1 and name2
-if (name1 == name2) {
-    System.out.println("name1 and name2 are identical");
-} else {
-    System.out.println("name1 and name2 are NOT identical");
-}
-\end{javalst}
-
-\vspace{-2ex}
-\begin{answer}[1em]
-\tt \hspace{1em} name1 and name2 are NOT identical
-\end{answer}
-
-\begin{javalst}
-// compare "Mark" and "Mark"
-if (name1.equals(name2)) {
-    System.out.println("name1 and name2 are equal");
-} else {
-    System.out.println("name1 and name2 are NOT equal");
-}
-\end{javalst}
-
-\vspace{-2ex}
-\begin{answer}[1em]
-\tt \hspace{1em} name1 and name2 are equal
+\begin{answer}
+\jans{charAt} is a non-static method; you can't call it using the \jans{String} class.
+You need to call it using an object like \jans{name}.
+Otherwise, the compiler won't know which string you want.
 \end{answer}
 
 
-\Q What is the difference between \emph{identical} and \emph{equal} in the previous question?
-
-\begin{answer}[3em]
-``Identical'' means the variables refer to the same \java{String} object.
-``Equal'' means the strings have the same characters, in the \java{Arrays.equals} sense.
-\end{answer}
-
-
-\Q \label{stringMatch}
-Discuss the \java{stringMatch} problem on the next page.
-What three \java{String} methods will you need to solve it?
-(If you have time during the activity, complete the method.)
-
-\begin{answer}[2em]
-\java{String.length} for the loop, and \java{String.substring} and \java{String.equals} for the comparison.
-\end{answer}
-
-
-\Q \label{stringYak}
-Discuss the \java{stringYak} problem on the next page.
-What two \java{String} methods will you need to solve it?
-(If you have time during the activity, complete the method.)
-
-\begin{answer}[2em]
-\java{String.length} for the loop, and \java{String.charAt} to identify \chr{y} and \chr{k}.
-\end{answer}
+%\Q Consider the following method and compiler error.
+%Explain how this situation is different from the previous question.
+%How would you correct the error?
+%
+%\begin{quote}
+%\begin{javalst}
+%public static void printAddress() {
+%    // show the memory location of this object
+%    System.out.println(this);
+%}
+%\end{javalst}
+%\textit{Error:~} non-static variable \java{this} cannot be referenced from a static context
+%\end{quote}
+%
+%\begin{answer}[3em]
+%Static methods do not have an implicit \jans{this} parameter.
+%In order to work, the \jans{printAddress} method must not be static.
+%\end{answer}
 
 
-\newpage
+\Q For each method in \ref{nonstatic}, what object is referenced by \java{this}?
+(Write N/A if \java{this} is not passed to the method.)
 
-[CodingBat] Given two strings, return the number of positions where they contain the same substring of length two. So \java{"xxcaazz"} and \java{"xxbaaz"} yields 3, since the \java{"xx"}, \java{"aa"}, and \java{"az"} substrings appear in the same place in both strings.
+\begin{multicols}{2}
+\begin{enumerate}
 
-\medskip
-\begin{javalst}
-public static int stringMatch(String a, String b) {
-\end{javalst}
+\item \ans[5em]{color}
 
-\vspace{-1em}
-\begin{answer}[18em]
-\begin{javaans}
-    // figure which string is shorter
-    int len = Math.min(a.length(), b.length());
-    int count = 0;
+\item \ans[5em]{N/A}
 
-    // look at both substrings starting at i
-    for (int i = 0; i < len - 1; i++) {
-        String aSub = a.substring(i, i + 2);
-        String bSub = b.substring(i, i + 2);
-        if (aSub.equals(bSub)) {
-            count++;
-        }
-    }
+\item \ans[5em]{title}
 
-    return count;
-\end{javaans}
-\end{answer}
+\item \ans[5em]{N/A}
 
-\begin{javalst}
-}
-\end{javalst}
+\item \ans[5em]{name}
 
-\vfill
-
-[CodingBat] Suppose the string \java{"yak"} is unlucky. Given a string, return a version where all the \java{"yak"} are removed, but the \java{'a'} can be any character. The \java{"yak"} strings will not overlap.
-
-\bigskip
-
-\java{stringYak("yakpak")} $\rightarrow$ \java{"pak"}
-
-\java{stringYak("pikyik")} $\rightarrow$ \java{"pik"}
-
-\java{stringYak("yak123ya")} $\rightarrow$ \java{"123ya"}
-
-\medskip
-\begin{javalst}
-public static String stringYak(String str) {
-\end{javalst}
-
-\vspace{-1em}
-\begin{answer}[16em]
-\begin{javaans}
-    String result = "";
-
-    for (int i = 0; i < str.length(); i++) {
-        if (i + 2 < str.length() && str.charAt(i) == 'y'
-                                 && str.charAt(i + 2) == 'k') {
-            i = i + 2;
-        } else {
-            result += str.charAt(i);
-        }
-    }
-
-    return result;
-\end{javaans}
-\end{answer}
-
-\begin{javalst}
-}
-\end{javalst}
-
-\newpage
+\end{enumerate}
+\end{multicols}

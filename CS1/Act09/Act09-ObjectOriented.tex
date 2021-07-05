@@ -5,7 +5,7 @@
 
 \title{Object-Oriented}
 \author{Chris Mayfield and Helen Hu}
-\date{Fall 2019}
+\date{Summer 2021}
 
 \input{../../cspogil.sty}
 
@@ -16,9 +16,12 @@
 Internally, the library class \java{java.lang.String} stores an array of characters.
 It also provides a variety of useful methods for comparing, manipulating, and searching text in general.
 
+\rolenames
+
 \guide{
-  \item Explain how characters and strings are represented in memory.
-  \item Predict the output of string methods (excluding boundary cases).
+  \item Describe how characters and strings are represented in memory.
+%  \item Predict the output of string methods (excluding boundary cases).
+  \item Explain the difference of calling static versus non-static methods.
   \item Recognize common mistakes when working with the String API.
 }{
   \item Working with all team members to reach consensus on hard questions. (Teamwork)
@@ -31,15 +34,14 @@ Note that when drawing strings in the future, students will not need to use this
 Spend some time reporting out in the middle of \ref{string-methods.tex} to make sure students understand the object itself is passed.
 Point out that methods from the \java{String} class make it easier to manipulate character arrays.
 
-Students likely won't have time to complete the CodingBat problems in \ref{stringMatch} and \ref{stringYak}, but they should do so outside of class.
-Have teams focus their discussions on the algorithms for these problems, instead of writing a bunch of incorrect syntax on paper.
-
 \ref{string-mistakes.tex} should be a quick review of errors students have previously seen at some point in the course.
 When reporting out, have teams discuss why these errors occur in the context of what they have learned in \ref{string-chararray.tex} and \ref{string-methods.tex}.
 }
 
 \input{string-chararray.tex}
+\clearpage
 \input{string-methods.tex}
+\clearpage
 \input{string-mistakes.tex}
 
 \end{document}

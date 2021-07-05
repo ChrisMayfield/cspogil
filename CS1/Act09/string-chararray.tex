@@ -25,10 +25,10 @@ word = "dog";
 \end{minipage}
 
 
-\quest{20 min}
+\quest{15 min}
 
 
-\Q How is the syntax of character literals and string literals different?
+\Q How is the syntax of character literals (like \chr{A}) and string literals (like \str{dog}) different?
 
 \begin{answer}
 Character literals use single quotes, and strings use double quotes.
@@ -37,11 +37,23 @@ Character literals use single quotes, and strings use double quotes.
 
 \Q What is the index of \java{'d'} in the string above?
 What is the index of \java{'g'}?
-In general, what is the index of the last character of a string?
+%In general, what is the index of the last character of a string?
 
 \begin{answer}
 The index of \chr{d} is 0, the index of \chr{g} is 2.
+
+\medskip
 In general, the last character is at {\tt length - 1}.
+\end{answer}
+
+
+\Q What is the {\it value} of a \java{char} variable (i.e., stored in the variable's memory)?
+What is the {\it value} of an array variable?
+What is the {\it value} of a \java{String} variable?
+
+\begin{answer}
+Since {\tt char}s are primitive, the value of a {\tt char} variable is the character itself.
+Arrays and strings are reference types, so their variables contain memory locations.
 \end{answer}
 
 
@@ -55,21 +67,11 @@ The data is stored inside the class and accessed via methods.
 \end{answer}
 
 
-\Q Why can you use the \java{String} class in Java programs without having to import it first?
+%\Q Why can you use the \java{String} class in Java programs without having to import it first?
 
-\begin{answer}
-It's in the \java{java.lang} package, which gets imported automatically.
-\end{answer}
-
-
-\Q What is the {\it value} of a \java{char} variable?
-What is the {\it value} of an array variable?
-What is the {\it value} of a \java{String} variable?
-
-\begin{answer}
-Since {\tt char}s are primitive, the value of a {\tt char} variable is the character itself.
-Arrays and strings are reference types, so their variables contain memory locations.
-\end{answer}
+%\begin{answer}
+%It's in the \java{java.lang} package, which gets imported automatically.
+%\end{answer}
 
 
 \Q \label{diagram}
@@ -99,11 +101,10 @@ hmm = str;
 \end{minipage}
 \begin{minipage}{0.65\linewidth}
 
-\begin{answer}[3.1in]
-\includegraphics[height=3in]{string2.pdf}
-\end{answer}
+\note{\includegraphics[height=3in]{string2.pdf}}
 
 \end{minipage}
+\vspace{1ex}
 
 
 \Q Recall that the \java{==} operator compares the {\it value} of two variables.
@@ -117,7 +118,7 @@ In contrast, two {\tt String} variables are \java{==} if they refer to the same 
 
 
 \Q How could you determine whether two character arrays have the same contents?
-In other words, how does the \java{Arrays.equals} method work internally?
+In other words, how does the \java{String.equals} method work internally?
 
 \begin{answer}
 Using a loop, you compare each character in the first array to the corresponding character in the second array. If any two characters don't match, or the arrays have different lengths, then they are not equal.

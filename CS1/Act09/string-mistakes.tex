@@ -1,13 +1,16 @@
 \model{Common Mistakes}
 % Based on Model 3 of Activity 5 - Strings by Helen Hu
 
+Use \textit{JShell} to run each of the code snippets.
+For Program B, do not provide any user input (just press Enter).
+Record the output of the last statement in the space below the table.
+
 \newsavebox{\programA}
 \begin{lrbox}{\programA}
 \begin{javalst}
 String greeting = "hello world";
 greeting.toUpperCase();
 System.out.println(greeting);
-
 \end{javalst}
 \end{lrbox}
 
@@ -17,7 +20,6 @@ System.out.println(greeting);
 Scanner in = new Scanner(System.in);
 String line = in.nextLine();
 char letter = line.charAt(1);
-System.out.println(letter);
 \end{javalst}
 \end{lrbox}
 
@@ -35,13 +37,12 @@ System.out.println(letter);
 \end{table}
 
 
-\quest{10 min}
+\quest{15 min}
 
 
-\Q Write the output of each program in the space under the table above.
-What is the logic error you see when you run Program A?
+\Q What is the logic error you see when you run Program A?
 
-\begin{answer}[2em]
+\begin{answer}
 The \str{hello world} greeting is still lowercase.
 \end{answer}
 
@@ -50,7 +51,7 @@ The \str{hello world} greeting is still lowercase.
 In Program A, what is returned by the string method?
 What happens to the return value?
 
-\begin{answer}[2em]
+\begin{answer}
 A new string is returned, but its value is not saved anywhere.
 \end{answer}
 
@@ -60,8 +61,8 @@ A new string is returned, but its value is not saved anywhere.
 \begin{answer}
 \vspace{-1ex}
 \begin{javaans}
-greeting = greeting.toUpperCase();    // or just combine the two lines
-System.out.println(greeting);         System.out.println(greeting.toUpperCase());
+greeting = greeting.toUpperCase();   // or just combine the two lines
+System.out.println(greeting);        System.out.println(greeting.toUpperCase());
 \end{javaans}
 \end{answer}
 
@@ -89,9 +90,56 @@ If the user enters a blank line, then there will be no character at position 1. 
 \end{answer}
 
 
-\Q Explain why these errors occur based on what you learned in \ref{string-chararray.tex} and \ref{string-methods.tex}.
+%\Q Explain why these errors occur based on what you learned in \ref{string-chararray.tex} and \ref{string-methods.tex}.
+%
+%\begin{answer}
+%The \java{toUpperCase} method returns a copy of {\tt this} string; it doesn't actually change the original string.
+%The \java{charAt} method reads the internal character array; if the index is out of bounds, you'll get an exception.
+%\end{answer}
 
-\begin{answer}
-The \java{toUpperCase} method returns a copy of {\tt this} string; it doesn't actually change the original string.
-The \java{charAt} method reads the internal character array; if the index is out of bounds, you'll get an exception.
+
+\newpage
+
+\Q To compare strings, you must use either the \java{String.equals} or \java{String.compareTo} method.
+Predict the output of the following code.
+
+\begin{javalst}
+String name1 = new String("Mark");
+String name2 = new String("Mark");
+\end{javalst}
+
+\begin{javalst}
+// compare name1 and name2
+if (name1 == name2) {
+    System.out.println("name1 and name2 are identical");
+} else {
+    System.out.println("name1 and name2 are NOT identical");
+}
+\end{javalst}
+
+\vspace{-2ex}
+\begin{answer}[1em]
+\tt \hspace{1em} name1 and name2 are NOT identical
+\end{answer}
+
+\begin{javalst}
+// compare "Mark" and "Mark"
+if (name1.equals(name2)) {
+    System.out.println("name1 and name2 are equal");
+} else {
+    System.out.println("name1 and name2 are NOT equal");
+}
+\end{javalst}
+
+\vspace{-2ex}
+\begin{answer}[1em]
+\tt \hspace{1em} name1 and name2 are equal
+\end{answer}
+
+
+\Q What is the difference between \emph{identical} and \emph{equal} in the previous question?
+
+\begin{answer}[4em]
+``Identical'' means the variables refer to the same \java{String} object.
+``Equal'' means the strings have the same characters, in the \java{Arrays.equals} sense.
 \end{answer}

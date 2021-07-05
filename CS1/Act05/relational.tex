@@ -1,7 +1,7 @@
 \model{Relational Operators}
 % based on Model 2 of Activity 4 Boolean by Helen Hu
 
-In \ref{employers.tex}, you determined the top three attributes by comparing percentages.
+In the meta activity, you determined the top three attributes by comparing percentages.
 We can declare variables to represent these percentages in Java:
 
 \begin{javalst}
@@ -10,8 +10,9 @@ We can declare variables to represent these percentages in Java:
     double teamwork = 78.7;  // Ability to work in a team
 \end{javalst}
 
-In the table below, predict the result of each expression and identify the operator (if any).
-The first three rows are completed for you.
+In the table below, determine the result of each expression and identify the operator.
+The first five rows are completed for you.
+(Optional: Use {\it JShell} to check your work.)
 
 \begin{center}
 \setlength{\defaultwidth}{8.5em}
@@ -21,6 +22,8 @@ The first three rows are completed for you.
 \java{written}              &       82.0    &       none   \\ \hline
 \java{written > problem}    &       true    &       >      \\ \hline
 \java{problem < teamwork}   &       false   &       <      \\ \hline
+\java{teamwork = 79.5}      &       79.5    &       =      \\ \hline
+\java{teamwork == 78.7}     &       false   &       ==     \\ \hline
 \java{82.0 < written}       &  \ans{false}  &  \ans{<}     \\ \hline
 \java{82.0 > written}       &  \ans{false}  &  \ans{>}     \\ \hline
 \java{82.0 == written}      &  \ans{true}   &  \ans{==}    \\ \hline
@@ -28,7 +31,7 @@ The first three rows are completed for you.
 \java{teamwork == problem}  &  \ans{false}  &  \ans{==}    \\ \hline
 \java{teamwork = problem}   &  \ans{80.9}   &  \ans{=}     \\ \hline
 \java{teamwork == problem}  &  \ans{true}   &  \ans{==}    \\ \hline
-\java{problem}              &  \ans{80.9}   &  \ans{none}  \\ \hline
+%\java{problem}              &  \ans{80.9}   &  \ans{none}  \\ \hline
 \java{teamwork}             &  \ans{80.9}   &  \ans{none}  \\ \hline
 \end{tabular}
 \setlength{\defaultwidth}{15em}
@@ -79,7 +82,7 @@ Give an example of a boolean expression that uses \java{>=} and evaluates to tru
 
 
 \Q Java has six relational operators.
-Only five have been mentioned, but you should be able to guess the sixth.
+Only five have been shown, but you should be able to guess the sixth.
 List all six below, and explain briefly what each one means.
 
 \begin{answer}

@@ -1,0 +1,76 @@
+% was the last question of CS1/Act06
+
+\Q \label{nested}
+A \emph{nested loop} is one that exists within the scope of another loop.
+This construct is often used when there are two variables for which all combinations must be examined.
+
+\begin{javalst}
+    for (int x = 1; x < 4; x++) {
+        for (int y = 1; y < 4; y++) {
+            System.out.printf("The product of %d and %d is %d\n", x, y, x * y);
+        }
+        System.out.println();
+    }
+\end{javalst}
+
+Write nested loops that compute and display the factorial of each integer from 1 to 20.
+(Reuse your code from the previous question.)
+Your output should be in this format:
+
+\vspace{-1ex}
+\begin{verbatim}
+    The factorial of 1 is 1
+    The factorial of 2 is 2
+    The factorial of 3 is 6
+    The factorial of 4 is 24
+\end{verbatim}
+\vspace{-1ex}
+
+\begin{answer}[9em]
+\begin{javaans}
+for (int n = 1; n <= 20; n++) {
+    long fact = 1;  // not int
+    for (int i = n; i > 1; i--) {
+        fact *= i;
+    }
+    System.out.printf("The factorial of %d is %d\n", n, fact);
+}
+\end{javaans}
+\end{answer}
+
+
+% removed these questions too, because they were too big of a jump
+
+\Q \label{forchar}
+Write a \java{for} loop that prints each character of a string on a separate line.
+You will need to invoke the \java{length()} and \java{charAt()} methods.
+Assume the string variable is named \java{word}.
+
+\begin{answer}
+\begin{javaans}
+for (int i = 0; i < word.length(); i++) {
+    System.out.println(word.charAt(i));
+}
+\end{javaans}
+\end{answer}
+
+
+\Q Rewrite your \java{for} loop in \ref{forchar} as a \java{while} loop.
+
+\begin{answer}[6em]
+\begin{javaans}
+int i = 0;
+while (i < word.length()) {
+    System.out.println(word.charAt(i));
+    i++;
+}
+\end{javaans}
+\end{answer}
+
+
+% corresponding text from the instructor guide:
+
+You might need to guide students on \ref{forchar} when applying string methods in the context of a loop.
+For example, you could write \java{word.length()} and \java{word.charAt(i)} on the board.
+On \ref{nested}, students might not think to use a {\tt long} variable to store the factorial.
+If time permits, show the output of the solution with {\tt fact} declared as an {\tt int}, and ask them to fix the code.

@@ -1,7 +1,7 @@
 \model{Array Syntax}
 % based on Model 1 of Activity 13 - TwoD Arrays by Helen Hu
 
-An \emph{array} allows you to declare a collection of related variables (of the same type) at once.
+An \emph{array} variable allows you to store multiple variables (of the same type).
 Each value in an array is known as an \emph{element}.
 The programmer must specify the \emph{length} of the array (the number of array elements).
 Once the array is created, its length cannot be changed.
@@ -44,14 +44,13 @@ Array elements are accessed by \emph{index} number, starting at zero:
 \quest{15 min}
 
 
-\Q Examine the results of the above code.
+\Q Examine the results of the code.
 
 \begin{enumerate}
-\item What is the index for the element \java{'i'}? \ans[10em]{1}
-\item What is the length of \java{letterArray}? \ans[10em]{2}
-\item What is the length of \java{numberArray}? \ans[10em]{365}
-\item How would you access the last element of \java{numberArray}?
-\ans[10em]{\java{numberArray[364]}}
+\item What is the length of \java{letterArray}? \ans[5em]{2}
+\item What is the length of \java{numberArray}? \ans[5em]{365}
+\item What is the index of the element \java{'i'} in \java{letterArray}? \ans[5em]{1}
+\item What is the index of the last element of \java{numberArray}? \ans[5em]{\java{364}}
 \end{enumerate}
 
 
@@ -61,10 +60,12 @@ Array elements are accessed by \emph{index} number, starting at zero:
 \item What are three ways that square brackets [] are used?
 
 \vspace{-1ex}
-\begin{answer}[2em]
-1) To declare the type: {\tt double[]}.
-2) To specify the length: {\tt double[365]}.
-3) To access an element: {\tt numberArray[0]}.
+\begin{answer}[4em]
+1) To declare the type: {\tt double[]}
+
+2) To specify the length: {\tt double[365]}
+
+3) To access an element: {\tt numberArray[0]}
 \end{answer}
 
 \item In contrast, how are curly braces \{\} used for an array?
@@ -76,7 +77,9 @@ To create an array with an initial set of values.
 \end{enumerate}
 
 
-\Q What are the type and value for each of the four {\it expressions} below?
+\Q \label{typeval}
+What are the resulting type and value of the following expressions?
+Show your work by writing the value of each array element in the space provided.
 
 \begin{javalst}
 int[] a = {3, 6, 15, 22, 100, 0};
@@ -86,63 +89,48 @@ String[] c = {"alpha", "beta", "gamma"};
 
 \begin{enumerate}
 \item \java{a[3] + a[2]}
-\ans{Type: {\tt int}, Value: {\tt 37}}
+\hfill
+~ Type:  \ans[4em]{\tt int}
+~ Value: \ans[4em]{\tt 37}
+\hspace{8em} \\
+\ans[2em]{22} ~~~ \ans[2em]{15}
 
 \item \java{b[2] - b[0] + a[4]}
-\ans{Type: {\tt double}, Value: {\tt 98.5}}
+\hfill
+~ Type:  \ans[4em]{\tt double}
+~ Value: \ans[4em]{\tt 98.5}
+\hspace{8em} \\
+\ans[2em]{2.0} ~~~ \ans[2em]{3.5} ~~~ \ans[2em]{100}
 
 \item \java{c[1].charAt(a[0])}
-\ans{Type: {\tt char}, Value: {\tt \qs{a}\qs}}
+\hfill
+~ Type:  \ans[4em]{\tt char}
+~ Value: \ans[4em]{\tt \qs{a}\qs}
+\hspace{8em} \\
+\ans[2em]{beta} ~ ~ ~ ~ ~ ~ ~ \ans[2em]{3}
 
 \item \java{a[4] * b[1] <= a[5] * a[0]}
-\ans{Type: {\tt boolean}, Value: {\tt false}}
-\end{enumerate}
-
-
-\begin{tabularx}{\linewidth}{|X|}
-\hline
-Array variables can be initialized without the \java{new} keyword: \\
-~~~~~~~~\java{int[] picks = \{3, 5, 7, 2, 1\};} \\[-1ex]
-~~~~~~~~\java{String[] names = \{"Grace", "Alan", "Tim"\};} \\[1ex]
-
-However, if the variable is already declared, \java{new} is required: \\
-~~~~~~~~\java{picks = new int[] \{3, 5, 7, 2, 1\};} \\[-1ex]
-~~~~~~~~\java{names = new String[] \{"Grace", "Alan", "Tim"\};} \\
-\hline
-\end{tabularx}
-\vspace{1ex}
-
-
-\Q \label{arrayexp}
-Write {\it expressions} that create the following \java{new} arrays. (Do not declare variables.)
-
-\begin{enumerate}
-
-\item
-\begin{tabular}{|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|}
-\hline
-0 & 14 & 1024 & 127 & 3 & 5521 \\
-\hline
-\end{tabular}
-
-\vspace{1ex}
-\ans[35em]{\tt new int[] \{0, 14, 1024, 127, 3, 5521\}}
-
-\item
-\begin{tabular}{|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|}
-\hline
-3.23 & 1.52 & 4.23 & 32.5 & 2.45 & 5.23 & 3.33 \\
-\hline
-\end{tabular}
-
-\vspace{1ex}
-\ans[35em]{\tt new double[] \{3.23, 1.52, 4.23, 32.5, 2.45, 5.23, 3.33\}}
+\hfill
+~ Type:  \ans[4em]{\tt boolean}
+~ Value: \ans[4em]{\tt false}
+\hspace{8em} \\
+\ans[2em]{100} ~~~ \ans[2em]{4.5} ~~ ~~~ \ans[2em]{0} ~~~ \ans[2em]{3}
 
 \end{enumerate}
+
+
+\vspace{0pt}
+
+\comment{
+As shown in \ref{typeval}, an array variable can be declared and initialized without using \java{new}.
+However, to assign an array variable that was previously declared, \java{new} is required: \\
+~~~~~~~~\java{a = new int[] \{3, 6, 15, 22, 100, 0\};} \\[-1ex]
+~~~~~~~~\java{c = new String[] \{"alpha", "beta", "gamma"\};}
+}
 
 
 \Q \label{arraysta}
-Write {\it statements} that both declare and initialize variables for these \java{new} arrays.
+Write statements that declare and initialize variables for the following arrays.
 
 \begin{enumerate}
 
@@ -165,5 +153,33 @@ Write {\it statements} that both declare and initialize variables for these \jav
 
 \vspace{1ex}
 \ans[35em]{\tt double[] b = \{3.23, 1.52, 4.23, 32.5, 2.45, 5.23, 3.33\};}
+
+\end{enumerate}
+
+
+\Q \label{arrayexp}
+Write statements that assign the following arrays to variables you declared in \ref{arraysta}.
+
+\begin{enumerate}
+
+\item
+\begin{tabular}{|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|}
+\hline
+0 & 14 & 1024 & 127 & 3 & 5521 \\
+\hline
+\end{tabular}
+
+\vspace{1ex}
+\ans[35em]{\tt a = new int[] \{0, 14, 1024, 127, 3, 5521\}}
+
+\item
+\begin{tabular}{|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|}
+\hline
+3.23 & 1.52 & 4.23 & 32.5 & 2.45 & 5.23 & 3.33 \\
+\hline
+\end{tabular}
+
+\vspace{1ex}
+\ans[35em]{\tt b = new double[] \{3.23, 1.52, 4.23, 32.5, 2.45, 5.23, 3.33\}}
 
 \end{enumerate}

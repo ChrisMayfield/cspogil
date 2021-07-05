@@ -27,7 +27,16 @@ To show arrays in memory diagrams, we simply draw adjacent boxes.
 \quest{15 min}
 
 
-\Q Draw a memory diagram for the following array declarations.
+\Q What is the default value for array elements?
+
+\begin{answer}[3em]
+Zero or equivalent value, depending on the data type.
+For numeric types like {\tt int} and {\tt double}, the default is 0; for {\tt boolean}, it's {\tt false}; for {\tt char}, it's {\tt \qs{\bs u0000}\qs}; for reference types, it's {\tt null}.
+\end{answer}
+
+
+\Q Draw a memory diagram for the following arrays.
+(\textit{Hint:} You should have no empty boxes.)
 
 \begin{minipage}{0.46\linewidth}
 
@@ -47,8 +56,7 @@ costs[0] = 0.99;
 
 \item
 \begin{javalst}
-String[] names = new String[3];
-names[1] = "Anita";
+String[] names = {"Anita"};
 \end{javalst}
 
 \end{enumerate}
@@ -56,38 +64,31 @@ names[1] = "Anita";
 \end{minipage}
 \hfill
 \begin{minipage}{0.53\linewidth}
-
-\begin{answer}[130pt]
-\includegraphics[width=\linewidth]{decl-array.pdf}
-\end{answer}
-
+\note{\includegraphics[width=\linewidth]{decl-array.pdf}}
 \end{minipage}
 
 
-\Q What is the \emph{default} value for uninitialized array elements?
-(Hint: You should have no empty boxes in your memory diagrams above.)
+\Q Like strings, arrays are reference types. What is the value of an array {\it variable}?
 
-\begin{answer}
-Zero or equivalent value, depending on the data type.
-For numeric types like {\tt int} and {\tt double}, the default is 0; for {\tt boolean}, it's {\tt false}; for {\tt char}, it's {\tt \qs{\bs u0000}\qs}; for reference types, it's {\tt null}.
+\begin{answer}[3em]
+An integer representing the memory location of the array.
 \end{answer}
 
 
-\Q Like strings, arrays are reference types. What is the {\it value} of an array variable?
+\Q Does the statement \java{int[] copy = nums;} create a new array? Justify your answer.
 
-\begin{answer}
-The memory location of the array. If you assign one array variable to another, you're only copying the reference, not the array itself.
+\begin{answer}[3em]
+No. If you assign one array variable to another, you're only copying the reference, not the array itself.
 \end{answer}
 
 
 \Q Draw a memory diagram of the following array.
-(Hint: You should have four arrows.)
+(\textit{Hint:} You should have four arrows.)
 
 \begin{javalst}
 String[] greek = {"alpha", "beta", "gamma"};
 \end{javalst}
 
-\begin{answer}[6em]
-\hspace{4em}
-\includegraphics[height=6em]{string-array.pdf}
-\end{answer}
+\vspace{1em}
+\hspace{2em}
+\note{\includegraphics[height=6em]{string-array.pdf}}

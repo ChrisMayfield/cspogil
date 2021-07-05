@@ -5,7 +5,7 @@
 
 \title{Arrays of Numbers}
 \author{Chris Mayfield and Helen Hu}
-\date{Fall 2019}
+\date{Summer 2021}
 
 \input{../../cspogil.sty}
 
@@ -16,39 +16,34 @@
 Programs often need to store multiple values of the same type, such as a list of phone numbers, or the names of your top 20 favorite songs.
 Rather than create a separate variable for each one, we can store them together using an array.
 
+\rolenames
+
 \guide{
   \item Explain course policies about academic honesty.
   \item Declare and initialize array variables of primitive types.
   \item Draw a memory diagram of an array of reference types.
-  \item Write a for loop that iterates the contents of an array.
 }{
   \item Developing algorithms that loop through arrays to compute a result. (Problem Solving)
 }{
-\ref{case1.tex} and \ref{case3.tex} can be helpful to clarify policies and discuss what is appropriate collaboration vs cheating.
+The case studies can be helpful to clarify policies and discuss what is appropriate collaboration vs cheating.
 Each team will need a copy of the \github{Handouts/jmu-honor-code.pdf}{Honor Code} or your own institution's document.
-Only 10 minutes are allocated for this discussion, but it could take more time.
+Only 15 minutes are allocated for this discussion, but it could take more time.
 
-\ref{array-syntax.tex} introduces arrays for the first time, with a focus on array syntax and memory diagrams.
-Students learn about zero-based indexing array processing using loops.
-Be sure to discuss \ref{arrayexp} and \ref{arraysta} when reporting out.
-Students often confuse \emph{expressions} with \emph{statements}.
+\ref{array-syntax.tex} introduces arrays for the first time, with a focus on array syntax.
+Students learn about declaring, initializing, and using array variables.
+Be sure to discuss \ref{arraysta} and \ref{arrayexp} when reporting out.
 Explain how Java generally requires the \texttt{new} operator when creating arrays, except in the case of \ref{arraysta}.
 
 In \ref{array-diagrams.tex}, explain that the \texttt{new} operator automatically zeros-out memory for the array.
 Therefore, the default value will be 0 for integers, 0.0 for doubles, \texttt{null} for strings, etc.
 These values should be present in the team's diagrams.
 You may need to remind students that references (i.e., to string objects) are drawn with an arrow.
-
-Students will have the most trouble with \ref{array-loops.tex}, particularly if writing code on paper.
-One way to jump start the process is to report out before teams write their solution.
-Give each team 2--3 minutes to develop an algorithm and have the presenter describe it to the class.
-Then have students complete \ref{pairwiseMax} and \ref{finalGrade} as an exercise outside of class.
 }
 
 \input{../Honor/case1.tex}
 \input{../Honor/case3.tex}
 \input{array-syntax.tex}
+\newpage
 \input{array-diagrams.tex}
-\input{array-loops.tex}
 
 \end{document}

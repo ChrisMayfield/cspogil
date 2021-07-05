@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Exercises {
+public class ArrayLoops {
     
     /**
      * Return a new array containing the pairwise maximum value of

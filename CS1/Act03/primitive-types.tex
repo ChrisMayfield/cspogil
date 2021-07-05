@@ -26,7 +26,7 @@
 \end{table}
 
 Note that 1 byte is 8 bits, i.e., eight ``ones and zeros'' in computer memory.
-Since there are only two options for each bit, you can represent $2^8 = 256$ possible values with 1 byte.
+Since there are only two possible values for each bit, you can represent $2^8 = 256$ possible values with 1 byte.
 
 
 \quest{15 min}
@@ -169,11 +169,11 @@ days = '0';
 All are okay except:
 \\ \hspace*{1em} \texttt{total = sum;}
 \\ \hspace*{1em} \texttt{flag = minutes;}
-\\ \hspace*{1em} \texttt{days = \chr{0};}
+%\\ \hspace*{1em} \texttt{days = \chr{0};}
 
 \medskip
 Note that assigning \chr{0} to \java{days} is legal,
-but the value is actually stored as 48L.
+but the value is actually stored as 48L (Unicode for the digit zero character).
 \end{answer}
 
 \end{multicols}

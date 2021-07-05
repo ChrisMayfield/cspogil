@@ -28,37 +28,43 @@ When drawing memory diagrams, use an arrow to reference other memory locations (
 \quest{20 min}
 
 
-\Q What are the reference types in the example above?
+\Q What are the names of the reference types in the example above?
 
-\begin{answer}
+\begin{answer}[2em]
 String and Scanner
 \end{answer}
 
 
-\Q By convention, what is the difference between primitive and reference type names?
+\Q Notice the pattern Java uses for type names like \java{int} and \java{String}:
 
-\begin{answer}
-Primitive types are lowercase, and reference types are capitalized.
-\end{answer}
+\begin{enumerate}
+
+\item Are reference type names all lowercase or capitalized?
+\ans[8em]{Capitalized}
+
+\item Are primitive type names all lowercase or capitalized?
+\ans[8em]{All lowercase}
+
+\end{enumerate}
 
 
 \Q Variables in Java can use at most eight bytes of memory. Explain why the values \java{"Beyonce"} and \java{System.in} cannot be stored directly in the memory locations for \java{name} and \java{in}.
 
-\begin{answer}
+\begin{answer}[3em]
 Both values are much larger than eight bytes, so they need to be stored somewhere else.
 \end{answer}
 
 
 \Q What is the value of the variable \java{count}? What is the value of the variable \java{price}?
 
-\begin{answer}
+\begin{answer}[3em]
 The values are 0 and 1.99. They are stored directly in the variable's memory.
 \end{answer}
 
 
 \Q What is the value of the variable \java{name}? What is the value of the variable \java{in}?
 
-\begin{answer}
+\begin{answer}[3em]
 The values are memory addresses. They reference the location where the actual data is stored.
 \end{answer}
 
@@ -112,4 +118,14 @@ System.out.println(other);
 
 \begin{answer}
 The output is \texttt{Taylor}, because changing the value (i.e., reference) of \java{first} does not affect the value of \java{other}.
+\end{answer}
+
+
+\Q (Optional) Paste the contents of \textit{TaylorSwift.java} into \href{https://cscircles.cemc.uwaterloo.ca/java_visualize/#code=public+class+ClassNameHere+%7B%0A++++public+static+void+main(String%5B%5D+args)+%7B%0A++++++++%0A++++%7D%0A%7D&mode=edit&showStringsAsObjects=1}{Java Visualizer}.
+What differences do you notice between the diagram in Java Visualizer and yours from \ref{twostrs}?
+
+\begin{answer}[5em]
+Answers might include:
+\bull The variables are drawn in (method) frames.
+\bull There are no boxes drawn around the objects.
 \end{answer}

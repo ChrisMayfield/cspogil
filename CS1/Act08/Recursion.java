@@ -1,4 +1,4 @@
-public class Fact {
+public class Recursion {
     
     public static int factorial(int n) {
         System.out.println("n is " + n);

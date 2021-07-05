@@ -35,26 +35,36 @@ $\sum\limits_{i=1}^{n} i =$ \ans{n + $\sum\limits_{i=1}^{n-1} i$}
 
 \Q What is the base case of the summation? (Write the complete formula, not just the value.)
 
-\begin{answer}
+\begin{answer}[3em]
 $$\sum\limits_{i=1}^{1} i = 1$$
 \end{answer}
 
 
-\Q Implement a recursive method \java{summation} that takes a single parameter \java{n} and returns the sum $1 + 2 + \ldots + n$.
+\Q Implement a recursive method that takes a single parameter \java{n} and returns the sum $1 + 2 + \ldots + n$.
 It should only have an \java{if} statement and two \java{return} statements.
 
-\vspace{-1ex}
-\begin{answer}[10em]
-\begin{javaans}
+\begin{javalst}
 public static int summation(int n) {
-    if (n == 1) {
-        return 1;
-    } else {
-        return n + summation(n - 1);
-    }
+\end{javalst}
+\vspace{-1em}
+\begin{quote}
+\begin{answer}[6em]
+\begin{javaans}
+if (n == 1) {
+    return 1;
+} else {
+    return n + summation(n - 1);
 }
 \end{javaans}
 \end{answer}
+\end{quote}
+\vspace{-1em}
+\begin{javalst}
+}
+\end{javalst}
+
+
+\newpage
 
 
 \Q Discuss how the \java{factorial} method below uses temporary variables.
@@ -100,9 +110,9 @@ Draw a similar diagram for \java{summation(3)} as described in the previous ques
 \hfill
 \begin{minipage}{0.48\linewidth}
 
-\begin{answer}[115pt]
+\note{
 \includegraphics[width=\linewidth]{stack3-ans.pdf}
-\end{answer}
+}
 
 \end{minipage}
 \vspace{1em}

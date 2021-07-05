@@ -1,0 +1,89 @@
+\model{Object Methods}
+
+In addition to providing constructors, getters, and setters, classes often provide \java{equals} and \java{toString} methods.
+These methods make it easier to work with objects of the class.
+
+\vspace{1em}
+
+As a team, review the provided \textit{Color.java} and \textit{Point.java} files.
+Run each program to see how it works.
+Then answer the following questions using the source code (don't just guess).
+
+
+\quest{15 min}
+
+
+\Q Based on the output of \textit{Color.java}, what is the value of each expression below?
+
+\begin{javalst}
+Color black = new Color();
+Color other = new Color(0, 0, 0);
+Color gold = new Color(255, 215, 0);
+\end{javalst}
+
+\begin{multicols}{2}
+\setlength{\defaultwidth}{5em}
+\begin{enumerate}[itemsep=1pt]
+\item \java{black == other} \ans{false}
+\item \java{black == gold} \ans{false}
+\item \java{black.toString()} \ans{"\#000000"}
+\item \java{black.equals(other)} \ans{true}
+\item \java{black.equals(gold)} \ans{false}
+\item \java{gold.toString()} \ans{"\#ffd700"}
+\end{enumerate}
+\end{multicols}
+
+
+\Q What is the purpose of the \texttt{toString} method?
+
+\begin{answer}
+It returns a \texttt{String} representation of the \texttt{Color} (in HTML/CSS format).
+The \java{toString} method makes it easier to examine and debug objects.
+\end{answer}
+
+
+\Q \label{expr}
+Based on the output of \textit{Point.java}, what is the value of each expression below?
+\begin{javalst}
+Point p1 = new Point();
+Point p2 = new Point(0, 0);
+Point p3 = new Point(3, 3);
+\end{javalst}
+
+\begin{multicols}{2}
+\setlength{\defaultwidth}{5em}
+\begin{enumerate}[itemsep=1pt]
+\item \java{p1 == p2} \ans{false}
+\item \java{p1.toString()} \ans{"(0, 0)"}
+\item \java{p3.toString()} \ans{"(3, 3)"}
+\item \java{p1.equals(p2)} \ans{true}
+\item \java{p1.equals("(0, 0)")} \ans{false}
+\item \java{p3.equals("(3, 3)")} \ans{false}
+\end{enumerate}
+\end{multicols}
+
+
+\Q What is the purpose of the \texttt{equals} method?
+
+\begin{answer}
+It determines whether two objects have the same attribute values.
+The \java{equals} method is useful for testing with \java{assertEquals}.
+\end{answer}
+
+
+\Q Examine {\it Point.java} again.
+What is the purpose of the \java{if}-statement in the \texttt{equals} method?
+
+\begin{answer}
+Since \java{equals} can take any type of \java{Object}, you need to check if the argument is a \java{Color} or \java{Point} instance before using it as such.
+\end{answer}
+
+
+\Q How could you modify the \java{equals} method to cause both \ref{expr}e and \ref{expr}f to return \java{true}?
+
+\begin{answer}[5em]
+Change the last line to ~\jans{return this.toString().equals(obj);}
+
+\vspace{1em}
+You could instead add ~\texttt{if (obj instanceof String)}, but since the \texttt{String.equals} method takes an \texttt{Object}, there's no need to convert the \java{obj} parameter before calling \texttt{String.equals}.
+\end{answer}

@@ -5,7 +5,7 @@
 
 \title{Designing Classes}
 \author{Chris Mayfield and Helen Hu}
-\date{Fall 2019}
+\date{Summer 2021}
 
 \input{../../cspogil.sty}
 
@@ -17,35 +17,40 @@ The \java{String} class provides methods for working with text.
 The \java{Random} class provides methods for generating random numbers.
 In this activity, you'll learn how to make your own classes that represent everyday objects.
 
+\rolenames
+
 \guide{
-  \item Discuss benefits of POGIL for student learning.
+%  \item Discuss benefits of POGIL for student learning.
   \item Explain the purpose of constructor, accessor, and mutator methods.
   \item Implement the equals and toString methods for a given class design.
   \item Design a new class (UML diagram) based on a general description.
 }{
   \item Identifying attributes and data types that model a real-world object. (Problem Solving)
 }{
-\ref{pogil-research.tex} is a meta activity designed to reestablish buy-in near the end of the semester.
-Be sure to explain why you are using POGIL in your classroom and how it benefits students.
-The figures and sample solutions are from Moog (2014), found in Chapter 8 of \href{http://dx.doi.org/10.7936/K7PN93HC}{Integrating Cognitive Science with Innovative Teaching in STEM Disciplines}.
+%\ref{pogil-research.tex} is a meta activity designed to reestablish buy-in near the end of the semester.
+%Be sure to explain why you are using POGIL in your classroom and how it benefits students.
+%The figures and sample solutions are from Moog (2014), found in Chapter 8 of \href{https://dx.doi.org/10.7936/K7PN93HC}{Integrating Cognitive Science with Innovative Teaching in STEM Disciplines}.
 
 \ref{common-methods.tex} begins with questions about constructors, getters, and setters.
-Report out on \ref{immutable} as soon as the majority teams have made it that far.
-You may find it helpful to project the source code for {\tt Color.java} while students work through the questions.
-Reinforce the concept of immutable objects, and point out that the \java{java.lang.String} class is designed this way.
+Report out as soon as the majority teams have finished.
+You may find it helpful to project the source code for {\it Color.java} while students work through the questions.
+Reinforce the concept of immutable objects, and point out that the \java{String} class is designed this way.
 
-The questions immediately after \ref{expr} require students to understand the source code of \java{equals} and \java{toString}.
-If this is the first time they have seen language features like \java{Object}, \texttt{instanceof}, and \java{String.format}, you may want to give a 5-minute lecture (but avoid giving the answers).
+The questions at the beginning of \ref{equals-tostring.tex} require students to understand the source code of \java{equals} and \java{toString}.
+If this is the first time they have seen language features like \java{Object}, \texttt{instanceof}, and \java{String.format}, you might want to give a 5-minute lecture (but avoid giving away the answers).
 
 When reporting out \ref{credit-card.tex}, have presenters write their designs on the board.
 Compare the trade-offs of their different designs.
 For example, to store credit card numbers some teams may use strings, others may use arrays of integers, and some may use a \texttt{long} variable (\texttt{int} won't work because of the range).
 }
 
-\input{pogil-research.tex}
-\newpage
+%\graphicspath{{../Meta/}}
+%\input{../Meta/pogil-research.tex}
+
 \input{common-methods.tex}
-\vspace{2em}
+\newpage
+\input{equals-tostring.tex}
+\vspace{1em}
 \input{credit-card.tex}
 
 \end{document}

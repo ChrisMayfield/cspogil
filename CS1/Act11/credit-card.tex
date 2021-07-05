@@ -1,7 +1,8 @@
 \model{Credit Card}
 % based on Model 2 of "Activity 10 - Class Design" by Helen Hu
 
-In this section, you will design a new class that represents an individual's credit card.
+Classes often represent objects in the real world.
+In this section, you will design a new class that represents a \java{CreditCard} like the one below:
 
 \begin{center}
 % https://www.bankofamerica.com/credit-cards/
@@ -12,26 +13,28 @@ In this section, you will design a new class that represents an individual's cre
 \quest{15 min}
 
 
-\Q List two or more attributes that would be necessary for the \java{CreditCard} class.
+\Q Identify two or more attributes that would be necessary for the \java{CreditCard} class.
 For each attribute, indicate what data type would be most appropriate.
 
-\begin{answer}[3em]
-Answers may include \verb|number:long|, \verb|expire:Date|, \verb|name:String|, \verb|code:int|, etc.
+\begin{answer}
+Answers may include ~\verb|number:long|, ~\verb|expire:Date|, ~\verb|name:String|, ~\verb|code:int|, ~etc.
 \end{answer}
 
 
-\Q When constructing (or updating) a \java{CreditCard} object, what values would you need to check?
-What are the valid ranges of values for each attribute?
+\Q Using UML syntax, define two or more constructors for the \java{CreditCard} class.
 
 \begin{answer}
-The number should have 16 digits, dates need to have valid months and days, names should be at most 22 letters and not contain digits or other characters, code should be 3--4 digits.
+\begin{javaans}
++CreditCard()
++CreditCard(number:long, name:String)
+\end{javaans}
 \end{answer}
 
 
-\Q List two accessor methods would be appropriate for the \java{CreditCard} class.
+\Q Define two or more accessor methods for the \java{CreditCard} class.
 Include arguments and return values, using the same format as a UML diagram.
 
-\begin{answer}[6em]
+\begin{answer}[5em]
 \begin{verbatim}
 +getNumber(): long
 +getExpire(): Date
@@ -41,10 +44,10 @@ Include arguments and return values, using the same format as a UML diagram.
 \end{answer}
 
 
-\Q List two mutator methods would be appropriate for the \java{CreditCard} class.
+\Q Define two or more mutator methods for the \java{CreditCard} class.
 Include arguments and return values, using the same format as a UML diagram.
 
-\begin{answer}[6em]
+\begin{answer}[5em]
 \begin{verbatim}
 +setNumber(number:long): void
 +setExpire(expire:Date): void
@@ -54,9 +57,23 @@ Include arguments and return values, using the same format as a UML diagram.
 \end{answer}
 
 
-\Q Describe how you would implement the \java{equals} and \java{toString} methods of the \java{CreditCard} class (i.e., what you would define them to return based on which attributes).
+\Q Describe how you would implement the \java{equals} method of the \java{CreditCard} class.
+
+\begin{answer}
+Two credit cards would be considered equal if they have the same account number, assuming there are no duplicates in the bank.
+\end{answer}
+
+
+\Q Describe how you would implement the \java{toString} method of the \java{CreditCard} class.
+
+\begin{answer}
+The \java{toString} would print the account number, expiration date, and cardholder's name, each separated by a comma.
+\end{answer}
+
+
+\Q When constructing (or updating) a \java{CreditCard} object, which arguments would you need to validate?
+What are the valid ranges of values for each attribute?
 
 \begin{answer}[5em]
-Two credit cards would be considered equal if they have the same account number, assuming there are no duplicates in the bank.
-The \java{toString} would print the account number, expiration date, and cardholder's name, each separated by a comma.
+The number should have 16 digits, dates need to have valid months and days, names should be at most 22 letters and not contain digits or other characters, code should be 3--4 digits, etc.
 \end{answer}

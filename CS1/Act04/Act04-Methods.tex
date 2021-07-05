@@ -5,7 +5,7 @@
 
 \title{Multiple Methods}
 \author{Chris Mayfield}
-\date{Fall 2019}
+\date{Summer 2021}
 
 \input{../../cspogil.sty}
 
@@ -16,6 +16,8 @@
 Java programs are organized into \emph{classes}, each of which has one or more \emph{methods}, each of which has one or more \emph{statements}.
 Writing methods allows you to break down a complex program into smaller blocks of reusable code.
 
+\rolenames
+
 \guide{
   \item Apply methods from the Math class based on their documentation.
   \item Explain the syntax of a method declaration (parameters and return type).
@@ -25,24 +27,24 @@ Writing methods allows you to break down a complex program into smaller blocks o
 }{
 This activity will likely take students longer than they think.
 Remind managers to keep track of the time and presenters to be ready to report out.
-
-\ref{math-methods.tex} introduces a number of terms, which you should model throughout facilitation.
-\ref{println} and \ref{printf} are good for reporting out to reinforce the concepts of \emph{signature}, \emph{parameters}, and \emph{arguments}.
-Students often confuse \texttt{printf} by using string concatenation within the format string.
+The recorder (or other team member) could read questions out loud to help with pacing.
 
 \ref{invoke-return.tex} includes only void methods with no parameters, so that students may focus on the flow of execution.
 For \ref{lines} and \ref{times}, do a quick check of each team's answer before they get too far along.
 Some misread or misinterpret the question and/or don't get the difference between analyzing the code statically (i.e., how many lines) vs dynamically (i.e., how many times).
 
-\ref{stack-diagrams.tex} builds on a previous method for drawing diagrams and memory traces (see Reference Types in Activity 3).
-You may need to remind students that memory diagrams simply include a small box to the right of each variable name.
+\ref{math-methods.tex} introduces a number of terms.
+\ref{println} and \ref{printf} are good for reporting out to reinforce the concepts of \emph{signature}, \emph{parameters}, and \emph{arguments}.
+In addition, they address a misconception: students often confuse \texttt{printf} by using string concatenation within the format string.
+
+\ref{stack-diagrams.tex} builds on a previous technique for drawing diagrams and memory traces (from the Data Types activity).
+You might need to remind students that memory diagrams simply include a small box to the right of each variable name.
 Have multiple teams draw their diagram for \ref{drawing} on the board to compare different ways students think about this question.
-Address their misconceptions, and be sure to show the correct solution.
 }
 
-\input{math-methods.tex}
-\vfill
 \input{invoke-return.tex}
+\newpage
+\input{math-methods.tex}
 \newpage
 \input{stack-diagrams.tex}
 

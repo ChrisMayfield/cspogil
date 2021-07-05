@@ -1,35 +1,52 @@
 \model{Math Methods}
 
-Consider the following methods \emph{defined} in the \java{Math} class:
-
-\begin{javalst}
-    public static int abs(int a)
-    public static double log(double a)
-    public static double pow(double a, double b)
-    public static double random()
-    public static int subtractExact(int x, int y)
-\end{javalst}
-
-Note this list isn't exhaustive; \java{Math} has over 70 methods in total.
-To \emph{invoke} methods from another class (like \java{Math}), you must first specify the class name:
-
-\begin{javalst}
-    value = abs(-5);       // Error: cannot find symbol
-    value = Math.abs(-5);  // correct
-\end{javalst}
-
-The period in this example is called the \emph{dot operator}. When reading the above code out loud, you would say ``math dot abs''.
-Here is the Java documentation for the methods listed above:
+Consider the following methods defined in the \java{Math} class.
+(This list isn't exhaustive; the \java{Math} class has over 90 methods in total!)
 
 \begin{center}
 \includegraphics[scale=0.90]{math-javadoc.pdf}
 \end{center}
 
+%Each of these methods is written in Java.
+The code for these methods is provided in a source file named {\it Math.java}.
+Here is what the definition of the \java{abs} method looks like:
 
-\quest{15 min}
+\smallskip
+\begin{javalst}
+    public static int abs(int a) {
+        // code omitted
+    }
+\end{javalst}
+\smallskip
+
+%These methods are defined in a source file named {\it Math.java} as follows:
+%
+%\smallskip
+%\begin{javalst}
+%    public static int abs(int a)
+%    public static double log(double a)
+%    public static double pow(double a, double b)
+%    public static double random()
+%    public static int subtractExact(int x, int y)
+%\end{javalst}
+%\smallskip
+
+To use a method from another source file (like {\it Math.java}), you must first specify the class name:
+
+\smallskip
+\begin{javalst}
+    value = abs(-5);       // Error: cannot find symbol
+    value = Math.abs(-5);  // correct
+\end{javalst}
+\smallskip
+
+%The period in this example is called the \emph{dot operator}. When reading the above code out loud, you would say ``math dot abs''.
 
 
-\Q What type of value does \java{Math.random()} return? Give an example of what it would look like.
+\quest{20 min}
+
+
+\Q What type of value does \java{Math.random()} return? Give an example of what a random value might look like.
 
 \begin{answer}[3em]
 It returns a random \texttt{double} value greater than or equal to 0.0 and less than 1.0.
@@ -37,11 +54,11 @@ For example, the value 0.7851637186510342.
 \end{answer}
 
 
-\Q When {\it defining} a method (like \java{random} or \java{abs}), what do you need to specify before the method name and after the method name?
+\Q When {\it defining} a method (like \java{abs} or \java{log}), what do you need to specify before the method name and after the method name?
 
 \begin{answer}
 Before the name, you need to specify what type of value the method will return.
-After the name, you need to specify what values are required to invoke the method.
+After the name, you need to specify what values are required to use the method.
 \end{answer}
 
 
@@ -55,7 +72,7 @@ public static double average(int x, int y)
 \end{answer}
 
 
-\Q When {\it invoking} a method, what do you need to specify before the method name and after the method name?
+\Q When {\it using} a method, what do you need to specify before the method name and after the method name?
 
 \begin{answer}
 Before the name, you need to specify the class name (unless the method is in the same class).
@@ -63,10 +80,9 @@ After the name, you need to specify the required values.
 \end{answer}
 
 
-\Q For each method in \ref{\currfilename}, write a Java statement that invokes it and assigns the result to a variable.
+\Q For each method in \ref{\currfilename}, write a Java statement that uses the method and assigns the result to a variable.
 
 \begin{answer}[7em]
-\vspace{-1ex}
 \begin{javaans}
 answer = Math.abs(-5);
 length = Math.log(1.2);
@@ -85,8 +101,8 @@ Since arguments will be assigned to parameters, their types must be compatible.
 }
 
 
-\Q How many parameters and arguments does each method have?
-In the table below, what is the relationship between the last two columns?
+\Q In the table below, how many parameters and arguments does each method have?
+What is the relationship between the last two columns?
 
 \begin{center}
 \begin{tabular}{|c|C{5em}|C{5em}|}

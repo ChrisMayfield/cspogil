@@ -1,8 +1,29 @@
 \model{Stack Diagrams}
 
+The following program displays the time \verb|12:15|~ on the screen:
+
+\begin{quote}
+%\medskip
+%Note: The signature for \java{System.out.println} is ~\java{public void println(String x)}.
+%\medskip
+
+\begin{javalst}
+public static void printTime(int hour, int minute) {
+    System.out.println(hour + ":" + minute);
+}
+
+public static void main(String[] args) {
+    int hour = 11;
+    int minute = 59;
+    printTime(12, 15);
+}
+\end{javalst}
+\end{quote}
+
+We can draw a \emph{stack diagram} to visualize how the program works.
 Each method has its own area of memory to store parameters and other variables.
-When a method is invoked, Java allocates this memory on the \emph{call stack}.
-For convenience, we draw ``stack'' diagrams upside down.
+%When a method is invoked, Java allocates this memory on the \emph{call stack}.
+For convenience, we stack method calls underneath each other (upside down).
 
 \begin{center}
 \includegraphics[height=3in]{stack-rings1.png}
@@ -10,27 +31,11 @@ For convenience, we draw ``stack'' diagrams upside down.
 \includegraphics[height=3in]{stack1.pdf}
 \end{center}
 
-\begin{center}
-Note: The signature for \java{System.out.println} is ~\java{public void println(String x)}.
-\end{center}
-
-\begin{javalst}
-    public static void printTime(int hour, int minute) {
-        System.out.println(hour + ":" + minute);
-    }
-    
-    public static void main(String[] args) {
-        int hour = 11;
-        int minute = 59;
-        printTime(12, 15);
-    }
-\end{javalst}
-
 
 \quest{15 min}
 
 
-\Q Based on the diagram, how many methods does the program call? \ans[5em]{Three}
+\Q Based on the diagram, how many methods does the program use? \ans[5em]{Three}
 \vspace{1ex}
 
 
@@ -38,11 +43,13 @@ Note: The signature for \java{System.out.println} is ~\java{public void println(
 \vspace{1ex}
 
 
-\Q How do stack diagrams extend the memory diagrams we've seen previously?
+\Q How are stack diagrams different from the memory diagrams we've seen previously?
 
 \begin{answer}[5em]
 There is a box for each method call, with the name of the method on the left.
-Note that reference types (like strings) are not stored ``on the stack'' --- the variables are part of the method, but the actual data is outside of the method.
+
+\medskip
+Notice that reference types (like strings) are not stored ``on the stack'' --- the variables are part of the method, but the actual data is stored outside of the method.
 \end{answer}
 
 

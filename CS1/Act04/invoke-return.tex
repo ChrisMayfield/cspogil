@@ -8,7 +8,7 @@ The list of events on the right illustrates how the program runs.
 
 \begin{minipage}{0.68\textwidth}
 \begin{javabox}
-public class Model {
+public class Print {
     
     public static void main(String[] args) {
         System.out.println("First line.");
@@ -56,7 +56,7 @@ RETURN to line 7
 \end{minipage}
 
 
-\quest{15 min}
+\quest{10 min}
 
 
 \Q \label{lines}
@@ -70,7 +70,8 @@ How many times is \java{println} invoked when the program runs? \ans[10em]{Five 
 
 
 \Q For each \texttt{INVOKE} on the right, draw an arrow to the corresponding line of code.
-(Plan ahead so that crossing lines will still be legible.) %\ans{There should be 9 lines total.}
+(Plan ahead or use different colors so that crossing lines will be legible.)
+\note{There should be 9 lines total.}
 \vspace{1em}
 
 
@@ -88,15 +89,15 @@ Second line.\n
 \end{answer}
 
 
-\Q When Java sees a name like \java{x}, \java{count}, or \java{newLine}, how can it tell whether it's a variable or a method? (Hint: syntax)
+\Q When the Java compiler sees a name like \java{x}, \java{count}, or \java{newLine}, how can it tell whether it's a variable or a method? (Hint: syntax)
 
 \begin{answer}[5em]
 Methods have parentheses, and variables do not.
-They are similar to functions in math  : when you see $g(x)$, you know that $g$ is a function and $x$ is a variable.
+Methods are similar to functions in math: when you see $g(x)$, you know that $g$ is a function and $x$ is a variable.
 \end{answer}
 
 
-\Q What is the difference between a method and a variable? What do they have in common?
+\Q What is the difference between a method and a variable?
 
 \begin{answer}[5em]
 All computer programs, regardless of language, consist of \emph{code} and \emph{data}.

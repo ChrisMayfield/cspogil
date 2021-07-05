@@ -2,10 +2,10 @@
  * Geometric shape defined by a radius value.
  */
 public class Circle {
-    
+
     /** The radius of the circle. */
     private double radius;
-    
+
     /**
      * Constructs a circle with the given radius.
      * 
@@ -14,7 +14,7 @@ public class Circle {
     public Circle(double radius) {
         setRadius(radius);
     }
-    
+
     /**
      * Gets the radius value (accessor method).
      * 
@@ -23,7 +23,7 @@ public class Circle {
     public double getRadius() {
         return this.radius;
     }
-    
+
     /**
      * Sets the radius value (mutator method).
      * 
@@ -32,12 +32,11 @@ public class Circle {
     public void setRadius(double radius) {
         if (radius >= 0) {
             this.radius = radius;
-        }
-        else {
+        } else {
             this.radius = 0;
         }
     }
-    
+
     /**
      * Calculates the area.
      * 
@@ -46,7 +45,7 @@ public class Circle {
     public double area() {
         return Math.PI * this.radius * this.radius;
     }
-    
+
     /**
      * Calculates the circumference.
      * 
@@ -55,23 +54,20 @@ public class Circle {
     public double circumference() {
         return 2.0 * Math.PI * this.radius;
     }
-    
+
     /**
      * Example application that declares, instantiates, and prints circles.
      * 
-     * @param args command line arguments
+     * @param args command-line arguments
      */
     public static void main(String[] args) {
-        Circle small;
-        Circle big;
-        
-        small = new Circle(1);
-        System.out.println("small area = " + small.area());
-        System.out.println("small circ = " + small.circumference());
-        
-        big = new Circle(2);
-        System.out.println("big area = " + big.area());
-        System.out.println("big circ = " + big.circumference());
+        Circle one = new Circle(1);
+        System.out.println("one area = " + one.area());
+        System.out.println("one circ = " + one.circumference());
+
+        Circle two = new Circle(2);
+        System.out.println("two area = " + two.area());
+        System.out.println("two circ = " + two.circumference());
     }
-    
+
 }

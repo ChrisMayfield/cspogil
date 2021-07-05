@@ -1,0 +1,58 @@
+\Q Why are the results different when swapping integers and swapping objects?
+
+\begin{answer}[14em]
+\begin{minipage}{190pt}
+
+\begin{javaans}
+BEFORE swap:
+a = 7
+b = 4
+    Inside swapInts
+    swapping integers 7 and 4
+    finished swapping 4 and 7
+AFTER swap:
+a = 7
+b = 4
+\end{javaans}
+
+\end{minipage}
+\hspace{1em}
+\begin{minipage}{290pt}
+
+\begin{javaans}
+BEFORE swap:
+first = Circle(7)
+second = Circle(4)
+	Inside swapCircles
+	swapping circles Circle(7) and Circle(4)
+	finished swapping Circle(4) and Circle(7)
+AFTER swap:
+first = Circle(4)
+second = Circle(7)
+\end{javaans}
+
+\end{minipage}
+\begin{javaans}
+This program created 2 circles
+\end{javaans}
+\end{answer}
+
+
+\newpage
+
+\begin{center}
+\large\bf SwapCircle.java
+\vspace{-4pt}
+\end{center}
+
+\jafile{SwapCircle.java}
+
+
+\newpage
+
+\begin{center}
+\large\bf SwapDriver.java
+\vspace{-4pt}
+\end{center}
+
+\jafile{SwapDriver.java}

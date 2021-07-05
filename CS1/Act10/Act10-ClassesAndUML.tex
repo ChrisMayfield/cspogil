@@ -5,7 +5,7 @@
 
 \title{Classes and UML}
 \author{Chris Mayfield and Helen Hu}
-\date{Fall 2019}
+\date{Summer 2021}
 
 \input{../../cspogil.sty}
 
@@ -13,13 +13,15 @@
 
 \maketitle
 
-Previously we explored how classes define attributes and methods.
-Static variables and methods apply to the whole class, whereas non-static variables and methods apply to specific objects.
+When you define a class in Java, you are designing a new type of object.
+Each object has its own copy of the variables and methods in the class.
+
+\rolenames
 
 \guide{
-  \item Define the terms: attribute, method, constructor, instance.
+  \item Define the terms: attribute, method, constructor, scope.
   \item Implement non-static methods based on a UML diagram.
-  \item Distinguish between static, instance, parameter, and local variables.
+  \item Distinguish static, instance, parameter, and local variables.
 }{
   \item Writing method signatures exactly as shown in a UML diagram. (Information Processing)
 }{
@@ -29,12 +31,13 @@ Some students may incorrectly write \texttt{int lucky}, and if that happens, hav
 For reporting out, have presenters of neighboring teams compare their answers and ask questions as needed.
 
 \ref{circle-class.tex} asks students to implement a \texttt{Circle} class, one method at a time.
-After they complete \ref{circmain}, show Circle.java on the projector and step through the code beginning from \texttt{main}.
-It may be helpful to use \href{http://pythontutor.com/java.html}{Java Tutor} to illustrate how \texttt{Circle} objects are created on the heap.
+Make sure they write the complete method definition, not just the method body.
+After students complete \ref{circmain}, show \textit{Circle.java} on the projector and step through the code beginning from \texttt{main}.
+It may be helpful to use \href{https://cscircles.cemc.uwaterloo.ca/java_visualize/}{Java Visualizer} to illustrate how \texttt{Circle} objects are created.
 
-\ref{variable-scope.tex} presents a slightly different circle class named \texttt{SwapCircle}.
-Have students work through the first questions as quickly as possible so they can spend time on \ref{predict}.
-You'll need about ten minutes at the end of class to walk students through the solution, again using Java Tutor or similar tool.
+\ref{variable-scope.tex} presents a slightly different circle implementation named \texttt{SwapCircle}.
+Have students work through the first questions as quickly as possible so they can spend time on \ref{summary}.
+You'll need about ten minutes at the end of class to walk students through the solution, again using Java Visualizer or a similar tool.
 }
 
 \input{die-class.tex}

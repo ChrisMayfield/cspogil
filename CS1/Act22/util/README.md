@@ -1,5 +1,5 @@
-Package: openjdk-8-source
-Version: 8u131-b11-0ubuntu1.16.04.2
+Package: openjdk-11-source
+Version: 11.0.11+9-Ubuntu-0ubuntu2.20.04
 
 This package contains the Java programming language source files
 (src.zip) for all classes that make up the Java core API.

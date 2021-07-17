@@ -1,0 +1,40 @@
+% comment out for student version
+\ifdefined\Student\relax\else\def\Teacher{}\fi
+
+\documentclass[12pt]{article}
+
+\title{Arrays of Arrays}
+\author{Chris Mayfield, Helen Hu, and Dee Weikle}
+\date{Summer 2021}
+
+\input{../../cspogil.sty}
+
+\begin{document}
+
+\maketitle
+
+In Java, a multidimensional array is an array whose elements are themselves arrays.
+You can declare an ``array of arrays'' by using two or more sets of brackets, such as \java{String[][]}.
+
+\rolenames
+
+\guide{
+  \item Write nested for loops to traverse a two-dimensional array.
+  \item Explain differences between rectangular and ragged arrays.
+  \item Use two-dimensional arrays to model real-world problems.
+}{
+  \item Rewriting a group of repetitive statements as a for loop. (Information Processing)
+}{
+Make sure students have access to the source code.
+
+Encourage the presenters and recorders to work together on the second half of \ref{model1.tex}.
+For example, the presenter can direct message the final code to the recorder, or the recorder can simply retype everything the presenter does in real time.
+
+Key questions: \ref{key1} and \ref{key2}
+}
+
+\input{model1.tex}
+\clearpage
+\input{model2.tex}
+
+\end{document}

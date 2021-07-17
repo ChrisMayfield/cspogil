@@ -104,7 +104,7 @@
 \lstnewenvironment{javalst}{\lstset{style=morejava,backgroundcolor=}}{}
 \lstnewenvironment{javanum}{\lstset{style=morejava,backgroundcolor=,numbers=left}}{}
 \lstnewenvironment{javabox}{\lstset{style=morejava,frame=single,numbers=left}\quote}{\endquote}
-\newcommand{\jafile}[1]{\lstinputlisting[style=morejava,backgroundcolor=,numbers=left]{#1}}
+\newcommand{\jafile}[1]{\lstinputlisting[style=morejava,backgroundcolor=,numbers=left]{src/#1}}
 
 % Python environments
 \newcommand{\pyth}[1]{\lstinline[style=morepython]{#1}}%[
@@ -113,7 +113,7 @@
 \lstnewenvironment{pythlst}{\lstset{style=morepython,backgroundcolor=}}{}
 \lstnewenvironment{pythnum}{\lstset{style=morepython,backgroundcolor=,numbers=left}}{}
 \lstnewenvironment{pythbox}{\lstset{style=morepython,frame=single,numbers=left}\quote}{\endquote}
-\newcommand{\pyfile}[1]{\lstinputlisting[style=morepython,backgroundcolor=,numbers=left]{#1}}
+\newcommand{\pyfile}[1]{\lstinputlisting[style=morepython,backgroundcolor=,numbers=left]{src/#1}}
 
 % PDF properties
 \usepackage[pdftex]{hyperref}

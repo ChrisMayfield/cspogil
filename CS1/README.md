@@ -27,10 +27,10 @@ Course website: https://w3.cs.jmu.edu/mayfiecs/cs149/
 ## Activities 13--24
 Course website: https://w3.cs.jmu.edu/mayfiecs/cs159/
 
-* [Linked Structures](Act18)
+* [Linked Structures](Act22)
 
 ## Mini Activities
 
-* The [Honor](Honor) folder includes case studies of cheating on CS assignments.
+* The [Honor](Honor) folder includes case studies of cheating on assignments.
 * The [Meta](Meta) folder includes meta activities for team building and buy-in.
 * The [Other](Other) folder includes shorter, optional activities to review topics.

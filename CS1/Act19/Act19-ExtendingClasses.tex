@@ -1,0 +1,47 @@
+% comment out for student version
+\ifdefined\Student\relax\else\def\Teacher{}\fi
+
+\documentclass[12pt]{article}
+
+\title{Extending Classes}
+\author{Chris Mayfield}
+\date{Summer 2021}
+
+\input{../../cspogil.sty}
+
+\begin{document}
+
+\maketitle
+
+The \java{extends} keyword allows you to define a new class based on an existing class.
+This way, you can define new versions of classes without having to copy and paste their source code.
+
+\rolenames
+
+\guide{
+  \item Explain what it means for one class to extend another.
+  \item Summarize uses of the keywords \java{extends} and \java{super}.
+  \item Write a new method for an existing Java library class.
+}{
+  \item Making conclusions based on IDE hints and program output. (Critical Thinking)
+}{
+Provide teams with \textit{MyBigInt.java} before the activity begins.
+
+Prevent students from spending too much time on \ref{count1} and \ref{count2}.
+
+Highlight important aspects of the source code for BigInteger.
+
+Mention that BigInteger extends Number which extends Object.
+
+Introduce ``is a'' and ''has a'' terminology when reporting out.
+
+Key questions: \ref{key1}, \ref{key2}, and \ref{key3}
+}
+
+\input{model1.tex}
+\clearpage
+\input{model2.tex}
+%\clearpage
+%\input{model3.tex}
+
+\end{document}

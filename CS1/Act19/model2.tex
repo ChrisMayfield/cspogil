@@ -1,0 +1,136 @@
+\model{Adding New Methods}
+
+Add the following method to the \java{MyBigInt} class:
+
+\begin{quote}
+\begin{javalst}
+public MyBigInt reverse() {
+    String str = super.toString();
+    final int N = str.length();
+
+    // reverse the digits in the string
+    StringBuilder sb = new StringBuilder(N);
+    for (int i = 0; i < N; i++) {
+        int j = N - 1 - i;
+        sb.append(str.charAt(j));
+    }
+    return new MyBigInt(sb.toString());
+}
+\end{javalst}
+\end{quote}
+
+Add the following code to the \java{main} method:
+
+\begin{quote}
+\begin{javalst}
+BigInteger bi1 = new BigInteger("12345678");
+MyBigInt bi2 = new MyBigInt("12,345,678");
+System.out.println(bi1.reverse());
+System.out.println(bi2.reverse());
+\end{javalst}
+\end{quote}
+
+
+\quest{20 min}
+
+
+\Q Attempt to compile and run the program. Explain the error in \java{main}.
+
+\begin{answer}
+The method \java{reverse()} is undefined for the type \java{BigInteger}.
+It was defined only in the \java{MyBigInt} class.
+\end{answer}
+
+
+\Q Remove the line that caused the error, and run the program.
+What is the result?
+
+\begin{answer}[2em]
+87,654,321
+\end{answer}
+
+
+\Q Which \java{toString} method (in which class) is invoked on the first line of \java{reverse}?
+
+\begin{answer}[2em]
+\java{BigInteger.toString()}
+\end{answer}
+
+
+\Q Explain why \java{reverse()} does not need to worry about the placement of commas.
+
+\begin{answer}
+The string returned from \java{BigInteger.toString()} does not contain any commas.
+The commas are only added when \java{System.out.println} calls \java{MyBigInt.toString()}.
+\end{answer}
+
+
+\Q Consider a method \java{isPalindrome()} that determines whether a \java{MyBigInt} has the same digits forward and backward.
+For example, \java{123,321} and \java{12,321} are palindromes, but \java{123,421} and \java{12,341} are not.
+How could you implement this method using one line of code?
+
+\begin{javalst}
+public boolean isPalindrome() {
+\end{javalst}
+
+\vspace{-1ex}
+\begin{answer}[1em]
+\begin{javaans}
+    return this.equals(this.reverse());  // note: "this." is optional
+\end{javaans}
+\end{answer}
+\vspace{-1ex}
+
+\begin{javalst}
+}
+\end{javalst}
+
+
+\Q Why is the one-line implementation inefficient, especially for very large integers?
+
+\begin{answer}
+It converts the integer to a string, then it makes a copy of the string, and then it copies the string into a new \java{MyBigInt}.
+The two extra copies are unnecessary just for checking digits.
+\end{answer}
+
+
+\Q \label{key3}
+Rewrite \java{isPalindrome()} to be more efficient.
+(\textit{Hint:} Use the source code of \java{reverse()} as a starting point.)
+
+\begin{javalst}
+public boolean isPalindrome() {
+\end{javalst}
+
+\begin{answer}[18em]
+\begin{javaans}
+    String str = super.toString();
+    final int N = str.length();
+
+    // check each pair of digits
+    for (int i = 0; i < N / 2; i++) {
+        int j = N - 1 - i;
+        if (str.charAt(i) != str.charAt(j)) {
+            return false;
+        }
+    }
+    return true;
+\end{javaans}
+\end{answer}
+
+\begin{javalst}
+}
+\end{javalst}
+
+
+\Q Add your solution to \textit{MyBigInt.java}, and make sure it works.
+What code can you add to \java{main} to test the \java{isPalindrome} method?
+
+\begin{answer}[8em]
+\begin{javaans}
+System.out.println(new MyBigInt("123321").isPalindrome());
+System.out.println(new MyBigInt("12321").isPalindrome());
+System.out.println(new MyBigInt("123421").isPalindrome());
+System.out.println(new MyBigInt("12341").isPalindrome());
+\end{javaans}
+\end{answer}

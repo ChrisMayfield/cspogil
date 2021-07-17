@@ -1,0 +1,62 @@
+\model{java.lang.Object}
+
+Consider the following source code from the \java{Object} class:
+
+\begin{quote}
+\begin{javalst}
+public boolean equals(Object obj) {
+    return (this == obj);
+}
+
+public native int hashCode();  // returns the object's memory address
+
+public String toString() {
+    return getClass().getName() + "@" + Integer.toHexString(hashCode());
+}
+\end{javalst}
+\end{quote}
+
+
+
+
+\quest{10 min}
+
+
+\Q Explain what the default implementation of \java{equals} does.
+
+\begin{answer}[3em]
+It returns whether the references of two objects are the same.
+\end{answer}
+
+
+\Q Explain what the default implementation of \java{toString} does.
+
+\begin{answer}[3em]
+It prints the name of the classed, followed by \jans{"@"}, followed by the memory address in hexadecimal format.
+\end{answer}
+
+
+\Q Explain why the following code outputs \texttt{[I@7440e464} instead of \texttt{\{1, 2, 3\}}.
+
+\begin{javalst}
+int[] a = {1, 2, 3};
+System.out.println(a);
+\end{javalst}
+
+\begin{answer}[3em]
+Arrays do not provide a \java{toString} method, so they inherit the \java{Object.toString} method, which simply displays the memory address.
+\end{answer}
+
+
+\Q Explain why the following code outputs \texttt{false}, even though the two arrays have the exact same values.
+
+\begin{javalst}
+int[] a = {1, 2, 3};
+int[] b = {1, 2, 3};
+System.out.println(a.equals(b));
+\end{javalst}
+
+\begin{answer}[3em]
+The two array objects are at different memory locations.
+Because arrays do not provide an \java{equals} method, they inherit the \java{Object.equals} method, which only compares references.
+\end{answer}

@@ -1,0 +1,50 @@
+% comment out for student version
+\ifdefined\Student\relax\else\def\Teacher{}\fi
+
+\documentclass[12pt]{article}
+
+\title{Memory Diagrams}
+\author{Chris Mayfield}
+\date{Summer 2021}
+
+\input{../../cspogil.sty}
+
+\begin{document}
+
+\maketitle
+
+When tracing code by hand, it's helpful to draw a picture to keep track of variables, methods, and objects.
+Memory diagrams represent the state of a program at a particular moment in time.
+
+\rolenames
+
+\guide{
+  \item Describe primitive values and references in a memory diagram.
+  \item Draw memory diagrams that have variables, arrays and objects.
+  \item Summarize differences between variables, arrays, and objects.
+}{
+  \item Leveraging prior knowledge and experience of other students. (Teamwork)
+}{
+Discussion:
+\\ $*$ Variables -- all boxes are the "same" size (8 bytes or less)
+\\ $*$ Pass int to a method, and it doesn't get changed in main
+\\ $*$ Pass array to a method, and it gets changed (same object)
+
+Misconceptions:
+\\ $*$ Cannot have a reference to a variable (on the stack or heap)
+\\ $*$ Assigning variable does not create a new box (only declaring)
+\\ $*$ Assigning reference does not create a new object (only "new")
+
+Note on strings:
+\\ $*$ Shorthand -- for convenience, objects may be drawn toString
+
+Key questions: \ref{key1}, \ref{key2}, \ref{key3}
+}
+
+\input{model1.tex}
+\clearpage
+\input{model2.tex}
+\clearpage
+\input{model3.tex}
+
+\end{document}

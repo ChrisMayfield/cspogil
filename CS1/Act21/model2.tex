@@ -1,0 +1,107 @@
+\model{Abstract Methods}
+
+The \java{abstract} keyword can be used to declare methods that have no body.
+%These methods must be overridden in subclasses.
+Classes with abstract methods must also be defined as abstract.
+
+\begin{quote}
+\begin{javalst}
+public abstract class LoudToy {
+    private int volume;
+
+    public LoudToy(int volume) {
+        this.volume = volume;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+        makeNoise();
+    }
+
+    public abstract void makeNoise();
+}
+\end{javalst}
+\end{quote}
+
+
+\quest{15 min}
+
+
+\Q Summarize the differences between \ref{\currfilename} and your answer to \ref{LoudToyV1}.
+
+\begin{answer}
+The class and the \java{makeNoise} method are declared as abstract.
+The definition of \java{makeNoise} ends with a semicolon, rather than an empty body \verb|{}|.
+\end{answer}
+
+
+\Q Open \textit{LoudToy.java} (from \ref{\currfilename}) in your IDE.
+Remove the word \java{abstract} from the class definition.
+What are the two compiler errors?
+
+\begin{answer}
+The type LoudToy must be an abstract class to define abstract methods. \\[1ex]
+The abstract method makeNoise in type LoudToy can only be defined by an abstract class.
+\end{answer}
+
+
+\Q Replace the word \java{abstract} in the class definition, and then remove the word \java{abstract} from the method definition.
+What is the compiler error now?
+
+\begin{answer}
+This method requires a body instead of a semicolon.
+\end{answer}
+
+
+\Q Remove the definition of \java{makeNoise} altogether, and notice the compiler error.
+Why is it necessary to declare this method in \java{LoudToy}?
+
+\begin{answer}[3em]
+The \java{setVolume} method calls the \java{makeNoise} method.
+\end{answer}
+
+
+\Q Undo all changes in \textit{LoudToy.java}, and add the following \java{main} method.
+What is the compiler error message?
+Why do you think Java doesn't allow you to construct a \java{LoudToy}?
+
+\begin{javalst}
+public static void main(String[] args) {
+    LoudToy toy1 = new LoudToy(1);
+    toy1.makeNoise();
+}
+\end{javalst}
+
+\begin{answer}
+The compiler says, ``Cannot instantiate the type LoudToy.''
+Abstract classes cannot be instantiated, because some of their methods aren't implemented.
+\end{answer}
+
+
+\Q Open \textit{ToySheep.java} and rename \java{makeNoise} to \java{makeNoise2}.
+What is the compiler error?
+
+\begin{answer}[3em]
+The type ToySheep must implement the inherited abstract method LoudToy.makeNoise().
+\end{answer}
+
+
+\Q Rename the method back to \java{makeNoise}, but change \java{void} to \java{int}.
+What is the error now?
+
+\begin{answer}[3em]
+The return type is incompatible with LoudToy.makeNoise().
+\end{answer}
+
+
+\Q \label{key2}
+Explain how an abstract method is like a contract.
+
+\begin{answer}[5em]
+If you inherit an abstract class, you must override the abstract methods exactly as defined.
+This is important because they might be called in the code of the abstract class.
+\end{answer}

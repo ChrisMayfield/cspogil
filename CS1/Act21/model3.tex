@@ -1,0 +1,115 @@
+\model{Java Interfaces}
+
+An interface is similar to an abstract class, except that all methods are automatically \java{public} and \java{abstract}.
+Likewise, all fields are automatically \java{public}, \java{static}, and \java{final}.
+These keywords are omitted in the interface definition.
+
+\begin{quote}
+\begin{javalst}
+public interface Rechargeable {
+    int MAX_CHARGE = 10;
+
+    int getCharge();
+
+    void recharge();
+}
+\end{javalst}
+\end{quote}
+
+Classes do not extend interfaces; they implement them:
+
+\begin{quote}
+\begin{javalst}
+public class CellPhone implements Rechargeable {
+    private int chargeLevel;
+    private int volume;
+
+    public CellPhone(int chargeLevel, int volume) {
+        this.chargeLevel = chargeLevel;
+        this.volume = volume;
+    }
+
+    public int getCharge() {
+        return chargeLevel;
+    }
+
+    public void recharge() {
+        chargeLevel = MAX_CHARGE;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
+    public void makeCall() {
+        System.out.println("Ring... Hello?");
+    }
+}
+\end{javalst}
+\end{quote}
+
+
+\quest{15 min}
+
+\Q What two methods are required by \java{Rechargeable}?
+
+\begin{answer}[2em]
+getCharge() and recharge()
+\end{answer}
+
+
+\Q Modify your \textit{ToyRobot.java} to implement the \java{Rechargeable} interface.
+What changes did you need to make?
+
+\begin{answer}[5em]
+1. Add ``implements Rechargeable'' to the class definition. \\[1ex]
+2. Define a getCharge method (copied it from CellPhone). \\[1ex]
+3. Replaced 10 with \java{MAX_CHARGE} (constructor and recharge).
+\end{answer}
+
+
+\Q Consider the following \java{rechargeAll} method.
+What type of objects are stored in the list?
+
+\begin{javalst}
+public static void rechargeAll(ArrayList<Rechargeable> list) {
+    for (Rechargeable item : list) {
+        item.recharge();
+    }
+}
+\end{javalst}
+
+\begin{answer}[3em]
+It takes any type of Rechargeable object, such as CellPhone or ToyRobot.
+\end{answer}
+
+
+\Q \label{key3}
+Consider the following \java{main} method.
+Explain the significance of storing \java{ToyRobot} and \java{CellPhone} objects in the same \java{ArrayList} when calling \java{rechargeAll}.
+
+\begin{javalst}
+public static void main(String[] args) {
+    ArrayList<Rechargeable> items = new ArrayList<>();
+    items.add(new ToyRobot());
+    items.add(new CellPhone(4, 5));
+    rechargeAll(items);
+}
+\end{javalst}
+
+\begin{answer}[5em]
+The power of polymorphism through interfaces!
+The rechargeAll method can operate on ToyRobots and CellPhones even though they are not related through inheritance.
+\end{answer}
+
+
+\Q Explain how an interface is like a contract.
+
+\begin{answer}
+An interface is a data type that is guaranteed to have specific methods.
+Classes that implement an interface must provide those methods.
+\end{answer}

@@ -1,0 +1,54 @@
+% comment out for student version
+\ifdefined\Student\relax\else\def\Teacher{}\fi
+
+\documentclass[12pt]{article}
+
+\title{Recursive Drawings}
+\author{Chris Mayfield}
+\date{Summer 2021}
+
+\input{../../cspogil.sty}
+
+\begin{document}
+
+\maketitle
+
+A recursive method is one that calls itself, usually with an increasing or decreasing argument.
+In this activity, you will trace the execution of recursive methods that draw 2D graphics.
+
+\rolenames
+
+\guide{
+  \item Use the Java 2D API to draw a repeating pattern on shapes.
+  \item Explain how base cases and recursive calls affect execution.
+  \item Identify similarities and differences in recursive methods.
+}{
+  \item Tracing the flow of execution using print statements. (Information Processing)
+}{
+Make sure that teams spend no more than five minutes on the first question of each model.
+They will need time to set up and run the program, but they should use the questions to guide their discussion about the code.
+
+Point out that \ref{model1.tex} is a warm-up to become familiar with the provided code.
+There is no recursion yet, just standard Java 2D graphics.
+Remind students that $(0,0)$ is at the upper-left corner of the \java{Drawing}.
+Show students how to terminate the program and avoid leaving old \java{Drawing} windows open in the background.
+
+%This activity includes questions to review Java-specific details about inheritance.
+%On \ref{model2.tex}, help students avoid getting stuck on the \java{main} method.
+
+At the beginning on \ref{model2.tex}, briefly explain how \java{VeeTree} inherits from \java{Drawing} and overrides the \java{draw()} method.
+Because there is no constructor defined in \textit{VeeTree.java}, the the compiler automatically generates one that invokes \jans{super()}.
+Recommend that students change the \jans{DELAY} constant to 250 ms for this drawing.
+
+After \ref{model3.tex}, point out that it's very common for classes to have a public non-recursive method that calls a private recursive method.
+
+Key questions: \ref{key1}, \ref{key2}, and \ref{key3}
+}
+
+\input{model1.tex}
+\clearpage
+\input{model2.tex}
+\clearpage
+\input{model3.tex}
+
+\end{document}

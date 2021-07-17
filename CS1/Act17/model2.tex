@@ -1,0 +1,156 @@
+\model{Attributes and Methods}
+
+Here is a new and improved version of the \java{enum} from \ref{model1.tex}.
+Read and discuss the following source code as a team.
+
+\medskip
+
+\begin{javabox}
+public enum Month {
+
+    JAN("January", 31),
+    FEB("February", 28),
+    MAR("March", 31),
+    APR("April", 30),
+    MAY("May", 31),
+    JUN("June", 30),
+    JUL("July", 31),
+    AUG("August", 31),
+    SEP("September", 30),
+    OCT("October", 31),
+    NOV("November", 30),
+    DEC("December", 31);
+
+    private final String name;
+    private final int days;
+
+    private Month(String name, int days) {
+        this.name = name;
+        this.days = days;
+    }
+
+    public int length() {
+        return days;
+    }
+
+    public int number() {
+        return ordinal() + 1;
+    }
+
+    public static Month parseMonth(String name) {
+        String abbr = name.substring(0, 3);
+        return valueOf(abbr.toUpperCase());
+    }
+
+    public String toString() {
+        return name;
+    }
+
+}
+\end{javabox}
+
+
+\quest{20 min}
+
+
+\Q What are the attributes of a \java{Month} object?
+
+\begin{answer}[3em]
+The \jans{name} of a month, and the number of \jans{days} in a month.
+\end{answer}
+
+
+\Q Open the provided \textit{Month.java} file.
+Try changing the constructor to \java{public}.
+What compiler error results?
+
+\begin{answer}[3em]
+Illegal modifier for the enum constructor; only private is permitted.
+\end{answer}
+
+
+\Q \label{key3}
+Based on what you observed in \ref{model1.tex}, why do you think an \java{enum} constructor must be declared \java{private}?
+
+\begin{answer}
+Enum types may not be instantiated in other classes using the \jans{new} operator.
+However, they may be instantiated within the enum definition itself.
+\end{answer}
+
+
+\Q On which lines is the \java{Month} constructor called in \ref{\currfilename}?
+
+\begin{answer}[3em]
+Lines 3--14, where the \java{Month} constants are defined.
+\end{answer}
+
+
+\Q Other than \java{substring} and \java{toUpperCase}, what methods are called in \ref{\currfilename} that are not explicitly defined in \textit{Month.java}?
+
+\begin{answer}[3em]
+The \java{ordinal} method (on Line 29) and the \java{valueOf} method (on Line 34).
+\end{answer}
+
+
+\Q The \java{number} method returns the numeric value of the month (i.e., \java{1} for January or \java{12} for December).
+Explain how the implementation works.
+
+\begin{answer}
+The \java{ordinal} method returns the month's position in the enum declaration, which is a number from 0 to 11.
+Adding one to this number yields the desired result.
+\end{answer}
+
+
+\Q The \java{parseMonth} method returns the \java{Month} that corresponds to the provided name.
+Explain how the implementation works.
+
+\begin{answer}
+It gets the first three letters of the given name and converts them to uppercase.
+Then it uses the \java{valueOf} method to get the corresponding \java{Month} constant.
+\end{answer}
+
+
+\Q \label{HelpV1}
+Open the provided \textit{MonthHelp.java} file, and discuss the code as a team.
+Write additional code that displays the full name and number of days in the month input by the user.
+For example, if the user inputs \,\verb|Sept.|, output the message \,\verb|September has 30 days|.
+
+\begin{answer}[6em]
+\begin{javaans}
+Month m = Month.parseMonth(line);
+System.out.printf("%s has %d days\n", m, m.length());
+\end{javaans}
+\end{answer}
+
+
+\Q Implement a new method named \java{parseMonth(int number)} that returns the month for the given integer.
+For example, \java{parseMonth(1)} would return \java{JAN}, \java{parseMonth(2)} would return \java{FEB}, and so forth.
+(\textit{Hint:} Use \java{values}.)
+
+\begin{answer}[6em]
+\begin{javaans}
+public static Month parseMonth(int number) {
+    return values()[number - 1];
+}
+\end{javaans}
+\end{answer}
+
+
+\Q \label{key4}
+Extend your code from \ref{HelpV1} to use both versions of \java{parseMonth}.
+If the user inputs a month name or 3-letter abbreviation, call the string version.
+If the user inputs a month number, call the integer version.
+(\textit{Hint:} Use \java{line.length()} and \java{Integer.parseInt(line)}.)
+
+\begin{answer}[12em]
+\begin{javaans}
+Month m;
+if (line.length() > 2) {
+    m = Month.parseMonth(line);
+} else {
+    int number = Integer.parseInt(line);
+    m = Month.parseMonth(number);
+}
+System.out.printf("%s has %d days\n", m, m.length());
+\end{javaans}
+\end{answer}

@@ -1,0 +1,41 @@
+% comment out for student version
+\ifdefined\Student\relax\else\def\Teacher{}\fi
+
+\documentclass[12pt]{article}
+
+\title{Enum Types}
+\author{Chris Mayfield}
+\date{Summer 2021}
+
+\input{../../cspogil.sty}
+
+\begin{document}
+
+\maketitle
+
+An \java{enum} is a special data type that defines a fixed set of constants.
+Enums are a good choice when you can \textit{enumerate} all possible values at compile time.
+
+\rolenames
+
+\guide{
+  \item Explain and apply the methods provided by an enum type.
+  \item Summarize the main differences between classes and enums.
+  \item Implement an enum that includes attributes and methods.
+}{
+  \item Discussing results while running code interactively. (Oral Communication)
+}{
+\ref{model1.tex}: Remind students how to use JShell, especially tab completion and the up/down arrow keys.
+Encourage students to predict and discuss the results as a team while they run each line of code in JShell.
+
+\ref{model2.tex}: Distribute the source files \textit{Month.java} and \textit{MonthHelp.java} in advance.
+Notice that these files contain additional code than is in the model.
+
+Key questions: \ref{key1}, \ref{key2}, \ref{key3}, \ref{key4}
+}
+
+\input{model1.tex}
+\clearpage
+\input{model2.tex}
+
+\end{document}

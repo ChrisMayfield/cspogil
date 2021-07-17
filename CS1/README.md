@@ -33,4 +33,4 @@ Course website: https://w3.cs.jmu.edu/mayfiecs/cs159/
 
 * The [Honor](Honor) folder includes case studies of cheating on assignments.
 * The [Meta](Meta) folder includes meta activities for team building and buy-in.
-* The [Other](Other) folder includes shorter, optional activities to review topics.
+* The [Other](Other) folder includes shorter, optional activities on other topics.

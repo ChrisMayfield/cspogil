@@ -6,8 +6,8 @@ Each element of the list is called a \emph{node}.
 \vspace{1ex}
 \begin{minipage}{0.40\linewidth}
 \begin{javalst}
-    public class Node
-    {
+    public class Node {
+
         private int value;
         private Node next;
         ...
@@ -43,13 +43,13 @@ This organization allows fast insertions/deletions near the beginning. For examp
 \end{minipage}
 \vspace{1em}
 
-Instead of working with nodes directly, we can design a wrapper class to handle list logic:
+Instead of working with nodes directly, we can design a wrapper class to implement a list:
 
 \vspace{1ex}
 \begin{minipage}{0.40\linewidth}
 \begin{javalst}
-    public class MyList
-    {
+    public class MyList {
+
         private int size;
         private Node head;
         ...
@@ -72,21 +72,21 @@ Instead of working with nodes directly, we can design a wrapper class to handle 
 \quest{15 min}
 
 
-\Q How many assignment operations are required to add 14 {\it at the front} of an empty list? Note that creating a \java{Node} takes two assignments (one for \java{value} and one for \java{next}).
+\Q In \java{MyList}, how many assignment operations are required to add 14 {\it at the front} of an empty list? Note that creating a \java{Node} takes two assignments (one for \java{value} and one for \java{next}).
 
-\begin{answer}
-3 operations: 1 to assign the \java{value}, 1 to assign null to \java{next}, and 1 to assign the reference of the new Node to the head variable (node3 in this case).
+\begin{answer}[3em]
+3 operations: 1 to assign the \java{value}, 1 to assign null to \java{next}, and 1 to assign the reference of the new Node to the head variable.
 \end{answer}
 
 
-\Q How many operations are required to add 22 at the front, after 14 and 6 have been added?
+\Q In \java{MyList}, how many operations are required to add 22 at the front, after 14 and 6 have been added?
 
-\begin{answer}
-Still just 3, in fact the same as the first insert. Note that no shifting is required.
+\begin{answer}[3em]
+Still just 3, in fact the same as the first insert. Notice that no shifting is required.
 \end{answer}
 
 
-\Q Using this model, how many operations are required to add another element {\it at the end} of the current list?
+\Q How many operations are required to add an element {\it at the end} of \java{MyList} with 3 elements?
 
 \begin{answer}[3em]
 5 operations: 3 to find where the new element goes (by following references to the end of the list), one to create the new node, and one to change the reference of the previous last element.
@@ -106,38 +106,20 @@ At a conceptual level, array lists take up about half as much space as linked li
 \Q \label{LinksAreBad}
 Discuss why \java{LinkedList} is a poor choice of \java{List} in the program below.
 
-\vspace{1ex}
-\begin{javabox}
-import java.util.LinkedList;
-import java.util.List;
+\begin{quote}
+\jafile{LinksAreBad.java}
+\end{quote}
+\vspace{-1em}
 
-public class LinksAreBad
-{
-    public static void main(String[] args)
-    {
-        LinkedList<String> linkedList = new LinkedList<>();
+\begin{answer}
+Each insertion in the middle of the list takes $n/2$ operations (where $n$ is the current size of the list) in order to find the \java{next} references to assign.
+\end{answer}
 
-        System.out.println("LinkedList: ");
-        addAndGet(linkedList);
-        System.out.println("Done!");
-    }
 
-    public static void addAndGet(List<String> list)
-    {
-        for (int i = 0; i < 1000000; i++)
-        {
-            list.add("A");  // add at the end
-        }
+\Q \label{key3}
+If your program requires a \java{List} collection, how would you decide which implementation to use? (\java{ArrayList} vs ~\java{LinkedList})
 
-        for (int i = 0; i < 1000000; i++)
-        {
-            list.get(list.size() / 2);  // get the middle element
-        }
-    }
-}
-\end{javabox}
-\vspace{-1ex}
-
-\begin{answer}[3em]
-Each insertion in the middle of the list takes $n/2$ operations (where $n$ is the current size of the collection) in order to find the \java{next} references to assign.
+\begin{answer}
+If adding items at the end and accessing random elements, use ArrayList.
+If inserting items in the middle and only accessing at the two ends, use LinkedList.
 \end{answer}

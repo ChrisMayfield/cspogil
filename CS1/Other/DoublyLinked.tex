@@ -1,10 +1,28 @@
-\model{Doubly-Linked Lists}
+% comment out for student version
+\ifdefined\Student\relax\else\def\Teacher{}\fi
+
+\documentclass[12pt]{article}
+
+\title{Doubly-Linked Lists}
+\author{Chris Mayfield and Dee Weikle}
+\date{Summer 2021}
+
+\input{../../cspogil.sty}
+
+\begin{document}
+
+\maketitle
+
+% Learning objective:
+% \item Explain why Java's implementation of LinkedList is doubly-linked.
+
+%\model{Doubly-Linked Lists}
 
 Java's implementation of \java{LinkedList} stores two references in each node: one for the {\it previous}, and one for the {\it next}.
-In addition, both the head and the tail are stored.
+In addition, both the head and the tail are stored in the wrapper class.
 
 \begin{center}
-\includegraphics[scale=0.35]{figs/list4.png}
+\includegraphics[scale=0.35]{doubly-linked.png}
 \end{center}
 
 
@@ -33,7 +51,7 @@ Each element requires two references, so there is $N \times 8$ bytes of extra ov
 
 
 \Q \label{whydoubly}
-What problems of singly-linked lists do doubly-linked lists solve? (In other words, what do the \java{previous} and \java{tail} references make possible?)
+What problems of singly-linked lists do doubly-linked lists solve? (In other words, what do the \java{previous} and \java{tail} make possible?)
 
 \begin{answer}
 They allow for quick access to things at the end of the list, so adding/removing at either end is fast.
@@ -46,3 +64,13 @@ They also allow for the list to be traversed backwards.
 %\begin{answer}
 %Each has their pros and cons; it depends on how they're being used in a program and what the most common operations will be.
 %\end{answer}
+
+
+\Q If your program requires a \java{List} collection, how would you decide which implementation to use? (\java{ArrayList} vs ~\java{LinkedList})
+
+\begin{answer}
+If adding items at the end and accessing random elements, use ArrayList.
+If inserting items in the middle and only accessing at the two ends, use LinkedList.
+\end{answer}
+
+\end{document}

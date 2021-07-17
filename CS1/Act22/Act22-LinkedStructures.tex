@@ -5,7 +5,7 @@
 
 \title{Linked Structures}
 \author{Chris Mayfield and Dee Weikle}
-\date{Fall 2019}
+\date{Summer 2021}
 
 \input{../../cspogil.sty}
 
@@ -13,10 +13,10 @@
 
 \maketitle
 
-The \textit{Java Collections Framework} provides many useful interfaces, implementations (classes), and algorithms (methods).
-They all serve the same purpose: to store a collection of multiple objects.
-But each type of collection has its own trade-offs, and there is no one ``best solution'' for every storage problem.
-If arrays were good enough, Java wouldn't need a collections framework.
+The \textit{Java Collections Framework} provides many useful interfaces and implementations (classes). %, and algorithms (methods).
+They all serve the same purpose: to store a collection of objects.
+Each type of collection has its trade-offs, and there is no one ``best solution'' for every storage problem.
+%If arrays were good enough, Java wouldn't need a collections framework.
 
 %\medskip
 %Today you will learn one of the most fundamental concepts of data structures: whether to store elements in contiguous memory locations (arrays), or link elements together using references.
@@ -24,7 +24,6 @@ If arrays were good enough, Java wouldn't need a collections framework.
 \guide{
   \item Show the contents of a List after adding and removing elements.
   \item Summarize performance trade-offs for ArrayList and LinkedList.
-  \item Explain why Java's implementation of LinkedList is doubly-linked.
 }{
   \item Making connections between list diagrams and source code. (Information Processing)
 }{
@@ -37,16 +36,19 @@ Avoid discussing low-level details such as memory management and object overhead
 After reporting out \ref{ArraysAreBad} and \ref{LinksAreBad}, run one of them for about 10 seconds.
 Then terminate the program, change the list type in \java{main}, and rerun the program.
 
-At the end of \ref{doubly-linked.tex}, it is helpful to show the \github{CS1/Act18/util}{Java library source code} for List, ArrayList, and LinkedList.
+At the end of \ref{linked-lists.tex}, it is helpful to show the \github{CS1/Act18/util}{Java library source code} for List, ArrayList, and LinkedList.
 Help students make connections from the models in this activity to their actual implementation in Java.
-For example, you can display the private methods of LinkedList and ask presenters to discuss their team's answer to \ref{whydoubly}.
+For example, you can display the private methods of LinkedList and ask presenters to discuss their team's answer to \ref{LinksAreBad}.
+
+Key questions: \ref{key1}, \ref{key2}, and \ref{key3}
 
 \textbf{Acknowledgements:} The figures and source code in this activity are based on presentation materials by Nathan Sprague, and \ref{list-interface.tex} is based on a Lists activity by Clif Kussmaul.
 }
 
 \input{list-interface.tex}
+\clearpage
 \input{array-lists.tex}
+\clearpage
 \input{linked-lists.tex}
-\input{doubly-linked.tex}
 
 \end{document}

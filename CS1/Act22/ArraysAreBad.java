@@ -1,26 +1,20 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArraysAreBad
-{
-    public static void main(String[] args)
-    {
-        ArrayList<String> arrayList = new ArrayList<>();
-        
-        System.out.println("ArrayList: ");
-        addAndRemoveAtStart(arrayList);
+public class ArraysAreBad {
+
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        System.out.println("Start");
+        addAndRemove(list);
         System.out.println("Done!");
     }
-    
-    public static void addAndRemoveAtStart(List<String> list)
-    {
-        for (int i = 0; i < 1000000; i++)
-        {
+
+    public static void addAndRemove(List<String> list) {
+        for (int i = 0; i < 1000000; i++) {
             list.add(0, "A");  // add at index 0
         }
-        
-        for (int i = 0; i < 1000000; i++)
-        {
+        for (int i = 0; i < 1000000; i++) {
             list.remove(0);  // remove at index 0
         }
     }

@@ -1,0 +1,39 @@
+% comment out for student version
+\ifdefined\Student\relax\else\def\Teacher{}\fi
+
+\documentclass[12pt]{article}
+
+\title{Designing Classes}
+\author{C.~Mayfield, D.~Weikle, and N.~Sprague}
+\date{Summer 2021}
+
+\input{../../cspogil.sty}
+
+\begin{document}
+
+\maketitle
+
+When starting a software project, one of the first steps is to determine requirements.
+Next comes designing, which for object-oriented languages involves turning requirements into classes.
+
+\rolenames
+
+\guide{
+  \item Explain the differences between classes, objects, and their attributes.
+  \item Design a new class (in UML syntax) based on a general description.
+  \item Draw a UML diagram that consists of multiple interrelated classes.
+}{
+  \item Identifying attributes and data types that model a real-world object. (Problem Solving)
+}{
+Point out that classes can be used to represent objects in the real world (such as a picture, animal, person, or car). They can also be used to represent abstract concepts (such as a color, word, or Scanner, or StringBuilder). When designing classes for the first time, it is easier to consider objects in the real world. Identifying appropriate data fields for real world objects is more straightforward.
+
+Key questions: \ref{key1}, \ref{key2}, \ref{key3}
+}
+
+\input{model1.tex}
+\clearpage
+\input{model2.tex}
+\clearpage
+\input{model3.tex}
+
+\end{document}

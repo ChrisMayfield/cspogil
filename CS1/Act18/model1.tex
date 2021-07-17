@@ -1,0 +1,69 @@
+\model{Repair Shop}
+
+You have been asked to design software for a local automobile repair shop:
+
+\begin{quote}
+\slshape
+Wrench Craft, owned by Dean George, is an independent automobile repair shop in Harrisonburg, VA, specializing in repair of Asian import vehicles such as Honda, Toyota, Subaru, Nissan, Isuzu, Mitsubishi, Hyundai, and Mazda. If you'd like to arrange a time for us to service your car, just give us a call and we'll set you up with an appointment to get the work done. What could be more simple?
+
+\normalfont
+Source: \href{http://www.wrenchcraft.com/}{wrenchcraft.com}
+\end{quote}
+
+Among other things, the software needs to keep track of \emph{customers} (e.g., name, address, phone number), \emph{cars} (e.g., make, model, year), and \emph{invoices} (e.g., parts, labor, notes).
+
+\quest{15 min}
+
+
+\Q Identify all nouns in the description above.
+Don't worry about pronouns.
+List each noun only once (not every time it appears).
+Feel free to use an online tool like \href{https://parts-of-speech.info/}{parts-of-speech.info}.
+
+\begin{answer}[6em]
+software, automobile, repair, shop, Wrench, Craft, Dean, George, Harrisonburg, VA, import, vehicles, Honda, Toyota, Subaru, Nissan, Isuzu, Mitsubishi, Hyundai, Mazda, time, car(s), call, appointment, work, Source, wrenchcraft.com, track, customers, name, address, phone, number, make, model, year, invoices, parts, labor, notes
+\end{answer}
+
+
+\Q \label{relevant}
+Discuss which nouns are more likely to be relevant for designing software.
+For each relevant noun, determine whether it represents a class, an object, or an attribute:
+
+\begin{enumerate}[itemsep=0ex]
+
+\item Classes: \hfill
+\ans[33.5em]{Shop, Appointment, Customer, Car, Invoice, \ldots}
+
+\item Objects: \hfill
+\ans[33.5em]{Dean George, Harrisonburg, Honda, Toyota, \ldots}
+
+\item Attributes: \hfill
+\ans[33.5em]{name, address, phone number, make, model, year, parts, labor, notes}
+
+\end{enumerate}
+
+
+\Q \label{key1}
+Based on your discussion for \ref{relevant}, write a general definition for the following concepts:
+
+\begin{enumerate}[itemsep=0ex]
+
+\item Classes: \hfill
+\ans[33.5em]{General categories of real-world things}
+
+\item Objects: \hfill
+\ans[33.5em]{Examples (instances) of a particular category}
+
+\item Attributes: \hfill
+\ans[33.5em]{Characteristics (or values) of a real-world thing}
+
+\end{enumerate}
+
+
+\Q What other classes, objects, and attributes (not included in the description above) might be relevant for this software project?
+
+\begin{answer}
+Appointment (e.g., date, time, type) \\
+Inventory (e.g., part, quantity) \\
+Parts (e.g., number, name, cost) \\
+\end{answer}

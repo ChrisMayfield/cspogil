@@ -1,0 +1,127 @@
+\model{ArrayList Methods}
+
+Open the \href{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html}{ArrayList documentation} to answer questions about the following methods.
+The data type ``\java{E}'' refers to the type of elements in the ArrayList (e.g., \java{Integer}).
+
+\begin{center}
+\begin{tabularx}{\linewidth}{|p{68pt}|p{154pt}|X|}
+\hline
+  \tr Return Type
+& \tr Method
+& \tr Description
+\\ \hline
+  \java{boolean}
+& \java{add(E e)}
+& Appends the specified element to the end of this list.
+\\ \hline
+  \java{void}
+& \java{add(int index, E element)}
+& Inserts the specified element at the specified position in this list.
+\\ \hline
+  \java{E}
+& \java{get(int index)}
+& Returns the element at the specified position in this list.
+\\ \hline
+  \java{E}
+& \java{set(int index, E element)}
+& Replaces the element at the specified position in this list with the specified element.
+\\ \hline
+  \java{int}
+& \java{size()}
+& Returns the number of elements in this list.
+\\ \hline
+
+\end{tabularx}
+\end{center}
+
+
+
+\quest{15 min}
+
+
+\Q What value does the \java{add} method return?
+
+\begin{answer}[2em]
+\jans{true} (as specified by \jans{Collection.add(E)})
+\end{answer}
+
+
+\Q What value does the \java{set} method return?
+
+\begin{answer}[2em]
+the element previously at the specified position
+\end{answer}
+
+
+\Q What happens to existing elements when adding an element at a specified index?
+
+\begin{answer}[3em]
+Shifts the element currently at that position (if any) and any subsequent elements to the right (adds one to their indices).
+\end{answer}
+
+
+\Q What are the contents of \java{nums} after running the following code?
+
+\begin{javalst}
+ArrayList<Integer> nums;
+nums = new ArrayList<Integer>();
+nums.add(74);
+nums.add(21);
+nums.add(0, 11);
+nums.set(1, 59);
+\end{javalst}
+
+\begin{answer}[2em]
+[11, 59, 21]
+\end{answer}
+
+
+\newpage
+
+\Q \label{key3}
+The following program, found in \textit{Model3.java}, uses an array of ints.
+Rewrite the program to use an ArrayList instead.
+
+\vspace{1ex}
+
+\begin{javalst}
+import java.util.Arrays;
+
+public class Model3 {
+
+    public static void main(String[] args) {
+        final int N = 4;
+        int[] nums = new int[N];
+        for (int i = 0; i < N; i++) {
+            nums[i] = i + 1;
+        }
+        for (int i = 0; i < N; i++) {
+            nums[i] *= 5;
+        }
+        System.out.println(Arrays.toString(nums));
+    }
+
+}
+\end{javalst}
+
+\begin{answer}[22em]
+\begin{javaans}
+import java.util.ArrayList;
+
+public class Model3ans {
+
+    public static void main(String[] args) {
+        final int N = 4;
+        ArrayList<Integer> nums = new ArrayList<Integer>();
+        for (int i = 0; i < N; i++) {
+            nums.add(i + 1);
+        }
+        for (int i = 0; i < N; i++) {
+            nums.set(i, nums.get(i) * 5);
+        }
+        System.out.println(nums);
+    }
+
+}
+\end{javaans}
+\end{answer}

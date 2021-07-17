@@ -1,0 +1,159 @@
+\model{Example Code}
+
+The following examples are found in \textit{Model1.java}.
+Open this file on your computer, and run the program.
+Record the output of each example in the space below.
+
+\begin{multicols}{2}
+
+\begin{javanum}
+int[] nums;
+nums = new int[3];
+
+nums[0] = 74;
+nums[1] = 11;
+nums[2] = 21;
+
+System.out.println(nums.length);
+System.out.println(nums);
+\end{javanum}
+
+\vspace{1em}
+The output is:
+
+\begin{answer}[3em]
+\begin{javaans}
+3
+[I@7440e464
+\end{javaans}
+\end{answer}
+
+\columnbreak
+
+\begin{javanum}
+ArrayList<Integer> nums;
+nums = new ArrayList<Integer>();
+
+nums.add(74);
+nums.add(11);
+nums.add(21);
+
+System.out.println(nums.size());
+System.out.println(nums);
+\end{javanum}
+
+\vspace{1em}
+The output is:
+
+\begin{answer}[3em]
+\begin{javaans}
+3
+[74, 11, 21]
+\end{javaans}
+\end{answer}
+
+\end{multicols}
+
+
+\quest{20 min}
+
+
+\Q Compare the examples line by line, and summarize the differences.
+
+\begin{enumerate}[itemsep=1ex]
+
+\item Line 1: \vspace{-1ex}
+\begin{answer}[2em]
+Arrays are declared with square brackets; ArrayLists are declared with angle brackets.
+The array example uses the primitive type int, but the ArrayList example uses Integer.
+\end{answer}
+
+\item Line 2: \vspace{-1ex}
+\begin{answer}[2em]
+When creating the array, you have to specify the length in brackets.
+When creating the ArrayList, you need parentheses after the <>'s.
+\end{answer}
+
+\item Lines 3--6: \vspace{-1ex}
+\begin{answer}[2em]
+Arrays use square brackets to index a specific element.
+ArrayLists use the add method, and no indexes are required.
+\end{answer}
+
+\item Line 8: \vspace{-1ex}
+\begin{answer}[2em]
+Arrays have a length attribute.
+ArrayLists have a size method.
+\end{answer}
+
+\end{enumerate}
+
+
+\Q What is the main difference in the output of these two examples?
+
+\begin{answer}
+Printing the array just displays its memory address.
+Printing the ArrayList shows the actual contents.
+(The reason why is because ArrayList has a toString method.)
+\end{answer}
+
+
+\Q What happens if you add the following code after Line 6 in the array example?
+Verify your answer by editing \textit{Model1.java} and running the program.
+
+\begin{javalst}
+nums[3] = 59;
+\end{javalst}
+
+\begin{answer}
+\begin{javaans}
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException:
+Index 3 out of bounds for length 3
+\end{javaans}
+\end{answer}
+
+
+\Q In \textit{Model1.java}, comment out the line you just added in the previous question.
+Then add the following line to the ArrayList example.
+What is the resulting output?
+
+\begin{javalst}
+nums.add(59);
+\end{javalst}
+
+\begin{answer}
+\begin{javaans}
+4
+[74, 11, 21, 59]
+\end{javaans}
+\end{answer}
+
+
+\Q \label{key1}
+Based on your previous answer, what ability do ArrayLists have that arrays do not?
+
+\begin{answer}
+Their size can change, i.e., they can ``grow'' as you add new elements.
+
+(They also provide a toString method, so you can print them directly.)
+\end{answer}
+
+
+\Q Add the following line to the ArrayList example. What is the result?
+
+\begin{javalst}
+nums[0] = 33;
+\end{javalst}
+
+\begin{answer}
+Compiler error: \\
+The type of the expression must be an array type but it resolved to ArrayList<Integer>.
+\end{answer}
+
+
+\Q In the \java{ArrayList} example, is \java{nums} an \textit{array} or an \textit{object}? Justify your answer.
+
+\begin{answer}
+It's an object, because it has methods like add and size.
+You can't use it like an array, as shown in the compiler error.
+\end{answer}

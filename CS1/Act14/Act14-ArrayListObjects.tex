@@ -1,0 +1,41 @@
+% comment out for student version
+\ifdefined\Student\relax\else\def\Teacher{}\fi
+
+\documentclass[12pt]{article}
+
+\title{ArrayList Objects}
+\author{Chris Mayfield}
+\date{Summer 2021}
+
+\input{../../cspogil.sty}
+
+\begin{document}
+
+\maketitle
+
+\java{ArrayList} is a generic class for representing a list of objects.
+It provides methods for adding, inserting, removing, getting, and setting objects.
+Internally, the objects are stored using an array.
+%Unlike regular arrays, which have a fixed length, ArrayLists can grow in size.
+
+\rolenames
+
+\guide{
+  \item Summarize the differences between arrays and ArrayLists.
+  \item Describe how objects are stored in an ArrayList internally.
+  \item Write code that manipulates an ArrayList using for loops.
+}{
+  \item Reading API documentation to learn how to use a class. (Information Processing)
+}{
+Remember to make \textit{Model1.java} and \textit{Model3.java} available to students.
+
+Key questions: \ref{key1}, \ref{key2}, \ref{key3}
+}
+
+\input{model1.tex}
+\clearpage
+\input{model2.tex}
+\clearpage
+\input{model3.tex}
+
+\end{document}

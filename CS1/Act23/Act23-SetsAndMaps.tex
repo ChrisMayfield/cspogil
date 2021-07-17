@@ -1,0 +1,46 @@
+% comment out for student version
+\ifdefined\Student\relax\else\def\Teacher{}\fi
+
+\documentclass[12pt]{article}
+
+\title{Sets and Maps}
+\author{Chris Mayfield}
+\date{Summer 2021}
+
+\input{../../cspogil.sty}
+
+\begin{document}
+
+\maketitle
+
+Arrays and lists are straightforward for storing a collection of objects.
+In this activity, you'll gain experience with two other kinds of collections.
+Sets and maps are quite useful for implementing a wide variety of algorithms.
+
+\rolenames
+
+\guide{
+  \item Summarize methods in the \java{Set} interface.
+  \item Summarize methods in the \java{Map} interface
+  \item Explain differences between sets and maps.
+}{
+  \item Discuss results while running code interactively. (Oral Communication)
+}{
+Remind students how to use JShell, especially tab completion and arrow keys.
+Encourage teams to predict and discuss the results as run each line of code.
+
+When reporting out \ref{model1.tex}, point out there are no get/set methods.
+Discuss example uses of sets (e.g., eliminating duplicates, testing membership, comparing differences).
+
+When reporting out \ref{model2.tex}, compare maps with sets.
+For example, maps have a \java{get} method, but sets have \java{contains}.
+Discuss example uses of maps (e.g., counting words in a document).
+
+Key questions: \ref{key1}, \ref{key2}, and \ref{key3}
+}
+
+\input{model1.tex}
+\clearpage
+\input{model2.tex}
+
+\end{document}

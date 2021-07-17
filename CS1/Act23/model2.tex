@@ -1,0 +1,210 @@
+\model{Map of Team Names}
+
+The following abbreviations are for National Football League (NFL) teams:
+
+\begin{center}
+\begin{tabular}{l|l}
+ATL & Atlanta Falcons \\ \hline
+DEN & Denver Broncos \\ \hline
+IND & Indianapolis Colts \\ \hline
+MIA & Miami Dolphins \\ \hline
+SEA & Seattle Seahawks \\
+\end{tabular}
+\end{center}
+
+Complete the table below using \textit{JShell} (the same way you did for \ref{model1.tex}).
+
+\setlength{\defaultwidth}{20.8em}
+
+\begin{center}
+\begin{tabular}{|l|p{21em}|}
+\hline
+\multicolumn{1}{|c|}{\tr Java code} &
+\multicolumn{1}{ c|}{\tr Shell output}
+\\ \hline
+
+\java{Map<String, String> teams;}
+& \ans{null}
+\\ %\hline
+
+\java{teams = new Map<>();}
+& \ans{java.util.Map is abstract; cannot be instantiated}
+\\ %\hline
+
+\java{teams = new HashMap<>();}
+& \ans{\{\}}
+\\ %\hline
+
+\java{teams.isEmpty()}
+& \ans{true}
+\\ \hline
+
+\java{teams.put("MIA", "Miami Dolphins")}
+& \ans{null}
+\\ %\hline
+
+\java{teams.put("MIA", "Miami")}
+& \ans{"Miami Dolphins"}
+\\ %\hline
+
+\java{teams.size()}
+& \ans{1}
+\\ %\hline
+
+\java{teams}
+& \ans{\{MIA=Miami\}}
+\\ \hline
+
+\java{teams.put("ATL", "Atlanta")}
+& \ans{null}
+\\ %\hline
+
+\java{teams.put("SEA", "Seattle")}
+& \ans{null}
+\\ %\hline
+
+\java{teams}
+& \ans{\{MIA=Miami, ATL=Atlanta, SEA=Seattle\}}
+\\ \hline
+
+\java{teams.containsKey("ATL")}
+& \ans{true}
+\\ %\hline
+
+\java{teams.containsKey("DEN")}
+& \ans{false}
+\\ %\hline
+
+\java{teams.containsValue("Miami")}
+& \ans{true}
+\\ %\hline
+
+\java{teams.containsValue("Dolphins")}
+& \ans{false}
+\\ \hline
+
+\java{teams.get("SEA")}
+& \ans{"Seattle"}
+\\ %\hline
+
+\java{teams.get("IND")}
+& \ans{null}
+\\ %\hline
+
+\java{teams.get(0)}
+& \ans{null}
+\\ \hline
+
+\java{teams.remove("MIA")}
+& \ans{"Miami"}
+\\ %\hline
+
+\java{teams.remove("MIA")}
+& \ans{null}
+\\ %\hline
+
+\java{teams}
+& \ans{\{ATL=Atlanta, SEA=Seattle\}}
+\\ \hline
+
+\java{teams.keySet()}
+& \ans{[ATL, SEA]}
+\\ %\hline
+
+\java{teams.values()}
+& \ans{[Atlanta, Seattle]}
+\\ \hline
+
+\end{tabular}
+\end{center}
+
+
+\quest{25 min}
+
+
+\Q For the collection above:
+
+\setlength{\defaultwidth}{5em}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item What is the interface? \ans{Map}
+\item What is the class? \ans{HashMap}
+\item What type of keys? \ans{String}
+\item What type of values? \ans{String}
+\end{enumerate}
+\end{multicols}
+
+
+\Q Based on the shell output, describe what the following methods return:
+
+\setlength{\defaultwidth}{32em}
+
+\begin{enumerate}
+\item \java{put} ~\ans{The previous value associated with the key, or null if not mapped.}
+\item \java{get} ~\ans{The value to which the specified key is mapped, or null if none.}
+\end{enumerate}
+
+
+\Q What type of object does the \java{keySet} method return? Describe its contents.
+
+\begin{answer}[3em]
+In this example, it returns a \java{Set<String>} containing all the abbreviations.
+\end{answer}
+
+
+\Q What type of object does the \java{values} method return? Describe its contents.
+
+\begin{answer}[3em]
+In this example, it returns a \java{Collection<String>} containing all the team names.
+\end{answer}
+
+
+\Q \label{key2}
+In your own words, summarize what a \java{Map} is in Java.
+Give an example from everyday life.
+
+\begin{answer}
+An object that ``maps'' keys with values.
+A map cannot contain duplicate keys; each key can map to at most one value.
+For example, you could maps English words to their definitions.
+\end{answer}
+
+
+\Q Why did \java{teams.get(0)} return null, even though there were values in the map?
+
+\begin{answer}
+You cannot use ``indexes'' to access values in a map; only keys.
+There is no value mapped to the key of 0.
+Besides, keys in the \java{teams} map need to be strings.
+\end{answer}
+
+
+\Q \label{key3}
+Write Java code that defines a map named \java{dow} that represents the seven days of the week as follows: Sun=1, Mon=2, Tue=3, etc.
+Run your code in \textit{JShell} to make sure it works.
+
+\begin{answer}[12em]
+\begin{javaans}
+Map<String, Integer> dow = new HashMap<>();
+dow.put("Sun", 1);
+dow.put("Mon", 2);
+dow.put("Tue", 3);
+dow.put("Wed", 4);
+dow.put("Thu", 5);
+dow.put("Fri", 6);
+dow.put("Sat", 7);
+\end{javaans}
+\end{answer}
+
+
+\Q Print the \java{dow} variable in \textit{JShell}.
+What do you notice about the order of its contents?
+
+\begin{answer}
+The contents appear to be listed in a random order:
+
+\medskip
+%\jans{\{Monday=2, Thursday=5, Friday=6, Sunday=1, Wednesday=4, Tuesday=3, Saturday=7\}}
+\jans{\{Thu=5, Tue=3, Wed=4, Sat=7, Fri=6, Sun=1, Mon=2\}}
+\end{answer}

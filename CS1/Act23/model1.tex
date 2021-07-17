@@ -1,0 +1,189 @@
+\model{Set of Strings}
+
+Type each line of code below in \textit{JShell}, \emph{one at a time}, and record the results.
+You only need to record the output to the right of the ``\java{==>}'' symbol.
+For example, if \textit{JShell} outputs \verb|$8 ==> true|, then just write \verb|true|.
+If an error occurs, record the error message.
+
+\setlength{\defaultwidth}{20.8em}
+
+\begin{center}
+\begin{tabular}{|l|p{21em}|}
+\hline
+\multicolumn{1}{|c|}{\tr Java code} &
+\multicolumn{1}{ c|}{\tr Shell output}
+\\ \hline
+
+\java{Set<String> names = new Set<>();}
+& \ans{java.util.Set is abstract; cannot be instantiated}
+\\ %\hline
+
+\java{Set<String> names = new HashSet<>();}
+& \ans{[]}
+\\ \hline
+
+\java{names.add("WAS")}
+& \ans{true}
+\\ %\hline
+
+\java{names.add("BAL")}
+& \ans{true}
+\\ %\hline
+
+\java{names.add("PHI")}
+& \ans{true}
+\\ %\hline
+
+\java{names}
+& \ans{[PHI, WAS, BAL]}
+\\ \hline
+
+\java{names.contains("DEN")}
+& \ans{false}
+\\ %\hline
+
+\java{names.add("DEN")}
+& \ans{true}
+\\ %\hline
+
+\java{names.contains("DEN")}
+& \ans{true}
+\\ %\hline
+
+\java{names.contains("den")}
+& \ans{false}
+\\ \hline
+
+\java{names.add("DEN")}
+& \ans{false}
+\\ %\hline
+
+\java{names.add(123)}
+& \ans{int cannot be converted to java.lang.String}
+\\ %\hline
+
+\java{names.size()}
+& \ans{4}
+\\ %\hline
+
+\java{names}
+& \ans{[PHI, WAS, DEN, BAL]}
+\\ \hline
+
+\java{names.remove("WAS")}
+& \ans{true}
+\\ %\hline
+
+\java{names.remove("IND")}
+& \ans{false}
+\\ %\hline
+
+\java{names}
+& \ans{[PHI, DEN, BAL]}
+\\ \hline
+
+\java{names.isEmpty()}
+& \ans{false}
+\\ %\hline
+
+\java{names.clear()}
+& \ans{}
+\\ %\hline
+
+\java{names.size()}
+& \ans{0}
+\\ %\hline
+
+\java{names.isEmpty()}
+& \ans{true}
+\\ \hline
+
+\end{tabular}
+\end{center}
+
+
+\quest{20 min}
+
+
+\Q For the collection above:
+
+\setlength{\defaultwidth}{5em}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item What is the interface name? \ans{Set}
+\item What is the class name? \ans{HashSet}
+\item What is the variable name? \ans{names}
+\item What is the element type? \ans{String}
+\end{enumerate}
+\end{multicols}
+
+
+\Q Based on the shell output, describe what the following methods return:
+
+\setlength{\defaultwidth}{32em}
+
+\begin{enumerate}
+\item \java{add} ~\ans{true if this set did not already contain the specified element}
+\item \java{remove} ~\ans{true if this set contained the specified element}
+\end{enumerate}
+
+
+\Q Consider the contents of \java{names} just before \java{"WAS"} was removed.
+
+\setlength{\defaultwidth}{3em}
+
+\begin{enumerate}
+\item What was the size of \java{names} at this point? \ans{4}
+\item How many times was the \java{add} method called? \ans{6}
+\item Explain why these two numbers are different.
+\begin{answer}[2em]
+DEN was added a second time, but it was already in the set. \\
+123 could not be added, because its type didn't match.
+\end{answer}
+\vspace{-1ex}
+\end{enumerate}
+
+
+\Q Continuing the previous question:
+
+\setlength{\defaultwidth}{15em}
+
+\begin{enumerate}
+\item In what order were the strings added to the set? \ans{WAS, BAL, PHI, DEN}
+\item In what order were they displayed in the output? \ans{PHI, WAS, DEN, BAL}
+\item Why do you think the two orders are different?
+\begin{answer}[2em]
+Sets have no defined order
+\end{answer}
+\vspace{-1ex}
+\end{enumerate}
+
+
+\Q \label{key1}
+In your own words, summarize what a \java{Set} is in Java.
+Give an example from everyday life.
+
+\begin{answer}
+The \java{java.util.Set} interface models the mathematical notion of a \emph{set}, i.e., a collection that has no duplicates.
+For example, you could have the set of all computer science majors.
+\end{answer}
+
+
+\Q In discrete mathematics, sets have three basic operations:
+
+\begin{itemize}[itemsep=2pt]
+\item Union ($S \cup T$) : all elements in $S$ or $T$ (or both)
+\item Intersection ($S \cap T$) : elements in both $S$ and $T$
+\item Difference ($S - T$) : elements in $S$ but not in $T$
+\end{itemize}
+
+Based on the \href{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html}{documentation} for \java{java.util.Set}, which methods implement these operations?
+
+\begin{answer}
+\begin{javaans}
+set1.addAll(set2);    // Union
+set1.retainAll(set2); // Intersection
+set1.removeAll(set2); // Difference
+\end{javaans}
+\end{answer}

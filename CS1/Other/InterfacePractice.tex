@@ -1,0 +1,129 @@
+% comment out for student version
+\ifdefined\Student\relax\else\def\Teacher{}\fi
+
+\documentclass[12pt]{article}
+
+\title{Interfaces and Abstract Classes}
+\author{Nathan Sprague and Chris Mayfield}
+\date{Summer 2021}
+
+\input{../../cspogil.sty}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\vspace{-1em}
+\includegraphics[scale=0.80]{interface-uml.png}
+\vspace{-2em}
+\end{center}
+
+
+\Q Fill in each cell of the table with one of three values:
+
+\begin{itemize}[itemsep=2pt]
+\item ~\textbf{Y}~
+An object of this type could be assigned to a variable of this type.
+\item ~\textbf{N}~
+An object of this type could \textit{not} be assigned to a variable of this type.
+\item ~\textbf{--} ~
+It is not possible to instantiate an object of this type.
+\end{itemize}
+
+\setlength{\defaultwidth}{3em}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|} \hline
+\multicolumn{2}{|l|}{\multirow{2}{*}{}}   & \multicolumn{5}{c|}{\bf Variable Type}
+  \\ \cline{3-7} \multicolumn{2}{|l|}{}
+           & Tossable & Ball     & Rock     & Baseball & Football \\ \hline
+\multirow{5}{*}{\bf Object Type}
+& Tossable & \ans{--} & \ans{--} & \ans{--} & \ans{--} & \ans{--} \\ \cline{2-7} 
+& Ball     & \ans{--} & \ans{--} & \ans{--} & \ans{--} & \ans{--} \\ \cline{2-7} 
+& Rock     & \ans{Y}  & \ans{N}  & \ans{Y}  & \ans{N}  & \ans{N}  \\ \cline{2-7} 
+& Baseball & \ans{Y}  & \ans{Y}  & \ans{N}  & \ans{Y}  & \ans{N}  \\ \cline{2-7} 
+& Football & \ans{Y}  & \ans{Y}  & \ans{N}  & \ans{N}  & \ans{Y}  \\ \hline
+\end{tabular}
+\end{center}
+
+
+\Q Write the source code for the UML diagram.
+
+\begin{itemize}
+
+\item In \textit{Rock.java}, the \java{toss} method should print \java{"Tossing a Rock!"}.
+
+\item In \textit{Baseball.java}, the \java{toss} method should print \java{"Tossing a Baseball!"}, and the \java{bounce} method should print \java{"Bouncing a Baseball!"}.
+
+\item In \textit{Football.java}, the \java{toss} method should print \java{"Tossing a Football!"}, and the \java{bounce} method should print \java{"Bouncing a Football!"}.
+
+\end{itemize}
+
+
+\Q Indicate whether each code snippet will:
+
+\begin{itemize}[itemsep=1ex]
+\item \textbf{N} ~--~ not compile;
+\item \textbf{X} ~--~ compile but generate an exception at run-time; or
+\item \textbf{R} ~--~ compile and run without generating an exception.
+\end{itemize}
+
+
+\begin{center}
+\begin{tabular}{|l|l|l|} \hline
+& \bf Code Snippet
+& \bf Result
+\\ \hline
+
+a) &
+\begin{javalst}
+Ball ball = new Football("Spalding");
+\end{javalst}
+& \ans{R}
+\\ \hline
+
+b) &
+\begin{javalst}
+Ball ball = new Football("Spalding");
+Baseball baseball = (Baseball) ball;
+\end{javalst}
+& \ans{X}
+\\ \hline
+
+c) &
+\begin{javalst}
+Object obj = new Baseball("Spalding");
+\end{javalst}
+& \ans{R}
+\\ \hline
+
+d) &
+\begin{javalst}
+Object obj = new Baseball("Spalding");
+Tossable tossable = obj;
+\end{javalst}
+& \ans{N}
+\\ \hline
+
+e) &
+\begin{javalst}
+Tossable tossable = new Baseball("Spalding");
+Object obj = tossable;
+\end{javalst}
+& \ans{R}
+\\ \hline
+
+f) &
+\begin{javalst}
+Tossable tossable = new Baseball("Spalding");
+tossable.getBrandName();
+\end{javalst}
+& \ans{N}
+\\ \hline
+
+\end{tabular}
+\end{center}
+
+
+\end{document}

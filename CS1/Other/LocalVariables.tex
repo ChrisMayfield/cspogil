@@ -1,0 +1,156 @@
+% comment out for student version
+\ifdefined\Student\relax\else\def\Teacher{}\fi
+
+\documentclass[12pt]{article}
+
+\title{Local Variables}
+\author{Chris Mayfield}
+\date{Summer 2021}
+
+\input{../../cspogil.sty}
+
+\begin{document}
+
+\maketitle
+
+%\model{Local Variables}
+
+Consider the following example.
+The memory diagram shows the state of the program just before \java{printResult} returns for the second time:
+
+\medskip
+\begin{javalst}
+public static void printResult(int qty, double amt) {
+    System.out.printf("%d for $%.2f\n", qty, amt);
+}
+
+public static void main(String[] args) {
+    int count = 3;
+    double price = 9.99;
+    char grade = 'A';
+    boolean okay = true;
+    printResult(count, price);
+    count++;
+    price *= 2;
+    okay = !okay;
+    printResult(count, price);
+}
+\end{javalst}
+
+\bigskip
+The output of the program is:
+
+\begin{verbatim}
+3 for $9.99
+4 for $19.98
+\end{verbatim}
+
+\vspace{-26em}
+\hfill \includegraphics{local-diagram.pdf}
+\hspace{2em} \null
+
+
+\quest{15 min}
+
+
+\Q How many variables are declared \ldots
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item in \java{main}? \ans[3em]{4}
+\item in \java{printResult}? \ans[3em]{2}
+\end{enumerate}
+\end{multicols}
+
+
+\Q How many times is each variable assigned?
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item \java{count} \ans[3em]{2} \note{including ++}
+\item \java{price} \ans[3em]{2}
+\item \java{grade} \ans[3em]{1}
+\item \java{okay}  \ans[3em]{2}
+\item \java{qty}   \ans[3em]{2} \note{two method calls}
+\item \java{amt}   \ans[3em]{2}
+\end{enumerate}
+\end{multicols}
+
+
+\Q Is there a small box for each declaration or each assignment? Justify your answer.
+
+\begin{answer}[3em]
+Each declaration; otherwise there would be more than four boxes in \java{main}.
+\end{answer}
+
+
+\Q What do the six small boxes in the memory diagram represent?
+
+\begin{answer}[3em]
+The contents of memory for each of the variables.
+\end{answer}
+
+
+\Q What do the two large boxes in the memory diagram represent?
+
+\begin{answer}[3em]
+The stack frames for each method, showing which variables are defined.
+\end{answer}
+
+
+\Q \label{key1}
+Why does the diagram indicate that \java{count} is \java{4} and \java{price} is \java{19.98}, even though the source code says that \java{count = 3} and \java{price = 9.99}?
+
+\begin{answer}[3em]
+The variables were modified later in the program.
+The diagram shows the state of memory near the end.
+\end{answer}
+
+
+\Q Based on the source code:
+
+\begin{enumerate}
+\item Which method is defined first? \ans[8em]{printResult}
+\item Which method is executed first? \ans[8em]{main}
+\end{enumerate}
+
+
+%\Q In what order are the methods shown in the memory diagram? Why?
+%
+%\begin{answer}[3em]
+%Methods are shown in the order of execution, because the diagram represents the state of memory over time.
+%\end{answer}
+
+
+\Q Copy the contents of \textit{LocalVariables.java} into \href{https://cscircles.cemc.uwaterloo.ca/java_visualize/#code=public+class+ClassNameHere+%7B%0A++++public+static+void+main(String%5B%5D+args)+%7B%0A++++++++%0A++++%7D%0A%7D&mode=edit&showStringsAsObjects=1}{Java Visualizer}.
+Click the ``Visualize execution'' button, and then click ``Forward $>$'' multiple times to see the code run.
+
+\begin{enumerate}
+
+\item What does the diagram look like on Step 11 of 19, just before \java{count++} executes?
+
+\begin{answer}[3em]
+There is only one frame (for \java{main}) with four variables:
+count=3, price=9.99, grade=\chr{A}, and okay=true.
+\end{answer}
+
+\item Why is there no frame for the \java{printResult} method on Step 11 of 19?
+
+\begin{answer}[3em]
+The method is not currently active; it returned during the previous step.
+\end{answer}
+
+\item Run the program to Step 17 of 19, just before \java{printResult} returns for the second time.
+What differences do you notice between the diagram on the previous page and the one on Java Visualizer?
+
+\begin{answer}[6em]
+Answers might include:
+\bull All boxes (variables and frames) have four sides in the activity.
+\bull The frames are drawn in opposite order (top-down vs bottom-up).
+\bull Java Visualizer labels the frames on top and shows the line number.
+\bull Java Visualizer shows the method return values (even when \jans{void}).
+\end{answer}
+
+\end{enumerate}
+
+\end{document}

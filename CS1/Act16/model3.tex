@@ -1,0 +1,60 @@
+\model{Writing to a File}
+
+The \java{java.io.PrintWriter} class is useful for writing text files:
+
+\medskip
+
+\begin{javalst}
+File file = new File("results.tsv");
+PrintWriter out = new PrintWriter(file);
+// output text to the file...
+out.close();
+\end{javalst}
+
+
+\quest{15 min}
+
+
+\Q Examine the \href{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintWriter.html}{documentation for \java{PrintWriter}}.
+What methods can be used to output a string to the file?
+
+\begin{answer}[3em]
+append, format, print, printf, println, write
+\end{answer}
+
+
+\Q \label{key3}
+Modify your code from Question \ref{key2} to output to the \textit{results.tsv} file instead of to the screen.
+Summarize your changes below:
+
+\begin{answer}[6em]
+1. Add the lines from \ref{\currfilename} to the beginning/end of \java{main}. \\
+2. Surround the PrintWriter constructor in a try/catch block. \\
+3. Replace each \jans{System.out.println} with just \java{out.println}.
+\end{answer}
+
+
+\Q In general, is it easier to write code that reads a file or writes a file?
+Explain your reasoning.
+
+\begin{answer}
+Writing a file is much easier, because you don't have to parse the file contents and deal with potentially incorrect formatting.
+\end{answer}
+
+
+
+\Q Make sure the end of your \java{main} method closes both files.
+Why is it important to close files when you are finished with them?
+
+\begin{answer}
+Closing a file releases any system resources associated with it.
+And when writing files, the output may not be on disk until it's closed.
+\end{answer}
+
+
+\Q (Optional) What is the difference between the \java{print} methods and the \java{write} methods in the \java{PrintWriter} class?
+
+\begin{answer}
+The \java{print} methods should be used most of the time for outputting text.
+The \java{write} methods are lower level and used for printing characters without encoding them based on the current operating environment.
+\end{answer}

@@ -1,0 +1,146 @@
+\model{Reading from a File}
+
+The Internet Movie Database (IMDb) maintains information about movies, television shows, video games, and more---including their cast, production crew, trivia, ratings, etc.
+
+\vspace{1em}
+
+Download the \textit{title2020.tsv} file into your Eclipse project.
+It's a subset of all titles from the year 2020 and is based on the data available at \url{https://www.imdb.com/interfaces/}.
+
+\vspace{1em}
+
+Create a new program named \textit{IMDb.java}, and add the following lines to the \java{main} method:
+
+\begin{quote}
+\begin{javalst}
+File file = new File("title2020.tsv");
+Scanner in = new Scanner(file);
+for (int i = 0; i < 3; i++) {
+    System.out.println(in.nextLine());
+}
+in.close();
+\end{javalst}
+\end{quote}
+
+Note: You will need to import \java{java.io.File} and \java{java.util.Scanner}.
+
+\quest{20 min}
+
+
+\Q Explain the compiler error when attempting to construct the \java{Scanner}.
+
+\begin{answer}[3em]
+Unhandled exception type FileNotFoundException.
+
+(The constructor throws FileNotFoundException.)
+\end{answer}
+
+
+\Q Explain two ways you can modify the code to handle this error.
+(\textit{Hint:} Eclipse offers them as ``quick fixes''.)
+Which way is better?
+
+\begin{answer}[5em]
+You can (1) add a throws declaration, or (2) surround with try/catch.
+The first option is simpler because it changes the least amount of code.
+But it causes the entire method to ignore file not found exceptions.
+The latter option is better, because it isolates the problem.
+\end{answer}
+
+
+\Q \label{FNF}
+Modify the program so that it compiles:
+1) surround the ``\java{new Scanner}'' line with try/catch;
+2) remove the auto-generated \java{TODO} comment; and
+3) initialize the \java{in} variable to \java{null} (before the \java{try} block).
+Copy and paste the beginning on your \java{main} method (from the ``\java{File file}'' line to the end of the \java{catch} block) in the box below.
+
+\begin{answer}[10em]
+\begin{javaans}
+File file = new File("title2020.tsv");
+Scanner in = null;
+try {
+    in = new Scanner(file);
+} catch (FileNotFoundException e) {
+    e.printStackTrace();
+}
+\end{javaans}
+\end{answer}
+
+
+\Q Run the program. What is the output of the \java{for} loop?
+
+\begin{answer}[4em]
+\begin{javaans}
+tid	type	title	original	isadult	year	ended	runtime	genres
+60366	short	A Embalagem de Vidro	A Embalagem de Vidro	0	2020		11	Documentary,Short
+62336	movie	El tango del viudo y su espejo deformante	El tango del viudo y su espejo deformante	0	2020		70	Drama
+\end{javaans}
+\end{answer}
+
+
+\Q TSV stands for ``tab-separated values''.
+Explain the format of the \textit{title2020.tsv} file:
+
+\begin{enumerate}
+\item What does the first line represent? \ans{the attribute names}
+\item What do the remaining lines represent? \ans{movies / TV shows}
+\item How are ``column breaks'' represented? \ans{by tab characters}
+\end{enumerate}
+\vspace{-1em}
+
+
+%\Q Open \textit{title2020.tsv} using a spreadsheet application (like Excel).
+%
+%\begin{enumerate}
+%\item How many lines does the file have? \ans[5em]{34,698}
+%\item How many ``columns'' does it have? \ans[5em]{9}
+%\end{enumerate}
+%\vspace{-1em}
+
+
+\Q By default, \java{Scanner.next()} separates input by whitespace.
+Replace the \java{for} loop in your \java{main} method with the following code.
+What is the resulting output?
+
+\begin{quote}
+\begin{javalst}
+in.useDelimiter("\t");
+in.nextLine();
+
+for (int i = 0; i < 3; i++) {
+    System.out.println(in.next());
+}
+\end{javalst}
+\end{quote}
+\vspace{-1em}
+
+\begin{answer}
+\begin{javaans}
+60366
+short
+A Embalagem de Vidro
+\end{javaans}
+\end{answer}
+        
+\Q \label{key2}
+Remove the \java{for} loop from your program.
+Write code that outputs the \java{tid}, \java{type}, and \java{title} of the first 5 titles that start with \str{A}.
+(\textit{Hint:} Use a \java{while} loop, call \java{in.next()} to get each of the three values, and call \java{in.nextLine()} to advance to the next line.)
+Paste your code below, starting from the \java{while} loop.
+
+\begin{answer}[15em]
+\begin{javaans}
+int count = 0;
+while (count < 5) {
+    String tid = in.next();
+    String type = in.next();
+    String title = in.next();
+    if (title.startsWith("A")) {
+        System.out.println(tid + "\t" + type + "\t" + title);
+        count++;
+    }
+    in.nextLine();
+}
+\end{javaans}
+\end{answer}

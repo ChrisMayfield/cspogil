@@ -1,0 +1,53 @@
+% comment out for student version
+\ifdefined\Student\relax\else\def\Teacher{}\fi
+
+\documentclass[12pt]{article}
+
+\title{File Input/Output}
+\author{Chris Mayfield}
+\date{Summer 2021}
+
+\input{../../cspogil.sty}
+
+\begin{document}
+
+\maketitle
+
+Most data is stored in files, not input by the user every time.
+In this activity, you'll learn the basics of reading and writing plain text files.
+
+\rolenames
+
+\guide{
+  \item Parse user input and string objects using a \java{Scanner}.
+  \item Read a text file line by line, and extract data from it.
+  \item Create a new text file, and output several lines to it.
+}{
+% \item Justifying answers based on the results of an experiment. (Critical Thinking)
+  \item Reading Java API documentation to explore a class. (Information Processing)
+}{
+\ref{model1.tex} is an opportunity to introduce \java{System.in} and \java{System.out} as files.
+In a way, students have been doing File I/O since Hello World.
+
+On \ref{run1}, if the \textsf{Ctrl+D} key doesn't work, have students click the editor window and then click back to the Console window.
+That should reset the Console input to recognize \textsf{Ctrl+D} again.
+Students might confuse their own input as part of the program's output.
+Make sure they don't have two copies of each line in their answer.
+
+At the end of \ref{model2.tex}, compare answers for \ref{FNF} and \ref{key2}.
+Discuss how to handle \java{FileNotFound} exceptions (e.g., print a stack trace, exit with an error code, or ask the user to try again).
+Remind students of the difference between \java{next()} and \java{nextLine()}.
+
+During \ref{model3.tex}, have students open their \textit{results.tsv} file in an editor window and a spreadsheet application.
+Discuss the file format and how it's displayed in each application.
+
+Key questions: \ref{key1}, \ref{key2}, and \ref{key3}
+}
+
+\input{model1.tex}
+\clearpage
+\input{model2.tex}
+\clearpage
+\input{model3.tex}
+
+\end{document}

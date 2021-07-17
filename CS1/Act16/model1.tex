@@ -1,0 +1,115 @@
+\model{Review of Scanner}
+
+The \java{java.util.Scanner} class is useful for reading and parsing text from various sources:
+
+\begin{quote}
+\begin{javalst}
+// Example 1
+Scanner in = new Scanner(System.in);
+while (in.hasNextLine()) {
+    String line = in.nextLine();
+    System.out.println(line);
+}
+
+// Example 2
+String text = "1 fish 2 fish red fish blue fish";
+Scanner sc = new Scanner(text);
+System.out.println(sc.nextInt());
+System.out.println(sc.next());
+System.out.println(sc.nextInt());
+System.out.println(sc.next());
+\end{javalst}
+\end{quote}
+
+
+\quest{10 min}
+
+
+\Q For each example above, describe what the \java{Scanner} is scanning.
+
+\begin{enumerate}
+\item Example 1:~ \java{new Scanner(System.in)} \ans{keyboard input}
+\item Example 2:~ \java{new Scanner(text)} \ans{the ``fish'' string}
+\end{enumerate}
+
+
+\Q Based on the \href{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html}{documentation for \java{Scanner}}, explain the following:
+
+\begin{enumerate}
+\item \java{in.hasNextLine()} \vspace{-1ex}
+\begin{answer}[1em]
+Returns true if there is another line in the input of this scanner.
+\end{answer}
+
+\item \java{in.nextLine()} \vspace{-1ex}
+\begin{answer}[1em]
+Advances this scanner past the current line and returns the input that was skipped.
+\end{answer}
+
+\item \java{s.nextInt()} \vspace{-1ex}
+\begin{answer}[1em]
+Scans the next token of the input as an int.
+\end{answer}
+
+\item \java{s.next()} \vspace{-1ex}
+\begin{answer}[1em]
+Finds and returns the next complete token from this scanner.
+\end{answer}
+\end{enumerate}
+
+
+\newpage
+
+\Q \label{run1}
+Open \textit{ScannerDemo.java} in Eclipse, and run the program.
+Enter three lines of input, and notice the output.
+Then press \textsf{Ctrl+D}, which is the keyboard shortcut for ``end of file'' (EOF).
+
+\begin{enumerate}
+
+\item In the Console, what color was the user's input? \ans[8em]{blue/green}
+
+\item In the Console, what color was the program's output? \ans[8em]{black}
+
+\item What was the complete output of the program? (Note: Do not include the input lines.)
+
+\begin{answer}[12em]
+\begin{javaans}
+==== Example 1 ====
+Line 1
+Line 2
+Line 3
+==== Example 2 ====
+1
+fish
+2
+fish
+\end{javaans}
+\end{answer}
+
+\end{enumerate}
+\vspace{-1em}
+
+
+\Q What effect did pressing \textsf{Ctrl+D} have on the program?
+Explain how you think EOF works.
+
+\begin{answer}[5em]
+The first example repeated while the input had a next line.
+EOF caused the program to exit the while loop and move on to Example 2.
+Once the keyboard input ``file'' ended, \java{hasNextLine} returned false.
+\end{answer}
+
+
+\Q \label{key1}
+Rewrite the code for Example 2 to output each \textit{word} of the string using a \java{while} loop.
+Run your code to make sure it works.
+
+\begin{answer}[6em]
+\begin{javaans}
+Scanner sc = new Scanner(text);
+while (sc.hasNext()) {
+    System.out.println(sc.next());
+}
+\end{javaans}
+\end{answer}

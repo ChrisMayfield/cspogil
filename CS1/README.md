@@ -27,7 +27,18 @@ Course website: https://w3.cs.jmu.edu/mayfiecs/cs149/
 ## Activities 13--24
 Course website: https://w3.cs.jmu.edu/mayfiecs/cs159/
 
+* [Memory Diagrams](Act13)
+* [ArrayList Objects](Act14)
+* [Arrays of Arrays](Act15)
+* [File Input/Output](Act16)
+* [Enum Types](Act17)
+* [Designing Classes](Act18)
+* [Extending Classes](Act19)
+* [Polymorphism](Act20)
+* [Abstract Classes](Act21)
 * [Linked Structures](Act22)
+* [Sets and Maps](Act23)
+* [Recursive Drawings](Act24)
 
 ## Mini Activities
 

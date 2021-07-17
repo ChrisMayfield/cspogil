@@ -1,0 +1,234 @@
+\model{Variable vs Object Types}
+
+Consider the following program:
+
+\begin{quote}
+\begin{javalst}
+public static void main(String[] args) {
+    Person p1 = new Person("Helen", LocalDate.parse("2000-01-02"));
+    Student s1 = new Student("John", LocalDate.parse("2000-03-04"));
+    Person poly = new Student("Polly", LocalDate.parse("2000-05-06"));
+
+    System.out.println(p1 instanceof Student);
+    System.out.println(s1 instanceof Student);
+    System.out.println(poly instanceof Student);
+}
+\end{javalst}
+\end{quote}
+
+The output of the program is:
+
+\begin{quote}
+\begin{verbatim}
+false
+true
+true
+\end{verbatim}
+\end{quote}
+
+
+\quest{30 min}
+
+
+\Q Complete the table below based on the source code:
+
+\setlength{\defaultwidth}{6em}
+
+\begin{center}
+\begin{tabular}{c|c|c}
+\tr Variable & \tr Type of Variable & \tr Type of Object \\
+\hline
+\java{p1}    & \ans{Person}         & \ans{Person}       \\
+\hline
+\java{s1}    & \ans{Student}        & \ans{Student}      \\
+\hline
+\java{poly}  & \ans{Person}         & \ans{Student}      \\
+\end{tabular}
+\end{center}
+
+
+\Q Is the \java{instanceof} operator based on the variable's type or object's type?
+Justify your answer with a specific example from the program.
+
+\begin{answer}[3em]
+It's based on the object's type.
+The 3rd line of output is true, because poly is a Student, even though it's declared as a Person.
+\end{answer}
+
+
+\Q Predict the result of the following expressions.
+Then run the code on a computer to check your answers.
+\note{Note: \jans{instanceof Object} is always true.}
+
+\setlength{\defaultwidth}{4em}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item \java{p1 instanceof Person} \ans{true}
+
+\item \java{p1 instanceof Object} \ans{true}
+
+\item \java{s1 instanceof Person} \ans{true}
+
+\item \java{s1 instanceof LocalDate} \ans{false}
+
+\item \java{poly instanceof Person} \ans{true}
+
+\item \java{poly instanceof Teacher} \ans{false}
+\end{enumerate}
+\end{multicols}
+
+
+\Q Review your answer to Quesiton \ref{NotStu}.
+Explain why the following statement is invalid:
+
+\begin{javalst}
+Student s2 = new Person("Chris", LocalDate.parse("2000-07-08"));
+\end{javalst}
+
+\begin{answer}[3em]
+The variable's type has to be a parent of the object's type (if not the same).
+Not all Person objects are Students.
+\end{answer}
+
+
+\Q Open \textit{Model2.java} in your editor.
+Answer each question by typing the following code in \java{main} and pressing \textsf{Ctrl+Space} to list possible completions.
+
+\begin{enumerate}
+\item Which methods can be called on the \java{s1} variable? \hspace{2em} \java{s1.}
+\begin{answer}[1em]
+All the methods of Object, Person, and Student.
+\end{answer}
+
+\item Which methods can be called on the \java{poly} variable? \hspace{1em} \java{poly.}
+\begin{answer}[1em]
+Only the methods of Object and Person.
+\end{answer}
+\end{enumerate}
+
+\vspace{-2em}
+
+
+\Q Identify a method that is only in the \java{Student} class (and not the \java{Person} class).
+
+\setlength{\defaultwidth}{15em}
+
+\begin{enumerate}
+\item Which method did you choose? \ans{getSid, isTA, setSid, or setTA}
+
+\item Write code that calls that method on \java{poly}:
+\ans{\jans{poly.setSid(1234);}}
+
+\item What happens when you try to run that code on a computer?
+\begin{answer}[2em]
+Compiler error: ``The method setSid(int) is undefined for the type Person''
+\end{answer}
+
+\item Are the methods that you can call based on the variable's or object's type?
+\hfill \ans[6em]{variable's}
+\end{enumerate}
+
+
+\Q Sometimes you need to call a method from the object's class, even though the variable was declared as a different type.
+Using your example from the previous question, do the following:
+
+\begin{enumerate}
+\item Write an if-statement that checks if a \java{Person} variable ``is a'' \java{Student} object.
+\begin{answer}[1em]
+\jans{if (poly instanceof Student) \{}
+\end{answer}
+
+\item Inside the if-statement block, declare a new variable of type \java{Student}.
+Type-cast the \java{Person} variable, and assign the result to the  \java{Student} variable.
+
+\begin{answer}[1em]
+\jans{Student stu = (Student) poly;}
+\end{answer}
+
+\item Call the \java{Student} method on this new variable.
+
+\begin{answer}[1em]
+\jans{stu.setSid(1234);}
+\end{answer}
+\end{enumerate}
+
+
+\Q Where in the source code of \textit{Person.java} do you see this 3-step pattern?
+
+\begin{answer}[1em]
+In the \java{equals} method.
+\end{answer}
+
+
+\Q \label{key2}
+In general, explain why the first two steps (the if statement and type cast) are needed.
+
+\begin{answer}[3em]
+The first step is needed to avoid getting a \jans{ClassCastException}.
+The second step is needed in order to access fields/methods of the subclass.
+\end{answer}
+
+
+\Q Trace the execution of the following code using a debugger:
+
+\begin{javalst}
+LocalDate d = LocalDate.parse("1949-01-17");
+Object obj = new Teacher("Anita Borg", d, 123456);
+System.out.println(obj.toString());
+\end{javalst}
+
+\setlength{\defaultwidth}{6em}
+
+\vspace{-1ex}
+\begin{enumerate}
+\item What type of variable is \java{obj}?
+\ans{Object}
+
+\item What type of object does \java{obj} reference?
+\ans{Teacher}
+
+\item Which version of \java{toString} (in which class) is invoked first?
+\ans{Teacher}
+
+\item Which version of \java{toString} (in which class) is invoked second?
+\ans{Person}
+\end{enumerate}
+\vspace{-1ex}
+
+
+\Q Predict which \java{equals} methods will be called in the following example.
+Then trace the code using a debugger to check your answer.
+
+\begin{javalst}
+Person j = new Student("John", LocalDate.parse("2000-03-04"));
+Person m = new Teacher("Mary", LocalDate.parse("2000-09-10"), 100000);
+System.out.println(j.equals(m));
+System.out.println(m.equals(j));
+\end{javalst}
+
+\begin{answer}
+In the first \jans{println}, \jans{Student.equals} is called because \jans{j} is a \jans{Student}.
+(Then \jans{Person.equals} is called via \jans{super}.)
+In the second \jans{println}, \jans{Person.equals} is called because \jans{m} is a \jans{Teacher}, which inherits \jans{equals} from \jans{Person}.
+\end{answer}
+
+
+\Q \label{key3}
+Discuss the following questions. Justify your answers using examples from today's activity.
+
+\begin{enumerate}
+\item Does the variable's type or object's type determine which methods can be called?
+
+\begin{answer}[3em]
+The variable's type.
+When the compiler sees a variable, it makes sure the methods are defined in its class (or parent's class).
+\end{answer}
+
+\item Does the variable's type or object's type determine which method is actually called?
+
+\begin{answer}[3em]
+The object's type.
+This behavior is desired when methods are overloaded: we want to call the method specific to that object.
+\end{answer}
+\end{enumerate}

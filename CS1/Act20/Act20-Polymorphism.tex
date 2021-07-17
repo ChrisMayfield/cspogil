@@ -1,0 +1,38 @@
+% comment out for student version
+\ifdefined\Student\relax\else\def\Teacher{}\fi
+
+\documentclass[12pt]{article}
+
+\title{Polymorphism}
+\author{Chris Mayfield and Helen Hu}
+\date{Summer 2021}
+
+\input{../../cspogil.sty}
+
+\begin{document}
+
+\maketitle
+
+``The dictionary definition of \textit{polymorphism} refers to a principle in biology in which an organism or species can have many different forms.
+This principle can also be applied to object-oriented programming.''
+(The Java Tutorials)
+
+\rolenames
+
+\guide{
+  \item Identify whether two classes have an ``is a'' or ``has a'' relationship.
+  \item Explain which methods can be called by a variable using polymorphism.
+  \item Predict which method will actually run when polymorphism is involved.
+}{
+  \item Verifying program behavior by tracing code with a debugger. (Critical Thinking)
+}{
+Be sure to make the source code available to students.
+
+Key questions: \ref{key1}, \ref{key2}, \ref{key3}
+}
+
+\input{model1.tex}
+\clearpage
+\input{model2.tex}
+
+\end{document}

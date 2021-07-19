@@ -12,6 +12,9 @@ Activities are composed by including (with \input) a sequence of models.
 You can browse each of the models and activities separately.
 The build.py script compiles student and teacher PDFs for each LaTeX source file.
 
+The diagrams and other figures were drawn using [Dia](https://wiki.gnome.org/Apps/Dia/), [LibreOffice](https://www.libreoffice.org/), and [diagrams.net](https://www.diagrams.net/).
+For some diagrams, the source files are included, and for others, the source is embedded in the pdf itself.
+
 Unless otherwise noted, this work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 For more information, see http://pogil.org, http://cspogil.org, and http://introcspogil.org/.

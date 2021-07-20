@@ -1,3 +1,3 @@
 # Unused
 
-This folder contains old models/questions that are no longer in use.
+This folder contains old materials that are either unfinished or no longer in use.

@@ -6,8 +6,12 @@ all:
 
 	pdflatex '\def\Teacher{}\input{book.tex}' > /dev/null
 	pdflatex '\def\Teacher{}\input{book.tex}' > /dev/null
+	pdflatex '\def\Teacher{}\input{book.tex}' > /dev/null
 	mv book.pdf book_Teacher.pdf
 
+	rm -f book.aux book.log book.out book.toc
+
+	pdflatex '\def\Student{}\input{book.tex}' > /dev/null
 	pdflatex '\def\Student{}\input{book.tex}' > /dev/null
 	pdflatex '\def\Student{}\input{book.tex}' > /dev/null
 	mv book.pdf book_Student.pdf

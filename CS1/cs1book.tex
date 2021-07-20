@@ -99,8 +99,16 @@ Source documents available in Overleaf
 \pdfbookmark{\contentsname}{toc}
 \tableofcontents
 \addtocontents{toc}{\protect\thispagestyle{empty}}
-\cleardoublepage
 
+\clearpage\phantomsection
+\addcontentsline{toc}{chapter}{Role Cards}
+\includepdf[pages=-]{../Handouts/role-cards-appendix.pdf}
+
+\clearpage\phantomsection
+\addcontentsline{toc}{chapter}{Team Report}
+\includepdf[pages=-]{../Handouts/team-report.pdf}
+
+\cleardoublepage
 \pagestyle{plain}
 \pagenumbering{arabic}
 \setcounter{page}{1}
@@ -140,7 +148,7 @@ Source documents available in Overleaf
 \mod{3} For Loops
 }
 
-\addtocontents{toc}{\newpage}
+%\addtocontents{toc}{\newpage}
 
 \act{Act07/Act07-Arrays}{Arrays of Numbers}{
 \mod{1} Case Study: Panic Attack \\
@@ -185,6 +193,9 @@ Source documents available in Overleaf
 \mod{1} Rectangular Array \\
 \mod{2} Ragged Array
 }
+
+%\addtocontents{toc}{\newpage}
+
 \act{Act16/Act16-FileInputOutput}{File Input/Output}{
 \mod{1} Review of Scanner \\
 \mod{2} Reading from a File \\
@@ -226,5 +237,13 @@ Source documents available in Overleaf
 \mod{2} The ``Vee'' Tree \\
 \mod{3} Sierpiński Triangle
 }
+
+%\cleardoublepage
+%\thispagestyle{empty}
+%\begin{center}
+%\null\vfill
+%\huge\bf Appendix
+%\vfill\null
+%\end{center}
 
 \end{document}

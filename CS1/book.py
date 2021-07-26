@@ -35,8 +35,7 @@ def main(suff):
                     print "\\mod{" + str(i) + "}",
                     print line[7:-2], "\\\\"
                 if line.startswith("\\section*"):
-                    i += 1
-                    print "\\mod{" + str(i) + "}",
+                    print "\\indent",
                     print line[10:-2], "\\\\"
         print "}"
 

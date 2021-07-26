@@ -75,14 +75,16 @@ An integer representing the memory location of the array.
 \end{answer}
 
 
-\Q Does the statement \java{int[] copy = nums;} create a new array? Justify your answer.
+\Q \label{nocopy}
+Does the statement \java{int[] copy = nums;} create a new array? Justify your answer.
 
 \begin{answer}[3em]
 No. If you assign one array variable to another, you're only copying the reference, not the array itself.
 \end{answer}
 
 
-\Q Draw a memory diagram of the following array.
+\Q \label{draw3str}
+Draw a memory diagram of the following array.
 (\textit{Hint:} You should have four arrows.)
 
 \begin{javalst}

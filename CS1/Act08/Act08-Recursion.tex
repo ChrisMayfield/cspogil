@@ -27,21 +27,23 @@ Eventually we reach the most basic version, for which the answer is trivial.
 }{
 This activity is a first introduction to recursion using two mathematical examples: factorial and summation.
 Students learn how to read and trace recursive methods, not how to formulate recursive solutions to problems.
-
 Let students wrestle with these difficult concepts, and don't give too much help on individual questions.
+
 Keep an eye on questions 1--3, and if a team is getting off track, have them compare answers with a neighboring team.
 You may need to point out that $!$ in mathematics means \emph{factorial}, but \java{!} in Java means \emph{not}.
-It's unfortunately common for operators to have slightly different meanings in different languages.
+It's unfortunately common that operators have slightly different meanings in different languages.
 
 Report out on \ref{factjava} and \ref{output} by having teams write their answers on the board.
-Ideally there will be multiple (incorrect) answers, which will lead to a discussion.
-Then paste the code in \ref{factjava} into \href{http://pythontutor.com/java.html}{Java Tutor} and step through the code as a live demo.
-It's possible that \ref{factorial.tex} may take an additional 5--10 minutes, based on how long you report out.
-After \ref{stackover}, introduce the term \emph{stack overflow} and make the connection to the \emph{call stack} visualization in Java Tutor.
+Ideally there will be slightly different (incorrect) answers, which will lead to a discussion.
+Paste \textit{Recursion.java} into \href{https://cscircles.cemc.uwaterloo.ca/java_visualize/}{Java Visualizer} and step through the code as a live demo.
+After \ref{stackover}, introduce the term \emph{stack overflow} and make the connection to the \emph{call stack} visualization in Java Visualizer.
 
-\ref{summation.tex} should move a bit faster than \ref{factorial.tex}, since it's similar to factorial.
-Have presenters write their team's solution to \ref{diagram} on the board.
-Address misconceptions about variables, parameter passing, and return values.
+Depending on how long you report out, \ref{factorial.tex} could take an additional 5--10 minutes.
+\ref{summation.tex} should move a bit faster, since summation is almost identical to factorial.
+Invite presenters to write their team's solution to \ref{diagram} on the board.
+Address any misconceptions about variables, parameter passing, and return values.
+
+Key questions: \ref{key1}, \ref{stackover}, \ref{diagram}
 
 Source files: \src{Act08}{Recursion.java}
 }

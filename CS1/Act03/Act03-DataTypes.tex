@@ -26,24 +26,27 @@ Java supports two main types of data: \emph{primitive types} like \java{int} and
   \item Providing feedback on how well other team members are working. (Teamwork)
 }{
 The meta activity reinforces the importance of roles.
-Successful teams are able to accomplish all the tasks outlined on the \github{Handouts/role-cards-mayfield.pdf}{Role Cards}, and there's too many things for one person to keep track of.
-Ask the reflectors to pay special attention to their team during today's activity.
+Successful teams are able to accomplish all the tasks outlined on the \github{Handouts/role-cards-mayfield.pdf}{Role Cards}, and there's too many things for one person to keep track.
+Ask the reflectors to pay special attention to their role during today's activity, and invite them at some point to report to share what they have observed.
 
 On \ref{literals}, students may struggle with letters used in primitive values (i.e., F and L).
 Rather than just say what everything means, direct students back to \ref{primitive-types.tex} and have them read out loud the type names.
-During report-out, introduce the term \emph{literal} and explain that \texttt{float} is a floating-point data type.
-Ask students to guess where the name \texttt{double} comes from.
-%The solution files \sol{Act03}{Assign1.java} and \sol{Act03}{Assign2.java} are available for demonstration.
-
+%Explain that \texttt{float} is a floating-point data type, and ask students to guess where the name \texttt{double} comes from.
 \ref{allowed} is good for report-out, allowing students to collectively develop a rule for when an assignment is allowed.
-It might be helpful to have a couple of examples handy to challenge their assumptions.
-But be careful, examples like \texttt{short x = 3; byte y = 3; char c = 3;} may open a can of worms.
-If these issues come up, you'll need to explain that \texttt{javac} will check the range of the value, and if it is acceptable, allow the assignment (i.e., \texttt{byte z = 255;} will fail).
+The solution files \sol{Act03}{Assign1.java} and \sol{Act03}{Assign2.java} are available for demonstration.
+When reporting out, introduce the term \emph{literal}.
+
+%It might be helpful to have a couple of examples handy to challenge their assumptions.
+%But be careful, examples like \texttt{short x = 3; byte y = 3; char c = 3;} may open a can of worms.
+%If these issues come up, you'll need to explain that \texttt{javac} will check the range of the value, and if it is acceptable, allow the assignment (i.e., \texttt{byte z = 255;} will fail).
 
 \ref{reference-types.tex} introduces a technique for drawing memory diagrams to show the difference between primitive and reference types.
-On \ref{twostrs}, have 2--3 teams draw their diagrams on the board and address misconceptions.
-It might be helpful at this point to direct students to \href{https://cscircles.cemc.uwaterloo.ca/java_visualize/}{Java Visualizer}, which draws similar diagrams (including stack frames).
-Be sure to check the option for ``Show String/Integer/etc objects, not just values'' so it will draw references as arrows.
+On \ref{twostrs}, have multiple teams draw their diagrams on the board.
+Address misconceptions that arise (e.g., drawing multiple string objects).
+It might be helpful at this point to direct students to \href{https://cscircles.cemc.uwaterloo.ca/java_visualize/}{Java Visualizer}, which draws similar diagrams.
+Select the option ``Show String/Integer/etc objects, not just values'' for it to display references as arrows.
+
+Key questions: \ref{allowed}, \ref{varval}, \ref{twostrs}
 
 Source files: \src{Act03}{TaylorSwift.java}
 }

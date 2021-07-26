@@ -25,12 +25,19 @@ This way, you can define new versions of classes without having to copy and past
 }{
   \item Making conclusions based on IDE hints and program output. (Critical Thinking)
 }{
+This activity requires some prior knowledge of BigInteger and the \java{String.replace()} method.
+All that's needed is a 10-minute mini lecture (e.g., using JShell) that shows how to create and add two BigIntegers, and how to find and replace strings.
+
+BigInteger was originally chosen for this activity, because (1) it's a useful class in the Java library, and (2) it's not declared as \java{final} (so it can be extended).
+The new feature this activity is adding to BigInteger is the ability to work with comma separators.
+
+Highlight important aspects of the documentation for BigInteger.
+For example, mention that BigInteger extends Number, which extends Object.
+Notice the static constant fields.
+In addition to the constructors, there is a static \java{valueOf} method.
+
 Prevent students from spending too much time on \ref{count1} and \ref{count2}.
-
-Highlight important aspects of the source code for BigInteger.
-
-Mention that BigInteger extends Number which extends Object.
-
+You can tell them the number of methods; they should be able to count the fields and constructors.
 Introduce ``is a'' and ''has a'' terminology when reporting out.
 
 Key questions: \ref{key1}, \ref{key2}, \ref{key3}

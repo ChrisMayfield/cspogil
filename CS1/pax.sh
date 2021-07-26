@@ -6,6 +6,9 @@
 # Prerequisites:
 #   sudo apt install libfile-which-perl
 #   pdfannotextractor --install
+#
+# A bug in pdfannotextractor.pl might prevent the script from running:
+# https://bugs.launchpad.net/ubuntu/+source/texlive-extra/+bug/1892600
 
 for f in */Act*_Teacher.pdf; do pdfannotextractor $f; done
 for f in */Act*_Student.pdf; do pdfannotextractor $f 2>/dev/null; done

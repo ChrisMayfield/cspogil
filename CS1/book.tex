@@ -25,7 +25,7 @@
 \newcommand{\act}[3]{
   \cleardoublepage\phantomsection
   \addcontentsline{toc}{chapter}{#2}
-  \addtocontents{toc}{\bigskip{#3}\par}
+  \addtocontents{toc}{\nopagebreak\bigskip{#3}\par}
   \ifdefined\Teacher
     \includepdf[pages=-, pagecommand={}]{#1_Teacher.pdf}
   \else

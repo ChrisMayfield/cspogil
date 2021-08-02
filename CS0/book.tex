@@ -1,0 +1,179 @@
+%comment out for student version
+\ifdefined\Student\relax\else\def\Teacher{}\fi
+
+\documentclass[12pt,twoside,openright]{report}
+
+\title{Activities for CS0}
+\author{Chris Mayfield}
+\date{Summer 2021}
+
+\input{../cspogil.sty}
+
+\usepackage{pdfpages}
+\usepackage{pax}
+
+% remove page numbers
+%\makeatletter
+%\let\ps@plain\ps@empty
+%\makeatother
+
+% dots in toc chapters
+\usepackage{tocloft}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+% include activity pdf
+\newcommand{\act}[3]{
+  \cleardoublepage\phantomsection
+  \addcontentsline{toc}{chapter}{#2}
+  \addtocontents{toc}{\nopagebreak\bigskip{#3}\par}
+  \ifdefined\Teacher
+    \includepdf[pages=-, pagecommand={}]{#1_Teacher.pdf}
+  \else
+    \includepdf[pages=-, pagecommand={}]{#1_Student.pdf}
+  \fi
+}
+
+\begin{document}
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\pdfbookmark{Title Page}{title}
+\begin{titlepage}
+\null\vfill
+\centering
+
+\includegraphics{../IntroCS.pdf}
+
+\makeatletter
+
+\vspace*{4em}
+\huge \textbf{\@title}
+
+\vspace*{2pt}
+\ifdefined\Teacher
+\color{DarkRed}
+\Large \textbf{Instructor's Guide with Solutions}
+\else
+\color{ForestGreen}
+\Large \textbf{Student Workbook}
+\fi
+\normalcolor
+
+\vspace*{2em}
+\large \@author
+
+\vspace*{4pt}
+\small With contributions from Helen Hu, \\ Clif Kussmaul, Mike Lam, and Greg Keim
+
+\vspace*{2em}
+\Large \@date
+
+\makeatother
+
+\normalsize
+
+\vspace*{4em}
+\includegraphics{../by-nc-sa.png}
+
+\vspace*{1ex}
+Copyright \textcopyright\ 2021.
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+
+%\ifdefined\Teacher
+%\vspace*{2em}
+%\includegraphics[height=4em]{Overleaf.png}
+%
+%\vspace*{1ex}
+%Source documents available in Overleaf
+%\fi
+
+\vfill\null
+\end{titlepage}
+
+\cleardoublepage
+\pdfbookmark{Preface}{pre}
+\input{preface.tex}
+
+\cleardoublepage
+\pdfbookmark{\contentsname}{toc}
+\tableofcontents
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+
+\clearpage\phantomsection
+\addcontentsline{toc}{chapter}{Role Cards}
+\includepdf[pages=-]{../Handouts/role-cards-appendix.pdf}
+
+\clearpage\phantomsection
+\addcontentsline{toc}{chapter}{Team Report}
+\includepdf[pages=-]{../Handouts/team-report.pdf}
+
+\cleardoublepage
+\pagestyle{plain}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\renewcommand{\indent}{\hspace*{1.5em}}
+\newcommand{\mod}[1]{\indent Model~#1~~}
+
+%\addtocontents{toc}{\newpage}
+
+\act{Act01/Act01-Algorithms}{Activity 1: Algorithms}{
+\mod{1} Hi-Lo Game
+}
+\act{Act02/Act02-BitsBytes}{Activity 2: Bits and Bytes}{
+\mod{1} Logic Gates \\
+\mod{2} Binary Numbers
+}
+\act{Act03/Act03-Hardware}{Activity 3: Hardware}{
+\mod{1} Computer Architecture \\
+\mod{2} Machine Instructions
+}
+\act{Act04/Act04-Operating}{Activity 4: What is an OS?}{
+\mod{1} Screenshots \\
+\mod{2} Interactions
+}
+\act{Act05/Act05-Internet}{Activity 5: The Internet}{
+\mod{1} How the Internet Works \\
+\mod{2} Measuring Your Network
+}
+\act{Act06/Act06-Encryption}{Activity 6: Encryption}{
+\mod{1} Random Substitution \\
+\mod{2} Caesar Cipher \\
+\mod{3} Vigenère Cipher
+}
+\act{Act07/Act07-HelloPython}{Activity 7: Hello, Python!}{
+\mod{1} Using IDLE \\
+\mod{2} Guessing Game
+}
+\act{Act08/Act08-Languages}{Activity 8: Programming Languages}{
+\mod{1} Low-Level Languages \\
+\mod{2} High-Level Languages
+}
+\act{Act09/Act09-LifeCycles}{Activity 9: Software Development}{
+\mod{1} Finding \& Fixing Errors \\
+\mod{2} The Waterfall Model \\
+\mod{3} The Iterative Model
+}
+\act{Act10/Act10-DataStruct}{Activity 10: Data Structures}{
+\mod{1} Array \\
+\mod{2} Linked List
+}
+\act{Act11/Act11-Relational}{Activity 11: Relational Operations}{
+\mod{1} Select and Project \\
+\mod{2} Product and Join
+}
+\act{Act12/Act12-EightPuzzle}{Activity 12: Artificial Intelligence}{
+\mod{1} The 8-Puzzle \\
+\mod{2} Search Trees
+}
+
+%\cleardoublepage
+%\thispagestyle{empty}
+%\begin{center}
+%\null\vfill
+%\huge\bf Appendix
+%\vfill\null
+%\end{center}
+
+\end{document}

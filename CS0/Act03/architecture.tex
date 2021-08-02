@@ -1,9 +1,14 @@
 \model{Computer Architecture}
 
-Here is the 8-bit machine described in Appendix~C of Brookshear and Brylow (2015):
+Here is the 8-bit machine described in Appendix~C of the textbook:
 
 \begin{center}
 \includegraphics[width=0.8\linewidth]{cpu-bus-ram.pdf}
+\end{center}
+
+\begin{center}
+\color{gray}\scriptsize Image credit:
+Brookshear and Brylow. (2015). \textit{Computer Science: An Overview}. Pearson.
 \end{center}
 
 
@@ -31,7 +36,7 @@ The Bus connects the CPU and RAM together.
 \Q The CPU has circuits for adding the contents of two registers; think of registers as the ``pins'' in last week's lab.
 What is the largest number this machine can add without overflowing?
 
-\begin{answer}
+\begin{answer}[3em]
 Because the machine has eight bits, the largest number is 0xFF or 255.
 \end{answer}
 
@@ -39,7 +44,7 @@ Because the machine has eight bits, the largest number is 0xFF or 255.
 \Q Common tasks the CPU performs include \emph{loading} data from a memory cell into a register and \emph{storing} data from a register into a memory cell.
 Describe what the CPU would need to do in order to add twenty numbers stored in memory.
 
-\begin{answer}[7em]
+\begin{answer}[6em]
 The CPU would need to use two registers: one for a running total, and one to load data from memory.
 Start by setting the total register to zero.
 For each number, load it into the other register, and then add it to the total.

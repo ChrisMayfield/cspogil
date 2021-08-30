@@ -29,10 +29,6 @@ public enum Month {
         return ordinal() + 1;
     }
 
-    public static Month parseMonth(int number) {
-        return values()[number - 1];
-    }
-
     public static Month parseMonth(String name) {
         String abbr = name.substring(0, 3);
         return valueOf(abbr.toUpperCase());

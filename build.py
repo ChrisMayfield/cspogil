@@ -1,7 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Compiles student and teacher PDFs for each LaTeX source file."""
-
-from __future__ import print_function
 
 import os
 import shutil

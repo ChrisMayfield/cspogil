@@ -1,0 +1,29 @@
+---
+name: Build PDF Release
+on:
+  push:
+    branches:
+      - master
+jobs:
+  Build:
+    name: Build PDF release bundle
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Ubuntu dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install texlive-latex-recommended texlive-latex-extra
+      - name: Build PDFs
+        run: |
+          ./build.py all
+          find . '(' -name "*_Student.pdf" -or -name "*_Teacher.pdf" ')' -exec zip -g PDF.zip {} \;
+      - name: Set GitHub auth token
+        run: |
+          gh config set -h github.com oauth_token "${{ secrets.GITHUB_TOKEN }}"
+      - name: Create updated release
+        run: |
+          gh release delete cspogil-latest -y || true
+          git push --delete origin cspogil-latest || true
+          gh release create cspogil-latest PDF.zip
